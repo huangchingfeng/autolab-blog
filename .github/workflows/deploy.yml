@@ -1,36 +1,45 @@
-name: Deploy Blog to GitHub Pages
+name: Build and Deploy Blog
 
 on:
   push:
     branches: [main]
+    paths: ['articles/**']
+  workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  contents: write
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/setup-python@v5
         with:
-          path: blog
+          python-version: '3.12'
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Install dependencies
+        run: pip install markdown pyyaml pymdown-extensions Pygments
+
+      - name: Build all articles and rebuild site
+        run: |
+          python3 << 'PYEOF'
+          from publish_blog import publish_article, rebuild_site, ARTICLES_DIR
+
+          # Build each article
+          for md in sorted(ARTICLES_DIR.glob("*.md")):
+              print(f"Building: {md.name}")
+              publish_article(str(md))
+
+          # Rebuild index + sitemap
+          print("\nRebuilding site...")
+          rebuild_site()
+          PYEOF
+
+      - name: Commit and push built files
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add blog/
+          git diff --cached --quiet || (git commit -m "build: auto-deploy blog" && git push)
