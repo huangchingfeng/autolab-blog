@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://blog.autolab.cloud/sitemap.xml
