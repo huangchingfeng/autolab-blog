@@ -8,10 +8,19 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -27,19 +36,19 @@ jobs:
           python3 << 'PYEOF'
           from publish_blog import publish_article, rebuild_site, ARTICLES_DIR
 
-          # Build each article
           for md in sorted(ARTICLES_DIR.glob("*.md")):
               print(f"Building: {md.name}")
               publish_article(str(md))
 
-          # Rebuild index + sitemap
           print("\nRebuilding site...")
           rebuild_site()
           PYEOF
 
-      - name: Commit and push built files
-        run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          git add blog/
-          git diff --cached --quiet || (git commit -m "build: auto-deploy blog" && git push)
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: blog/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
