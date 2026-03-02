@@ -77,25 +77,17 @@ def extract_seo_from_article(text):
 
 
 def youtube_embed(youtube_id):
-    """產生 YouTube 嵌入 HTML"""
+    """產生 YouTube banner（縮圖 + 播放按鈕，點擊跳 YouTube）"""
     if not youtube_id:
         return ""
-    return f"""<div class="yt-embed"><div class="yt-wrapper">
-<iframe src="https://www.youtube.com/embed/{youtube_id}"
-  title="YouTube video" loading="lazy"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen></iframe>
-</div></div>"""
+    return f"""<a href="https://www.youtube.com/watch?v={youtube_id}" target="_blank" rel="noopener" class="yt-banner">
+  <img src="https://img.youtube.com/vi/{youtube_id}/maxresdefault.jpg" alt="觀看 YouTube 影片" loading="lazy">
+  <div class="yt-play">&#9654;</div>
+</a>"""
 
 
 def md_to_html(content):
-    """Markdown → HTML，自動將 YouTube 連結轉嵌入"""
-    # 轉換 YouTube 連結為嵌入（行內）
-    content = re.sub(
-        r'(?:https?://)?(?:www\.)?youtube\.com/watch\?v=([a-zA-Z0-9_-]+)',
-        r'<div class="yt-embed"><div class="yt-wrapper"><iframe src="https://www.youtube.com/embed/\1" title="YouTube" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>',
-        content
-    )
+    """Markdown → HTML"""
     return markdown.markdown(content, extensions=MD_EXTENSIONS,
                              extension_configs=MD_EXT_CONFIGS)
 
@@ -246,7 +238,10 @@ def publish_article(md_path, thumbnail_path=None):
 
     # 複製 thumbnail
     if thumbnail_path and Path(thumbnail_path).exists():
-        shutil.copy2(thumbnail_path, out_dir / "thumbnail.png")
+        src = Path(thumbnail_path).resolve()
+        dst = (out_dir / "thumbnail.png").resolve()
+        if src != dst:
+            shutil.copy2(thumbnail_path, out_dir / "thumbnail.png")
         print(f"  縮圖: blog/{slug}/thumbnail.png")
 
     # 複製到 articles/ 備份

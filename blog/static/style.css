@@ -323,3 +323,43 @@ img { max-width: 100%; height: auto; display: block; }
   .index-hero h1 { font-size: 1.6rem; }
   .index-cards { padding: 0 16px 40px; }
 }
+
+/* === YouTube Banner === */
+.yt-banner {
+  display: block;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto 32px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 212, 255, 0.1);
+}
+.yt-banner img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s;
+}
+.yt-banner:hover img {
+  transform: scale(1.02);
+}
+.yt-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  background: rgba(0, 212, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #0A1628;
+  transition: background 0.3s, transform 0.3s;
+  box-shadow: 0 4px 16px rgba(0, 212, 255, 0.4);
+}
+.yt-banner:hover .yt-play {
+  background: #00D4FF;
+  transform: translate(-50%, -50%) scale(1.1);
+}
