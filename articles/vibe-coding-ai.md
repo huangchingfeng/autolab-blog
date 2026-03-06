@@ -8,10 +8,14 @@ keywords:
 - AI自動化
 - Vibe Coding教學
 - AI時代生存
-og_image: https://www.autolab.cloud/blog/vibe-coding-ai/thumbnail.png
+og_image: https://blog.autolab.cloud/vibe-coding-ai/banner.png
 slug: vibe-coding-ai
 tags:
-- 'AI #VibeCoding #AI趨勢 #AI工作流 #企業AI培訓'
+- AI
+- Vibe Coding
+- AI趨勢
+- AI工作流
+- 企業AI培訓
 title: Vibe Coding 入門指南：工具人時代結束，用 AI 協作解決真問題
 youtube_id: LGDQ3musYUQ
 ---

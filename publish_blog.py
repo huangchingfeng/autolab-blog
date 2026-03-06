@@ -216,16 +216,61 @@ def generate_sitemap(all_articles):
 </urlset>"""
 
 
+def generate_rss(all_articles):
+    """產生 RSS 2.0 feed"""
+    today = datetime.date.today().strftime("%a, %d %b %Y 00:00:00 +0800")
+    sorted_articles = sorted(all_articles, key=lambda a: a.get("date", ""), reverse=True)
+
+    items = []
+    for a in sorted_articles[:20]:  # 最新 20 篇
+        pub_date = a.get("date", "")
+        # 簡易日期轉換
+        try:
+            dt = datetime.datetime.strptime(pub_date, "%Y-%m-%d")
+            rfc_date = dt.strftime("%a, %d %b %Y 00:00:00 +0800")
+        except (ValueError, TypeError):
+            rfc_date = today
+
+        desc = a.get("description", "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+        title = a.get("title", "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+        items.append(f"""    <item>
+      <title>{title}</title>
+      <link>{SITE_URL}/{a['slug']}/</link>
+      <guid>{SITE_URL}/{a['slug']}/</guid>
+      <pubDate>{rfc_date}</pubDate>
+      <description>{desc}</description>
+    </item>""")
+
+    return f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>阿峰老師 AI 實戰部落格</title>
+    <link>{SITE_URL}/</link>
+    <description>企業 AI 培訓、Vibe Coding、AI 工具教學，從觀念到落地。</description>
+    <language>zh-TW</language>
+    <lastBuildDate>{today}</lastBuildDate>
+    <atom:link href="{SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>
+{chr(10).join(items)}
+  </channel>
+</rss>"""
+
+
 def scan_articles():
-    """掃描所有已發布文章的 meta"""
+    """掃描所有已發布文章的 meta（自動去重複 slug）"""
     all_meta = []
+    seen_slugs = set()
     for md_file in sorted(ARTICLES_DIR.glob("*.md")):
         text = md_file.read_text()
         meta, _ = parse_front_matter(text)
-        if meta.get("slug"):
-            meta["has_banner"] = (BLOG_DIR / meta["slug"] / "banner.png").exists()
-            meta["has_thumb"] = (BLOG_DIR / meta["slug"] / "thumbnail.png").exists()
+        slug = meta.get("slug")
+        if slug and slug not in seen_slugs:
+            seen_slugs.add(slug)
+            meta["has_banner"] = (BLOG_DIR / slug / "banner.png").exists()
+            meta["has_thumb"] = (BLOG_DIR / slug / "thumbnail.png").exists()
             all_meta.append(meta)
+        elif slug in seen_slugs:
+            print(f"  [!] 跳過重複 slug: {slug} ({md_file.name})")
     return all_meta
 
 
@@ -309,7 +354,7 @@ def publish_from_yt(md_path, youtube_id=None, thumbnail_path=None):
         "slug": slug,
         "youtube_id": youtube_id or "",
         "author": "黃敬峰（AI峰哥）",
-        "og_image": f"{SITE_URL}/{slug}/thumbnail.png" if thumbnail_path else "",
+        "og_image": f"{SITE_URL}/{slug}/banner.png",
     }
 
     # 組合完整 markdown
@@ -344,10 +389,21 @@ def rebuild_site():
     (BLOG_DIR / "sitemap.xml").write_text(sitemap)
     print(f"  Sitemap: blog/sitemap.xml")
 
+    # RSS feed
+    rss = generate_rss(all_articles)
+    (BLOG_DIR / "feed.xml").write_text(rss)
+    print(f"  RSS: blog/feed.xml")
+
     # robots.txt
     (BLOG_DIR / "robots.txt").write_text(
         f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n"
     )
+
+    # CNAME（GitHub Pages 自訂網域，必須保護）
+    cname_path = BLOG_DIR / "CNAME"
+    if not cname_path.exists():
+        cname_path.write_text("blog.autolab.cloud")
+        print("  CNAME: blog.autolab.cloud（自動重建）")
 
     return all_articles
 

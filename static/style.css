@@ -342,45 +342,6 @@ img { max-width: 100%; height: auto; display: block; }
   .nav-links { gap: 16px; }
 }
 
-/* === 首頁 === */
-.index-hero {
-  text-align: center;
-  padding: 80px 24px 40px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-.index-hero h1 {
-  font-size: 2.2rem;
-  font-weight: 900;
-  background: linear-gradient(135deg, #00D4FF, #00A3CC);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 12px;
-}
-.index-hero p {
-  color: #C7C7CC;
-  font-size: 1.1rem;
-}
-.index-count {
-  color: #00D4FF;
-  font-size: 0.9rem !important;
-  margin-top: 8px;
-}
-.index-cards {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 24px 60px;
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
-
-@media (max-width: 600px) {
-  .index-hero { padding: 60px 16px 24px; }
-  .index-hero h1 { font-size: 1.6rem; }
-  .index-cards { padding: 0 16px 40px; }
-}
-
 /* === YouTube Banner === */
 .yt-banner {
   display: block;

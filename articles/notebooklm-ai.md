@@ -8,7 +8,7 @@ keywords:
 - AI 腳本寫作
 - NotebookLM 教學 2026
 - 內容創作 AI 工具
-og_image: https://blog.autolab.cloud/notebooklm-ai/thumbnail.png
+og_image: https://blog.autolab.cloud/notebooklm-ai/banner.png
 slug: notebooklm-ai
 tags:
 - NotebookLM

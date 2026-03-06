@@ -8,10 +8,14 @@ keywords:
 - Daniel Priestley
 - 員工思維vs創業者
 - AI創業框架
-og_image: https://www.autolab.cloud/blog/ai-new-business-rules/thumbnail.png
+og_image: https://blog.autolab.cloud/ai-new-business-rules/banner.png
 slug: ai-new-business-rules
 tags:
-- 'AI #創業 #AI創業 #DanielPriestley #企業培訓'
+- AI
+- 創業
+- AI創業
+- Daniel Priestley
+- 企業培訓
 title: AI 時代創業不再靠資金，靠的是這六個步驟｜阿峰老師
 youtube_id: v0lr6_khm2g
 ---

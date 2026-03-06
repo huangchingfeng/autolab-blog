@@ -9,7 +9,7 @@ keywords:
 - AI 泡沫判斷
 - 降低門檻提高天花板
 - AI 不確定性
-og_image: https://blog.autolab.cloud/satya-nadella-ai-ceo-ai-ai/thumbnail.png
+og_image: https://blog.autolab.cloud/satya-nadella-ai-ceo-ai-ai/banner.png
 slug: satya-nadella-ai-ceo-ai-ai
 tags:
 - AI趨勢

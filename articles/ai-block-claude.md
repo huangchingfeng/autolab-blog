@@ -10,7 +10,7 @@ keywords:
 - AI時代職場
 - Jack Dorsey AI
 - Anthropic Pentagon
-og_image: https://blog.autolab.cloud/ai-block-claude/thumbnail.png
+og_image: https://blog.autolab.cloud/ai-block-claude/banner.png
 slug: ai-block-claude
 tags:
 - AI

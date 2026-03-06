@@ -8,7 +8,7 @@ keywords:
 - AI時代工作
 - Anthropic封殺
 - AI職場生存
-og_image: https://blog.autolab.cloud/ai-block-2026-ai/thumbnail.png
+og_image: https://blog.autolab.cloud/ai-block-2026-ai/banner.png
 slug: ai-block-2026-ai
 tags:
 - AI裁員

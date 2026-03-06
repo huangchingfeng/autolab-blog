@@ -1,13 +1,13 @@
-name: Build and Deploy Blog
+name: Deploy Blog to GitHub Pages
 
 on:
   push:
     branches: [main]
-    paths: ['articles/**', 'blog/**/thumbnail.png']
+    paths: ['blog/**']
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -16,33 +16,13 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Install dependencies
-        run: pip install markdown pyyaml pymdown-extensions Pygments
-
-      - name: Build all articles and rebuild site
-        run: |
-          python3 << 'PYEOF'
-          from publish_blog import publish_article, rebuild_site, ARTICLES_DIR
-
-          for md in sorted(ARTICLES_DIR.glob("*.md")):
-              print(f"Building: {md.name}")
-              publish_article(str(md))
-
-          print("\nRebuilding site...")
-          rebuild_site()
-          PYEOF
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
