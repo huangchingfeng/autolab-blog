@@ -1,79 +1,72 @@
 #!/usr/bin/env python3
-"""Autolab Blog Banner Generator — 奧美品牌顧問級 v2
-設計概念：「駕駛艙儀表板」— 深色空間裡的發光儀表板，傳遞掌控感、專業、精準。
+"""Autolab Blog Banner Generator v3 — Pexels 背景版
 
-v2 修正：
-- 改用 W8 字體（W9 有缺字問題）
-- 垂直置中佈局：內容不再擠在上方
-- 底部品牌列加粗加大
+設計概念：高品質 Pexels 照片背景 + 深色漸層遮罩 + 品牌文字覆蓋
+尺寸：1200×630（OG Image / Twitter Card）
 """
 
+import os
+import sys
 from pathlib import Path
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
+
+# broll_engine 路徑（共用 Pexels API + 字體工具）
+BROLL_DIR = Path(__file__).parent.parent.parent / "04-內容行銷(Marketing)" / "11-youtube-broll(YouTube影片B-Roll)"
+sys.path.insert(0, str(BROLL_DIR))
 
 # ============================================================
 # 品牌色碼
 # ============================================================
 DEEP_NAVY = (10, 22, 40)
-NAVY_2 = (15, 29, 50)
-NAVY_3 = (21, 32, 53)
-NAVY_4 = (27, 42, 69)
 CYAN = (0, 212, 255)
 WHITE = (255, 255, 255)
-GRAY_200 = (199, 199, 204)
 GRAY_300 = (142, 142, 147)
-GRAY_400 = (99, 99, 102)
 ACCENT_ORANGE = (255, 107, 53)
 
-# 品牌 Badge 背景色（模擬 Cyan 12% on Deep Navy）
-BADGE_BG = (12, 47, 70)
+W = 1200
+H = 630
+MARGIN_X = 60
 
 # ============================================================
 # 字體
 # ============================================================
-FONT_CN_BLACK = "/Users/huangjingfeng/Library/Fonts/NotoSansCJKtc-Black.otf"
 FONT_CN_BOLD = "/Users/huangjingfeng/Library/Fonts/NotoSansCJKtc-Bold.otf"
+FONT_CN_BLACK = "/Users/huangjingfeng/Library/Fonts/NotoSansCJKtc-Black.otf"
 FONT_CN_MEDIUM = "/Users/huangjingfeng/Library/Fonts/NotoSansCJKtc-Medium.otf"
 FONT_CN_REGULAR = "/Users/huangjingfeng/Library/Fonts/NotoSansCJKtc-Regular.otf"
 FONT_EN = "/System/Library/Fonts/HelveticaNeue.ttc"
 
-W = 1200
-H = 630
-MARGIN_X = 80
-BRAND_BAR_H = 70  # 底部品牌列高度
+# Tag → Pexels 搜尋關鍵字映射
+TAG_TO_QUERY = {
+    "AI": "artificial intelligence",
+    "AI趨勢": "technology future",
+    "AI裁員": "office corporate",
+    "AI創業": "startup entrepreneur",
+    "AI安全": "cybersecurity",
+    "Claude": "artificial intelligence robot",
+    "Claude Code": "programming code",
+    "Vibe Coding": "software developer coding",
+    "職場AI": "business office modern",
+    "企業培訓": "corporate training workshop",
+    "NotebookLM": "digital notebook technology",
+    "AI工具": "technology tools",
+    "內容創作": "creative content digital",
+    "多元潛能": "creative person diverse",
+    "認知交集": "brain creativity",
+    "實戰案例": "success business",
+    "創業框架": "startup planning",
+    "微軟CEO": "microsoft technology",
+    "OpenAI": "artificial intelligence research",
+    "Anthropic": "artificial intelligence research",
+    "投資": "finance investment chart",
+}
 
 
-def make_font(path, size, index=0):
+def _make_font(path, size, index=0):
     return ImageFont.truetype(path, size, index=index)
 
 
-def draw_rounded_rect(draw, xy, radius, fill=None):
-    """繪製圓角矩形"""
-    x1, y1, x2, y2 = xy
-    r = min(radius, (y2 - y1) // 2, (x2 - x1) // 2)
-    draw.pieslice([x1, y1, x1 + 2*r, y1 + 2*r], 180, 270, fill=fill)
-    draw.pieslice([x2 - 2*r, y1, x2, y1 + 2*r], 270, 360, fill=fill)
-    draw.pieslice([x1, y2 - 2*r, x1 + 2*r, y2], 90, 180, fill=fill)
-    draw.pieslice([x2 - 2*r, y2 - 2*r, x2, y2], 0, 90, fill=fill)
-    draw.rectangle([x1 + r, y1, x2 - r, y2], fill=fill)
-    draw.rectangle([x1, y1 + r, x2, y2 - r], fill=fill)
-
-
-def draw_glow(img, cx, cy, radius, color, intensity=0.08):
-    """繪製柔和光暈效果"""
-    overlay = Image.new("RGBA", img.size, (0, 0, 0, 0))
-    draw = ImageDraw.Draw(overlay)
-    steps = 50
-    for i in range(steps, 0, -1):
-        ratio = i / steps
-        r = int(radius * ratio)
-        alpha = int(255 * intensity * (1 - ratio))
-        c = color + (alpha,)
-        draw.ellipse([cx - r, cy - r, cx + r, cy + r], fill=c)
-    img.paste(Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB"))
-
-
-def wrap_text(text, font, max_width):
+def _wrap_text(text, font, max_width):
     """智慧斷行"""
     lines = []
     current = ""
@@ -91,145 +84,192 @@ def wrap_text(text, font, max_width):
     return lines
 
 
-def generate_banner(title, subtitle, tags, slug, output_dir):
-    """生成單張品牌 banner"""
+def _draw_text_with_stroke(draw, pos, text, font, fill, stroke_width=2, stroke_fill=(0, 0, 0)):
+    """繪製帶描邊的文字"""
+    x, y = pos
+    for dx in range(-stroke_width, stroke_width + 1):
+        for dy in range(-stroke_width, stroke_width + 1):
+            if dx == 0 and dy == 0:
+                continue
+            draw.text((x + dx, y + dy), text, font=font, fill=stroke_fill)
+    draw.text((x, y), text, font=font, fill=fill)
+
+
+def _tags_to_query(tags):
+    """從文章 tags 推導 Pexels 搜尋關鍵字"""
+    if not tags:
+        return "technology modern"
+    for tag in tags:
+        if tag in TAG_TO_QUERY:
+            return TAG_TO_QUERY[tag]
+    return "technology modern"
+
+
+def _load_pexels_bg(query, cache_dir, slug):
+    """下載 Pexels 照片作為 banner 背景"""
+    cache_dir = Path(cache_dir)
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    cache_path = cache_dir / f"{slug}_bg.jpg"
+
+    try:
+        from broll_engine.pexels import pexels_photo
+        result = pexels_photo(query, str(cache_path), size="large2x", orientation="landscape")
+        if result:
+            return Image.open(result).convert("RGB")
+    except Exception as e:
+        print(f"    Pexels 下載失敗: {e}")
+
+    return None
+
+
+def _create_gradient_bg():
+    """Fallback：CVI 漸層背景"""
     img = Image.new("RGB", (W, H), DEEP_NAVY)
     draw = ImageDraw.Draw(img)
+    # 微妙的漸層效果
+    for y in range(H):
+        ratio = y / H
+        r = int(DEEP_NAVY[0] + (20 - DEEP_NAVY[0]) * ratio * 0.3)
+        g = int(DEEP_NAVY[1] + (35 - DEEP_NAVY[1]) * ratio * 0.3)
+        b = int(DEEP_NAVY[2] + (60 - DEEP_NAVY[2]) * ratio * 0.3)
+        draw.line([(0, y), (W, y)], fill=(r, g, b))
+    return img
 
-    # === 背景光暈 ===
-    draw_glow(img, W - 80, 60, 450, CYAN, intensity=0.035)
-    draw_glow(img, 80, H - 80, 300, ACCENT_ORANGE, intensity=0.018)
+
+def generate_banner(title, tags=None, pexels_query="", subtitle="",
+                    slug="banner", output_path="banner.png", cache_dir="/tmp/pexels-blog-cache"):
+    """生成 Pexels 背景版品牌 banner（1200×630）
+
+    Args:
+        title: 文章標題
+        tags: 文章標籤列表
+        pexels_query: 自訂 Pexels 搜尋詞（空字串=從 tags 推導）
+        subtitle: 副標題（可選）
+        slug: 文章 slug（用於快取）
+        output_path: 輸出路徑
+        cache_dir: Pexels 快取目錄
+    """
+    # 1. 背景：Pexels 照片 or CVI 漸層
+    query = pexels_query or _tags_to_query(tags)
+    bg_img = _load_pexels_bg(query, cache_dir, slug)
+    has_photo = bg_img is not None
+
+    if bg_img:
+        # 裁切到 1200×630 並模糊化
+        bg_img = bg_img.resize((max(W, int(bg_img.width * H / bg_img.height)),
+                                max(H, int(bg_img.height * W / bg_img.width))),
+                               Image.LANCZOS)
+        # 居中裁切
+        left = (bg_img.width - W) // 2
+        top = (bg_img.height - H) // 2
+        bg_img = bg_img.crop((left, top, left + W, top + H))
+        # 微模糊讓文字更清晰
+        bg_img = bg_img.filter(ImageFilter.GaussianBlur(radius=2))
+        img = bg_img
+    else:
+        img = _create_gradient_bg()
+
+    # 2. 深色漸層遮罩（從上到下加深）
+    overlay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    overlay_draw = ImageDraw.Draw(overlay)
+    if has_photo:
+        for y in range(H):
+            ratio = y / H
+            # 上方 40% 透明度 → 下方 85% 透明度
+            alpha = int(100 + 115 * ratio)
+            overlay_draw.line([(0, y), (W, y)], fill=(DEEP_NAVY[0], DEEP_NAVY[1], DEEP_NAVY[2], alpha))
+    img = img.convert("RGBA")
+    img = Image.alpha_composite(img, overlay)
+    img = img.convert("RGB")
     draw = ImageDraw.Draw(img)
 
-    # === 計算佈局（垂直置中） ===
-    title_font = make_font(FONT_CN_BLACK, 48)
-    sub_font = make_font(FONT_CN_REGULAR, 20)
-    tag_font = make_font(FONT_CN_MEDIUM, 14)
+    # 3. 文字佈局
+    title_font = _make_font(FONT_CN_BLACK, 52)
+    sub_font = _make_font(FONT_CN_REGULAR, 20)
+    tag_font = _make_font(FONT_CN_MEDIUM, 14)
+    brand_font = _make_font(FONT_CN_BOLD, 15)
+    brand_en = _make_font(FONT_EN, 14, index=5)
     max_text_w = W - MARGIN_X * 2
 
-    title_lines = wrap_text(title, title_font, max_text_w)
+    title_lines = _wrap_text(title, title_font, max_text_w)
     if len(title_lines) > 3:
         title_lines = title_lines[:3]
         title_lines[-1] = title_lines[-1][:-2] + "..."
 
+    # 4. 從底部向上佈局
+    # 品牌條
+    bar_y = H - 50
+    # 半透明品牌條背景
+    bar_overlay = Image.new("RGBA", (W, 50), (DEEP_NAVY[0], DEEP_NAVY[1], DEEP_NAVY[2], 180))
+    img_rgba = img.convert("RGBA")
+    img_rgba.paste(bar_overlay, (0, bar_y), bar_overlay)
+    img = img_rgba.convert("RGB")
+    draw = ImageDraw.Draw(img)
+
+    draw.text((MARGIN_X, bar_y + 15), "阿峰老師", font=brand_font, fill=CYAN)
+    draw.text((MARGIN_X + 70, bar_y + 16), " |  blog.autolab.cloud", font=brand_en, fill=GRAY_300)
+
+    # 5. 標題（底部對齊品牌條上方）
+    title_line_h = 68
+    title_block_h = len(title_lines) * title_line_h
+    title_start_y = bar_y - title_block_h - 20
+
+    # 副標題
     sub_lines = []
     if subtitle:
-        sub_lines = wrap_text(subtitle, sub_font, max_text_w)[:2]
-
-    # 計算內容總高度
-    tag_block_h = 36  # tag badges 高度
-    title_line_h = 64
-    sub_line_h = 32
-    gap_tag_title = 24
-    gap_title_sub = 20
-
-    content_h = tag_block_h + gap_tag_title
-    content_h += len(title_lines) * title_line_h
+        sub_lines = _wrap_text(subtitle, sub_font, max_text_w)[:2]
     if sub_lines:
-        content_h += gap_title_sub + len(sub_lines) * sub_line_h
+        title_start_y -= (len(sub_lines) * 30 + 12)
 
-    # 可用區域：頂部 40px ~ 底部品牌列上方 20px
-    avail_top = 40
-    avail_bottom = H - BRAND_BAR_H - 20
-    avail_h = avail_bottom - avail_top
+    for i, line in enumerate(title_lines):
+        y = title_start_y + i * title_line_h
+        _draw_text_with_stroke(draw, (MARGIN_X, y), line, title_font, WHITE,
+                               stroke_width=3, stroke_fill=(0, 0, 0))
 
-    # 垂直置中偏上（視覺重心偏上更舒服）
-    start_y = avail_top + max(0, (avail_h - content_h) // 2 - 20)
-
-    # === 頂部 Cyan 裝飾線 ===
-    draw.line([(MARGIN_X, start_y), (MARGIN_X + 50, start_y)], fill=CYAN, width=3)
-
-    # === Tag badges ===
-    tag_x = MARGIN_X
-    tag_y = start_y + 14
-    for tag in (tags[:3] if tags else []):
-        bbox = tag_font.getbbox(tag)
-        tw = bbox[2] - bbox[0] + 24
-        th = 28
-        draw_rounded_rect(draw,
-                          (tag_x, tag_y, tag_x + tw, tag_y + th),
-                          radius=14,
-                          fill=BADGE_BG)
-        # 1px Cyan 邊框模擬
-        draw.rounded_rectangle(
-            [(tag_x, tag_y), (tag_x + tw, tag_y + th)],
-            radius=14,
-            outline=(0, 80, 100),
-            width=1
-        )
-        draw.text((tag_x + 12, tag_y + 5), tag, font=tag_font, fill=CYAN)
-        tag_x += tw + 10
-
-    # === 標題 ===
-    title_y = tag_y + tag_block_h + gap_tag_title - 14
-    for line in title_lines:
-        draw.text((MARGIN_X, title_y), line, font=title_font, fill=WHITE)
-        title_y += title_line_h
-
-    # === 副標題 ===
+    # 副標題
     if sub_lines:
-        sub_y = title_y + gap_title_sub
+        sub_y = title_start_y + title_block_h + 8
         for line in sub_lines:
-            draw.text((MARGIN_X, sub_y), line, font=sub_font, fill=GRAY_200)
-            sub_y += sub_line_h
+            _draw_text_with_stroke(draw, (MARGIN_X, sub_y), line, sub_font, (220, 220, 225),
+                                   stroke_width=1, stroke_fill=(0, 0, 0))
+            sub_y += 30
 
-    # === 底部品牌列 ===
-    bar_y = H - BRAND_BAR_H
+    # 6. Tags（標題上方）
+    if tags:
+        tag_y = title_start_y - 44
+        tag_x = MARGIN_X
+        for tag in tags[:3]:
+            bbox = tag_font.getbbox(tag)
+            tw = bbox[2] - bbox[0] + 20
+            th = 26
+            # 半透明膠囊背景
+            tag_bg = Image.new("RGBA", (tw, th), (0, 0, 0, 0))
+            tag_draw = ImageDraw.Draw(tag_bg)
+            tag_draw.rounded_rectangle([(0, 0), (tw - 1, th - 1)], radius=13,
+                                       fill=(255, 255, 255, 40))
+            tag_draw.rounded_rectangle([(0, 0), (tw - 1, th - 1)], radius=13,
+                                       outline=(CYAN[0], CYAN[1], CYAN[2], 120), width=1)
+            img_rgba = img.convert("RGBA")
+            img_rgba.paste(tag_bg, (tag_x, tag_y), tag_bg)
+            img = img_rgba.convert("RGB")
+            draw = ImageDraw.Draw(img)
+            draw.text((tag_x + 10, tag_y + 4), tag, font=tag_font, fill=CYAN)
+            tag_x += tw + 8
 
-    # 分隔線：左 1/3 Cyan 漸層 → 右 2/3 Navy
-    for x in range(MARGIN_X, W - MARGIN_X):
-        progress = (x - MARGIN_X) / (W - 2 * MARGIN_X)
-        if progress < 0.25:
-            # Cyan → 透明
-            fade = 1.0 - (progress / 0.25)
-            r = int(DEEP_NAVY[0] + (CYAN[0] - DEEP_NAVY[0]) * fade)
-            g = int(DEEP_NAVY[1] + (CYAN[1] - DEEP_NAVY[1]) * fade)
-            b = int(DEEP_NAVY[2] + (CYAN[2] - DEEP_NAVY[2]) * fade)
-            draw.point((x, bar_y), fill=(r, g, b))
-        else:
-            draw.point((x, bar_y), fill=NAVY_3)
+    # 7. 頂部 Cyan 裝飾線
+    top_y = min(tag_y - 20 if tags else title_start_y - 20, 40)
+    draw.line([(MARGIN_X, top_y), (MARGIN_X + 50, top_y)], fill=CYAN, width=3)
 
-    # 品牌文字
-    brand_cn = make_font(FONT_CN_BOLD, 16)
-    brand_en = make_font(FONT_EN, 15, index=5)
-
-    draw.text((MARGIN_X, bar_y + 20), "阿峰老師", font=brand_cn, fill=CYAN)
-
-    pipe_x = MARGIN_X + 76
-    draw.text((pipe_x, bar_y + 20), " |  autolab.cloud", font=brand_en, fill=GRAY_400)
-
-    # 右下角 Wing Mark
-    wx = W - MARGIN_X - 36
-    wy = bar_y + 22
-    # 左翼
-    draw.polygon([(wx, wy + 14), (wx + 14, wy), (wx + 17, wy + 7)], fill=CYAN)
-    # 右翼
-    draw.polygon([(wx + 36, wy + 14), (wx + 22, wy), (wx + 19, wy + 7)], fill=CYAN)
-
-    # === 右上角裝飾 L 形 ===
-    dx = W - MARGIN_X
-    dy = 50
-    draw.line([(dx - 36, dy), (dx, dy)], fill=NAVY_4, width=2)
-    draw.line([(dx, dy), (dx, dy + 36)], fill=NAVY_4, width=2)
-
-    # === 左下角裝飾點陣（3x3 微點） ===
-    dot_x0 = MARGIN_X
-    dot_y0 = bar_y - 50
-    for row in range(3):
-        for col in range(3):
-            dx = dot_x0 + col * 8
-            dy = dot_y0 + row * 8
-            draw.ellipse([dx, dy, dx + 3, dy + 3], fill=NAVY_4)
-
-    # 保存
-    output_path = Path(output_dir) / "thumbnail.png"
+    # 儲存
+    output_path = Path(output_path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     img.save(str(output_path), "PNG", quality=95)
-    print(f"  [OK] {slug}")
-    return output_path
+    print(f"  [OK] banner → {output_path.name}")
+    return str(output_path)
 
 
 # ============================================================
-# 文章資料
+# 批次重建全部 banner
 # ============================================================
 BLOG_DIR = Path(__file__).parent / "blog"
 
@@ -286,9 +326,20 @@ ARTICLES = [
 
 
 def main():
+    """載入 .env 並批次生成全部 banner"""
+    # 載入 Pexels API Key
+    env_path = BROLL_DIR / "broll_engine" / ".env"
+    if not env_path.exists():
+        env_path = BROLL_DIR / ".env"
+    if env_path.exists():
+        for line in open(env_path):
+            if "=" in line and not line.startswith("#"):
+                k, v = line.strip().split("=", 1)
+                os.environ[k] = v
+
     print("=" * 55)
-    print("  Autolab Blog Banner Generator v2")
-    print("  Design: Ogilvy-grade Brand Consistency")
+    print("  Autolab Blog Banner Generator v3")
+    print("  Design: Pexels Background + Brand Overlay")
     print("=" * 55)
 
     for article in ARTICLES:
@@ -297,11 +348,17 @@ def main():
         out_dir.mkdir(parents=True, exist_ok=True)
         generate_banner(
             title=article["title"],
-            subtitle=article["subtitle"],
+            subtitle=article.get("subtitle", ""),
             tags=article["tags"],
             slug=slug,
-            output_dir=out_dir,
+            output_path=str(out_dir / "banner.png"),
         )
+        # 同時生成 thumbnail.png（向後相容）
+        banner_path = out_dir / "banner.png"
+        thumb_path = out_dir / "thumbnail.png"
+        if banner_path.exists():
+            import shutil
+            shutil.copy2(str(banner_path), str(thumb_path))
 
     print(f"\n  共生成 {len(ARTICLES)} 張品牌 Banner")
     print("=" * 55)

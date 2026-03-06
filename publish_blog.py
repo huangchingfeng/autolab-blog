@@ -132,6 +132,15 @@ def render_article(meta, html_content):
     json_ld = build_json_ld(meta)
     canonical = meta.get("canonical_url") or f"{SITE_URL}/{slug}/"
 
+    # Featured image（優先 banner.png，fallback thumbnail.png）
+    featured_html = ""
+    banner_path = BLOG_DIR / slug / "banner.png"
+    thumb_path = BLOG_DIR / slug / "thumbnail.png"
+    if banner_path.exists():
+        featured_html = f'<div class="featured-image-wrapper"><img src="banner.png" alt="{meta.get("title", "")}" class="featured-image" loading="lazy"></div>'
+    elif thumb_path.exists():
+        featured_html = f'<div class="featured-image-wrapper"><img src="thumbnail.png" alt="{meta.get("title", "")}" class="featured-image" loading="lazy"></div>'
+
     return Template(tpl).safe_substitute(
         title=meta.get("title", "Untitled"),
         description=meta.get("description", ""),
@@ -143,6 +152,7 @@ def render_article(meta, html_content):
         author=meta.get("author", "黃敬峰（AI峰哥）"),
         tags=tags_html,
         youtube=yt_html,
+        featured_image=featured_html,
         content=html_content,
         json_ld=json_ld,
         site_url=SITE_URL,
@@ -157,7 +167,13 @@ def render_index(all_articles):
 
     cards = []
     for a in sorted_articles:
-        thumb = f'{SITE_URL}/{a["slug"]}/thumbnail.png' if a.get("has_thumb") else f"{SITE_URL}/static/og-default.png"
+        # 優先用 banner.png（Pexels 背景版），fallback thumbnail.png
+        if a.get("has_banner"):
+            thumb = f'{SITE_URL}/{a["slug"]}/banner.png'
+        elif a.get("has_thumb"):
+            thumb = f'{SITE_URL}/{a["slug"]}/thumbnail.png'
+        else:
+            thumb = f"{SITE_URL}/static/og-default.png"
         tags_html = "".join(f'<span class="tag">{t}</span>' for t in a.get("tags", [])[:3])
         cards.append(f"""<a href="{SITE_URL}/{a['slug']}/" class="card">
   <img class="card-thumb" src="{thumb}" alt="{a.get('title', '')}" loading="lazy">
@@ -207,6 +223,7 @@ def scan_articles():
         text = md_file.read_text()
         meta, _ = parse_front_matter(text)
         if meta.get("slug"):
+            meta["has_banner"] = (BLOG_DIR / meta["slug"] / "banner.png").exists()
             meta["has_thumb"] = (BLOG_DIR / meta["slug"] / "thumbnail.png").exists()
             all_meta.append(meta)
     return all_meta
