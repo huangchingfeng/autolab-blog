@@ -3,7 +3,7 @@ name: Build and Deploy Blog
 on:
   push:
     branches: [main]
-    paths: ['articles/**']
+    paths: ['articles/**', 'blog/**/thumbnail.png']
   workflow_dispatch:
 
 permissions:
