@@ -32,11 +32,25 @@ IMG_W = 1200
 PADDING = 60
 
 # ============================================================
-# 字體
+# 字體（動態偵測，支援 macOS + Linux）
 # ============================================================
-FONT_CN_BOLD = "/Users/huangjingfeng/Library/Fonts/NotoSansCJKtc-Bold.otf"
-FONT_CN_REGULAR = "/Users/huangjingfeng/Library/Fonts/NotoSansCJKtc-Regular.otf"
-FONT_CN_MEDIUM = "/Users/huangjingfeng/Library/Fonts/NotoSansCJKtc-Medium.otf"
+import platform
+
+def _find_font(names, fallback=""):
+    search_dirs = []
+    if platform.system() == "Darwin":
+        search_dirs = [Path.home() / "Library/Fonts", Path("/System/Library/Fonts"), Path("/Library/Fonts")]
+    else:
+        search_dirs = [Path("/usr/share/fonts"), Path("/usr/local/share/fonts"), Path.home() / ".fonts"]
+    for name in names:
+        for d in search_dirs:
+            for p in d.rglob(name):
+                return str(p)
+    return fallback
+
+FONT_CN_BOLD = _find_font(["NotoSansCJKtc-Bold.otf", "NotoSansCJK-Bold.ttc"])
+FONT_CN_REGULAR = _find_font(["NotoSansCJKtc-Regular.otf", "NotoSansCJK-Regular.ttc"], FONT_CN_BOLD)
+FONT_CN_MEDIUM = _find_font(["NotoSansCJKtc-Medium.otf", "NotoSansCJK-Medium.ttc"], FONT_CN_BOLD)
 
 
 def _font(path, size):
@@ -63,7 +77,7 @@ def _wrap_text(text, font, max_width):
 def _brand_footer(draw, y, width):
     """底部品牌小字"""
     font = _font(FONT_CN_REGULAR, 14)
-    text = "阿峰老師 | autolab.cloud"
+    text = "阿峰老師 | blog.autolab.cloud"
     draw.text((PADDING, y), text, font=font, fill=GRAY_400)
     return y + 30
 

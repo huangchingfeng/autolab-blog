@@ -7,61 +7,115 @@
     <language>zh-TW</language>
     <lastBuildDate>Fri, 06 Mar 2026 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://blog.autolab.cloud/feed.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://blog.autolab.cloud/static/og-default.png</url>
+      <title>阿峰老師 AI 實戰部落格</title>
+      <link>https://blog.autolab.cloud/</link>
+    </image>
     <item>
-      <title>你的「三分鐘熱度」是 AI 時代最值錢的資產：認知交集完整操作指南</title>
-      <link>https://blog.autolab.cloud/article-2026-03-06/</link>
-      <guid>https://blog.autolab.cloud/article-2026-03-06/</guid>
+      <title>Satya Nadella 的 10 億美元 AI 豪賭｜3 個不確定性思維 + 實操模板</title>
+      <link>https://blog.autolab.cloud/satya-nadella-ai-ceo-ai-ai/</link>
+      <guid>https://blog.autolab.cloud/satya-nadella-ai-ceo-ai-ai/</guid>
       <pubDate>Fri, 06 Mar 2026 00:00:00 +0800</pubDate>
-      <description>什麼都想學的人在 AI 時代反而最值錢？本文從多元潛能、認知交集、Tutorial Hell 出發，提供3步找到認知交集的操作指南，以及從教學地獄脫身的具體做法。</description>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>微軟 CEO Satya Nadella 在 2019 年砸 10 億投資 OpenAI，本文拆解他的 3 個 AI 決策思維，加上阿峰老師獨家「降低門檻+提高天花板」實操模板，教你用不對稱風險策略擁抱 AI。</description>
+      <category>AI趨勢</category>
+      <category>SatyaNadella</category>
+      <category>微軟CEO</category>
+      <category>OpenAI</category>
+      <category>AI實戰</category>
     </item>
     <item>
       <title>10 個素人用 Claude Code 做出的真實產品｜最快 4.5 小時上線</title>
       <link>https://blog.autolab.cloud/claude-code-10-real-products/</link>
       <guid>https://blog.autolab.cloud/claude-code-10-real-products/</guid>
       <pubDate>Fri, 06 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
       <description>設計師、廣告導演、露營旅館老闆⋯⋯10 個非工程師背景的人，用 Claude Code 做出 APP、SaaS、自動化系統。最快只花 4.5 小時。</description>
+      <category>Claude Code</category>
+      <category>Vibe Coding</category>
+      <category>AI開發</category>
+      <category>實戰案例</category>
     </item>
     <item>
-      <title>Satya Nadella 的 10 億美元 AI 豪賭｜3 個不確定性思維 + 實操模板</title>
-      <link>https://blog.autolab.cloud/satya-nadella-ai-ceo-ai-ai/</link>
-      <guid>https://blog.autolab.cloud/satya-nadella-ai-ceo-ai-ai/</guid>
+      <title>你的「三分鐘熱度」是 AI 時代最值錢的資產：認知交集完整操作指南</title>
+      <link>https://blog.autolab.cloud/article-2026-03-06/</link>
+      <guid>https://blog.autolab.cloud/article-2026-03-06/</guid>
       <pubDate>Fri, 06 Mar 2026 00:00:00 +0800</pubDate>
-      <description>微軟 CEO Satya Nadella 在 2019 年砸 10 億投資 OpenAI，本文拆解他的 3 個 AI 決策思維，加上阿峰老師獨家「降低門檻+提高天花板」實操模板，教你用不對稱風險策略擁抱 AI。</description>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>什麼都想學的人在 AI 時代反而最值錢？本文從多元潛能、認知交集、Tutorial Hell 出發，提供3步找到認知交集的操作指南，以及從教學地獄脫身的具體做法。</description>
+      <category>AI</category>
+      <category>多元潛能</category>
+      <category>認知交集</category>
     </item>
     <item>
       <title>AI 裁員潮來了？Block 砍 5000 人背後的真相與 5 步工作拆解法</title>
       <link>https://blog.autolab.cloud/ai-block-2026-ai/</link>
       <guid>https://blog.autolab.cloud/ai-block-2026-ai/</guid>
       <pubDate>Mon, 02 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
       <description>Block 因 AI 裁員 5000 人，Anthropic 因拒絕開發自動武器被川普封殺。三個關鍵觀察加上獨家 5 步工作拆解法，教你找出自己的不可取代區。</description>
+      <category>AI裁員</category>
+      <category>AI安全</category>
+      <category>職場AI</category>
+      <category>Block</category>
+      <category>Anthropic</category>
     </item>
     <item>
       <title>Claude 被封殺、Block 裁員一半：AI 時代職場生存指南（2026）</title>
       <link>https://blog.autolab.cloud/ai-block-claude/</link>
       <guid>https://blog.autolab.cloud/ai-block-claude/</guid>
       <pubDate>Mon, 02 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
       <description>Block CEO Jack Dorsey 裁掉 4,000 人，說是因為 AI；Anthropic 因拒絕移除安全限制遭美國政府全面封殺。這兩件同時發生的大事，說明了 AI 取代人力已不是預言，而是現在式。本文深度分析數據、各大廠立場，並告訴你現在該怎麼做。</description>
+      <category>AI</category>
+      <category>AI裁員</category>
+      <category>Block</category>
+      <category>Anthropic</category>
+      <category>Claude</category>
+      <category>JackDorsey</category>
+      <category>DarioAmodei</category>
+      <category>AI職場</category>
+      <category>AI安全</category>
     </item>
     <item>
       <title>AI 時代創業不再靠資金，靠的是這六個步驟｜阿峰老師</title>
       <link>https://blog.autolab.cloud/ai-new-business-rules/</link>
       <guid>https://blog.autolab.cloud/ai-new-business-rules/</guid>
       <pubDate>Mon, 02 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
       <description>Daniel Priestley 的六步驟創業框架 + 台灣企業培訓實戰觀察。AI 降低了技術門檻，但真正稀缺的是決策勇氣和行動力。附台灣職場實戰案例。</description>
+      <category>AI</category>
+      <category>創業</category>
+      <category>AI創業</category>
+      <category>Daniel Priestley</category>
+      <category>企業培訓</category>
     </item>
     <item>
       <title>NotebookLM 逆向工程教學：3 步驟免費拆解百萬爆款影片結構（含完整提示詞）</title>
       <link>https://blog.autolab.cloud/notebooklm-ai/</link>
       <guid>https://blog.autolab.cloud/notebooklm-ai/</guid>
       <pubDate>Mon, 02 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
       <description>用 Google NotebookLM 免費拆解百萬播放影片的底層結構，轉化為你自己的腳本藍圖。本文含完整提示詞範本、5 種進階應用場景，以及內容創作者的實戰心得。</description>
+      <category>NotebookLM</category>
+      <category>AI工具</category>
+      <category>內容逆向工程</category>
+      <category>腳本寫作</category>
+      <category>YouTube教學</category>
     </item>
     <item>
       <title>Vibe Coding 入門指南：工具人時代結束，用 AI 協作解決真問題</title>
       <link>https://blog.autolab.cloud/vibe-coding-ai/</link>
       <guid>https://blog.autolab.cloud/vibe-coding-ai/</guid>
       <pubDate>Sun, 01 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
       <description>矽谷工程師被裁、公司錢拿去買 GPU。AI 時代工具人正在被淘汰，Vibe Coding 是你從工具人躍遷為擁有者的最快路徑。含 5 步驟入門實戰、台灣企業案例。</description>
+      <category>AI</category>
+      <category>Vibe Coding</category>
+      <category>AI趨勢</category>
+      <category>AI工作流</category>
+      <category>企業AI培訓</category>
     </item>
   </channel>
 </rss>

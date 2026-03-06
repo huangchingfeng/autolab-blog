@@ -36,13 +36,36 @@ H = 630
 MARGIN_X = 60
 
 # ============================================================
-# 字體
+# 字體（動態偵測，支援 macOS + Linux）
 # ============================================================
-FONT_CN_BOLD = "/Users/huangjingfeng/Library/Fonts/NotoSansCJKtc-Bold.otf"
-FONT_CN_BLACK = "/Users/huangjingfeng/Library/Fonts/NotoSansCJKtc-Black.otf"
-FONT_CN_MEDIUM = "/Users/huangjingfeng/Library/Fonts/NotoSansCJKtc-Medium.otf"
-FONT_CN_REGULAR = "/Users/huangjingfeng/Library/Fonts/NotoSansCJKtc-Regular.otf"
-FONT_EN = "/System/Library/Fonts/HelveticaNeue.ttc"
+import platform
+
+def _find_font(names, fallback=""):
+    """在常見路徑中搜尋字體"""
+    search_dirs = []
+    if platform.system() == "Darwin":
+        search_dirs = [
+            Path.home() / "Library/Fonts",
+            Path("/System/Library/Fonts"),
+            Path("/Library/Fonts"),
+        ]
+    else:
+        search_dirs = [
+            Path("/usr/share/fonts"),
+            Path("/usr/local/share/fonts"),
+            Path.home() / ".fonts",
+        ]
+    for name in names:
+        for d in search_dirs:
+            for p in d.rglob(name):
+                return str(p)
+    return fallback
+
+FONT_CN_BOLD = _find_font(["NotoSansCJKtc-Bold.otf", "NotoSansCJK-Bold.ttc"])
+FONT_CN_BLACK = _find_font(["NotoSansCJKtc-Black.otf", "NotoSansCJK-Black.ttc"], FONT_CN_BOLD)
+FONT_CN_MEDIUM = _find_font(["NotoSansCJKtc-Medium.otf", "NotoSansCJK-Medium.ttc"], FONT_CN_BOLD)
+FONT_CN_REGULAR = _find_font(["NotoSansCJKtc-Regular.otf", "NotoSansCJK-Regular.ttc"], FONT_CN_BOLD)
+FONT_EN = _find_font(["HelveticaNeue.ttc", "Helvetica.ttc", "DejaVuSans.ttf", "Arial.ttf"])
 
 # Tag → Pexels 搜尋關鍵字映射
 TAG_TO_QUERY = {
@@ -68,6 +91,20 @@ TAG_TO_QUERY = {
     "OpenAI": "artificial intelligence research",
     "Anthropic": "artificial intelligence research",
     "投資": "finance investment chart",
+    "AI寫作": "writing creative digital",
+    "Cursor": "programming code ide",
+    "n8n": "automation workflow technology",
+    "自動化": "automation digital workflow",
+    "提示詞": "artificial intelligence chat",
+    "商業模式": "business strategy planning",
+    "Gemini": "artificial intelligence google",
+    "ChatGPT": "artificial intelligence chatbot",
+    "SatyaNadella": "microsoft technology ceo",
+    "JackDorsey": "technology entrepreneur",
+    "DarioAmodei": "artificial intelligence research",
+    "AI實戰": "technology office modern",
+    "AI職場": "office workplace future",
+    "Block": "fintech payment technology",
 }
 
 
@@ -263,7 +300,7 @@ def generate_banner(title, tags=None, pexels_query="", subtitle="",
     # 儲存
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    img.save(str(output_path), "PNG", quality=95)
+    img.save(str(output_path), "PNG", optimize=True)
     print(f"  [OK] banner → {output_path.name}")
     return str(output_path)
 

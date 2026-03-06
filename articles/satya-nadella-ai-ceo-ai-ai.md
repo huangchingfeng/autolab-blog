@@ -1,8 +1,7 @@
 ---
 author: 黃敬峰（AI峰哥）
 date: '2026-03-06'
-description: 微軟 CEO Satya Nadella 在 2019 年砸 10 億投資 OpenAI，本文拆解他的 3 個 AI 決策思維，加上阿峰老師獨家「降低門檻+提高天花板」實操模板，教你用不對稱風險策略擁抱
-  AI。
+description: "微軟 CEO Satya Nadella 在 2019 年砸 10 億投資 OpenAI，本文拆解他的 3 個 AI 決策思維，加上阿峰老師獨家「降低門檻+提高天花板」實操模板，教你用不對稱風險策略擁抱 AI。"
 keywords:
 - Satya Nadella AI
 - 微軟 CEO AI 觀點
@@ -19,15 +18,6 @@ tags:
 - AI實戰
 title: Satya Nadella 的 10 億美元 AI 豪賭｜3 個不確定性思維 + 實操模板
 youtube_id: ohq6IzL-Wko
----
-
----
-title: "Satya Nadella 的 10 億美元 AI 豪賭：3 個你必須學會的不確定性思維"
-date: 2026-03-06
-slug: satya-nadella-ai-bet
-tags: [AI趨勢, Satya Nadella, 微軟, OpenAI, AI思維]
-description: "微軟 CEO Satya Nadella 在 2019 年砸 10 億美元投資 OpenAI，當時所有人都覺得他瘋了。這篇文章從他的最新訪談中，拆解 3 個面對 AI 不確定性的關鍵思維，加上阿峰老師的獨家實戰建議。"
-keywords: [Satya Nadella, 微軟 CEO, OpenAI 投資, AI 泡沫, AI 失業, Scaling Laws, 量子電腦, AI 實戰]
 ---
 
 # Satya Nadella 的 10 億美元 AI 豪賭：3 個你必須學會的不確定性思維

@@ -158,20 +158,6 @@ img { max-width: 100%; height: auto; display: block; }
   box-shadow: 0 4px 24px rgba(0,0,0,0.3);
 }
 
-/* ── YouTube 嵌入 ── */
-.yt-embed {
-  max-width: var(--max-w); margin: 0 auto 32px;
-  padding: 0 24px;
-}
-.yt-embed .yt-wrapper {
-  position: relative; padding-bottom: 56.25%; height: 0;
-  border-radius: 12px; overflow: hidden;
-}
-.yt-embed iframe {
-  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  border: 0;
-}
-
 /* ── 文章內容 ── */
 .article-content {
   max-width: var(--max-w); margin: 0 auto;
@@ -331,23 +317,41 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: .85rem; color: var(--text-muted);
 }
 
+/* ── Skip Link（無障礙） ── */
+.skip-link {
+  position: absolute; left: -999px; top: 0; z-index: 999;
+  padding: 8px 16px; background: var(--primary); color: var(--bg);
+  font-weight: 700; font-size: .9rem; border-radius: 0 0 8px 0;
+}
+.skip-link:focus {
+  left: 0;
+}
+
 /* ── RWD ── */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 1.75rem; }
+  .articles { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+  .article-header h1 { font-size: 1.75rem; }
+}
+
 @media (max-width: 640px) {
   .hero h1 { font-size: 1.5rem; }
   .articles { grid-template-columns: 1fr; }
   .article-header h1 { font-size: 1.5rem; }
   .article-content h2 { font-size: 1.25rem; }
   .article-content { line-height: 1.8; }
+  .article-content table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .featured-image { max-height: 280px; }
-  .nav-links { gap: 16px; }
+  .nav-links { gap: 12px; font-size: .8rem; }
 }
 
 /* === YouTube Banner === */
 .yt-banner {
   display: block;
   position: relative;
-  max-width: 800px;
+  max-width: var(--max-w);
   margin: 0 auto 32px;
+  padding: 0 24px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 24px rgba(0, 212, 255, 0.1);

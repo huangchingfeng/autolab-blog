@@ -8,6 +8,7 @@
 """
 import argparse
 import datetime
+import html
 import json
 import os
 import re
@@ -76,13 +77,31 @@ def extract_seo_from_article(text):
     return meta
 
 
-def youtube_embed(youtube_id):
+def normalize_youtube_id(raw_id):
+    """從 YouTube URL 或 ID 中提取 11 字元 ID"""
+    if not raw_id:
+        return ""
+    m = re.search(r'(?:v=|youtu\.be/|embed/)([a-zA-Z0-9_-]{11})', raw_id)
+    if m:
+        return m.group(1)
+    # 已經是純 ID
+    if re.match(r'^[a-zA-Z0-9_-]{11}$', raw_id.strip()):
+        return raw_id.strip()
+    return raw_id.strip()
+
+
+def youtube_embed(youtube_id, title=""):
     """產生 YouTube banner（縮圖 + 播放按鈕，點擊跳 YouTube）"""
     if not youtube_id:
         return ""
-    return f"""<a href="https://www.youtube.com/watch?v={youtube_id}" target="_blank" rel="noopener" class="yt-banner">
-  <img src="https://img.youtube.com/vi/{youtube_id}/maxresdefault.jpg" alt="觀看 YouTube 影片" loading="lazy">
-  <div class="yt-play">&#9654;</div>
+    vid = normalize_youtube_id(youtube_id)
+    alt_text = html.escape(f"觀看影片：{title}") if title else "觀看 YouTube 影片"
+    aria = html.escape(f"在 YouTube 觀看：{title}") if title else "在 YouTube 觀看影片"
+    return f"""<a href="https://www.youtube.com/watch?v={vid}" target="_blank" rel="noopener" class="yt-banner" aria-label="{aria}">
+  <img src="https://img.youtube.com/vi/{vid}/maxresdefault.jpg"
+       onerror="this.src='https://img.youtube.com/vi/{vid}/hqdefault.jpg'"
+       alt="{alt_text}" loading="lazy" width="1280" height="720">
+  <div class="yt-play" role="img" aria-hidden="true">&#9654;</div>
 </a>"""
 
 
@@ -92,9 +111,20 @@ def md_to_html(content):
                              extension_configs=MD_EXT_CONFIGS)
 
 
+def _iso_date(date_str):
+    """將日期轉為 ISO 8601 含時區格式"""
+    d = str(date_str) if date_str else ""
+    if re.match(r'^\d{4}-\d{2}-\d{2}$', d):
+        return f"{d}T00:00:00+08:00"
+    return d
+
+
 def build_json_ld(meta):
-    """產生 Article JSON-LD 結構化資料"""
-    return json.dumps({
+    """產生 Article JSON-LD 結構化資料（含 VideoObject）"""
+    date_iso = _iso_date(meta.get("date", ""))
+    updated_iso = _iso_date(meta.get("updated", meta.get("date", "")))
+
+    ld = {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": meta.get("title", ""),
@@ -113,47 +143,81 @@ def build_json_ld(meta):
                 "url": f"{SITE_URL}/static/og-default.png"
             }
         },
-        "datePublished": meta.get("date", ""),
-        "dateModified": meta.get("date", ""),
+        "datePublished": date_iso,
+        "dateModified": updated_iso,
         "image": meta.get("og_image", f"{SITE_URL}/static/og-default.png"),
         "mainEntityOfPage": f"{SITE_URL}/{meta.get('slug', '')}/",
         "keywords": ", ".join(meta.get("keywords", meta.get("tags", []))),
         "inLanguage": "zh-Hant-TW"
-    }, ensure_ascii=False)
+    }
+
+    # VideoObject（YouTube 影片 Rich Result）
+    yt_id = meta.get("youtube_id", "")
+    if yt_id:
+        vid = normalize_youtube_id(yt_id)
+        ld["video"] = {
+            "@type": "VideoObject",
+            "name": meta.get("title", ""),
+            "description": meta.get("description", ""),
+            "thumbnailUrl": f"https://img.youtube.com/vi/{vid}/maxresdefault.jpg",
+            "uploadDate": date_iso,
+            "embedUrl": f"https://www.youtube.com/embed/{vid}",
+            "url": f"https://www.youtube.com/watch?v={vid}"
+        }
+
+    return json.dumps(ld, ensure_ascii=False)
 
 
 def render_article(meta, html_content):
     """套用文章頁模板"""
     tpl = (TEMPLATES_DIR / "article.html").read_text()
     slug = meta.get("slug", "untitled")
-    og_image = meta.get("og_image", f"{SITE_URL}/static/og-default.png")
-    tags_html = "".join(f'<span class="tag">{t}</span>' for t in meta.get("tags", []))
-    yt_html = youtube_embed(meta.get("youtube_id"))
-    json_ld = build_json_ld(meta)
-    canonical = meta.get("canonical_url") or f"{SITE_URL}/{slug}/"
+    title = meta.get("title", "Untitled")
+    title_escaped = html.escape(title)
 
-    # Featured image（優先 banner.png，fallback thumbnail.png）
-    featured_html = ""
+    # og_image fallback：banner → thumbnail → og-default
+    og_image = f"{SITE_URL}/static/og-default.png"
     banner_path = BLOG_DIR / slug / "banner.png"
     thumb_path = BLOG_DIR / slug / "thumbnail.png"
     if banner_path.exists():
-        featured_html = f'<div class="featured-image-wrapper"><img src="banner.png" alt="{meta.get("title", "")}" class="featured-image" loading="lazy"></div>'
+        og_image = f"{SITE_URL}/{slug}/banner.png"
     elif thumb_path.exists():
-        featured_html = f'<div class="featured-image-wrapper"><img src="thumbnail.png" alt="{meta.get("title", "")}" class="featured-image" loading="lazy"></div>'
+        og_image = f"{SITE_URL}/{slug}/thumbnail.png"
+    elif meta.get("og_image"):
+        og_image = meta["og_image"]
+
+    tags_html = "".join(f'<span class="tag">{html.escape(str(t))}</span>' for t in meta.get("tags", []))
+    yt_html = youtube_embed(meta.get("youtube_id"), title)
+    json_ld = build_json_ld({**meta, "og_image": og_image})
+    canonical = meta.get("canonical_url") or f"{SITE_URL}/{slug}/"
+    date_iso = _iso_date(meta.get("date", ""))
+
+    # Featured image（優先 banner.png，fallback thumbnail.png）
+    featured_html = ""
+    if banner_path.exists():
+        featured_html = f'<div class="featured-image-wrapper"><img src="banner.png" alt="{title_escaped}" class="featured-image" loading="lazy" width="780" height="438"></div>'
+    elif thumb_path.exists():
+        featured_html = f'<div class="featured-image-wrapper"><img src="thumbnail.png" alt="{title_escaped}" class="featured-image" loading="lazy" width="780" height="438"></div>'
+
+    # 逃逸 content 中的 $ 符號，避免 Template 誤解析
+    safe_content = html_content.replace("$", "$$")
 
     return Template(tpl).safe_substitute(
-        title=meta.get("title", "Untitled"),
-        description=meta.get("description", ""),
+        title=title_escaped,
+        description=html.escape(meta.get("description", "")),
         keywords=", ".join(meta.get("keywords", meta.get("tags", []))),
         canonical=canonical,
         og_image=og_image,
+        og_image_width="1200",
+        og_image_height="630",
         slug=slug,
-        date=meta.get("date", ""),
+        date=str(meta.get("date", "")),
+        date_iso=date_iso,
         author=meta.get("author", "黃敬峰（AI峰哥）"),
         tags=tags_html,
         youtube=yt_html,
         featured_image=featured_html,
-        content=html_content,
+        content=safe_content,
         json_ld=json_ld,
         site_url=SITE_URL,
     )
@@ -219,27 +283,29 @@ def generate_sitemap(all_articles):
 def generate_rss(all_articles):
     """產生 RSS 2.0 feed"""
     today = datetime.date.today().strftime("%a, %d %b %Y 00:00:00 +0800")
-    sorted_articles = sorted(all_articles, key=lambda a: a.get("date", ""), reverse=True)
+    sorted_articles = sorted(all_articles, key=lambda a: str(a.get("date", "")), reverse=True)
 
     items = []
-    for a in sorted_articles[:20]:  # 最新 20 篇
-        pub_date = a.get("date", "")
-        # 簡易日期轉換
+    for a in sorted_articles[:20]:
+        pub_date = str(a.get("date", ""))
         try:
             dt = datetime.datetime.strptime(pub_date, "%Y-%m-%d")
             rfc_date = dt.strftime("%a, %d %b %Y 00:00:00 +0800")
         except (ValueError, TypeError):
             rfc_date = today
 
-        desc = a.get("description", "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
-        title = a.get("title", "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+        desc = html.escape(str(a.get("description", "")))
+        title = html.escape(str(a.get("title", "")))
+        # 分類標籤
+        categories = "".join(f"\n      <category>{html.escape(str(t))}</category>" for t in a.get("tags", []))
 
         items.append(f"""    <item>
       <title>{title}</title>
       <link>{SITE_URL}/{a['slug']}/</link>
       <guid>{SITE_URL}/{a['slug']}/</guid>
       <pubDate>{rfc_date}</pubDate>
-      <description>{desc}</description>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>{desc}</description>{categories}
     </item>""")
 
     return f"""<?xml version="1.0" encoding="UTF-8"?>
@@ -251,26 +317,40 @@ def generate_rss(all_articles):
     <language>zh-TW</language>
     <lastBuildDate>{today}</lastBuildDate>
     <atom:link href="{SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>{SITE_URL}/static/og-default.png</url>
+      <title>阿峰老師 AI 實戰部落格</title>
+      <link>{SITE_URL}/</link>
+    </image>
 {chr(10).join(items)}
   </channel>
 </rss>"""
 
 
 def scan_articles():
-    """掃描所有已發布文章的 meta（自動去重複 slug）"""
+    """掃描所有已發布文章的 meta（自動去重複 slug，按日期排序保留最新）"""
     all_meta = []
     seen_slugs = set()
-    for md_file in sorted(ARTICLES_DIR.glob("*.md")):
+    # 先蒐集所有文章，再按日期倒序（同 slug 保留最新的）
+    candidates = []
+    for md_file in ARTICLES_DIR.glob("*.md"):
         text = md_file.read_text()
         meta, _ = parse_front_matter(text)
         slug = meta.get("slug")
-        if slug and slug not in seen_slugs:
+        if slug:
+            meta["_src"] = md_file.name
+            candidates.append(meta)
+    # 按日期倒序排列
+    candidates.sort(key=lambda a: str(a.get("date", "")), reverse=True)
+    for meta in candidates:
+        slug = meta["slug"]
+        if slug not in seen_slugs:
             seen_slugs.add(slug)
             meta["has_banner"] = (BLOG_DIR / slug / "banner.png").exists()
             meta["has_thumb"] = (BLOG_DIR / slug / "thumbnail.png").exists()
             all_meta.append(meta)
-        elif slug in seen_slugs:
-            print(f"  [!] 跳過重複 slug: {slug} ({md_file.name})")
+        else:
+            print(f"  [!] 跳過重複 slug: {slug} ({meta.get('_src', '')})")
     return all_meta
 
 
@@ -288,23 +368,23 @@ def publish_article(md_path, thumbnail_path=None):
     print(f"  文章: {meta.get('title', slug)}")
     print(f"  Slug: {slug}")
 
-    # 轉換 HTML
-    html_content = md_to_html(content)
-    full_html = render_article(meta, html_content)
-
-    # 建立輸出目錄
+    # 建立輸出目錄（先建立，才能複製 thumbnail）
     out_dir = BLOG_DIR / slug
     out_dir.mkdir(parents=True, exist_ok=True)
-    (out_dir / "index.html").write_text(full_html)
-    print(f"  HTML: blog/{slug}/index.html")
 
-    # 複製 thumbnail
+    # 複製 thumbnail（必須在 render_article 之前，否則 featured image 偵測失敗）
     if thumbnail_path and Path(thumbnail_path).exists():
         src = Path(thumbnail_path).resolve()
         dst = (out_dir / "thumbnail.png").resolve()
         if src != dst:
             shutil.copy2(thumbnail_path, out_dir / "thumbnail.png")
         print(f"  縮圖: blog/{slug}/thumbnail.png")
+
+    # 轉換 HTML（此時 thumbnail 已就位，featured image 偵測正確）
+    html_content = md_to_html(content)
+    full_html = render_article(meta, html_content)
+    (out_dir / "index.html").write_text(full_html)
+    print(f"  HTML: blog/{slug}/index.html")
 
     # 複製到 articles/ 備份
     dest = ARTICLES_DIR / f"{slug}.md"
@@ -326,19 +406,31 @@ def publish_from_yt(md_path, youtube_id=None, thumbnail_path=None):
     # 清理文章內容（移除底部 SEO 區塊）
     content = re.split(r'\n\s*SEO:\s*\n', text)[0].strip()
 
-    # 產生 slug — 優先用 keywords，再用標題英文部分
+    # 產生 slug — 只取純英文/數字 keywords
     slug_source = ""
     if seo.get("keywords"):
-        # 取前 3 個 keyword 組成 slug
-        slug_source = " ".join(seo["keywords"][:3])
+        # 過濾出有英文字母的 keywords
+        en_keywords = [k for k in seo["keywords"] if re.search(r'[a-zA-Z]', k)]
+        if en_keywords:
+            slug_source = " ".join(en_keywords[:3])
     if not slug_source:
-        slug_source = title
-    slug = re.sub(r'[^a-z0-9]+', '-', slug_source.lower())
+        # 從標題中提取英文部分
+        en_parts = re.findall(r'[a-zA-Z][a-zA-Z0-9]*', title)
+        if en_parts:
+            slug_source = " ".join(en_parts[:5])
+    slug = re.sub(r'[^a-z0-9]+', '-', slug_source.lower()) if slug_source else ""
     slug = re.sub(r'-+', '-', slug).strip('-')
+    # 去除重複的連續相同詞（如 ai-ai-ai → ai）
+    parts = slug.split('-')
+    deduped = [parts[0]] if parts else []
+    for p in parts[1:]:
+        if p != deduped[-1]:
+            deduped.append(p)
+    slug = '-'.join(deduped)
     # 截斷到合理長度
     if len(slug) > 60:
         slug = slug[:60].rsplit('-', 1)[0]
-    # fallback：如果 slug 太短或無英文
+    # fallback
     if len(slug) < 5 or not any(c.isalpha() for c in slug):
         slug = f"article-{datetime.date.today().isoformat()}"
 
@@ -352,9 +444,8 @@ def publish_from_yt(md_path, youtube_id=None, thumbnail_path=None):
         "tags": seo.get("tags", []),
         "keywords": seo.get("keywords", []),
         "slug": slug,
-        "youtube_id": youtube_id or "",
+        "youtube_id": normalize_youtube_id(youtube_id) if youtube_id else "",
         "author": "黃敬峰（AI峰哥）",
-        "og_image": f"{SITE_URL}/{slug}/banner.png",
     }
 
     # 組合完整 markdown
@@ -410,16 +501,26 @@ def rebuild_site():
 
 def git_deploy(message="publish blog article"):
     """Git add + commit + push"""
-    os.chdir(HERE)
-    subprocess.run(["git", "add", "."], check=True, capture_output=True)
+    def _git(*cmd):
+        try:
+            return subprocess.run(
+                ["git", *cmd], cwd=HERE, check=True,
+                capture_output=True, text=True
+            )
+        except subprocess.CalledProcessError as e:
+            print(f"  [!] git {' '.join(cmd)} 失敗:")
+            if e.stderr:
+                print(f"      {e.stderr.strip()}")
+            raise
+    _git("add", ".")
     result = subprocess.run(
-        ["git", "diff", "--cached", "--quiet"], capture_output=True
+        ["git", "diff", "--cached", "--quiet"], cwd=HERE, capture_output=True
     )
     if result.returncode == 0:
         print("  [i] 沒有變更，跳過 git push")
         return
-    subprocess.run(["git", "commit", "-m", message], check=True, capture_output=True)
-    subprocess.run(["git", "push"], check=True, capture_output=True)
+    _git("commit", "-m", message)
+    _git("push")
     print("  Git: commit + push 完成")
 
 
