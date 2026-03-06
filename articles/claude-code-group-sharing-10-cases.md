@@ -14,7 +14,7 @@ keywords:
   - 非工程師開發
 slug: "claude-code-10-real-products"
 author: "黃敬峰（AI峰哥）"
-og_image: ""
+og_image: "https://blog.autolab.cloud/claude-code-10-real-products/thumbnail.png"
 ---
 
 # 10 個素人用 Claude Code 做出來的真實產品，最快只花 4.5 小時
