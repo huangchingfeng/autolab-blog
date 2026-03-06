@@ -5,13 +5,28 @@
     <link>https://blog.autolab.cloud/</link>
     <description>企業 AI 培訓、Vibe Coding、AI 工具教學，從觀念到落地。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Fri, 06 Mar 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 07 Mar 2026 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://blog.autolab.cloud/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://blog.autolab.cloud/static/og-default.png</url>
       <title>阿峰老師 AI 實戰部落格</title>
       <link>https://blog.autolab.cloud/</link>
     </image>
+    <item>
+      <title>簡立峰五大 AI 判斷：台灣沒有軟體產業，但軟體會長在硬體上</title>
+      <link>https://blog.autolab.cloud/article-2026-03-07/</link>
+      <guid>https://blog.autolab.cloud/article-2026-03-07/</guid>
+      <pubDate>Sat, 07 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>Google 台灣前總經理簡立峰對台灣 AI 未來做出五個關鍵判斷。從兩國九家公司壟斷 AI，到中小企業老闆用 AI 乘三倍，阿峰老師帶你拆解每一個判斷背後的實戰意義。</description>
+      <category>AI</category>
+      <category>台灣AI</category>
+      <category>簡立峰</category>
+      <category>Google</category>
+      <category>中小企業AI</category>
+      <category>企業AI培訓</category>
+      <category>阿峰老師</category>
+    </item>
     <item>
       <title>Satya Nadella 的 10 億美元 AI 豪賭｜3 個不確定性思維 + 實操模板</title>
       <link>https://blog.autolab.cloud/satya-nadella-ai-ceo-ai-ai/</link>
