@@ -1,19 +1,17 @@
-# Blog Gitignore
+
 __pycache__/
-*.pyc
 .DS_Store
 .env
-
-c
-*.pyo
-.env
-
-# Editor
-.vscode/
 .idea/
+.vscode/
+*.bak
+*.pyc
+*.pyo
 *.swp
 *~
-
+# Blog Gitignore
 # Credentials
+# Editor
+c
 credentials.json
 token.json
