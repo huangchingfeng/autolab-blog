@@ -164,6 +164,13 @@ Spec 給得完整、Skill 設計得精準、踩坑記錄寫得清楚——這些
 
 ---
 
+## 延伸閱讀
+
+- [Vibe Coding 入門指南：工具人時代結束，用 AI 協作解決真問題](https://blog.autolab.cloud/vibe-coding-ai/)
+- [AI 時代創業不再靠資金，靠的是這六個步驟](https://blog.autolab.cloud/ai-new-business-rules/)
+
+---
+
 ## 想更深入學習 AI？
 
 **2026 AI 實戰應用課（小班制手把手課程）**

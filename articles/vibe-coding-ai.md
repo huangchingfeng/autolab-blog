@@ -150,6 +150,14 @@ AI 時代的正確路徑是：
 
 ---
 
+## 延伸閱讀
+
+- [10 個素人用 Claude Code 做出的真實產品｜最快 4.5 小時上線](https://blog.autolab.cloud/claude-code-10-real-products/)
+- [AI 時代創業不再靠資金，靠的是這六個步驟](https://blog.autolab.cloud/ai-new-business-rules/)
+- [Claude 被封殺、Block 裁員一半：AI 時代職場生存指南（2026）](https://blog.autolab.cloud/ai-block-claude/)
+
+---
+
 📌 2026 AI 實戰應用課 — 從觀念到落地，帶你真正用 AI 解決問題
 → autolab.cloud/2026-ai-course
 

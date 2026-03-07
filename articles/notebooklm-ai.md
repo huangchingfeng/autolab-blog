@@ -152,6 +152,13 @@ NotebookLM 的逆向工程方法，本質上就是把這個「從經驗中提取
 
 ---
 
+## 延伸閱讀
+
+- [10 個素人用 Claude Code 做出的真實產品｜最快 4.5 小時上線](https://blog.autolab.cloud/claude-code-10-real-products/)
+- [MacBook Neo 科技平權：一萬六千九就能學 AI 的時代來了](https://blog.autolab.cloud/macbook-neo-ai/)
+
+---
+
 2026 AI 實戰應用課
 → https://autolab.cloud/2026-ai-course
 
