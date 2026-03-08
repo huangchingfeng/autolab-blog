@@ -8,7 +8,7 @@ keywords:
 - 幽靈繁榮
 - 2028全球智能危機
 - AI取代工作
-slug: article-2026-03-06
+slug: ai-white-collar-crisis
 tags:
 - AI失業
 - 白領裁員

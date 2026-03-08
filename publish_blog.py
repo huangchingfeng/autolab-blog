@@ -168,7 +168,140 @@ def build_json_ld(meta):
     return json.dumps(ld, ensure_ascii=False)
 
 
-def render_article(meta, html_content):
+def build_breadcrumb(meta):
+    """產生麵包屑 HTML 和 JSON-LD"""
+    title = html.escape(meta.get("title", ""))
+    slug = meta.get("slug", "")
+
+    breadcrumb_html = (
+        f'<a href="{SITE_URL}/">Blog</a>'
+        f'<span class="sep">›</span>'
+        f'<span class="current">{title}</span>'
+    )
+
+    breadcrumb_ld = json.dumps({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Blog",
+                "item": f"{SITE_URL}/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": meta.get("title", ""),
+                "item": f"{SITE_URL}/{slug}/"
+            }
+        ]
+    }, ensure_ascii=False)
+
+    return breadcrumb_html, breadcrumb_ld
+
+
+def build_article_tags_meta(tags):
+    """產生 article:tag Open Graph meta tags"""
+    return "\n  ".join(
+        f'<meta property="article:tag" content="{html.escape(str(t))}">'
+        for t in tags
+    )
+
+
+def build_related_articles(current_meta, all_articles):
+    """找出最相關的 3 篇文章（基於標籤匹配 + 日期）"""
+    current_slug = current_meta.get("slug", "")
+    current_tags = set(current_meta.get("tags", []))
+
+    if not all_articles:
+        return ""
+
+    # 計算相關度（共同標籤數）
+    scored = []
+    for a in all_articles:
+        if a.get("slug") == current_slug:
+            continue
+        common = len(current_tags & set(a.get("tags", [])))
+        scored.append((common, str(a.get("date", "")), a))
+
+    # 排序：先按共同標籤數降序，再按日期降序
+    scored.sort(key=lambda x: (x[0], x[1]), reverse=True)
+    related = [item[2] for item in scored[:3]]
+
+    if not related:
+        return ""
+
+    cards_html = []
+    for a in related:
+        slug = a.get("slug", "")
+        if a.get("has_banner"):
+            thumb = f'{slug}/banner.png'
+        elif a.get("has_thumb"):
+            thumb = f'{slug}/thumbnail.png'
+        else:
+            thumb = "static/og-default.png"
+
+        title = html.escape(str(a.get("title", "")))
+        cards_html.append(f'''<a href="{SITE_URL}/{slug}/" class="related-card">
+  <img class="related-card-thumb" src="{thumb}" alt="{title}" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">{a.get("date", "")}</div>
+    <div class="related-card-title">{title}</div>
+  </div>
+</a>''')
+
+    return f'''<section class="related-section">
+  <h2>你可能也想看</h2>
+  <div class="related-grid">
+    {"".join(cards_html)}
+  </div>
+</section>'''
+
+
+def build_article_nav(current_meta, all_articles):
+    """產生上一篇/下一篇導航"""
+    current_slug = current_meta.get("slug", "")
+    sorted_articles = sorted(all_articles, key=lambda a: str(a.get("date", "")), reverse=True)
+
+    idx = None
+    for i, a in enumerate(sorted_articles):
+        if a.get("slug") == current_slug:
+            idx = i
+            break
+
+    if idx is None:
+        return ""
+
+    parts = []
+    # 上一篇（較新的 = idx - 1）
+    if idx > 0:
+        prev = sorted_articles[idx - 1]
+        prev_title = html.escape(str(prev.get("title", "")))
+        parts.append(f'''<a href="{SITE_URL}/{prev["slug"]}/" class="prev">
+  <div class="nav-label">← 上一篇</div>
+  <div class="nav-title">{prev_title}</div>
+</a>''')
+    else:
+        parts.append('<div></div>')
+
+    # 下一篇（較舊的 = idx + 1）
+    if idx < len(sorted_articles) - 1:
+        next_a = sorted_articles[idx + 1]
+        next_title = html.escape(str(next_a.get("title", "")))
+        parts.append(f'''<a href="{SITE_URL}/{next_a["slug"]}/" class="next">
+  <div class="nav-label">下一篇 →</div>
+  <div class="nav-title">{next_title}</div>
+</a>''')
+    else:
+        parts.append('<div></div>')
+
+    return f'''<nav class="article-nav">
+  {"".join(parts)}
+</nav>'''
+
+
+def render_article(meta, html_content, all_articles=None):
     """套用文章頁模板"""
     tpl = (TEMPLATES_DIR / "article.html").read_text()
     slug = meta.get("slug", "untitled")
@@ -199,6 +332,19 @@ def render_article(meta, html_content):
     elif thumb_path.exists():
         featured_html = f'<div class="featured-image-wrapper"><img src="thumbnail.png" alt="{title_escaped}" class="featured-image" loading="lazy" width="780" height="438"></div>'
 
+    # 麵包屑
+    breadcrumb_html, breadcrumb_ld = build_breadcrumb(meta)
+
+    # article:tag meta
+    article_tags_meta = build_article_tags_meta(meta.get("tags", []))
+
+    # 相關文章 & 導航（需要 all_articles）
+    related_html = ""
+    nav_html = ""
+    if all_articles:
+        related_html = build_related_articles(meta, all_articles)
+        nav_html = build_article_nav(meta, all_articles)
+
     # 逃逸 content 中的 $ 符號，避免 Template 誤解析
     safe_content = html_content.replace("$", "$$")
 
@@ -220,6 +366,11 @@ def render_article(meta, html_content):
         content=safe_content,
         json_ld=json_ld,
         site_url=SITE_URL,
+        breadcrumb_html=breadcrumb_html,
+        breadcrumb_ld=breadcrumb_ld,
+        article_tags_meta=article_tags_meta,
+        related_articles=related_html.replace("$", "$$"),
+        article_nav=nav_html.replace("$", "$$"),
     )
 
 
@@ -233,13 +384,13 @@ def render_index(all_articles):
     for a in sorted_articles:
         # 優先用 banner.png（Pexels 背景版），fallback thumbnail.png
         if a.get("has_banner"):
-            thumb = f'{SITE_URL}/{a["slug"]}/banner.png'
+            thumb = f'{a["slug"]}/banner.png'
         elif a.get("has_thumb"):
-            thumb = f'{SITE_URL}/{a["slug"]}/thumbnail.png'
+            thumb = f'{a["slug"]}/thumbnail.png'
         else:
-            thumb = f"{SITE_URL}/static/og-default.png"
+            thumb = "static/og-default.png"
         tags_html = "".join(f'<span class="tag">{t}</span>' for t in a.get("tags", [])[:3])
-        cards.append(f"""<a href="{SITE_URL}/{a['slug']}/" class="card">
+        cards.append(f"""<a href="{a['slug']}/" class="card">
   <img class="card-thumb" src="{thumb}" alt="{a.get('title', '')}" loading="lazy">
   <div class="card-body">
     <div class="card-date">{a.get('date', '')}</div>
@@ -253,6 +404,7 @@ def render_index(all_articles):
         cards="\n".join(cards),
         site_url=SITE_URL,
         count=len(sorted_articles),
+        article_count=len(sorted_articles),
     )
 
 
@@ -382,7 +534,9 @@ def publish_article(md_path, thumbnail_path=None):
 
     # 轉換 HTML（此時 thumbnail 已就位，featured image 偵測正確）
     html_content = md_to_html(content)
-    full_html = render_article(meta, html_content)
+    # 掃描所有文章用於 related/nav
+    all_articles = scan_articles()
+    full_html = render_article(meta, html_content, all_articles)
     (out_dir / "index.html").write_text(full_html)
     print(f"  HTML: blog/{slug}/index.html")
 
@@ -469,6 +623,21 @@ def rebuild_site():
     if blog_static.exists():
         shutil.rmtree(blog_static)
     shutil.copytree(STATIC_DIR, blog_static)
+
+    # 重建所有文章頁（加入相關文章和導航）
+    print(f"  重建文章頁（相關文章 + 導航）...")
+    for meta in all_articles:
+        slug = meta.get("slug", "")
+        md_file = ARTICLES_DIR / f"{slug}.md"
+        if md_file.exists():
+            text = md_file.read_text()
+            _, content = parse_front_matter(text)
+            html_content = md_to_html(content)
+            full_html = render_article(meta, html_content, all_articles)
+            out_dir = BLOG_DIR / slug
+            out_dir.mkdir(parents=True, exist_ok=True)
+            (out_dir / "index.html").write_text(full_html)
+    print(f"  已重建 {len(all_articles)} 篇文章頁")
 
     # 生成首頁
     index_html = render_index(all_articles)

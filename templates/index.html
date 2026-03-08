@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog — 阿峰老師 Autolab</title>
-  <meta name="description" content="阿峰老師的 AI 實戰部落格。企業 AI 培訓、Vibe Coding、AI 工具教學、職場 AI 應用，從觀念到落地。">
-  <meta name="keywords" content="AI教學, 企業AI培訓, Vibe Coding, AI工具, 阿峰老師, AI實戰">
+  <title>AI 實戰教學部落格 — 阿峰老師 Autolab｜企業 AI 培訓</title>
+  <meta name="description" content="阿峰老師（黃敬峰）AI 實戰部落格。400+ 企業合作、10,000+ 學員。企業 AI 培訓、Vibe Coding、AI 工具教學、ChatGPT 應用、Gemini 實戰、職場 AI 落地，從觀念到實作一次搞定。">
+  <meta name="keywords" content="AI教學, 企業AI培訓, Vibe Coding, AI工具, 阿峰老師, AI實戰, ChatGPT教學, Gemini應用, 企業數位轉型, AI課程">
   <link rel="canonical" href="${site_url}/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Blog — 阿峰老師 Autolab">
-  <meta property="og:description" content="AI 實戰部落格：企業培訓、Vibe Coding、AI 工具教學，從觀念到落地。">
+  <meta property="og:title" content="AI 實戰教學部落格 — 阿峰老師 Autolab｜企業 AI 培訓">
+  <meta property="og:description" content="400+ 企業合作、10,000+ 學員。AI 實戰部落格：企業培訓、Vibe Coding、AI 工具教學，從觀念到落地。">
   <meta property="og:image" content="${site_url}/static/og-default.png">
   <meta property="og:url" content="${site_url}/">
   <meta property="og:site_name" content="阿峰老師 Autolab">
@@ -19,8 +19,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Blog — 阿峰老師 Autolab">
-  <meta name="twitter:description" content="AI 實戰部落格：企業培訓、Vibe Coding、AI 工具教學，從觀念到落地。">
+  <meta name="twitter:title" content="AI 實戰教學部落格 — 阿峰老師 Autolab｜企業 AI 培訓">
+  <meta name="twitter:description" content="400+ 企業合作、10,000+ 學員。AI 實戰部落格：企業培訓、Vibe Coding、AI 工具教學，從觀念到落地。">
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -58,12 +58,343 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="${site_url}/static/style.css">
+
+  <style>
+    /* ===== Skip Link (無障礙) ===== */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      background: #00D4FF;
+      color: #0A1628;
+      padding: 8px 16px;
+      border-radius: 0 0 8px 8px;
+      z-index: 9999;
+      font-weight: 600;
+      text-decoration: none;
+      transition: top 0.2s;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* ===== Nav Logo SVG ===== */
+    .nav-logo-svg {
+      width: 32px;
+      height: 32px;
+      margin-right: 8px;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+    }
+
+    /* ===== Hero 增強 ===== */
+    .hero {
+      text-align: center;
+      padding: 80px 24px 60px;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: #8B8FA3;
+      margin-bottom: 24px;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .hero-stat {
+      text-align: center;
+    }
+    .hero-stat-number {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #00D4FF;
+      display: block;
+    }
+    .hero-stat-label {
+      font-size: 0.85rem;
+      color: #8B8FA3;
+    }
+    .hero-cta {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .hero-btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .hero-btn:hover {
+      transform: translateY(-2px);
+    }
+    .hero-btn.primary {
+      background: #00D4FF;
+      color: #0A1628;
+    }
+    .hero-btn.primary:hover {
+      box-shadow: 0 4px 20px rgba(0,212,255,0.35);
+    }
+    .hero-btn.secondary {
+      background: transparent;
+      color: #00D4FF;
+      border: 1.5px solid #00D4FF;
+    }
+    .hero-btn.secondary:hover {
+      background: rgba(0,212,255,0.08);
+    }
+
+    /* ===== 搜尋 + 標籤篩選 ===== */
+    .filter-section {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      padding: 0 24px;
+    }
+    .filter-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .search-box {
+      position: relative;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 12px 16px 12px 44px;
+      border: 1.5px solid rgba(0,212,255,0.2);
+      border-radius: 10px;
+      background: #0F1D32;
+      color: #FFFFFF;
+      font-size: 1rem;
+      font-family: 'Inter', 'Noto Sans TC', sans-serif;
+      outline: none;
+      transition: border-color 0.2s;
+      box-sizing: border-box;
+    }
+    .search-box input::placeholder {
+      color: #8B8FA3;
+    }
+    .search-box input:focus {
+      border-color: #00D4FF;
+    }
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      color: #8B8FA3;
+      pointer-events: none;
+    }
+    .tag-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag-btn {
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: 1.5px solid rgba(0,212,255,0.2);
+      background: transparent;
+      color: #8B8FA3;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: 'Inter', 'Noto Sans TC', sans-serif;
+    }
+    .tag-btn:hover {
+      border-color: #00D4FF;
+      color: #00D4FF;
+    }
+    .tag-btn.active {
+      background: #00D4FF;
+      color: #0A1628;
+      border-color: #00D4FF;
+      font-weight: 600;
+    }
+
+    /* ===== 關於我 ===== */
+    .about-section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 24px;
+    }
+    .about-inner {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      background: #0F1D32;
+      border-radius: 16px;
+      padding: 40px;
+      border: 1px solid rgba(0,212,255,0.1);
+    }
+    .avatar-placeholder {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00D4FF, #FF6B35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      flex-shrink: 0;
+    }
+    .about-text h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0 0 8px;
+      color: #FFFFFF;
+    }
+    .about-text p {
+      color: #8B8FA3;
+      line-height: 1.7;
+      margin: 0 0 16px;
+    }
+    .about-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .about-btn {
+      display: inline-block;
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: transform 0.15s;
+    }
+    .about-btn:hover {
+      transform: translateY(-1px);
+    }
+    .about-btn:not(.outline) {
+      background: #00D4FF;
+      color: #0A1628;
+    }
+    .about-btn.outline {
+      background: transparent;
+      color: #00D4FF;
+      border: 1.5px solid #00D4FF;
+    }
+
+    /* ===== Footer 增強 ===== */
+    .footer {
+      border-top: 1px solid rgba(0,212,255,0.1);
+      padding: 0;
+      margin-top: 0;
+    }
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 24px 32px;
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .footer-brand {
+      max-width: 320px;
+    }
+    .footer-logo {
+      font-weight: 800;
+      color: #00D4FF;
+      font-size: 1.1rem;
+    }
+    .footer-brand > span,
+    .footer-brand {
+      color: #FFFFFF;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .footer-desc {
+      color: #8B8FA3;
+      font-size: 0.9rem;
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+    .footer-links {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .footer-col h4 {
+      color: #FFFFFF;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin: 0 0 4px;
+    }
+    .footer-col a {
+      color: #8B8FA3;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.15s;
+    }
+    .footer-col a:hover {
+      color: #00D4FF;
+    }
+    .footer-bottom {
+      text-align: center;
+      padding: 20px 24px;
+      border-top: 1px solid rgba(0,212,255,0.06);
+    }
+    .footer-bottom p {
+      color: #8B8FA3;
+      font-size: 0.8rem;
+      margin: 0;
+    }
+
+    /* ===== RWD ===== */
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 1.75rem; }
+      .hero-stats { gap: 20px; }
+      .hero-stat-number { font-size: 1.35rem; }
+      .about-inner {
+        flex-direction: column;
+        text-align: center;
+        padding: 28px;
+      }
+      .about-links { justify-content: center; }
+      .footer-inner { flex-direction: column; gap: 28px; }
+      .footer-links { gap: 28px; }
+    }
+  </style>
 </head>
 <body>
+  <!-- Skip Link (無障礙) -->
+  <a href="#main-content" class="skip-link">跳至主要內容</a>
+
   <!-- NAV -->
   <nav class="nav">
     <div class="nav-inner">
       <a href="https://www.autolab.cloud" class="nav-brand">
+        <svg class="nav-logo-svg" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="1" y="1" width="30" height="30" rx="7" stroke="#00D4FF" stroke-width="2" fill="none"/>
+          <path d="M18.5 6L11 18h5.5L13.5 26 21 14h-5.5L18.5 6z" fill="#00D4FF"/>
+        </svg>
         <span>Autolab</span> 阿峰老師
       </a>
       <div class="nav-links">
@@ -77,22 +408,155 @@
   <!-- HERO -->
   <section class="hero">
     <h1>AI 實戰部落格</h1>
-    <p>會用、懂用、好用、每天用。從觀念到落地的 AI 實戰教學。</p>
+    <p class="hero-subtitle">會用、懂用、好用、每天用。從觀念到落地的 AI 實戰教學。</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-number">400+</span>
+        <span class="hero-stat-label">企業合作</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-number">10,000+</span>
+        <span class="hero-stat-label">學員</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-number">${count}</span>
+        <span class="hero-stat-label">篇文章</span>
+      </div>
+    </div>
+    <div class="hero-cta">
+      <a href="#main-content" class="hero-btn primary">瀏覽文章 ↓</a>
+      <a href="https://www.autolab.cloud" class="hero-btn secondary">企業培訓諮詢 →</a>
+    </div>
+  </section>
+
+  <!-- 搜尋 + 標籤篩選 -->
+  <section class="filter-section">
+    <div class="filter-inner">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="搜尋文章..." aria-label="搜尋文章">
+        <svg class="search-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="2"/>
+          <line x1="13" y1="13" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tag-filter" id="tag-filter">
+        <button class="tag-btn active" data-tag="all">全部</button>
+        <!-- JS 動態生成其他 tag buttons -->
+      </div>
+    </div>
   </section>
 
   <!-- 文章列表 -->
-  <section class="articles">
+  <section class="articles" id="main-content">
     ${cards}
+  </section>
+
+  <!-- 關於我 -->
+  <section class="about-section">
+    <div class="about-inner">
+      <div class="about-avatar">
+        <div class="avatar-placeholder">峰</div>
+      </div>
+      <div class="about-text">
+        <h2>黃敬峰（AI峰哥）</h2>
+        <p>企業 AI 實戰培訓專家，400+ 企業合作、10,000+ 學員。<br>「你是機長，AI 是機組人員。」</p>
+        <div class="about-links">
+          <a href="https://www.autolab.cloud" class="about-btn">官網</a>
+          <a href="mailto:ai@autolab.cloud" class="about-btn outline">聯繫合作</a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p>&copy; 2026 Autolab — 黃敬峰（AI峰哥）. All rights reserved.</p>
-    <p style="margin-top:8px">
-      <a href="https://www.autolab.cloud">官網</a> ·
-      <a href="https://reurl.cc/GGlLNx">LINE 社群</a> ·
-      <a href="mailto:ai@autolab.cloud">聯繫合作</a>
-    </p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">Autolab</span> 阿峰老師
+        <p class="footer-desc">企業 AI 實戰培訓，從觀念到落地。</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>快速連結</h4>
+          <a href="${site_url}/">Blog</a>
+          <a href="https://www.autolab.cloud">官網</a>
+          <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+        </div>
+        <div class="footer-col">
+          <h4>聯繫</h4>
+          <a href="mailto:ai@autolab.cloud">ai@autolab.cloud</a>
+          <a href="https://www.autolab.cloud">企業培訓諮詢</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Autolab — 黃敬峰（AI峰哥）. All rights reserved.</p>
+    </div>
   </footer>
+
+  <!-- 搜尋 + 標籤篩選 JS -->
+  <script>
+  (function() {
+    var cards = document.querySelectorAll('.card');
+    var searchInput = document.getElementById('search-input');
+    var tagFilter = document.getElementById('tag-filter');
+
+    // 從 cards 中提取所有 tags
+    var allTags = [];
+    var tagSet = {};
+    cards.forEach(function(card) {
+      card.querySelectorAll('.tag').forEach(function(t) {
+        var text = t.textContent.trim();
+        if (!tagSet[text]) {
+          tagSet[text] = true;
+          allTags.push(text);
+        }
+      });
+    });
+
+    // 動態生成 tag buttons
+    allTags.forEach(function(tag) {
+      var btn = document.createElement('button');
+      btn.className = 'tag-btn';
+      btn.setAttribute('data-tag', tag);
+      btn.textContent = tag;
+      tagFilter.appendChild(btn);
+    });
+
+    var activeTag = 'all';
+
+    function filterCards() {
+      var query = searchInput.value.toLowerCase();
+      cards.forEach(function(card) {
+        var titleEl = card.querySelector('.card-title');
+        var descEl = card.querySelector('.card-desc');
+        var title = titleEl ? titleEl.textContent.toLowerCase() : '';
+        var desc = descEl ? descEl.textContent.toLowerCase() : '';
+        var tags = [];
+        card.querySelectorAll('.tag').forEach(function(t) {
+          tags.push(t.textContent.trim());
+        });
+
+        var matchSearch = !query || title.indexOf(query) !== -1 || desc.indexOf(query) !== -1;
+        var matchTag = activeTag === 'all' || tags.indexOf(activeTag) !== -1;
+
+        card.style.display = (matchSearch && matchTag) ? '' : 'none';
+      });
+    }
+
+    searchInput.addEventListener('input', filterCards);
+
+    tagFilter.addEventListener('click', function(e) {
+      if (e.target.classList.contains('tag-btn')) {
+        tagFilter.querySelectorAll('.tag-btn').forEach(function(b) {
+          b.classList.remove('active');
+        });
+        e.target.classList.add('active');
+        activeTag = e.target.getAttribute('data-tag');
+        filterCards();
+      }
+    });
+  })();
+  </script>
 </body>
 </html>

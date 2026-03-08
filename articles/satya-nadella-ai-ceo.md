@@ -9,7 +9,7 @@ keywords:
 - 降低門檻提高天花板
 - AI 不確定性
 og_image: https://blog.autolab.cloud/satya-nadella-ai-ceo-ai-ai/banner.png
-slug: satya-nadella-ai-ceo-ai-ai
+slug: satya-nadella-ai-ceo
 tags:
 - AI趨勢
 - SatyaNadella

@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog — 阿峰老師 Autolab</title>
-  <meta name="description" content="阿峰老師的 AI 實戰部落格。企業 AI 培訓、Vibe Coding、AI 工具教學、職場 AI 應用，從觀念到落地。">
-  <meta name="keywords" content="AI教學, 企業AI培訓, Vibe Coding, AI工具, 阿峰老師, AI實戰">
+  <title>AI 實戰教學部落格 — 阿峰老師 Autolab｜企業 AI 培訓</title>
+  <meta name="description" content="阿峰老師（黃敬峰）AI 實戰部落格。400+ 企業合作、10,000+ 學員。企業 AI 培訓、Vibe Coding、AI 工具教學、ChatGPT 應用、Gemini 實戰、職場 AI 落地，從觀念到實作一次搞定。">
+  <meta name="keywords" content="AI教學, 企業AI培訓, Vibe Coding, AI工具, 阿峰老師, AI實戰, ChatGPT教學, Gemini應用, 企業數位轉型, AI課程">
   <link rel="canonical" href="https://blog.autolab.cloud/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Blog — 阿峰老師 Autolab">
-  <meta property="og:description" content="AI 實戰部落格：企業培訓、Vibe Coding、AI 工具教學，從觀念到落地。">
+  <meta property="og:title" content="AI 實戰教學部落格 — 阿峰老師 Autolab｜企業 AI 培訓">
+  <meta property="og:description" content="400+ 企業合作、10,000+ 學員。AI 實戰部落格：企業培訓、Vibe Coding、AI 工具教學，從觀念到落地。">
   <meta property="og:image" content="https://blog.autolab.cloud/static/og-default.png">
   <meta property="og:url" content="https://blog.autolab.cloud/">
   <meta property="og:site_name" content="阿峰老師 Autolab">
@@ -19,8 +19,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Blog — 阿峰老師 Autolab">
-  <meta name="twitter:description" content="AI 實戰部落格：企業培訓、Vibe Coding、AI 工具教學，從觀念到落地。">
+  <meta name="twitter:title" content="AI 實戰教學部落格 — 阿峰老師 Autolab｜企業 AI 培訓">
+  <meta name="twitter:description" content="400+ 企業合作、10,000+ 學員。AI 實戰部落格：企業培訓、Vibe Coding、AI 工具教學，從觀念到落地。">
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -58,12 +58,343 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://blog.autolab.cloud/static/style.css">
+
+  <style>
+    /* ===== Skip Link (無障礙) ===== */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      background: #00D4FF;
+      color: #0A1628;
+      padding: 8px 16px;
+      border-radius: 0 0 8px 8px;
+      z-index: 9999;
+      font-weight: 600;
+      text-decoration: none;
+      transition: top 0.2s;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* ===== Nav Logo SVG ===== */
+    .nav-logo-svg {
+      width: 32px;
+      height: 32px;
+      margin-right: 8px;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+    }
+
+    /* ===== Hero 增強 ===== */
+    .hero {
+      text-align: center;
+      padding: 80px 24px 60px;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: #8B8FA3;
+      margin-bottom: 24px;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .hero-stat {
+      text-align: center;
+    }
+    .hero-stat-number {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #00D4FF;
+      display: block;
+    }
+    .hero-stat-label {
+      font-size: 0.85rem;
+      color: #8B8FA3;
+    }
+    .hero-cta {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .hero-btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .hero-btn:hover {
+      transform: translateY(-2px);
+    }
+    .hero-btn.primary {
+      background: #00D4FF;
+      color: #0A1628;
+    }
+    .hero-btn.primary:hover {
+      box-shadow: 0 4px 20px rgba(0,212,255,0.35);
+    }
+    .hero-btn.secondary {
+      background: transparent;
+      color: #00D4FF;
+      border: 1.5px solid #00D4FF;
+    }
+    .hero-btn.secondary:hover {
+      background: rgba(0,212,255,0.08);
+    }
+
+    /* ===== 搜尋 + 標籤篩選 ===== */
+    .filter-section {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      padding: 0 24px;
+    }
+    .filter-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .search-box {
+      position: relative;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 12px 16px 12px 44px;
+      border: 1.5px solid rgba(0,212,255,0.2);
+      border-radius: 10px;
+      background: #0F1D32;
+      color: #FFFFFF;
+      font-size: 1rem;
+      font-family: 'Inter', 'Noto Sans TC', sans-serif;
+      outline: none;
+      transition: border-color 0.2s;
+      box-sizing: border-box;
+    }
+    .search-box input::placeholder {
+      color: #8B8FA3;
+    }
+    .search-box input:focus {
+      border-color: #00D4FF;
+    }
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      color: #8B8FA3;
+      pointer-events: none;
+    }
+    .tag-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag-btn {
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: 1.5px solid rgba(0,212,255,0.2);
+      background: transparent;
+      color: #8B8FA3;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: 'Inter', 'Noto Sans TC', sans-serif;
+    }
+    .tag-btn:hover {
+      border-color: #00D4FF;
+      color: #00D4FF;
+    }
+    .tag-btn.active {
+      background: #00D4FF;
+      color: #0A1628;
+      border-color: #00D4FF;
+      font-weight: 600;
+    }
+
+    /* ===== 關於我 ===== */
+    .about-section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 24px;
+    }
+    .about-inner {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      background: #0F1D32;
+      border-radius: 16px;
+      padding: 40px;
+      border: 1px solid rgba(0,212,255,0.1);
+    }
+    .avatar-placeholder {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00D4FF, #FF6B35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      flex-shrink: 0;
+    }
+    .about-text h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0 0 8px;
+      color: #FFFFFF;
+    }
+    .about-text p {
+      color: #8B8FA3;
+      line-height: 1.7;
+      margin: 0 0 16px;
+    }
+    .about-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .about-btn {
+      display: inline-block;
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: transform 0.15s;
+    }
+    .about-btn:hover {
+      transform: translateY(-1px);
+    }
+    .about-btn:not(.outline) {
+      background: #00D4FF;
+      color: #0A1628;
+    }
+    .about-btn.outline {
+      background: transparent;
+      color: #00D4FF;
+      border: 1.5px solid #00D4FF;
+    }
+
+    /* ===== Footer 增強 ===== */
+    .footer {
+      border-top: 1px solid rgba(0,212,255,0.1);
+      padding: 0;
+      margin-top: 0;
+    }
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 24px 32px;
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .footer-brand {
+      max-width: 320px;
+    }
+    .footer-logo {
+      font-weight: 800;
+      color: #00D4FF;
+      font-size: 1.1rem;
+    }
+    .footer-brand > span,
+    .footer-brand {
+      color: #FFFFFF;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .footer-desc {
+      color: #8B8FA3;
+      font-size: 0.9rem;
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+    .footer-links {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .footer-col h4 {
+      color: #FFFFFF;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin: 0 0 4px;
+    }
+    .footer-col a {
+      color: #8B8FA3;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.15s;
+    }
+    .footer-col a:hover {
+      color: #00D4FF;
+    }
+    .footer-bottom {
+      text-align: center;
+      padding: 20px 24px;
+      border-top: 1px solid rgba(0,212,255,0.06);
+    }
+    .footer-bottom p {
+      color: #8B8FA3;
+      font-size: 0.8rem;
+      margin: 0;
+    }
+
+    /* ===== RWD ===== */
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 1.75rem; }
+      .hero-stats { gap: 20px; }
+      .hero-stat-number { font-size: 1.35rem; }
+      .about-inner {
+        flex-direction: column;
+        text-align: center;
+        padding: 28px;
+      }
+      .about-links { justify-content: center; }
+      .footer-inner { flex-direction: column; gap: 28px; }
+      .footer-links { gap: 28px; }
+    }
+  </style>
 </head>
 <body>
+  <!-- Skip Link (無障礙) -->
+  <a href="#main-content" class="skip-link">跳至主要內容</a>
+
   <!-- NAV -->
   <nav class="nav">
     <div class="nav-inner">
       <a href="https://www.autolab.cloud" class="nav-brand">
+        <svg class="nav-logo-svg" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="1" y="1" width="30" height="30" rx="7" stroke="#00D4FF" stroke-width="2" fill="none"/>
+          <path d="M18.5 6L11 18h5.5L13.5 26 21 14h-5.5L18.5 6z" fill="#00D4FF"/>
+        </svg>
         <span>Autolab</span> 阿峰老師
       </a>
       <div class="nav-links">
@@ -77,13 +408,48 @@
   <!-- HERO -->
   <section class="hero">
     <h1>AI 實戰部落格</h1>
-    <p>會用、懂用、好用、每天用。從觀念到落地的 AI 實戰教學。</p>
+    <p class="hero-subtitle">會用、懂用、好用、每天用。從觀念到落地的 AI 實戰教學。</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-number">400+</span>
+        <span class="hero-stat-label">企業合作</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-number">10,000+</span>
+        <span class="hero-stat-label">學員</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-number">19</span>
+        <span class="hero-stat-label">篇文章</span>
+      </div>
+    </div>
+    <div class="hero-cta">
+      <a href="#main-content" class="hero-btn primary">瀏覽文章 ↓</a>
+      <a href="https://www.autolab.cloud" class="hero-btn secondary">企業培訓諮詢 →</a>
+    </div>
+  </section>
+
+  <!-- 搜尋 + 標籤篩選 -->
+  <section class="filter-section">
+    <div class="filter-inner">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="搜尋文章..." aria-label="搜尋文章">
+        <svg class="search-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="2"/>
+          <line x1="13" y1="13" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tag-filter" id="tag-filter">
+        <button class="tag-btn active" data-tag="all">全部</button>
+        <!-- JS 動態生成其他 tag buttons -->
+      </div>
+    </div>
   </section>
 
   <!-- 文章列表 -->
-  <section class="articles">
-    <a href="https://blog.autolab.cloud/notebooklm-cinematic-video-overviews/" class="card">
-  <img class="card-thumb" src="https://blog.autolab.cloud/notebooklm-cinematic-video-overviews/thumbnail.png" alt="** NotebookLM Cinematic Video Overviews 完整解析｜簡報秒變電影感影片" loading="lazy">
+  <section class="articles" id="main-content">
+    <a href="notebooklm-cinematic-video-overviews/" class="card">
+  <img class="card-thumb" src="notebooklm-cinematic-video-overviews/banner.png" alt="** NotebookLM Cinematic Video Overviews 完整解析｜簡報秒變電影感影片" loading="lazy">
   <div class="card-body">
     <div class="card-date">2026-03-08</div>
     <div class="card-title">** NotebookLM Cinematic Video Overviews 完整解析｜簡報秒變電影感影片</div>
@@ -91,17 +457,17 @@
     <div class="card-tags"><span class="tag">**</span><span class="tag">NotebookLM</span><span class="tag">Google</span></div>
   </div>
 </a>
-<a href="https://blog.autolab.cloud/untitled/" class="card">
-  <img class="card-thumb" src="https://blog.autolab.cloud/untitled/thumbnail.png" alt="Untitled" loading="lazy">
+<a href="chatgpt-skills-ai-skills-manus-skills/" class="card">
+  <img class="card-thumb" src="chatgpt-skills-ai-skills-manus-skills/thumbnail.png" alt="ChatGPT Skills 正式登場！比 GPT 5.4 更值得注意的新功能" loading="lazy">
   <div class="card-body">
     <div class="card-date">2026-03-08</div>
-    <div class="card-title">Untitled</div>
-    <div class="card-desc"></div>
-    <div class="card-tags"></div>
+    <div class="card-title">ChatGPT Skills 正式登場！比 GPT 5.4 更值得注意的新功能</div>
+    <div class="card-desc">ChatGPT 悄悄上線 Skills 功能，讓你幫 AI 設定固定工作流程。本文完整解析 Skills 操作指南、Manus 匯入教學，以及企業如何用 Skills 解決 AI 產出不穩定的問題。</div>
+    <div class="card-tags"><span class="tag">AI</span><span class="tag">ChatGPT</span><span class="tag">Skills</span></div>
   </div>
 </a>
-<a href="https://blog.autolab.cloud/claude-skills-claude-skills/" class="card">
-  <img class="card-thumb" src="https://blog.autolab.cloud/claude-skills-claude-skills/banner.png" alt="Claude Skills 完整教學：Skills vs 提示詞 vs MCP 差在哪？含實戰操作指南｜2026" loading="lazy">
+<a href="claude-skills-claude-skills/" class="card">
+  <img class="card-thumb" src="claude-skills-claude-skills/banner.png" alt="Claude Skills 完整教學：Skills vs 提示詞 vs MCP 差在哪？含實戰操作指南｜2026" loading="lazy">
   <div class="card-body">
     <div class="card-date">2026-03-08</div>
     <div class="card-title">Claude Skills 完整教學：Skills vs 提示詞 vs MCP 差在哪？含實戰操作指南｜2026</div>
@@ -109,8 +475,8 @@
     <div class="card-tags"><span class="tag">ClaudeSkills</span><span class="tag">AI教學</span><span class="tag">Anthropic</span></div>
   </div>
 </a>
-<a href="https://blog.autolab.cloud/cursor-claude-code-ai/" class="card">
-  <img class="card-thumb" src="https://blog.autolab.cloud/cursor-claude-code-ai/banner.png" alt="Cursor進入戰時狀態：Claude Code 25倍補貼搶市場，AI寫程式工具未來分析" loading="lazy">
+<a href="cursor-claude-code-ai/" class="card">
+  <img class="card-thumb" src="cursor-claude-code-ai/banner.png" alt="Cursor進入戰時狀態：Claude Code 25倍補貼搶市場，AI寫程式工具未來分析" loading="lazy">
   <div class="card-body">
     <div class="card-date">2026-03-08</div>
     <div class="card-title">Cursor進入戰時狀態：Claude Code 25倍補貼搶市場，AI寫程式工具未來分析</div>
@@ -118,8 +484,8 @@
     <div class="card-tags"><span class="tag">AI</span><span class="tag">Cursor</span><span class="tag">ClaudeCode</span></div>
   </div>
 </a>
-<a href="https://blog.autolab.cloud/gemini-3-1-pro-ai-landing-page-ai-gemini/" class="card">
-  <img class="card-thumb" src="https://blog.autolab.cloud/gemini-3-1-pro-ai-landing-page-ai-gemini/thumbnail.png" alt="Gemini 3.1 Pro 實測：5 分鐘做出高質感網頁｜AI 網頁生成教學" loading="lazy">
+<a href="gemini-3-1-pro-ai-landing-page-ai-gemini/" class="card">
+  <img class="card-thumb" src="gemini-3-1-pro-ai-landing-page-ai-gemini/banner.png" alt="Gemini 3.1 Pro 實測：5 分鐘做出高質感網頁｜AI 網頁生成教學" loading="lazy">
   <div class="card-body">
     <div class="card-date">2026-03-08</div>
     <div class="card-title">Gemini 3.1 Pro 實測：5 分鐘做出高質感網頁｜AI 網頁生成教學</div>
@@ -127,8 +493,8 @@
     <div class="card-tags"><span class="tag">AI</span><span class="tag">Gemini</span><span class="tag">網頁設計</span></div>
   </div>
 </a>
-<a href="https://blog.autolab.cloud/ai-openai-codex-ai/" class="card">
-  <img class="card-thumb" src="https://blog.autolab.cloud/ai-openai-codex-ai/banner.png" alt="產品經理要消失了？OpenAI 內部 5 個震撼變化＋台灣企業導入 AI 實戰指南" loading="lazy">
+<a href="ai-openai-codex-ai/" class="card">
+  <img class="card-thumb" src="ai-openai-codex-ai/banner.png" alt="產品經理要消失了？OpenAI 內部 5 個震撼變化＋台灣企業導入 AI 實戰指南" loading="lazy">
   <div class="card-body">
     <div class="card-date">2026-03-07</div>
     <div class="card-title">產品經理要消失了？OpenAI 內部 5 個震撼變化＋台灣企業導入 AI 實戰指南</div>
@@ -136,8 +502,8 @@
     <div class="card-tags"><span class="tag">AI</span><span class="tag">產品經理</span><span class="tag">OpenAI</span></div>
   </div>
 </a>
-<a href="https://blog.autolab.cloud/ai-matt-shumer-something-big-ai/" class="card">
-  <img class="card-thumb" src="https://blog.autolab.cloud/ai-matt-shumer-something-big-ai/banner.png" alt="八千萬人閱讀的 AI 末日預言｜Matt Shumer 警告大事要發生了" loading="lazy">
+<a href="ai-matt-shumer-something-big-ai/" class="card">
+  <img class="card-thumb" src="ai-matt-shumer-something-big-ai/banner.png" alt="八千萬人閱讀的 AI 末日預言｜Matt Shumer 警告大事要發生了" loading="lazy">
   <div class="card-body">
     <div class="card-date">2026-03-07</div>
     <div class="card-title">八千萬人閱讀的 AI 末日預言｜Matt Shumer 警告大事要發生了</div>
@@ -145,8 +511,8 @@
     <div class="card-tags"><span class="tag">AI</span><span class="tag">AI取代工作</span><span class="tag">MattShumer</span></div>
   </div>
 </a>
-<a href="https://blog.autolab.cloud/gemini-gems-ai/" class="card">
-  <img class="card-thumb" src="https://blog.autolab.cloud/gemini-gems-ai/thumbnail.png" alt="Gemini Gems 完全攻略：5 個 AI 員工幫你每天省 3 小時｜阿峰老師" loading="lazy">
+<a href="gemini-gems-ai/" class="card">
+  <img class="card-thumb" src="gemini-gems-ai/banner.png" alt="Gemini Gems 完全攻略：5 個 AI 員工幫你每天省 3 小時｜阿峰老師" loading="lazy">
   <div class="card-body">
     <div class="card-date">2026-03-07</div>
     <div class="card-title">Gemini Gems 完全攻略：5 個 AI 員工幫你每天省 3 小時｜阿峰老師</div>
@@ -154,17 +520,8 @@
     <div class="card-tags"><span class="tag">Gemini</span><span class="tag">Gems</span><span class="tag">AI員工</span></div>
   </div>
 </a>
-<a href="https://blog.autolab.cloud/ai-2026-ai/" class="card">
-  <img class="card-thumb" src="https://blog.autolab.cloud/ai-2026-ai/banner.png" alt="2026必懂17款AI工具完全指南｜Gemini、Claude、Cursor、Manus四大分類評測" loading="lazy">
-  <div class="card-body">
-    <div class="card-date">2026-03-07</div>
-    <div class="card-title">2026必懂17款AI工具完全指南｜Gemini、Claude、Cursor、Manus四大分類評測</div>
-    <div class="card-desc">結合數位時代評選、a16z百大排行與400+企業培訓經驗，精選17款AI工具完整評測。從核心助理到AI Agent，告訴你每款適合誰、什麼時候該用。</div>
-    <div class="card-tags"><span class="tag">AI工具</span><span class="tag">AI教學</span><span class="tag">Gemini</span></div>
-  </div>
-</a>
-<a href="https://blog.autolab.cloud/article-2026-03-07/" class="card">
-  <img class="card-thumb" src="https://blog.autolab.cloud/article-2026-03-07/banner.png" alt="鍵盤敲越多越危險？AI 時代的個人生存法則｜簡立峰博士觀點" loading="lazy">
+<a href="ai-keyboard-work-one-person-company/" class="card">
+  <img class="card-thumb" src="ai-keyboard-work-one-person-company/banner.png" alt="鍵盤敲越多越危險？AI 時代的個人生存法則｜簡立峰博士觀點" loading="lazy">
   <div class="card-body">
     <div class="card-date">2026-03-07</div>
     <div class="card-title">鍵盤敲越多越危險？AI 時代的個人生存法則｜簡立峰博士觀點</div>
@@ -172,17 +529,17 @@
     <div class="card-tags"><span class="tag">AI</span><span class="tag">職場</span><span class="tag">簡立峰</span></div>
   </div>
 </a>
-<a href="https://blog.autolab.cloud/satya-nadella-ai-ceo-ai-ai/" class="card">
-  <img class="card-thumb" src="https://blog.autolab.cloud/satya-nadella-ai-ceo-ai-ai/banner.png" alt="Satya Nadella 的 10 億美元 AI 豪賭｜3 個不確定性思維 + 實操模板" loading="lazy">
+<a href="ai-2026-ai/" class="card">
+  <img class="card-thumb" src="ai-2026-ai/banner.png" alt="2026必懂17款AI工具完全指南｜Gemini、Claude、Cursor、Manus四大分類評測" loading="lazy">
   <div class="card-body">
-    <div class="card-date">2026-03-06</div>
-    <div class="card-title">Satya Nadella 的 10 億美元 AI 豪賭｜3 個不確定性思維 + 實操模板</div>
-    <div class="card-desc">微軟 CEO Satya Nadella 在 2019 年砸 10 億投資 OpenAI，本文拆解他的 3 個 AI 決策思維，加上阿峰老師獨家「降低門檻+提高天花板」實操模板，教你用不對稱風險策略擁抱 AI。</div>
-    <div class="card-tags"><span class="tag">AI趨勢</span><span class="tag">SatyaNadella</span><span class="tag">微軟CEO</span></div>
+    <div class="card-date">2026-03-07</div>
+    <div class="card-title">2026必懂17款AI工具完全指南｜Gemini、Claude、Cursor、Manus四大分類評測</div>
+    <div class="card-desc">結合數位時代評選、a16z百大排行與400+企業培訓經驗，精選17款AI工具完整評測。從核心助理到AI Agent，告訴你每款適合誰、什麼時候該用。</div>
+    <div class="card-tags"><span class="tag">AI工具</span><span class="tag">AI教學</span><span class="tag">Gemini</span></div>
   </div>
 </a>
-<a href="https://blog.autolab.cloud/claude-code-10-real-products/" class="card">
-  <img class="card-thumb" src="https://blog.autolab.cloud/claude-code-10-real-products/banner.png" alt="10 個素人用 Claude Code 做出的真實產品｜最快 4.5 小時上線" loading="lazy">
+<a href="claude-code-10-real-products/" class="card">
+  <img class="card-thumb" src="claude-code-10-real-products/banner.png" alt="10 個素人用 Claude Code 做出的真實產品｜最快 4.5 小時上線" loading="lazy">
   <div class="card-body">
     <div class="card-date">2026-03-06</div>
     <div class="card-title">10 個素人用 Claude Code 做出的真實產品｜最快 4.5 小時上線</div>
@@ -190,8 +547,17 @@
     <div class="card-tags"><span class="tag">Claude Code</span><span class="tag">Vibe Coding</span><span class="tag">AI開發</span></div>
   </div>
 </a>
-<a href="https://blog.autolab.cloud/macbook-neo-ai/" class="card">
-  <img class="card-thumb" src="https://blog.autolab.cloud/macbook-neo-ai/banner.png" alt="MacBook Neo 科技平權：一萬六千九就能學 AI 的時代來了" loading="lazy">
+<a href="satya-nadella-ai-ceo/" class="card">
+  <img class="card-thumb" src="satya-nadella-ai-ceo/banner.png" alt="Satya Nadella 的 10 億美元 AI 豪賭｜3 個不確定性思維 + 實操模板" loading="lazy">
+  <div class="card-body">
+    <div class="card-date">2026-03-06</div>
+    <div class="card-title">Satya Nadella 的 10 億美元 AI 豪賭｜3 個不確定性思維 + 實操模板</div>
+    <div class="card-desc">微軟 CEO Satya Nadella 在 2019 年砸 10 億投資 OpenAI，本文拆解他的 3 個 AI 決策思維，加上阿峰老師獨家「降低門檻+提高天花板」實操模板，教你用不對稱風險策略擁抱 AI。</div>
+    <div class="card-tags"><span class="tag">AI趨勢</span><span class="tag">SatyaNadella</span><span class="tag">微軟CEO</span></div>
+  </div>
+</a>
+<a href="macbook-neo-ai/" class="card">
+  <img class="card-thumb" src="macbook-neo-ai/banner.png" alt="MacBook Neo 科技平權：一萬六千九就能學 AI 的時代來了" loading="lazy">
   <div class="card-body">
     <div class="card-date">2026-03-06</div>
     <div class="card-title">MacBook Neo 科技平權：一萬六千九就能學 AI 的時代來了</div>
@@ -199,8 +565,8 @@
     <div class="card-tags"><span class="tag">AI</span><span class="tag">MacBookNeo</span><span class="tag">科技平權</span></div>
   </div>
 </a>
-<a href="https://blog.autolab.cloud/article-2026-03-06/" class="card">
-  <img class="card-thumb" src="https://blog.autolab.cloud/article-2026-03-06/banner.png" alt="2028全球智能危機解讀：白領會被AI取代嗎？400家企業培訓的真實觀察" loading="lazy">
+<a href="ai-white-collar-crisis/" class="card">
+  <img class="card-thumb" src="ai-white-collar-crisis/banner.png" alt="2028全球智能危機解讀：白領會被AI取代嗎？400家企業培訓的真實觀察" loading="lazy">
   <div class="card-body">
     <div class="card-date">2026-03-06</div>
     <div class="card-title">2028全球智能危機解讀：白領會被AI取代嗎？400家企業培訓的真實觀察</div>
@@ -208,8 +574,8 @@
     <div class="card-tags"><span class="tag">AI失業</span><span class="tag">白領裁員</span><span class="tag">幽靈繁榮</span></div>
   </div>
 </a>
-<a href="https://blog.autolab.cloud/ai-block-2026-ai/" class="card">
-  <img class="card-thumb" src="https://blog.autolab.cloud/ai-block-2026-ai/banner.png" alt="AI 裁員潮來了？Block 砍 5000 人背後的真相與 5 步工作拆解法" loading="lazy">
+<a href="ai-block-2026-ai/" class="card">
+  <img class="card-thumb" src="ai-block-2026-ai/banner.png" alt="AI 裁員潮來了？Block 砍 5000 人背後的真相與 5 步工作拆解法" loading="lazy">
   <div class="card-body">
     <div class="card-date">2026-03-02</div>
     <div class="card-title">AI 裁員潮來了？Block 砍 5000 人背後的真相與 5 步工作拆解法</div>
@@ -217,8 +583,8 @@
     <div class="card-tags"><span class="tag">AI裁員</span><span class="tag">AI安全</span><span class="tag">職場AI</span></div>
   </div>
 </a>
-<a href="https://blog.autolab.cloud/ai-block-claude/" class="card">
-  <img class="card-thumb" src="https://blog.autolab.cloud/ai-block-claude/banner.png" alt="Claude 被封殺、Block 裁員一半：AI 時代職場生存指南（2026）" loading="lazy">
+<a href="ai-block-claude/" class="card">
+  <img class="card-thumb" src="ai-block-claude/banner.png" alt="Claude 被封殺、Block 裁員一半：AI 時代職場生存指南（2026）" loading="lazy">
   <div class="card-body">
     <div class="card-date">2026-03-02</div>
     <div class="card-title">Claude 被封殺、Block 裁員一半：AI 時代職場生存指南（2026）</div>
@@ -226,8 +592,8 @@
     <div class="card-tags"><span class="tag">AI</span><span class="tag">AI裁員</span><span class="tag">Block</span></div>
   </div>
 </a>
-<a href="https://blog.autolab.cloud/ai-new-business-rules/" class="card">
-  <img class="card-thumb" src="https://blog.autolab.cloud/ai-new-business-rules/banner.png" alt="AI 時代創業不再靠資金，靠的是這六個步驟｜阿峰老師" loading="lazy">
+<a href="ai-new-business-rules/" class="card">
+  <img class="card-thumb" src="ai-new-business-rules/banner.png" alt="AI 時代創業不再靠資金，靠的是這六個步驟｜阿峰老師" loading="lazy">
   <div class="card-body">
     <div class="card-date">2026-03-02</div>
     <div class="card-title">AI 時代創業不再靠資金，靠的是這六個步驟｜阿峰老師</div>
@@ -235,8 +601,8 @@
     <div class="card-tags"><span class="tag">AI</span><span class="tag">創業</span><span class="tag">AI創業</span></div>
   </div>
 </a>
-<a href="https://blog.autolab.cloud/notebooklm-ai/" class="card">
-  <img class="card-thumb" src="https://blog.autolab.cloud/notebooklm-ai/banner.png" alt="NotebookLM 逆向工程教學：3 步驟免費拆解百萬爆款影片結構（含完整提示詞）" loading="lazy">
+<a href="notebooklm-ai/" class="card">
+  <img class="card-thumb" src="notebooklm-ai/banner.png" alt="NotebookLM 逆向工程教學：3 步驟免費拆解百萬爆款影片結構（含完整提示詞）" loading="lazy">
   <div class="card-body">
     <div class="card-date">2026-03-02</div>
     <div class="card-title">NotebookLM 逆向工程教學：3 步驟免費拆解百萬爆款影片結構（含完整提示詞）</div>
@@ -244,8 +610,8 @@
     <div class="card-tags"><span class="tag">NotebookLM</span><span class="tag">AI工具</span><span class="tag">內容逆向工程</span></div>
   </div>
 </a>
-<a href="https://blog.autolab.cloud/vibe-coding-ai/" class="card">
-  <img class="card-thumb" src="https://blog.autolab.cloud/vibe-coding-ai/banner.png" alt="Vibe Coding 入門指南：工具人時代結束，用 AI 協作解決真問題" loading="lazy">
+<a href="vibe-coding-ai/" class="card">
+  <img class="card-thumb" src="vibe-coding-ai/banner.png" alt="Vibe Coding 入門指南：工具人時代結束，用 AI 協作解決真問題" loading="lazy">
   <div class="card-body">
     <div class="card-date">2026-03-01</div>
     <div class="card-title">Vibe Coding 入門指南：工具人時代結束，用 AI 協作解決真問題</div>
@@ -255,14 +621,112 @@
 </a>
   </section>
 
+  <!-- 關於我 -->
+  <section class="about-section">
+    <div class="about-inner">
+      <div class="about-avatar">
+        <div class="avatar-placeholder">峰</div>
+      </div>
+      <div class="about-text">
+        <h2>黃敬峰（AI峰哥）</h2>
+        <p>企業 AI 實戰培訓專家，400+ 企業合作、10,000+ 學員。<br>「你是機長，AI 是機組人員。」</p>
+        <div class="about-links">
+          <a href="https://www.autolab.cloud" class="about-btn">官網</a>
+          <a href="mailto:ai@autolab.cloud" class="about-btn outline">聯繫合作</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer class="footer">
-    <p>&copy; 2026 Autolab — 黃敬峰（AI峰哥）. All rights reserved.</p>
-    <p style="margin-top:8px">
-      <a href="https://www.autolab.cloud">官網</a> ·
-      <a href="https://reurl.cc/GGlLNx">LINE 社群</a> ·
-      <a href="mailto:ai@autolab.cloud">聯繫合作</a>
-    </p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">Autolab</span> 阿峰老師
+        <p class="footer-desc">企業 AI 實戰培訓，從觀念到落地。</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>快速連結</h4>
+          <a href="https://blog.autolab.cloud/">Blog</a>
+          <a href="https://www.autolab.cloud">官網</a>
+          <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+        </div>
+        <div class="footer-col">
+          <h4>聯繫</h4>
+          <a href="mailto:ai@autolab.cloud">ai@autolab.cloud</a>
+          <a href="https://www.autolab.cloud">企業培訓諮詢</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Autolab — 黃敬峰（AI峰哥）. All rights reserved.</p>
+    </div>
   </footer>
+
+  <!-- 搜尋 + 標籤篩選 JS -->
+  <script>
+  (function() {
+    var cards = document.querySelectorAll('.card');
+    var searchInput = document.getElementById('search-input');
+    var tagFilter = document.getElementById('tag-filter');
+
+    // 從 cards 中提取所有 tags
+    var allTags = [];
+    var tagSet = {};
+    cards.forEach(function(card) {
+      card.querySelectorAll('.tag').forEach(function(t) {
+        var text = t.textContent.trim();
+        if (!tagSet[text]) {
+          tagSet[text] = true;
+          allTags.push(text);
+        }
+      });
+    });
+
+    // 動態生成 tag buttons
+    allTags.forEach(function(tag) {
+      var btn = document.createElement('button');
+      btn.className = 'tag-btn';
+      btn.setAttribute('data-tag', tag);
+      btn.textContent = tag;
+      tagFilter.appendChild(btn);
+    });
+
+    var activeTag = 'all';
+
+    function filterCards() {
+      var query = searchInput.value.toLowerCase();
+      cards.forEach(function(card) {
+        var titleEl = card.querySelector('.card-title');
+        var descEl = card.querySelector('.card-desc');
+        var title = titleEl ? titleEl.textContent.toLowerCase() : '';
+        var desc = descEl ? descEl.textContent.toLowerCase() : '';
+        var tags = [];
+        card.querySelectorAll('.tag').forEach(function(t) {
+          tags.push(t.textContent.trim());
+        });
+
+        var matchSearch = !query || title.indexOf(query) !== -1 || desc.indexOf(query) !== -1;
+        var matchTag = activeTag === 'all' || tags.indexOf(activeTag) !== -1;
+
+        card.style.display = (matchSearch && matchTag) ? '' : 'none';
+      });
+    }
+
+    searchInput.addEventListener('input', filterCards);
+
+    tagFilter.addEventListener('click', function(e) {
+      if (e.target.classList.contains('tag-btn')) {
+        tagFilter.querySelectorAll('.tag-btn').forEach(function(b) {
+          b.classList.remove('active');
+        });
+        e.target.classList.add('active');
+        activeTag = e.target.getAttribute('data-tag');
+        filterCards();
+      }
+    });
+  })();
+  </script>
 </body>
 </html>

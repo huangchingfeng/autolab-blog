@@ -5,21 +5,21 @@
 <title>用 Gems 打造你的專屬 AI 員工團隊 — 阿峰老師</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  @page { size: A4; margin: 0; }
+  @page { size: 338.67mm 190.5mm; margin: 0; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
     font-family: 'Noto Sans TC', 'Inter', sans-serif;
     color: #E8E8ED;
-    line-height: 1.7;
+    line-height: 1.6;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
 
   .page {
-    width: 210mm;
-    min-height: 297mm;
-    padding: 32mm 24mm 24mm 24mm;
+    width: 1280px;
+    height: 720px;
+    padding: 48px 56px 40px 56px;
     background: #0A1628;
     page-break-after: always;
     position: relative;
@@ -29,82 +29,85 @@
 
   .page-header {
     position: absolute;
-    top: 12mm; left: 24mm; right: 24mm;
+    top: 16px; left: 56px; right: 56px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 8px;
+    padding-bottom: 6px;
     border-bottom: 1px solid #152035;
   }
   .page-header .brand { font-size: 13px; font-weight: 800; letter-spacing: 2px; }
   .page-header .brand span { color: #00D4FF; }
   .page-header .page-num { font-size: 11px; color: #8B8FA3; font-family: 'JetBrains Mono', monospace; }
   .page-footer {
-    position: absolute; bottom: 10mm; left: 24mm; right: 24mm;
+    position: absolute; bottom: 12px; left: 56px; right: 56px;
     text-align: center; font-size: 9px; color: #555;
   }
 
   /* 封面 */
   .cover {
     display: flex; flex-direction: column; justify-content: center;
-    align-items: center; text-align: center; padding-top: 50mm;
+    align-items: center; text-align: center; padding-top: 0;
   }
   .cover .icon {
     width: 80px; height: 80px;
-    background: linear-gradient(135deg, #00D4FF, #0088AA);
-    border-radius: 20px;
+    background: transparent;
+    border-radius: 0;
     display: flex; align-items: center; justify-content: center;
-    font-size: 40px; margin-bottom: 24px;
-    box-shadow: 0 8px 32px rgba(0,212,255,.3);
+    font-size: 64px; margin-bottom: 20px;
+    box-shadow: none;
+    color: #00D4FF;
+    text-shadow: 0 0 40px rgba(0,212,255,.4), 0 0 80px rgba(0,212,255,.15);
   }
-  .cover h1 { font-size: 32px; font-weight: 900; color: #FFF; margin-bottom: 12px; line-height: 1.4; }
+  .cover h1 { font-size: 36px; font-weight: 900; color: #FFF; margin-bottom: 10px; line-height: 1.3; }
   .cover h1 em { font-style: normal; color: #00D4FF; }
-  .cover .subtitle { font-size: 18px; color: #C7C7CC; margin-bottom: 40px; }
-  .cover .meta { font-size: 14px; color: #8B8FA3; line-height: 2; }
+  .cover .subtitle { font-size: 18px; color: #C7C7CC; margin-bottom: 28px; }
+  .cover .meta { font-size: 14px; color: #8B8FA3; line-height: 1.8; }
   .cover .meta strong { color: #FFF; font-weight: 700; }
   .cover .badge {
     display: inline-block; background: rgba(0,212,255,.12);
     border: 1px solid rgba(0,212,255,.3); color: #00D4FF;
     padding: 6px 20px; border-radius: 20px;
-    font-size: 13px; font-weight: 700; margin-top: 32px;
+    font-size: 13px; font-weight: 700; margin-top: 24px;
   }
 
   /* 內文共用 */
   h2 {
-    font-size: 22px; font-weight: 900; color: #FFF; margin-bottom: 16px;
-    padding-bottom: 8px; border-bottom: 2px solid #00D4FF; display: inline-block;
+    font-size: 22px; font-weight: 900; color: #FFF; margin-bottom: 12px;
+    padding-bottom: 6px; border-bottom: 2px solid #00D4FF; display: inline-block;
   }
-  h3 { font-size: 16px; font-weight: 700; color: #FFF; margin: 16px 0 8px; }
-  p { font-size: 13.5px; color: #C7C7CC; margin-bottom: 10px; }
+  h3 { font-size: 15px; font-weight: 700; color: #FFF; margin: 12px 0 6px; }
+  p { font-size: 13px; color: #C7C7CC; margin-bottom: 8px; }
   .highlight { color: #00D4FF; font-weight: 700; }
+
+  /* 雙欄版面 */
+  .two-col { display: flex; gap: 24px; }
+  .two-col > div { flex: 1; }
+  .col-left { flex: 1; }
+  .col-right { flex: 1; }
 
   /* 步驟卡片 */
   .step-card {
     background: #0F1D32; border: 1px solid #152035; border-radius: 10px;
-    padding: 12px 16px; margin-bottom: 8px;
-    display: flex; gap: 12px; align-items: flex-start;
+    padding: 10px 14px; margin-bottom: 6px;
+    display: flex; gap: 10px; align-items: flex-start;
   }
   .step-num {
-    flex-shrink: 0; width: 28px; height: 28px;
+    flex-shrink: 0; width: 26px; height: 26px;
     background: #00D4FF; color: #0A1628; border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    font-weight: 800; font-size: 14px; font-family: 'JetBrains Mono', monospace;
+    font-weight: 800; font-size: 13px; font-family: 'JetBrains Mono', monospace;
   }
   .step-content { flex: 1; }
-  .step-content .step-title { font-size: 14px; font-weight: 700; color: #FFF; margin-bottom: 2px; }
-  .step-content .step-desc { font-size: 12.5px; color: #8B8FA3; margin: 0; line-height: 1.5; }
-  .step-content .step-desc code {
-    background: rgba(0,212,255,.1); color: #00D4FF;
-    padding: 1px 5px; border-radius: 3px;
-    font-family: 'JetBrains Mono', monospace; font-size: 11.5px;
-  }
+  .step-content .step-title { font-size: 13px; font-weight: 700; color: #FFF; margin-bottom: 2px; }
+  .step-content .step-desc { font-size: 12px; color: #8B8FA3; margin: 0; line-height: 1.4; }
 
   /* Gem Header */
-  .gem-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .gem-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
   .gem-icon {
-    width: 44px; height: 44px; border-radius: 12px;
+    width: 40px; height: 40px; border-radius: 10px;
     display: flex; align-items: center; justify-content: center;
-    font-size: 24px; flex-shrink: 0;
+    font-size: 22px; flex-shrink: 0;
   }
   .gem-title-group h2 { margin: 0; padding: 0; border: none; display: block; font-size: 18px; }
   .gem-title-group .gem-role { font-size: 12px; color: #8B8FA3; font-weight: 500; }
@@ -112,7 +115,7 @@
   /* 指令區塊 */
   .prompt-box {
     background: #060D1A; border: 1px solid #1a2740; border-radius: 8px;
-    padding: 14px 16px; margin: 10px 0; position: relative;
+    padding: 12px 14px; margin: 8px 0; position: relative;
   }
   .prompt-box .prompt-label {
     position: absolute; top: -8px; left: 12px;
@@ -122,300 +125,247 @@
   }
   .prompt-box p {
     font-family: 'Noto Sans TC', sans-serif;
-    font-size: 11.5px; color: #C7C7CC; line-height: 1.7; margin: 0; white-space: pre-wrap;
+    font-size: 11px; color: #C7C7CC; line-height: 1.6; margin: 0; white-space: pre-wrap;
   }
 
   /* 提示框 */
   .tip-box {
     background: rgba(0,212,255,.06); border-left: 3px solid #00D4FF;
-    border-radius: 0 6px 6px 0; padding: 10px 14px; margin: 10px 0;
+    border-radius: 0 6px 6px 0; padding: 8px 12px; margin: 8px 0;
   }
-  .tip-box p { font-size: 12px; color: #8B8FA3; margin: 0; }
+  .tip-box p { font-size: 11.5px; color: #8B8FA3; margin: 0; }
   .tip-box strong { color: #00D4FF; }
 
-  /* ========================================================
-     Gemini UI 模擬截圖
-     ======================================================== */
+  /* Gemini UI 模擬 */
   .gemini-mock {
     background: #1e1e2e;
-    border-radius: 12px;
+    border-radius: 10px;
     border: 1px solid #333;
     overflow: hidden;
-    margin: 12px 0;
+    margin: 8px 0;
     box-shadow: 0 4px 20px rgba(0,0,0,.4);
     font-family: 'Inter', 'Google Sans', sans-serif;
   }
-
-  /* 瀏覽器 chrome */
   .mock-browser-bar {
     background: #2a2a3a;
-    padding: 8px 14px;
+    padding: 6px 12px;
     display: flex; align-items: center; gap: 8px;
     border-bottom: 1px solid #333;
   }
-  .mock-dots { display: flex; gap: 5px; }
-  .mock-dots span {
-    width: 10px; height: 10px; border-radius: 50%;
-  }
+  .mock-dots { display: flex; gap: 4px; }
+  .mock-dots span { width: 8px; height: 8px; border-radius: 50%; }
   .mock-dots .d-red { background: #ff5f57; }
   .mock-dots .d-yel { background: #ffbd2e; }
   .mock-dots .d-grn { background: #28c840; }
   .mock-url-bar {
-    flex: 1; background: #1e1e2e; border-radius: 6px;
-    padding: 4px 12px; font-size: 11px; color: #888;
+    flex: 1; background: #1e1e2e; border-radius: 5px;
+    padding: 3px 10px; font-size: 10px; color: #888;
     font-family: 'JetBrains Mono', monospace;
   }
-
-  /* Gemini 主畫面 */
-  .gemini-layout { display: flex; min-height: 200px; }
-
-  /* 左側邊欄 */
+  .gemini-layout { display: flex; }
   .gemini-sidebar {
-    width: 220px; background: #1a1a2a; padding: 14px 0;
+    width: 180px; background: #1a1a2a; padding: 10px 0;
     border-right: 1px solid #333; flex-shrink: 0;
   }
   .sidebar-item {
-    padding: 9px 18px; font-size: 13px; color: #aaa;
-    display: flex; align-items: center; gap: 10px;
-    cursor: default;
+    padding: 7px 14px; font-size: 12px; color: #aaa;
+    display: flex; align-items: center; gap: 8px;
   }
   .sidebar-item .si-icon {
-    width: 20px; height: 20px; border-radius: 50%;
+    width: 18px; height: 18px; border-radius: 50%;
     background: #333; display: flex; align-items: center; justify-content: center;
-    font-size: 11px; color: #aaa;
+    font-size: 10px; color: #aaa;
   }
   .sidebar-item.active {
     background: rgba(138,180,248,.12); color: #8ab4f8;
-    border-radius: 0 20px 20px 0; margin-right: 8px;
+    border-radius: 0 16px 16px 0; margin-right: 6px;
   }
   .sidebar-item.active .si-icon { background: rgba(138,180,248,.2); color: #8ab4f8; }
-  .sidebar-divider { height: 1px; background: #333; margin: 8px 16px; }
+  .sidebar-divider { height: 1px; background: #333; margin: 6px 12px; }
   .sidebar-label {
-    padding: 6px 18px; font-size: 10px; color: #666;
+    padding: 4px 14px; font-size: 9px; color: #666;
     text-transform: uppercase; letter-spacing: 1px; font-weight: 600;
   }
   .sidebar-gem-item {
-    padding: 7px 18px; font-size: 12.5px; color: #bbb;
-    display: flex; align-items: center; gap: 8px;
+    padding: 5px 14px; font-size: 11px; color: #bbb;
+    display: flex; align-items: center; gap: 6px;
   }
-  .sidebar-gem-dot {
-    width: 8px; height: 8px; border-radius: 50%;
-  }
-
-  /* 右側主區域 */
-  .gemini-main {
-    flex: 1; padding: 20px 24px;
-    background: #1e1e2e;
-  }
+  .sidebar-gem-dot { width: 7px; height: 7px; border-radius: 50%; }
+  .gemini-main { flex: 1; padding: 14px 18px; background: #1e1e2e; }
 
   /* Gem 建立表單模擬 */
   .gem-form-mock {
-    background: #1e1e2e; border-radius: 12px; border: 1px solid #333;
-    overflow: hidden; margin: 12px 0;
+    background: #1e1e2e; border-radius: 10px; border: 1px solid #333;
+    overflow: hidden; margin: 8px 0;
     box-shadow: 0 4px 20px rgba(0,0,0,.4);
   }
   .gem-form-header {
-    background: #2a2a3a; padding: 14px 20px;
+    background: #2a2a3a; padding: 10px 16px;
     display: flex; align-items: center; justify-content: space-between;
     border-bottom: 1px solid #333;
   }
-  .gem-form-header .gfh-title {
-    font-size: 15px; font-weight: 600; color: #e0e0e0;
-  }
+  .gem-form-header .gfh-title { font-size: 13px; font-weight: 600; color: #e0e0e0; }
   .gem-form-header .gfh-save {
-    background: #8ab4f8; color: #1a1a2a; padding: 6px 18px;
-    border-radius: 18px; font-size: 12px; font-weight: 600;
+    background: #8ab4f8; color: #1a1a2a; padding: 4px 14px;
+    border-radius: 14px; font-size: 11px; font-weight: 600;
   }
-  .gem-form-body { padding: 20px; }
-  .gem-form-field { margin-bottom: 16px; }
+  .gem-form-body { padding: 14px 16px; }
+  .gem-form-field { margin-bottom: 10px; }
   .gem-form-field label {
-    display: block; font-size: 11px; color: #888;
-    margin-bottom: 6px; font-weight: 500;
+    display: block; font-size: 10px; color: #888;
+    margin-bottom: 4px; font-weight: 500;
     text-transform: uppercase; letter-spacing: .5px;
   }
   .gem-form-field .gf-input {
-    background: #2a2a3a; border: 1px solid #444; border-radius: 8px;
-    padding: 10px 14px; font-size: 14px; color: #e0e0e0;
-    width: 100%;
+    background: #2a2a3a; border: 1px solid #444; border-radius: 6px;
+    padding: 8px 12px; font-size: 13px; color: #e0e0e0; width: 100%;
   }
   .gem-form-field .gf-textarea {
-    background: #2a2a3a; border: 1px solid #444; border-radius: 8px;
-    padding: 12px 14px; font-size: 12px; color: #ccc;
-    width: 100%; min-height: 100px; line-height: 1.6;
-    white-space: pre-wrap;
+    background: #2a2a3a; border: 1px solid #444; border-radius: 6px;
+    padding: 8px 12px; font-size: 11px; color: #ccc;
+    width: 100%; min-height: 60px; line-height: 1.5; white-space: pre-wrap;
   }
   .gem-form-field .gf-input.focused,
   .gem-form-field .gf-textarea.focused {
-    border-color: #8ab4f8;
-    box-shadow: 0 0 0 2px rgba(138,180,248,.15);
+    border-color: #8ab4f8; box-shadow: 0 0 0 2px rgba(138,180,248,.15);
   }
-
-  /* 指示箭頭 */
-  .mock-arrow {
-    display: flex; align-items: center; gap: 6px;
-    margin: 6px 0 6px 20px;
-  }
-  .mock-arrow .arrow-line {
-    width: 24px; height: 2px; background: #FF6B35;
-  }
-  .mock-arrow .arrow-tip {
-    width: 0; height: 0;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 8px solid #FF6B35;
-  }
-  .mock-arrow .arrow-text {
-    font-size: 11px; font-weight: 700; color: #FF6B35;
-    font-family: 'Noto Sans TC', sans-serif;
-  }
-
-  /* 內聯標記 */
   .mock-highlight-box {
-    border: 2px solid #FF6B35;
-    border-radius: 6px;
-    padding: 2px;
-    position: relative;
+    border: 2px solid #FF6B35; border-radius: 6px; padding: 2px; position: relative;
   }
   .mock-highlight-label {
     position: absolute; top: -10px; right: -4px;
     background: #FF6B35; color: #FFF;
-    font-size: 9px; font-weight: 700;
-    padding: 1px 6px; border-radius: 3px;
+    font-size: 9px; font-weight: 700; padding: 1px 6px; border-radius: 3px;
   }
 
   /* CTA */
   .cta-section {
     background: linear-gradient(135deg, rgba(255,107,53,.08), rgba(0,212,255,.05));
-    border: 1px solid rgba(255,107,53,.2); border-radius: 14px;
-    padding: 24px 20px; text-align: center; margin-top: 16px;
+    border: 1px solid rgba(255,107,53,.2); border-radius: 12px;
+    padding: 20px; text-align: center; margin-top: 12px;
   }
-  .cta-section h3 { color: #FF6B35; font-size: 18px; margin-bottom: 10px; }
-  .cta-section .stats { font-size: 12px; color: #8B8FA3; margin-bottom: 14px; }
+  .cta-section h3 { color: #FF6B35; font-size: 17px; margin-bottom: 8px; }
+  .cta-section .stats { font-size: 12px; color: #8B8FA3; margin-bottom: 10px; }
 
   .line-cta {
-    background: #06C755; border-radius: 12px;
-    padding: 20px; text-align: center; margin-top: 14px;
+    background: #06C755; border-radius: 10px;
+    padding: 16px; text-align: center; margin-top: 10px;
   }
-  .line-cta h3 { color: #FFF; margin-bottom: 6px; }
-  .line-cta p { color: rgba(255,255,255,.8); font-size: 12px; }
+  .line-cta h3 { color: #FFF; margin-bottom: 4px; font-size: 15px; }
+  .line-cta p { color: rgba(255,255,255,.8); font-size: 11.5px; }
   .line-cta .line-url {
-    font-family: 'JetBrains Mono', monospace; font-size: 10px;
-    color: rgba(255,255,255,.5); word-break: break-all; margin-top: 6px;
+    font-family: 'JetBrains Mono', monospace; font-size: 9px;
+    color: rgba(255,255,255,.5); word-break: break-all; margin-top: 4px;
   }
 
-  ul { padding-left: 18px; margin-bottom: 10px; }
-  li { font-size: 12.5px; color: #C7C7CC; margin-bottom: 5px; }
+  ul { padding-left: 16px; margin-bottom: 8px; }
+  li { font-size: 12px; color: #C7C7CC; margin-bottom: 4px; }
   li strong { color: #FFF; }
-  .divider { height: 1px; background: #152035; margin: 16px 0; }
-  .two-col { display: flex; gap: 16px; }
-  .two-col > div { flex: 1; }
+  .divider { height: 1px; background: #152035; margin: 12px 0; }
 </style>
 </head>
 <body>
 
 <!-- ======== 第 1 頁：封面 ======== -->
 <div class="page cover">
-  <div class="icon">G</div>
+  <div class="icon">&#9830;</div>
   <h1>用 <em>Gems</em> 打造你的<br>專屬 AI 員工團隊</h1>
-  <p class="subtitle">5 個可以直接複製貼上的 Gems 指令設定<br>含完整操作步驟圖解</p>
+  <p class="subtitle">5 個可以直接複製貼上的 Gems 指令設定｜含完整操作步驟圖解</p>
   <div class="meta">
     <strong>阿峰老師 / 黃敬峰（AI峰哥）</strong><br>
-    企業 AI 實戰培訓專家<br>
-    400+ 企業合作 ｜ 10,000+ 學員<br><br>
-    <strong>www.autolab.cloud</strong><br>
-    ai@autolab.cloud
+    企業 AI 實戰培訓專家｜400+ 企業合作｜10,000+ 學員<br><br>
+    <strong>www.autolab.cloud</strong>｜ai@autolab.cloud
   </div>
   <div class="badge">免費教學資源 — Autolab</div>
   <div class="page-footer">Copyright 2026 Autolab / 阿峰老師. All rights reserved.</div>
 </div>
 
-<!-- ======== 第 2 頁：什麼是 Gems + 如何開啟（含模擬圖） ======== -->
+<!-- ======== 第 2 頁：什麼是 Gems + 如何開啟 ======== -->
 <div class="page">
   <div class="page-header">
     <div class="brand"><span>AUTOLAB</span> 阿峰老師</div>
     <div class="page-num">02 / 10</div>
   </div>
 
-  <h2>什麼是 Google Gems？</h2>
-  <p>Gems 是 Google Gemini 的<span class="highlight">自訂 AI 助手</span>功能。設定一次，每次開啟就直接進入工作狀態。</p>
+  <div class="two-col" style="margin-top: 8px;">
+    <div class="col-left">
+      <h2>什麼是 Google Gems？</h2>
+      <p>Gems 是 Google Gemini 的<span class="highlight">自訂 AI 助手</span>功能。設定一次，每次開啟就直接進入工作狀態。</p>
 
-  <div class="tip-box">
-    <p><strong>簡單來說：</strong>Gems 就像幫你的 AI 寫好一份「工作說明書」。設定一次，永久有效。</p>
-  </div>
+      <div class="tip-box">
+        <p><strong>簡單來說：</strong>Gems 就像幫你的 AI 寫好一份「工作說明書」。設定一次，永久有效。</p>
+      </div>
 
-  <h3>Step 1：打開 Gemini，找到 Gem 管理員</h3>
+      <h3>Step 1：打開 Gemini，找到 Gem 管理員</h3>
+      <p style="font-size:12px; color:#8B8FA3;">在左側選單找到「Gem 管理員」，點進去就能管理或建立新的 Gem。</p>
 
-  <!-- 模擬 Gemini 側邊欄 -->
-  <div class="gemini-mock">
-    <div class="mock-browser-bar">
-      <div class="mock-dots"><span class="d-red"></span><span class="d-yel"></span><span class="d-grn"></span></div>
-      <div class="mock-url-bar">gemini.google.com</div>
+      <h3>Step 2：建立新 Gem</h3>
+      <p style="font-size:12px; color:#8B8FA3;">輸入名稱與指令，按下儲存就完成。左側選單會出現你的新 Gem。</p>
     </div>
-    <div class="gemini-layout">
-      <div class="gemini-sidebar">
-        <div class="sidebar-item">
-          <div class="si-icon">+</div> 新對話
+    <div class="col-right">
+      <!-- 模擬 Gemini 側邊欄 -->
+      <div class="gemini-mock">
+        <div class="mock-browser-bar">
+          <div class="mock-dots"><span class="d-red"></span><span class="d-yel"></span><span class="d-grn"></span></div>
+          <div class="mock-url-bar">gemini.google.com</div>
         </div>
-        <div class="sidebar-divider"></div>
-        <div class="sidebar-item">
-          <div class="si-icon">&#9776;</div> 最近的對話
-        </div>
-        <div class="mock-highlight-box" style="margin: 2px 8px 2px 0;">
-          <div class="mock-highlight-label">點這裡</div>
-          <div class="sidebar-item active">
-            <div class="si-icon">&#9830;</div> Gem 管理員
+        <div class="gemini-layout" style="min-height: 200px;">
+          <div class="gemini-sidebar">
+            <div class="sidebar-item">
+              <div class="si-icon">+</div> 新對話
+            </div>
+            <div class="sidebar-divider"></div>
+            <div class="sidebar-item">
+              <div class="si-icon">&#9776;</div> 最近的對話
+            </div>
+            <div class="mock-highlight-box" style="margin: 2px 6px 2px 0;">
+              <div class="mock-highlight-label">點這裡</div>
+              <div class="sidebar-item active">
+                <div class="si-icon">&#9830;</div> Gem 管理員
+              </div>
+            </div>
+            <div class="sidebar-divider"></div>
+            <div class="sidebar-label">我的 Gems</div>
+            <div class="sidebar-gem-item"><div class="sidebar-gem-dot" style="background:#8ab4f8;"></div> 學習教練</div>
+            <div class="sidebar-gem-item"><div class="sidebar-gem-dot" style="background:#81c995;"></div> 寫作助手</div>
+            <div class="sidebar-gem-item"><div class="sidebar-gem-dot" style="background:#f28b82;"></div> 程式顧問</div>
+          </div>
+          <div class="gemini-main" style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
+            <div style="font-size: 24px; margin-bottom: 8px;">&#9830;</div>
+            <div style="font-size: 14px; color: #e0e0e0; font-weight: 600; margin-bottom: 6px;">Gem 管理員</div>
+            <div style="font-size: 11px; color: #888; margin-bottom: 14px;">建立自訂 Gem</div>
+            <div style="background: #8ab4f8; color: #1a1a2a; padding: 8px 18px; border-radius: 16px; font-size: 11px; font-weight: 600;">
+              + 建立新的 Gem
+            </div>
           </div>
         </div>
-        <div class="sidebar-divider"></div>
-        <div class="sidebar-label">我的 Gems</div>
-        <div class="sidebar-gem-item"><div class="sidebar-gem-dot" style="background:#8ab4f8;"></div> 學習教練</div>
-        <div class="sidebar-gem-item"><div class="sidebar-gem-dot" style="background:#81c995;"></div> 寫作助手</div>
-        <div class="sidebar-gem-item"><div class="sidebar-gem-dot" style="background:#f28b82;"></div> 程式顧問</div>
       </div>
-      <div class="gemini-main" style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
-        <div style="font-size: 28px; margin-bottom: 12px;">&#9830;</div>
-        <div style="font-size: 16px; color: #e0e0e0; font-weight: 600; margin-bottom: 8px;">Gem 管理員</div>
-        <div style="font-size: 13px; color: #888; margin-bottom: 20px;">建立自訂 Gem，讓 Gemini 成為你的專屬助手</div>
-        <div style="background: #8ab4f8; color: #1a1a2a; padding: 10px 24px; border-radius: 20px; font-size: 13px; font-weight: 600; cursor: default;">
-          + 建立新的 Gem
+
+      <!-- 模擬表單 -->
+      <div class="gem-form-mock" style="margin-top:8px;">
+        <div class="gem-form-header">
+          <div class="gfh-title">建立新 Gem</div>
+          <div class="gfh-save">儲存</div>
+        </div>
+        <div class="gem-form-body" style="padding:10px 14px;">
+          <div class="gem-form-field" style="margin-bottom:8px;">
+            <label>Gem 名稱</label>
+            <div class="mock-highlight-box">
+              <div class="mock-highlight-label">1. 填名稱</div>
+              <div class="gf-input focused" style="padding:6px 10px; font-size:12px;">Email 商務秘書</div>
+            </div>
+          </div>
+          <div class="gem-form-field" style="margin-bottom:0;">
+            <label>指令</label>
+            <div class="mock-highlight-box">
+              <div class="mock-highlight-label">2. 貼指令</div>
+              <div class="gf-textarea focused" style="min-height:40px; font-size:10px;">你是我的 Email 商務秘書。
+你的工作是幫我撰寫各種商務 Email ...</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <h3>Step 2：建立新 Gem，輸入名稱與指令</h3>
-
-  <!-- 模擬 Gem 建立表單 -->
-  <div class="gem-form-mock">
-    <div class="gem-form-header">
-      <div class="gfh-title">建立新 Gem</div>
-      <div class="gfh-save">儲存</div>
-    </div>
-    <div class="gem-form-body">
-      <div class="gem-form-field">
-        <label>Gem 名稱</label>
-        <div class="mock-highlight-box">
-          <div class="mock-highlight-label">1. 填名稱</div>
-          <div class="gf-input focused">Email 商務秘書</div>
-        </div>
-      </div>
-      <div class="gem-form-field">
-        <label>指令</label>
-        <div class="mock-highlight-box">
-          <div class="mock-highlight-label">2. 貼指令</div>
-          <div class="gf-textarea focused">你是我的 Email 商務秘書。
-
-你的工作是幫我撰寫各種商務 Email，包含但不限於：回覆客戶、跟進合作、會議邀請、感謝函、報價說明。
-
-寫信原則：
-- 使用繁體中文，語氣專業但親切 ...</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="tip-box">
-    <p><strong>完成！</strong>按下「儲存」後，左側選單就會出現你的新 Gem。點一下就能直接使用。</p>
   </div>
 
   <div class="page-footer">Copyright 2026 Autolab / 阿峰老師. All rights reserved.</div>
@@ -436,28 +386,13 @@
     </div>
   </div>
 
-  <p>回覆客戶、跟進合作、寄邀請函，這個 Gem 會幫你用<span class="highlight">專業但不生硬</span>的語氣完成各種商務信件。</p>
+  <div class="two-col">
+    <div class="col-left">
+      <p>回覆客戶、跟進合作、寄邀請函，這個 Gem 會幫你用<span class="highlight">專業但不生硬</span>的語氣完成各種商務信件。</p>
 
-  <!-- 模擬建立畫面 -->
-  <div class="gem-form-mock">
-    <div class="gem-form-header">
-      <div class="gfh-title">建立新 Gem</div>
-      <div class="gfh-save">儲存</div>
-    </div>
-    <div class="gem-form-body" style="padding: 14px 18px;">
-      <div class="gem-form-field" style="margin-bottom:10px;">
-        <label>名稱</label>
-        <div class="gf-input">Email 商務秘書</div>
-      </div>
-      <div class="gem-form-field" style="margin-bottom:0;">
-        <label>指令 — 複製以下全部內容貼上</label>
-      </div>
-    </div>
-  </div>
-
-  <div class="prompt-box">
-    <div class="prompt-label">複製這段指令</div>
-    <p>你是我的 Email 商務秘書。
+      <div class="prompt-box">
+        <div class="prompt-label">複製這段指令</div>
+        <p>你是我的 Email 商務秘書。
 
 你的工作是幫我撰寫各種商務 Email，包含但不限於：回覆客戶、跟進合作、會議邀請、感謝函、報價說明。
 
@@ -475,10 +410,38 @@
 3. 重點內容或背景
 
 請直接產出可以複製貼上的完整信件，包含主旨行。</p>
-  </div>
+      </div>
+    </div>
+    <div class="col-right">
+      <div class="gem-form-mock">
+        <div class="gem-form-header">
+          <div class="gfh-title">建立新 Gem</div>
+          <div class="gfh-save">儲存</div>
+        </div>
+        <div class="gem-form-body" style="padding: 10px 14px;">
+          <div class="gem-form-field" style="margin-bottom:8px;">
+            <label>名稱</label>
+            <div class="gf-input" style="padding:6px 10px; font-size:12px;">Email 商務秘書</div>
+          </div>
+          <div class="gem-form-field" style="margin-bottom:0;">
+            <label>指令 — 複製左側全部內容貼上</label>
+            <div class="gf-textarea" style="min-height:180px; font-size:10px;">你是我的 Email 商務秘書。
 
-  <div class="tip-box">
-    <p><strong>使用範例：</strong>「幫我回覆王經理，感謝他參加上週的 AI 培訓課程，並詢問後續進階課程的意願。」</p>
+你的工作是幫我撰寫各種商務 Email，包含但不限於：回覆客戶、跟進合作、會議邀請、感謝函、報價說明。
+
+寫信原則：
+- 使用繁體中文，語氣專業但親切
+- 開頭稱呼對方名字或職稱
+- 主旨明確，一封信只講一件事
+...</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <p><strong>使用範例：</strong>「幫我回覆王經理，感謝他參加上週的 AI 培訓課程，並詢問後續進階課程的意願。」</p>
+      </div>
+    </div>
   </div>
 
   <div class="page-footer">Copyright 2026 Autolab / 阿峰老師. All rights reserved.</div>
@@ -499,27 +462,13 @@
     </div>
   </div>
 
-  <p>這個 Gem 會幫你把逐字稿或筆記，整理成<span class="highlight">重點摘要 + 待辦事項 + 決議追蹤</span>的格式。</p>
+  <div class="two-col">
+    <div class="col-left">
+      <p>這個 Gem 會幫你把逐字稿或筆記，整理成<span class="highlight">重點摘要 + 待辦事項 + 決議追蹤</span>的格式。</p>
 
-  <div class="gem-form-mock">
-    <div class="gem-form-header">
-      <div class="gfh-title">建立新 Gem</div>
-      <div class="gfh-save">儲存</div>
-    </div>
-    <div class="gem-form-body" style="padding: 14px 18px;">
-      <div class="gem-form-field" style="margin-bottom:10px;">
-        <label>名稱</label>
-        <div class="gf-input">會議記錄整理師</div>
-      </div>
-      <div class="gem-form-field" style="margin-bottom:0;">
-        <label>指令 — 複製以下全部內容貼上</label>
-      </div>
-    </div>
-  </div>
-
-  <div class="prompt-box">
-    <div class="prompt-label">複製這段指令</div>
-    <p>你是我的會議記錄整理師。
+      <div class="prompt-box">
+        <div class="prompt-label">複製這段指令</div>
+        <p>你是我的會議記錄整理師。
 
 我會把會議的逐字稿、錄音轉文字、或手寫筆記給你，請幫我整理成以下格式：
 
@@ -544,10 +493,42 @@
 - 保留關鍵數字和具體承諾
 - 如果內容不清楚，用 [待確認] 標示
 - 繁體中文，條理分明</p>
-  </div>
+      </div>
+    </div>
+    <div class="col-right">
+      <div class="gem-form-mock">
+        <div class="gem-form-header">
+          <div class="gfh-title">建立新 Gem</div>
+          <div class="gfh-save">儲存</div>
+        </div>
+        <div class="gem-form-body" style="padding: 10px 14px;">
+          <div class="gem-form-field" style="margin-bottom:8px;">
+            <label>名稱</label>
+            <div class="gf-input" style="padding:6px 10px; font-size:12px;">會議記錄整理師</div>
+          </div>
+          <div class="gem-form-field" style="margin-bottom:0;">
+            <label>指令 — 複製左側全部內容貼上</label>
+            <div class="gf-textarea" style="min-height:180px; font-size:10px;">你是我的會議記錄整理師。
 
-  <div class="tip-box">
-    <p><strong>進階用法：</strong>搭配 Google 語音轉文字或 ChatEverywhere 的會議記錄功能，會議一結束就能產出整理好的記錄。</p>
+我會把會議的逐字稿、錄音轉文字、或手寫筆記給你，請幫我整理成以下格式：
+
+## 會議摘要
+用 3-5 個重點條列核心內容。
+
+## 決議事項
+每條決議標明：決議內容、負責人、完成日期
+
+## 待辦事項（Action Items）
+用表格整理
+...</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <p><strong>進階用法：</strong>搭配 Google 語音轉文字或 ChatEverywhere 會議記錄功能，會議一結束就能產出整理好的記錄。</p>
+      </div>
+    </div>
   </div>
 
   <div class="page-footer">Copyright 2026 Autolab / 阿峰老師. All rights reserved.</div>
@@ -568,27 +549,13 @@
     </div>
   </div>
 
-  <p>做簡報最花時間的不是做投影片，而是<span class="highlight">想架構</span>。這個 Gem 會根據主題和對象，快速產出簡報大綱。</p>
+  <div class="two-col">
+    <div class="col-left">
+      <p>做簡報最花時間的不是做投影片，而是<span class="highlight">想架構</span>。這個 Gem 會根據主題和對象，快速產出簡報大綱。</p>
 
-  <div class="gem-form-mock">
-    <div class="gem-form-header">
-      <div class="gfh-title">建立新 Gem</div>
-      <div class="gfh-save">儲存</div>
-    </div>
-    <div class="gem-form-body" style="padding: 14px 18px;">
-      <div class="gem-form-field" style="margin-bottom:10px;">
-        <label>名稱</label>
-        <div class="gf-input">簡報大綱產生器</div>
-      </div>
-      <div class="gem-form-field" style="margin-bottom:0;">
-        <label>指令 — 複製以下全部內容貼上</label>
-      </div>
-    </div>
-  </div>
-
-  <div class="prompt-box">
-    <div class="prompt-label">複製這段指令</div>
-    <p>你是我的簡報大綱產生器。
+      <div class="prompt-box">
+        <div class="prompt-label">複製這段指令</div>
+        <p>你是我的簡報大綱產生器。
 
 我會告訴你：
 1. 簡報主題
@@ -599,20 +566,16 @@
 請產出以下格式的大綱：
 
 ### 簡報資訊
-- 主題：
-- 對象：
-- 時長：
-- 目標：
+- 主題 / 對象 / 時長 / 目標
 
 ### 投影片大綱
 每一頁包含：
-- 頁碼
-- 標題（10 字以內）
+- 頁碼、標題（10 字以內）
 - 要講的重點（2-3 個條列）
 - 建議視覺元素（圖表/數據/案例/互動）
 
 ### 開場建議
-用一個引起好奇或共鳴的問句、故事、或數據開場。
+用引起好奇或共鳴的問句、故事、或數據開場。
 
 ### 結尾建議
 明確的 Call to Action，讓聽眾知道「聽完要做什麼」。
@@ -622,10 +585,43 @@
 - 10 分鐘 = 8-10 頁，30 分鐘 = 20-25 頁
 - 每 5 分鐘安排一個互動點或案例
 - 數據比文字有說服力，案例比理論有感覺</p>
-  </div>
+      </div>
+    </div>
+    <div class="col-right">
+      <div class="gem-form-mock">
+        <div class="gem-form-header">
+          <div class="gfh-title">建立新 Gem</div>
+          <div class="gfh-save">儲存</div>
+        </div>
+        <div class="gem-form-body" style="padding: 10px 14px;">
+          <div class="gem-form-field" style="margin-bottom:8px;">
+            <label>名稱</label>
+            <div class="gf-input" style="padding:6px 10px; font-size:12px;">簡報大綱產生器</div>
+          </div>
+          <div class="gem-form-field" style="margin-bottom:0;">
+            <label>指令 — 複製左側全部內容貼上</label>
+            <div class="gf-textarea" style="min-height:180px; font-size:10px;">你是我的簡報大綱產生器。
 
-  <div class="tip-box">
-    <p><strong>使用範例：</strong>「幫我規劃一場 30 分鐘的簡報，主題是『AI 如何提升業務效率』，對象是公司業務團隊。」</p>
+我會告訴你：
+1. 簡報主題
+2. 目標聽眾
+3. 簡報時間長度
+4. 想達到的目標
+
+請產出以下格式的大綱：
+### 簡報資訊
+### 投影片大綱
+### 開場建議
+### 結尾建議
+...</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <p><strong>使用範例：</strong>「幫我規劃一場 30 分鐘的簡報，主題是『AI 如何提升業務效率』，對象是公司業務團隊。」</p>
+      </div>
+    </div>
   </div>
 
   <div class="page-footer">Copyright 2026 Autolab / 阿峰老師. All rights reserved.</div>
@@ -646,27 +642,13 @@
     </div>
   </div>
 
-  <p>經營社群最痛苦的就是「不知道要寫什麼」。這個 Gem 根據你的素材，產出<span class="highlight">符合平台特性</span>的貼文。</p>
+  <div class="two-col">
+    <div class="col-left">
+      <p>經營社群最痛苦的就是「不知道要寫什麼」。這個 Gem 根據你的素材，產出<span class="highlight">符合平台特性</span>的貼文。</p>
 
-  <div class="gem-form-mock">
-    <div class="gem-form-header">
-      <div class="gfh-title">建立新 Gem</div>
-      <div class="gfh-save">儲存</div>
-    </div>
-    <div class="gem-form-body" style="padding: 14px 18px;">
-      <div class="gem-form-field" style="margin-bottom:10px;">
-        <label>名稱</label>
-        <div class="gf-input">社群貼文寫手</div>
-      </div>
-      <div class="gem-form-field" style="margin-bottom:0;">
-        <label>指令 — 複製以下全部內容貼上</label>
-      </div>
-    </div>
-  </div>
-
-  <div class="prompt-box">
-    <div class="prompt-label">複製這段指令</div>
-    <p>你是我的社群貼文寫手。
+      <div class="prompt-box">
+        <div class="prompt-label">複製這段指令</div>
+        <p>你是我的社群貼文寫手。
 
 我會給你素材（可能是一段心得、一個案例、一則新聞、一個想法），請幫我寫成社群貼文。
 
@@ -687,10 +669,43 @@
 - 用具體案例或數據支撐觀點
 - 讓讀者看完有「我也想試試」的行動感
 - 繁體中文，台灣用語</p>
-  </div>
+      </div>
+    </div>
+    <div class="col-right">
+      <div class="gem-form-mock">
+        <div class="gem-form-header">
+          <div class="gfh-title">建立新 Gem</div>
+          <div class="gfh-save">儲存</div>
+        </div>
+        <div class="gem-form-body" style="padding: 10px 14px;">
+          <div class="gem-form-field" style="margin-bottom:8px;">
+            <label>名稱</label>
+            <div class="gf-input" style="padding:6px 10px; font-size:12px;">社群貼文寫手</div>
+          </div>
+          <div class="gem-form-field" style="margin-bottom:0;">
+            <label>指令 — 複製左側全部內容貼上</label>
+            <div class="gf-textarea" style="min-height:180px; font-size:10px;">你是我的社群貼文寫手。
 
-  <div class="tip-box">
-    <p><strong>使用範例：</strong>「今天教了一家金融公司用 AI 做風險報告，原本要 3 天，現在 2 小時搞定。幫我寫成貼文。」</p>
+我會給你素材，請幫我寫成社群貼文。
+
+貼文風格：
+- 開頭抓住注意力
+- 口語化，像在跟朋友分享
+- 善用換行，每段 2-3 行
+- 結尾要有互動引導
+
+格式要求：
+- Facebook 版：300-500 字
+- LinkedIn 版：200-400 字
+...</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <p><strong>使用範例：</strong>「今天教了一家金融公司用 AI 做風險報告，原本要 3 天，現在 2 小時搞定。幫我寫成貼文。」</p>
+      </div>
+    </div>
   </div>
 
   <div class="page-footer">Copyright 2026 Autolab / 阿峰老師. All rights reserved.</div>
@@ -711,27 +726,13 @@
     </div>
   </div>
 
-  <p>很多人有數據但看不出重點。這個 Gem 幫你<span class="highlight">分析數據、找出趨勢、給出建議</span>，不需要會寫程式。</p>
+  <div class="two-col">
+    <div class="col-left">
+      <p>很多人有數據但看不出重點。這個 Gem 幫你<span class="highlight">分析數據、找出趨勢、給出建議</span>，不需要會寫程式。</p>
 
-  <div class="gem-form-mock">
-    <div class="gem-form-header">
-      <div class="gfh-title">建立新 Gem</div>
-      <div class="gfh-save">儲存</div>
-    </div>
-    <div class="gem-form-body" style="padding: 14px 18px;">
-      <div class="gem-form-field" style="margin-bottom:10px;">
-        <label>名稱</label>
-        <div class="gf-input">資料分析助手</div>
-      </div>
-      <div class="gem-form-field" style="margin-bottom:0;">
-        <label>指令 — 複製以下全部內容貼上</label>
-      </div>
-    </div>
-  </div>
-
-  <div class="prompt-box">
-    <div class="prompt-label">複製這段指令</div>
-    <p>你是我的資料分析助手。
+      <div class="prompt-box">
+        <div class="prompt-label">複製這段指令</div>
+        <p>你是我的資料分析助手。
 
 我會給你數據（可能是表格、CSV、數字清單、或文字描述的資料），請幫我分析並產出以下內容：
 
@@ -753,17 +754,50 @@
 根據分析結果，給出 3 個具體可執行的建議。
 
 ## 視覺化建議
-建議用什麼圖表呈現（長條圖/折線圖/圓餅圖），以及 X 軸 Y 軸應該放什麼。
+建議用什麼圖表呈現，以及 X 軸 Y 軸應該放什麼。
 
 分析原則：
 - 先講結論，再給數據
 - 用百分比和比較讓數字有感覺
 - 不確定的推論要標明「推測」
 - 繁體中文，格式清楚</p>
-  </div>
+      </div>
+    </div>
+    <div class="col-right">
+      <div class="gem-form-mock">
+        <div class="gem-form-header">
+          <div class="gfh-title">建立新 Gem</div>
+          <div class="gfh-save">儲存</div>
+        </div>
+        <div class="gem-form-body" style="padding: 10px 14px;">
+          <div class="gem-form-field" style="margin-bottom:8px;">
+            <label>名稱</label>
+            <div class="gf-input" style="padding:6px 10px; font-size:12px;">資料分析助手</div>
+          </div>
+          <div class="gem-form-field" style="margin-bottom:0;">
+            <label>指令 — 複製左側全部內容貼上</label>
+            <div class="gf-textarea" style="min-height:180px; font-size:10px;">你是我的資料分析助手。
 
-  <div class="tip-box">
-    <p><strong>使用範例：</strong>把 Excel 的銷售資料複製貼上，問它「幫我分析上半年的銷售趨勢，哪些產品成長最快？」</p>
+我會給你數據，請幫我分析並產出：
+
+## 資料概覽
+## 關鍵發現（Top 3-5）
+## 趨勢分析
+## 建議行動
+## 視覺化建議
+
+分析原則：
+- 先講結論，再給數據
+- 用百分比和比較讓數字有感覺
+...</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <p><strong>使用範例：</strong>把 Excel 的銷售資料複製貼上，問它「幫我分析上半年的銷售趨勢，哪些產品成長最快？」</p>
+      </div>
+    </div>
   </div>
 
   <div class="page-footer">Copyright 2026 Autolab / 阿峰老師. All rights reserved.</div>
@@ -776,73 +810,78 @@
     <div class="page-num">08 / 10</div>
   </div>
 
-  <h2>設定完成！實際使用畫面</h2>
-  <p>設定好 Gem 之後，從左側選單點選就能直接開始對話。AI 會自動帶入你設定的角色和規則。</p>
+  <div class="two-col" style="margin-top: 8px;">
+    <div class="col-left">
+      <h2>設定完成！實際使用畫面</h2>
+      <p>設定好 Gem 之後，從左側選單點選就能直接開始對話。AI 會自動帶入你設定的角色和規則。</p>
 
-  <!-- 模擬使用中的對話畫面 -->
-  <div class="gemini-mock">
-    <div class="mock-browser-bar">
-      <div class="mock-dots"><span class="d-red"></span><span class="d-yel"></span><span class="d-grn"></span></div>
-      <div class="mock-url-bar">gemini.google.com/gem/email-secretary</div>
-    </div>
-    <div class="gemini-layout" style="min-height: 280px;">
-      <div class="gemini-sidebar">
-        <div class="sidebar-item">
-          <div class="si-icon">+</div> 新對話
-        </div>
-        <div class="sidebar-divider"></div>
-        <div class="sidebar-label">我的 Gems</div>
-        <div class="sidebar-item active">
-          <div class="si-icon">&#9993;</div> Email 商務秘書
-        </div>
-        <div class="sidebar-gem-item"><div class="sidebar-gem-dot" style="background:#FF6B35;"></div> 會議記錄整理師</div>
-        <div class="sidebar-gem-item"><div class="sidebar-gem-dot" style="background:#A855F7;"></div> 簡報大綱產生器</div>
-        <div class="sidebar-gem-item"><div class="sidebar-gem-dot" style="background:#06C755;"></div> 社群貼文寫手</div>
-        <div class="sidebar-gem-item"><div class="sidebar-gem-dot" style="background:#F59E0B;"></div> 資料分析助手</div>
+      <h3 style="margin-top: 16px;">使用心法：你是機長，AI 是機組人員</h3>
+      <ul>
+        <li><strong>給清楚的指令</strong>：告訴 AI 你要什麼、給誰看、什麼風格</li>
+        <li><strong>提供足夠的素材</strong>：你給的資訊越多，產出越好</li>
+        <li><strong>永遠要檢查</strong>：AI 是助手不是老闆，最終決定權在你手上</li>
+        <li><strong>持續優化指令</strong>：用一段時間後，根據經驗調整 Gem 指令</li>
+      </ul>
+
+      <div class="tip-box" style="margin-top: 12px;">
+        <p><strong>重點：</strong>你不需要每次重新說明「你是 Email 秘書」— Gem 會自動帶入設定。直接說你要什麼就好。</p>
       </div>
-      <div class="gemini-main" style="padding: 16px 20px;">
-        <div style="display:flex; align-items:center; gap:8px; margin-bottom:16px;">
-          <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#00D4FF,#0066CC);display:flex;align-items:center;justify-content:center;font-size:16px;">&#9993;</div>
-          <div style="font-size:15px; color:#e0e0e0; font-weight:600;">Email 商務秘書</div>
+    </div>
+    <div class="col-right">
+      <!-- 模擬使用中的對話畫面 -->
+      <div class="gemini-mock">
+        <div class="mock-browser-bar">
+          <div class="mock-dots"><span class="d-red"></span><span class="d-yel"></span><span class="d-grn"></span></div>
+          <div class="mock-url-bar">gemini.google.com/gem/email-secretary</div>
         </div>
+        <div class="gemini-layout" style="min-height: 380px;">
+          <div class="gemini-sidebar">
+            <div class="sidebar-item">
+              <div class="si-icon">+</div> 新對話
+            </div>
+            <div class="sidebar-divider"></div>
+            <div class="sidebar-label">我的 Gems</div>
+            <div class="sidebar-item active">
+              <div class="si-icon">&#9993;</div> Email 商務秘書
+            </div>
+            <div class="sidebar-gem-item"><div class="sidebar-gem-dot" style="background:#FF6B35;"></div> 會議記錄整理師</div>
+            <div class="sidebar-gem-item"><div class="sidebar-gem-dot" style="background:#A855F7;"></div> 簡報大綱產生器</div>
+            <div class="sidebar-gem-item"><div class="sidebar-gem-dot" style="background:#06C755;"></div> 社群貼文寫手</div>
+            <div class="sidebar-gem-item"><div class="sidebar-gem-dot" style="background:#F59E0B;"></div> 資料分析助手</div>
+          </div>
+          <div class="gemini-main" style="padding: 14px 16px;">
+            <div style="display:flex; align-items:center; gap:6px; margin-bottom:12px;">
+              <div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#00D4FF,#0066CC);display:flex;align-items:center;justify-content:center;font-size:14px;">&#9993;</div>
+              <div style="font-size:13px; color:#e0e0e0; font-weight:600;">Email 商務秘書</div>
+            </div>
 
-        <!-- 使用者訊息 -->
-        <div style="background:#2a2a3a; border-radius:12px; padding:12px 16px; margin-bottom:12px; max-width:85%;">
-          <div style="font-size:11px; color:#8ab4f8; margin-bottom:4px; font-weight:500;">你</div>
-          <div style="font-size:12.5px; color:#e0e0e0; line-height:1.6;">幫我回覆王經理，感謝他參加上週的 AI 培訓課程，並詢問後續進階課程的意願。他是國泰人壽的教育訓練部主管。</div>
-        </div>
+            <!-- 使用者訊息 -->
+            <div style="background:#2a2a3a; border-radius:10px; padding:10px 14px; margin-bottom:10px; max-width:90%;">
+              <div style="font-size:10px; color:#8ab4f8; margin-bottom:3px; font-weight:500;">你</div>
+              <div style="font-size:11.5px; color:#e0e0e0; line-height:1.5;">幫我回覆王經理，感謝他參加上週的 AI 培訓課程，並詢問後續進階課程的意願。他是國泰人壽的教育訓練部主管。</div>
+            </div>
 
-        <!-- AI 回應 -->
-        <div style="background:#1a2a1a; border:1px solid #2a3a2a; border-radius:12px; padding:12px 16px; margin-bottom:12px;">
-          <div style="font-size:11px; color:#81c995; margin-bottom:4px; font-weight:500;">Email 商務秘書</div>
-          <div style="font-size:12px; color:#ccc; line-height:1.7;">
-            <strong style="color:#e0e0e0;">主旨：感謝參加 AI 培訓 — 進階課程規劃</strong><br><br>
-            王經理您好，<br><br>
-            上週在國泰人壽的 AI 實戰培訓課程中，看到團隊成員的投入度非常高，幾位同仁在課堂上做出的 AI 應用範例也很有亮點。<br><br>
-            想跟您分享，許多企業在第一堂課後會安排進階工作坊，聚焦在部門實際業務的 AI 落地方案 ...
+            <!-- AI 回應 -->
+            <div style="background:#1a2a1a; border:1px solid #2a3a2a; border-radius:10px; padding:10px 14px; margin-bottom:10px;">
+              <div style="font-size:10px; color:#81c995; margin-bottom:3px; font-weight:500;">Email 商務秘書</div>
+              <div style="font-size:11px; color:#ccc; line-height:1.6;">
+                <strong style="color:#e0e0e0;">主旨：感謝參加 AI 培訓 — 進階課程規劃</strong><br><br>
+                王經理您好，<br><br>
+                上週在國泰人壽的 AI 實戰培訓課程中，看到團隊成員的投入度非常高，幾位同仁在課堂上做出的 AI 應用範例也很有亮點。<br><br>
+                想跟您分享，許多企業在第一堂課後會安排進階工作坊，聚焦在部門實際業務的 AI 落地方案 ...
+              </div>
+            </div>
+
+            <!-- 輸入框 -->
+            <div style="background:#2a2a3a; border:1px solid #444; border-radius:16px; padding:8px 14px; display:flex; align-items:center; gap:6px;">
+              <div style="flex:1; font-size:11px; color:#666;">輸入訊息 ...</div>
+              <div style="background:#8ab4f8; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; color:#1a1a2a;">&#10148;</div>
+            </div>
           </div>
         </div>
-
-        <!-- 輸入框 -->
-        <div style="background:#2a2a3a; border:1px solid #444; border-radius:20px; padding:10px 16px; display:flex; align-items:center; gap:8px;">
-          <div style="flex:1; font-size:12px; color:#666;">輸入訊息 ...</div>
-          <div style="background:#8ab4f8; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; color:#1a1a2a;">&#10148;</div>
-        </div>
       </div>
     </div>
   </div>
-
-  <div class="tip-box">
-    <p><strong>重點：</strong>你不需要每次重新說明「你是 Email 秘書」— Gem 會自動帶入設定。直接說你要什麼就好。</p>
-  </div>
-
-  <h3>使用心法：你是機長，AI 是機組人員</h3>
-  <ul>
-    <li><strong>給清楚的指令</strong>：告訴 AI 你要什麼、給誰看、什麼風格</li>
-    <li><strong>提供足夠的素材</strong>：你給的資訊越多，產出越好</li>
-    <li><strong>永遠要檢查</strong>：AI 是助手不是老闆，最終決定權在你手上</li>
-    <li><strong>持續優化指令</strong>：用一段時間後，根據經驗調整 Gem 指令</li>
-  </ul>
 
   <div class="page-footer">Copyright 2026 Autolab / 阿峰老師. All rights reserved.</div>
 </div>
@@ -854,115 +893,126 @@
     <div class="page-num">09 / 10</div>
   </div>
 
-  <h2>你的 AI 員工團隊總覽</h2>
+  <div class="two-col" style="margin-top: 8px;">
+    <div class="col-left">
+      <h2>你的 AI 員工團隊總覽</h2>
 
-  <div style="margin: 12px 0;">
-    <div class="step-card">
-      <div class="gem-icon" style="background: linear-gradient(135deg, #00D4FF, #0066CC); width:36px; height:36px; font-size:18px; border-radius:10px;">&#9993;</div>
-      <div class="step-content">
-        <div class="step-title">Email 商務秘書</div>
-        <div class="step-desc">寫信、回信、跟進客戶 → 省下每天 30 分鐘</div>
+      <div style="margin: 10px 0;">
+        <div class="step-card">
+          <div class="gem-icon" style="background: linear-gradient(135deg, #00D4FF, #0066CC); width:32px; height:32px; font-size:16px; border-radius:8px;">&#9993;</div>
+          <div class="step-content">
+            <div class="step-title">Email 商務秘書</div>
+            <div class="step-desc">寫信、回信、跟進客戶 → 省下每天 30 分鐘</div>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="gem-icon" style="background: linear-gradient(135deg, #FF6B35, #CC4400); width:32px; height:32px; font-size:16px; border-radius:8px;">&#9998;</div>
+          <div class="step-content">
+            <div class="step-title">會議記錄整理師</div>
+            <div class="step-desc">逐字稿變行動清單 → 開完會 5 分鐘搞定記錄</div>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="gem-icon" style="background: linear-gradient(135deg, #A855F7, #7C3AED); width:32px; height:32px; font-size:16px; border-radius:8px;">&#9776;</div>
+          <div class="step-content">
+            <div class="step-title">簡報大綱產生器</div>
+            <div class="step-desc">給主題就出大綱 → 10 分鐘完成簡報架構</div>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="gem-icon" style="background: linear-gradient(135deg, #06C755, #04943F); width:32px; height:32px; font-size:16px; border-radius:8px;">&#9733;</div>
+          <div class="step-content">
+            <div class="step-title">社群貼文寫手</div>
+            <div class="step-desc">素材變貼文 → 一次產出 FB + LinkedIn 版本</div>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="gem-icon" style="background: linear-gradient(135deg, #F59E0B, #D97706); width:32px; height:32px; font-size:16px; border-radius:8px;">&#9851;</div>
+          <div class="step-content">
+            <div class="step-title">資料分析助手</div>
+            <div class="step-desc">數據變洞察 → 不用寫程式也能做分析</div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="step-card">
-      <div class="gem-icon" style="background: linear-gradient(135deg, #FF6B35, #CC4400); width:36px; height:36px; font-size:18px; border-radius:10px;">&#9998;</div>
-      <div class="step-content">
-        <div class="step-title">會議記錄整理師</div>
-        <div class="step-desc">逐字稿變行動清單 → 開完會 5 分鐘搞定記錄</div>
-      </div>
-    </div>
-    <div class="step-card">
-      <div class="gem-icon" style="background: linear-gradient(135deg, #A855F7, #7C3AED); width:36px; height:36px; font-size:18px; border-radius:10px;">&#9776;</div>
-      <div class="step-content">
-        <div class="step-title">簡報大綱產生器</div>
-        <div class="step-desc">給主題就出大綱 → 10 分鐘完成簡報架構</div>
-      </div>
-    </div>
-    <div class="step-card">
-      <div class="gem-icon" style="background: linear-gradient(135deg, #06C755, #04943F); width:36px; height:36px; font-size:18px; border-radius:10px;">&#9733;</div>
-      <div class="step-content">
-        <div class="step-title">社群貼文寫手</div>
-        <div class="step-desc">素材變貼文 → 一次產出 FB + LinkedIn 版本</div>
-      </div>
-    </div>
-    <div class="step-card">
-      <div class="gem-icon" style="background: linear-gradient(135deg, #F59E0B, #D97706); width:36px; height:36px; font-size:18px; border-radius:10px;">&#9851;</div>
-      <div class="step-content">
-        <div class="step-title">資料分析助手</div>
-        <div class="step-desc">數據變洞察 → 不用寫程式也能做分析</div>
-      </div>
-    </div>
-  </div>
 
-  <div class="divider"></div>
+      <p style="font-size: 12px; color: #8B8FA3; margin-top: 10px;">這 5 個 Gems 只是 AI 應用的冰山一角。阿峰老師的企業培訓涵蓋 ChatGPT、Gemini、Claude、Copilot 等主流 AI 工具。</p>
+    </div>
+    <div class="col-right">
+      <div class="cta-section">
+        <h3>企業包班培訓<br>量身打造你的 AI 課程</h3>
+        <p class="stats">400+ 企業合作 ｜ 10,000+ 學員 ｜ 2 小時到 2 天彈性配合</p>
+        <div class="divider"></div>
+        <p style="font-size: 13px; color: #C7C7CC;">聯繫我們：<strong style="color: #FF6B35;">ai@autolab.cloud</strong></p>
+        <p style="font-size: 13px; color: #C7C7CC;">官網：<strong style="color: #00D4FF;">www.autolab.cloud</strong></p>
+      </div>
 
-  <h3>想學更多 AI 實戰技巧？</h3>
-  <p>這 5 個 Gems 只是 AI 應用的冰山一角。阿峰老師的企業培訓涵蓋 ChatGPT、Gemini、Claude、Copilot 等主流 AI 工具。</p>
-
-  <div class="cta-section">
-    <h3>企業包班培訓，量身打造你的 AI 課程</h3>
-    <p class="stats">400+ 企業合作 ｜ 10,000+ 學員 ｜ 2 小時到 2 天彈性配合</p>
-    <p style="font-size: 13px; color: #C7C7CC;">聯繫我們：<strong style="color: #FF6B35;">ai@autolab.cloud</strong></p>
-    <p style="font-size: 13px; color: #C7C7CC;">官網：<strong style="color: #00D4FF;">www.autolab.cloud</strong></p>
+      <div class="line-cta" style="margin-top: 16px;">
+        <h3>加入 LINE AI 學員社群</h3>
+        <p>AI 工具最新情報、學員交流互助、阿峰老師不定期直播教學</p>
+        <p class="line-url">https://line.me/ti/g2/o6oRaGIHTzZ1nEofxnT9Rbv7_ZHAX-rylbJfKA</p>
+      </div>
+    </div>
   </div>
 
   <div class="page-footer">Copyright 2026 Autolab / 阿峰老師. All rights reserved.</div>
 </div>
 
-<!-- ======== 第 10 頁：社群 + 聯絡 ======== -->
+<!-- ======== 第 10 頁：關於 + 聯絡 ======== -->
 <div class="page">
   <div class="page-header">
     <div class="brand"><span>AUTOLAB</span> 阿峰老師</div>
     <div class="page-num">10 / 10</div>
   </div>
 
-  <h2>加入 AI 學習社群</h2>
+  <div class="two-col" style="margin-top: 8px;">
+    <div class="col-left">
+      <h2>關於阿峰老師</h2>
+      <p><strong style="color:#FFF;">黃敬峰（AI峰哥）</strong>，Autolab 創辦人，台灣企業 AI 實戰培訓專家。專注協助企業導入 AI 工具，提升工作效率與競爭力。</p>
 
-  <div class="line-cta">
-    <h3>LINE AI 學員社群</h3>
-    <p>加入社群，獲得 AI 工具最新情報、學員交流互助、阿峰老師不定期直播教學。</p>
-    <p class="line-url">https://line.me/ti/g2/o6oRaGIHTzZ1nEofxnT9Rbv7_ZHAX-rylbJfKA</p>
-  </div>
+      <div class="divider"></div>
 
-  <div class="divider"></div>
-
-  <h3>關於阿峰老師</h3>
-  <p><strong>黃敬峰（AI峰哥）</strong>，Autolab 創辦人，台灣企業 AI 實戰培訓專家。專注協助企業導入 AI 工具，提升工作效率與競爭力。</p>
-
-  <div class="two-col" style="margin-top: 16px;">
-    <div>
-      <h3>培訓特色</h3>
-      <ul>
-        <li>不講理論，全程實作</li>
-        <li>課後提供完整操作指南</li>
-        <li>依企業產業量身設計課程</li>
-        <li>從 2 小時講座到 2 天工作坊</li>
-        <li>課後 LINE 社群持續支援</li>
-      </ul>
+      <div class="two-col">
+        <div>
+          <h3>培訓特色</h3>
+          <ul>
+            <li>不講理論，全程實作</li>
+            <li>課後提供完整操作指南</li>
+            <li>依企業產業量身設計課程</li>
+            <li>從 2 小時講座到 2 天工作坊</li>
+            <li>課後 LINE 社群持續支援</li>
+          </ul>
+        </div>
+        <div>
+          <h3>熱門課程</h3>
+          <ul>
+            <li>AI 辦公室效率革命</li>
+            <li>AI 行銷與內容創作</li>
+            <li>AI 商業簡報實戰</li>
+            <li>AI 數據分析入門</li>
+            <li>主管的 AI 策略思維</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div>
-      <h3>熱門課程</h3>
-      <ul>
-        <li>AI 辦公室效率革命</li>
-        <li>AI 行銷與內容創作</li>
-        <li>AI 商業簡報實戰</li>
-        <li>AI 數據分析入門</li>
-        <li>主管的 AI 策略思維</li>
-      </ul>
+    <div class="col-right" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+      <div style="margin-bottom: 20px;">
+        <p style="font-size: 20px; color: #FFF; font-weight: 700; margin-bottom: 8px; line-height: 1.4;">「會用、懂用、好用、每天用」</p>
+        <p style="font-size: 13px; color: #8B8FA3;">這就是阿峰老師的 AI 培訓心法</p>
+      </div>
+
+      <div style="background: #0F1D32; border: 1px solid #152035; border-radius: 14px; padding: 28px 36px; width: 100%;">
+        <p style="font-size: 18px; color: #00D4FF; font-weight: 800; margin-bottom: 16px;">聯絡資訊</p>
+        <p style="font-size: 14px; color: #C7C7CC; margin-bottom: 6px;">
+          <strong style="color: #00D4FF;">www.autolab.cloud</strong>
+        </p>
+        <p style="font-size: 14px; color: #C7C7CC; margin-bottom: 6px;">
+          <strong style="color: #FFF;">ai@autolab.cloud</strong>
+        </p>
+        <p style="font-size: 14px; color: #8B8FA3;">
+          0976-715-102
+        </p>
+      </div>
     </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <div style="text-align: center; padding: 16px 0;">
-    <p style="font-size: 16px; color: #FFF; font-weight: 700; margin-bottom: 6px;">「會用、懂用、好用、每天用」</p>
-    <p style="font-size: 13px; color: #8B8FA3;">這就是阿峰老師的 AI 培訓心法</p>
-    <div class="divider"></div>
-    <p style="font-size: 13px; color: #C7C7CC;">
-      <strong style="color: #00D4FF;">www.autolab.cloud</strong><br>
-      <strong style="color: #FFF;">ai@autolab.cloud</strong><br>
-      <span style="color: #8B8FA3;">0976-715-102</span>
-    </p>
   </div>
 
   <div class="page-footer">Copyright 2026 Autolab / 阿峰老師. All rights reserved.</div>

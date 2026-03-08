@@ -36,12 +36,17 @@
       <category>阿峰老師</category>
     </item>
     <item>
-      <title>Untitled</title>
-      <link>https://blog.autolab.cloud/untitled/</link>
-      <guid>https://blog.autolab.cloud/untitled/</guid>
+      <title>ChatGPT Skills 正式登場！比 GPT 5.4 更值得注意的新功能</title>
+      <link>https://blog.autolab.cloud/chatgpt-skills-ai-skills-manus-skills/</link>
+      <guid>https://blog.autolab.cloud/chatgpt-skills-ai-skills-manus-skills/</guid>
       <pubDate>Sun, 08 Mar 2026 00:00:00 +0800</pubDate>
       <author>ai@autolab.cloud (黃敬峰)</author>
-      <description></description>
+      <description>ChatGPT 悄悄上線 Skills 功能，讓你幫 AI 設定固定工作流程。本文完整解析 Skills 操作指南、Manus 匯入教學，以及企業如何用 Skills 解決 AI 產出不穩定的問題。</description>
+      <category>AI</category>
+      <category>ChatGPT</category>
+      <category>Skills</category>
+      <category>Manus</category>
+      <category>企業AI</category>
     </item>
     <item>
       <title>Claude Skills 完整教學：Skills vs 提示詞 vs MCP 差在哪？含實戰操作指南｜2026</title>
@@ -131,6 +136,19 @@
       <category>費曼學習法</category>
     </item>
     <item>
+      <title>鍵盤敲越多越危險？AI 時代的個人生存法則｜簡立峰博士觀點</title>
+      <link>https://blog.autolab.cloud/ai-keyboard-work-one-person-company/</link>
+      <guid>https://blog.autolab.cloud/ai-keyboard-work-one-person-company/</guid>
+      <pubDate>Sat, 07 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>前 Google 台灣董事總經理簡立峰博士揭露 AI 時代職場真相：鍵盤工作比例越高越危險，但一人公司是巨大機會。含獨家自我檢測法和一人公司實戰指南。</description>
+      <category>AI</category>
+      <category>職場</category>
+      <category>簡立峰</category>
+      <category>一人公司</category>
+      <category>AI培訓</category>
+    </item>
+    <item>
       <title>2026必懂17款AI工具完全指南｜Gemini、Claude、Cursor、Manus四大分類評測</title>
       <link>https://blog.autolab.cloud/ai-2026-ai/</link>
       <guid>https://blog.autolab.cloud/ai-2026-ai/</guid>
@@ -146,32 +164,6 @@
       <category>2026AI</category>
     </item>
     <item>
-      <title>鍵盤敲越多越危險？AI 時代的個人生存法則｜簡立峰博士觀點</title>
-      <link>https://blog.autolab.cloud/article-2026-03-07/</link>
-      <guid>https://blog.autolab.cloud/article-2026-03-07/</guid>
-      <pubDate>Sat, 07 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>前 Google 台灣董事總經理簡立峰博士揭露 AI 時代職場真相：鍵盤工作比例越高越危險，但一人公司是巨大機會。含獨家自我檢測法和一人公司實戰指南。</description>
-      <category>AI</category>
-      <category>職場</category>
-      <category>簡立峰</category>
-      <category>一人公司</category>
-      <category>AI培訓</category>
-    </item>
-    <item>
-      <title>Satya Nadella 的 10 億美元 AI 豪賭｜3 個不確定性思維 + 實操模板</title>
-      <link>https://blog.autolab.cloud/satya-nadella-ai-ceo-ai-ai/</link>
-      <guid>https://blog.autolab.cloud/satya-nadella-ai-ceo-ai-ai/</guid>
-      <pubDate>Fri, 06 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>微軟 CEO Satya Nadella 在 2019 年砸 10 億投資 OpenAI，本文拆解他的 3 個 AI 決策思維，加上阿峰老師獨家「降低門檻+提高天花板」實操模板，教你用不對稱風險策略擁抱 AI。</description>
-      <category>AI趨勢</category>
-      <category>SatyaNadella</category>
-      <category>微軟CEO</category>
-      <category>OpenAI</category>
-      <category>AI實戰</category>
-    </item>
-    <item>
       <title>10 個素人用 Claude Code 做出的真實產品｜最快 4.5 小時上線</title>
       <link>https://blog.autolab.cloud/claude-code-10-real-products/</link>
       <guid>https://blog.autolab.cloud/claude-code-10-real-products/</guid>
@@ -182,6 +174,19 @@
       <category>Vibe Coding</category>
       <category>AI開發</category>
       <category>實戰案例</category>
+    </item>
+    <item>
+      <title>Satya Nadella 的 10 億美元 AI 豪賭｜3 個不確定性思維 + 實操模板</title>
+      <link>https://blog.autolab.cloud/satya-nadella-ai-ceo/</link>
+      <guid>https://blog.autolab.cloud/satya-nadella-ai-ceo/</guid>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>微軟 CEO Satya Nadella 在 2019 年砸 10 億投資 OpenAI，本文拆解他的 3 個 AI 決策思維，加上阿峰老師獨家「降低門檻+提高天花板」實操模板，教你用不對稱風險策略擁抱 AI。</description>
+      <category>AI趨勢</category>
+      <category>SatyaNadella</category>
+      <category>微軟CEO</category>
+      <category>OpenAI</category>
+      <category>AI實戰</category>
     </item>
     <item>
       <title>MacBook Neo 科技平權：一萬六千九就能學 AI 的時代來了</title>
@@ -199,8 +204,8 @@
     </item>
     <item>
       <title>2028全球智能危機解讀：白領會被AI取代嗎？400家企業培訓的真實觀察</title>
-      <link>https://blog.autolab.cloud/article-2026-03-06/</link>
-      <guid>https://blog.autolab.cloud/article-2026-03-06/</guid>
+      <link>https://blog.autolab.cloud/ai-white-collar-crisis/</link>
+      <guid>https://blog.autolab.cloud/ai-white-collar-crisis/</guid>
       <pubDate>Fri, 06 Mar 2026 00:00:00 +0800</pubDate>
       <author>ai@autolab.cloud (黃敬峰)</author>
       <description>一篇文章讓道瓊跌800點。AI會讓白領大規模失業嗎？幽靈繁榮是什麼？阿峰老師從400多家企業AI培訓經驗，分析白領就業危機的真相與機會。</description>

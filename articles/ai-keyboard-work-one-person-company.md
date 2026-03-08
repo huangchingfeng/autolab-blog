@@ -8,7 +8,7 @@ keywords:
 - 一人公司
 - 簡立峰AI
 - AI職場趨勢
-slug: article-2026-03-07
+slug: ai-keyboard-work-one-person-company
 tags:
 - AI
 - 職場
