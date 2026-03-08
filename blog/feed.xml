@@ -5,13 +5,29 @@
     <link>https://blog.autolab.cloud/</link>
     <description>企業 AI 培訓、Vibe Coding、AI 工具教學，從觀念到落地。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 07 Mar 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 08 Mar 2026 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://blog.autolab.cloud/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://blog.autolab.cloud/static/og-default.png</url>
       <title>阿峰老師 AI 實戰部落格</title>
       <link>https://blog.autolab.cloud/</link>
     </image>
+    <item>
+      <title>Cursor進入戰時狀態：Claude Code 25倍補貼搶市場，AI寫程式工具未來分析</title>
+      <link>https://blog.autolab.cloud/cursor-claude-code-ai/</link>
+      <guid>https://blog.autolab.cloud/cursor-claude-code-ai/</guid>
+      <pubDate>Sun, 08 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>富比世揭露 Claude Code 每月收 200 美元實際成本 5000 美元，Anthropic 用 25 倍補貼搶市場。Cursor 營收 20 億卻面臨 Claude Code 六個月超車的危機。阿峰老師深度分析 AI 寫程式工具大戰。</description>
+      <category>AI</category>
+      <category>Cursor</category>
+      <category>ClaudeCode</category>
+      <category>Anthropic</category>
+      <category>AI寫程式</category>
+      <category>AI工具</category>
+      <category>程式設計</category>
+      <category>AI趨勢</category>
+    </item>
     <item>
       <title>產品經理要消失了？OpenAI 內部 5 個震撼變化＋台灣企業導入 AI 實戰指南</title>
       <link>https://blog.autolab.cloud/ai-openai-codex-ai/</link>
