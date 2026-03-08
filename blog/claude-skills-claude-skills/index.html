@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Skills 完整教學：Skills vs 提示詞 vs MCP 差在哪？含實戰操作指南｜2026 — 阿峰老師</title>
+  <meta name="description" content="一次搞懂 Claude Skills 是什麼、跟提示詞和 MCP 的差別。含從零建立 Skill 的 5 步驟指南、進階組合技玩法、企業培訓實戰經驗分享。">
+  <meta name="keywords" content="Claude Skills, Skills是什麼, Claude Skills教學, Skills vs MCP, AI技能包">
+  <meta name="author" content="黃敬峰（AI峰哥）">
+  <link rel="canonical" href="https://blog.autolab.cloud/claude-skills-claude-skills/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Claude Skills 完整教學：Skills vs 提示詞 vs MCP 差在哪？含實戰操作指南｜2026">
+  <meta property="og:description" content="一次搞懂 Claude Skills 是什麼、跟提示詞和 MCP 的差別。含從零建立 Skill 的 5 步驟指南、進階組合技玩法、企業培訓實戰經驗分享。">
+  <meta property="og:image" content="https://blog.autolab.cloud/claude-skills-claude-skills/thumbnail.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://blog.autolab.cloud/claude-skills-claude-skills/">
+  <meta property="og:site_name" content="阿峰老師 Autolab">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="article:author" content="黃敬峰（AI峰哥）">
+  <meta property="article:published_time" content="2026-03-08T00:00:00+08:00">
+  <meta property="article:modified_time" content="2026-03-08T00:00:00+08:00">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Claude Skills 完整教學：Skills vs 提示詞 vs MCP 差在哪？含實戰操作指南｜2026">
+  <meta name="twitter:description" content="一次搞懂 Claude Skills 是什麼、跟提示詞和 MCP 的差別。含從零建立 Skill 的 5 步驟指南、進階組合技玩法、企業培訓實戰經驗分享。">
+  <meta name="twitter:image" content="https://blog.autolab.cloud/claude-skills-claude-skills/thumbnail.png">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Claude Skills 完整教學：Skills vs 提示詞 vs MCP 差在哪？含實戰操作指南｜2026", "description": "一次搞懂 Claude Skills 是什麼、跟提示詞和 MCP 的差別。含從零建立 Skill 的 5 步驟指南、進階組合技玩法、企業培訓實戰經驗分享。", "author": {"@type": "Person", "name": "黃敬峰（AI峰哥）", "url": "https://www.autolab.cloud"}, "publisher": {"@type": "Organization", "name": "Autolab", "url": "https://www.autolab.cloud", "logo": {"@type": "ImageObject", "url": "https://blog.autolab.cloud/static/og-default.png"}}, "datePublished": "2026-03-08T00:00:00+08:00", "dateModified": "2026-03-08T00:00:00+08:00", "image": "https://blog.autolab.cloud/claude-skills-claude-skills/thumbnail.png", "mainEntityOfPage": "https://blog.autolab.cloud/claude-skills-claude-skills/", "keywords": "Claude Skills, Skills是什麼, Claude Skills教學, Skills vs MCP, AI技能包", "inLanguage": "zh-Hant-TW", "video": {"@type": "VideoObject", "name": "Claude Skills 完整教學：Skills vs 提示詞 vs MCP 差在哪？含實戰操作指南｜2026", "description": "一次搞懂 Claude Skills 是什麼、跟提示詞和 MCP 的差別。含從零建立 Skill 的 5 步驟指南、進階組合技玩法、企業培訓實戰經驗分享。", "thumbnailUrl": "https://img.youtube.com/vi/PV9K6CjZzIs/maxresdefault.jpg", "uploadDate": "2026-03-08T00:00:00+08:00", "embedUrl": "https://www.youtube.com/embed/PV9K6CjZzIs", "url": "https://www.youtube.com/watch?v=PV9K6CjZzIs"}}</script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://blog.autolab.cloud/static/favicon.png">
+  <link rel="icon" type="image/x-icon" href="https://blog.autolab.cloud/static/favicon.ico">
+  <link rel="apple-touch-icon" href="https://blog.autolab.cloud/static/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="阿峰老師 Blog RSS" href="https://blog.autolab.cloud/feed.xml">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://blog.autolab.cloud/static/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至主要內容</a>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="https://www.autolab.cloud" class="nav-brand">
+        <span>Autolab</span> 阿峰老師
+      </a>
+      <div class="nav-links">
+        <a href="https://blog.autolab.cloud/">Blog</a>
+        <a href="https://www.autolab.cloud">官網</a>
+        <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="article-header">
+    <div class="article-meta">
+      <span>2026-03-08</span>
+      <span>黃敬峰（AI峰哥）</span>
+    </div>
+    <h1>Claude Skills 完整教學：Skills vs 提示詞 vs MCP 差在哪？含實戰操作指南｜2026</h1>
+    <div class="card-tags"><span class="tag">ClaudeSkills</span><span class="tag">AI教學</span><span class="tag">Anthropic</span><span class="tag">MCP</span><span class="tag">AI工具</span><span class="tag">AI生產力</span></div>
+  </header>
+
+  <!-- Featured Image -->
+  <div class="featured-image-wrapper"><img src="thumbnail.png" alt="Claude Skills 完整教學：Skills vs 提示詞 vs MCP 差在哪？含實戰操作指南｜2026" class="featured-image" loading="lazy" width="780" height="438"></div>
+
+  <!-- YouTube -->
+  <a href="https://www.youtube.com/watch?v=PV9K6CjZzIs" target="_blank" rel="noopener" class="yt-banner" aria-label="在 YouTube 觀看：Claude Skills 完整教學：Skills vs 提示詞 vs MCP 差在哪？含實戰操作指南｜2026">
+  <img src="https://img.youtube.com/vi/PV9K6CjZzIs/maxresdefault.jpg"
+       onerror="this.src='https://img.youtube.com/vi/PV9K6CjZzIs/hqdefault.jpg'"
+       alt="觀看影片：Claude Skills 完整教學：Skills vs 提示詞 vs MCP 差在哪？含實戰操作指南｜2026" loading="lazy" width="1280" height="720">
+  <div class="yt-play" role="img" aria-hidden="true">&#9654;</div>
+</a>
+
+  <!-- CONTENT -->
+  <main id="main-content">
+  <article class="article-content">
+    <h1 id="claude-skills-skillsmcp">Claude Skills 完整教學：Skills、提示詞、MCP 到底差在哪？（含實戰操作指南）</h1>
+<blockquote>
+<p>本文是 YouTube 影片「Claude Skills 是什麼？3分鐘搞懂 Skills、提示詞、MCP 的差別」的延伸閱讀版。
+影片講了核心觀念，本文加上獨家實戰操作指南和進階應用場景。
+影片版本：<a href="https://www.youtube.com/watch?v=PV9K6CjZzIs">https://www.youtube.com/watch?v=PV9K6CjZzIs</a></p>
+</blockquote>
+<hr />
+<h2 id="_1">影片重點回顧</h2>
+<p>Claude Skills 是 Anthropic 推出的一項功能，讓你可以把重複性的工作流程打包成「技能包」，AI 在需要的時候自動調用。它跟提示詞最大的差別是：提示詞關掉對話就忘了，Skills 永久可用。而且 Skills 不佔用上下文窗口，一次任務可以同時調用多個 Skills。</p>
+<p>跟 MCP 的差別也很清楚：AI 是大腦、Skills 是操作手冊、MCP 是門禁卡。它們是搭配使用，不是互相競爭。</p>
+<hr />
+<h2 id="claude-skills-skill">【獨家】Claude Skills 實戰操作指南：從零開始建立你的第一個 Skill</h2>
+<p>影片裡講了 Skills 的概念，但你可能會問：「那我實際上要怎麼建立一個 Skill？」這裡給你一個完整的 step-by-step 指南。</p>
+<h3 id="step-1">Step 1：找出你最常重複的工作</h3>
+<p>先不急著動手，花 5 分鐘想一下：你每週花最多時間在哪些重複性工作上？</p>
+<p>常見的高價值 Skills 場景：
+- 每週寫週報或會議紀錄
+- 定期整理數據做分析報告
+- 固定格式的客戶提案或簡報
+- 社群貼文的撰寫和排版
+- 程式碼的 review 和重構</p>
+<h3 id="step-2-skill">Step 2：定義 Skill 的核心要素</h3>
+<p>一個好的 Skill 至少要包含這四個要素：</p>
+<table>
+<thead>
+<tr>
+<th>要素</th>
+<th>說明</th>
+<th>範例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>觸發條件</td>
+<td>什麼時候該啟動這個 Skill</td>
+<td>「當用戶要求寫週報時」</td>
+</tr>
+<tr>
+<td>輸入格式</td>
+<td>AI 需要什麼資訊</td>
+<td>「本週完成的事項清單」</td>
+</tr>
+<tr>
+<td>處理流程</td>
+<td>具體的操作步驟</td>
+<td>「分類→摘要→排版→檢查」</td>
+</tr>
+<tr>
+<td>輸出標準</td>
+<td>成品要長什麼樣</td>
+<td>「300 字以內、含時間軸」</td>
+</tr>
+</tbody>
+</table>
+<h3 id="step-3-skill">Step 3：建立 Skill 資料夾結構</h3>
+<p>在 Claude 的設定中，一個 Skill 本質上就是一個資料夾，裡面可以放：</p>
+<div class="highlight"><pre><span></span><code>my-weekly-report-skill/
+├── SKILL.md          ← 主要指令檔（必要）
+├── template.md       ← 週報模板
+├── examples/         ← 過去的好範例
+│   ├── week1.md
+│   └── week2.md
+└── guidelines.md     ← 寫作風格指南
+</code></pre></div>
+
+<p><code>SKILL.md</code> 是最重要的檔案，它告訴 AI 這個 Skill 的觸發條件、處理流程和輸出標準。</p>
+<h3 id="step-4-skillmd">Step 4：寫好 SKILL.md</h3>
+<p>這是你 Skill 的「大腦」，範例：</p>
+<div class="highlight"><pre><span></span><code><span class="gh"># 週報撰寫 Skill</span>
+
+<span class="gu">## 觸發條件</span>
+當用戶提到「寫週報」、「weekly report」、「本週報告」時觸發。
+
+<span class="gu">## 輸入</span>
+<span class="k">-</span><span class="w"> </span>本週完成事項
+<span class="k">-</span><span class="w"> </span>下週計畫
+<span class="k">-</span><span class="w"> </span>遇到的問題（選填）
+
+<span class="gu">## 處理流程</span>
+<span class="k">1.</span> 將完成事項按重要性排序
+<span class="k">2.</span> 每項用一句話摘要
+<span class="k">3.</span> 套用 template.md 格式
+<span class="k">4.</span> 檢查字數不超過 300 字
+
+<span class="gu">## 輸出格式</span>
+參考 template.md
+</code></pre></div>
+
+<h3 id="step-5">Step 5：測試和迭代</h3>
+<p>建好之後，實際跑幾次，看看 AI 的輸出是不是你要的。常見需要調整的地方：
+- 觸發條件太廣（誤觸）或太窄（觸發不了）
+- 輸出格式跟你想的不一樣
+- 缺少某些步驟導致品質不穩定</p>
+<hr />
+<h2 id="skills">【獨家】進階玩法：Skills 的組合技</h2>
+<p>影片提到一次任務可以調用多個 Skills，這在實際應用上有非常多可能性。</p>
+<h3 id="1">組合技 1：內容生產線</h3>
+<div class="highlight"><pre><span></span><code>逐字稿 Skill → 文章改寫 Skill → SEO 優化 Skill → 社群貼文 Skill
+</code></pre></div>
+
+<p>一段播客錄音進去，出來的是完整的文章 + 10 篇社群貼文 + SEO 優化建議。</p>
+<h3 id="2">組合技 2：數據分析流水線</h3>
+<div class="highlight"><pre><span></span><code>數據清理 Skill → 統計分析 Skill → 圖表生成 Skill → 報告撰寫 Skill
+</code></pre></div>
+
+<p>原始 CSV 丟進去，出來的是完整的分析報告含圖表。這就是為什麼有人說三四個小時的工作可以壓縮到十分鐘。</p>
+<h3 id="3">組合技 3：客戶提案自動化</h3>
+<div class="highlight"><pre><span></span><code>需求分析 Skill → 方案設計 Skill → 簡報生成 Skill → 報價計算 Skill
+</code></pre></div>
+
+<p>客戶的需求描述進去，出來的是完整的提案簡報 + 報價單。</p>
+<hr />
+<h2 id="_2">阿峰觀點</h2>
+<p>我帶過台積電、國泰金控、中華電信等超過 400 家企業做 AI 培訓，發現一個有趣的現象：大部分公司不是不想用 AI，而是用了之後覺得「效果不穩定」。</p>
+<p>為什麼不穩定？因為每次都靠提示詞臨場發揮，結果就像請一個實習生，今天做得好，明天又退步了。</p>
+<p>Skills 解決的就是這個問題。一旦你把流程標準化、打包成技能包，AI 的輸出就會變得穩定、可預測、可複製。</p>
+<p>我認為 Skills 是目前被嚴重低估的 AI 功能。不只是 Claude，未來所有大型語言模型都會採用類似的概念。現在學會，等於提前卡位。</p>
+<hr />
+<h2 id="_3">本文提到的資源</h2>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>連結</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude</td>
+<td>claude.ai</td>
+<td>Anthropic 的 AI 助手，Skills 功能所在</td>
+</tr>
+<tr>
+<td>Claude Skills 官方倉庫</td>
+<td>Claude 設定頁面 → 視力技能</td>
+<td>Anthropic 官方開源的 Skills 合集</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>📌 企業 AI 培訓服務（服務過台積電、國泰金控、中華電信等 400+ 企業）
+→ <a href="https://www.autolab.cloud">https://www.autolab.cloud</a></p>
+<hr />
+<h3 id="_4">關於作者</h3>
+<p>黃敬峰（AI峰哥），企業 AI 實戰培訓專家，400+ 企業合作、10,000+ 學員。
+核心心法：「會用、懂用、好用、每天用」
+官網：<a href="https://www.autolab.cloud">https://www.autolab.cloud</a></p>
+<hr />
+  </article>
+  </main>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <div class="cta-box-inner">
+      <h3>想用 AI 解決真問題？</h3>
+      <p>加入阿峰老師的 AI 實戰社群，一起從觀念到落地。</p>
+      <a href="https://reurl.cc/GGlLNx" class="cta-btn">加入 LINE 社群</a>
+      <div class="cta-links">
+        <a href="https://www.autolab.cloud">官網</a>
+        <a href="mailto:ai@autolab.cloud">聯繫合作</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2026 Autolab — 黃敬峰（AI峰哥）. All rights reserved.</p>
+    <p style="margin-top:8px">
+      <a href="https://blog.autolab.cloud/">Blog</a> ·
+      <a href="https://www.autolab.cloud">官網</a> ·
+      <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+    </p>
+  </footer>
+</body>
+</html>
