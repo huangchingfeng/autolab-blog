@@ -116,15 +116,18 @@ img { max-width: 100%; height: auto; display: block; }
   display: flex; flex-wrap: wrap; gap: 6px;
 }
 .tag {
-  font-size: .75rem; color: var(--primary);
-  background: rgba(0,212,255,.08);
-  border: 1px solid rgba(0,212,255,.2);
+  font-size: .75rem;
   padding: 3px 12px; border-radius: 20px;
   transition: background .2s;
 }
-.tag:hover {
-  background: rgba(0,212,255,.15);
-}
+/* 6 色系 tag，用 data-color 區分 */
+.tag[data-color="cyan"]   { color: #00D4FF; background: rgba(0,212,255,.10); border: 1px solid rgba(0,212,255,.25); }
+.tag[data-color="orange"] { color: #FF6B35; background: rgba(255,107,53,.10); border: 1px solid rgba(255,107,53,.25); }
+.tag[data-color="green"]  { color: #34D399; background: rgba(52,211,153,.10); border: 1px solid rgba(52,211,153,.25); }
+.tag[data-color="purple"] { color: #A78BFA; background: rgba(167,139,250,.10); border: 1px solid rgba(167,139,250,.25); }
+.tag[data-color="pink"]   { color: #F472B6; background: rgba(244,114,182,.10); border: 1px solid rgba(244,114,182,.25); }
+.tag[data-color="yellow"] { color: #FBBF24; background: rgba(251,191,36,.10); border: 1px solid rgba(251,191,36,.25); }
+.tag:hover { filter: brightness(1.3); }
 
 /* ── 文章頁 ── */
 .article-header {

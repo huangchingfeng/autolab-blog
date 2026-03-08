@@ -18,8 +18,23 @@ import sys
 from pathlib import Path
 from string import Template
 
+import hashlib
 import markdown
 import yaml
+
+# ============================================================
+# Tag 顏色
+# ============================================================
+TAG_COLORS = ["cyan", "orange", "green", "purple", "pink", "yellow"]
+
+def _tag_color(tag_name):
+    """根據 tag 名稱穩定分配顏色"""
+    h = int(hashlib.md5(tag_name.encode()).hexdigest(), 16)
+    return TAG_COLORS[h % len(TAG_COLORS)]
+
+def _tag_html(tag_name):
+    color = _tag_color(str(tag_name))
+    return f'<span class="tag" data-color="{color}">{html.escape(str(tag_name))}</span>'
 
 # ============================================================
 # 路徑
@@ -319,7 +334,7 @@ def render_article(meta, html_content, all_articles=None):
     elif meta.get("og_image"):
         og_image = meta["og_image"]
 
-    tags_html = "".join(f'<span class="tag">{html.escape(str(t))}</span>' for t in meta.get("tags", []))
+    tags_html = "".join(_tag_html(t) for t in meta.get("tags", []))
     yt_html = youtube_embed(meta.get("youtube_id"), title)
     json_ld = build_json_ld({**meta, "og_image": og_image})
     canonical = meta.get("canonical_url") or f"{SITE_URL}/{slug}/"
@@ -389,7 +404,7 @@ def render_index(all_articles):
             thumb = f'{a["slug"]}/thumbnail.png'
         else:
             thumb = "static/og-default.png"
-        tags_html = "".join(f'<span class="tag">{t}</span>' for t in a.get("tags", [])[:3])
+        tags_html = "".join(_tag_html(t) for t in a.get("tags", [])[:3])
         cards.append(f"""<a href="{a['slug']}/" class="card">
   <img class="card-thumb" src="{thumb}" alt="{a.get('title', '')}" loading="lazy">
   <div class="card-body">
