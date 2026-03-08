@@ -48,9 +48,12 @@ def _find_font(names, fallback=""):
     return fallback
 
 
-FONT_CN_BOLD = _find_font(["NotoSansCJKtc-Bold.otf", "NotoSansCJK-Bold.ttc"])
+FONT_CN_BLACK = _find_font(["NotoSansCJKtc-Black.otf", "NotoSansCJK-Black.ttc"])
+FONT_CN_BOLD = _find_font(["NotoSansCJKtc-Bold.otf", "NotoSansCJK-Bold.ttc"], FONT_CN_BLACK)
 FONT_CN_REGULAR = _find_font(["NotoSansCJKtc-Regular.otf", "NotoSansCJK-Regular.ttc"], FONT_CN_BOLD)
 FONT_CN_MEDIUM = _find_font(["NotoSansCJKtc-Medium.otf", "NotoSansCJK-Medium.ttc"], FONT_CN_BOLD)
+# 標題用最粗的 Black，沒有 Black 就 fallback 到 Bold
+FONT_TITLE = FONT_CN_BLACK or FONT_CN_BOLD
 
 
 def _font(path, size):
@@ -62,7 +65,7 @@ def _font(path, size):
 # ============================================================
 
 def _wrap_text_smart(text, font, max_width, max_lines=3):
-    """智慧斷行：遇到英文單詞不切斷"""
+    """智慧斷行：遇到英文單詞不切斷，自動消除孤行"""
     lines = []
     current = ""
     i = 0
@@ -92,6 +95,21 @@ def _wrap_text_smart(text, font, max_width, max_lines=3):
 
     if current.strip():
         lines.append(current.strip())
+
+    # 消除孤行（orphan）：最後一行少於 6 字時，從倒數第二行末尾移字過去
+    if len(lines) >= 2:
+        last = lines[-1]
+        if len(last) < 6 and len(lines[-2]) > 6:
+            # 計算需要從倒數第二行移多少字，讓最後一行至少 6 字
+            move_count = 6 - len(last)
+            prev = lines[-2]
+            new_prev = prev[:-move_count].strip()
+            new_last = prev[-move_count:] + last
+            # 驗證移完後最後一行不超寬
+            bbox_last = font.getbbox(new_last)
+            if (bbox_last[2] - bbox_last[0]) <= max_width and len(new_prev) >= 4:
+                lines[-2] = new_prev
+                lines[-1] = new_last
 
     if len(lines) > max_lines:
         lines = lines[:max_lines]
@@ -139,153 +157,86 @@ def get_all_articles(articles_dir):
 # ============================================================
 
 def generate_banner(title, tags, date_str, slug, description, output_dir):
-    """生成單篇文章的 banner 圖片 (1200x630) — 大字置中風格"""
+    """生成單篇文章的 banner 圖片 (1200x630) — 極簡大字風格
+
+    設計理念（奧美風格）：
+    一張 Banner 只說一件事。背景給氣氛，標題給衝擊，品牌色給記憶點。
+    只保留 3 個元素：標題文字 + 左側色帶 + 底部微光。
+    """
+    # 1. 純色深底背景
     img = Image.new("RGB", (BANNER_W, BANNER_H), DEEP_NAVY)
     draw = ImageDraw.Draw(img)
 
-    # 1. 背景漸層
-    for y in range(BANNER_H):
-        ratio = y / BANNER_H
-        r = int(DEEP_NAVY[0] * (1 - ratio * 0.3))
-        g = int(DEEP_NAVY[1] * (1 - ratio * 0.3))
-        b = int(DEEP_NAVY[2] * (1 - ratio * 0.3))
-        draw.line([(0, y), (BANNER_W, y)], fill=(r, g, b))
-
-    # 2. 微弱幾何裝飾（比之前更淡）
+    # 2. 底部 Cyan 微光漸層（極淡，營造高級感）
     overlay = Image.new("RGBA", (BANNER_W, BANNER_H), (0, 0, 0, 0))
     overlay_draw = ImageDraw.Draw(overlay)
-    overlay_draw.ellipse(
-        [(BANNER_W - 300, -100), (BANNER_W + 100, 300)],
-        fill=(CYAN[0], CYAN[1], CYAN[2], 12)
-    )
-    overlay_draw.ellipse(
-        [(-100, BANNER_H - 200), (200, BANNER_H + 100)],
-        fill=(CYAN[0], CYAN[1], CYAN[2], 8)
-    )
+    glow_start_y = 480
+    for y in range(glow_start_y, BANNER_H):
+        ratio = (y - glow_start_y) / (BANNER_H - glow_start_y)
+        alpha = int(20 * ratio)  # 最濃也只有 alpha=20，極克制
+        overlay_draw.line([(0, y), (BANNER_W, y)],
+                          fill=(CYAN[0], CYAN[1], CYAN[2], alpha))
     img = img.convert("RGBA")
     img = Image.alpha_composite(img, overlay)
     img = img.convert("RGB")
     draw = ImageDraw.Draw(img)
 
-    # 3. 計算整體垂直佈局（置中）
-    # 結構：分類標籤 → 主標題（大字）→ 副標題/描述 → 底線
+    # 3. 左側品牌色帶（5px 寬，全高，品牌識別錨點）
+    draw.rectangle([(48, 0), (53, BANNER_H)], fill=CYAN)
 
-    # 分類標籤（第一個 tag）
-    tag_label = tags[0] if tags else "AI 實戰"
-    tag_font = _font(FONT_CN_BOLD, 18)
-
-    # 主標題 — 動態字體大小（根據標題長度調整）
+    # 4. 標題 — 動態字級，一眼看完
     title_clean = title.strip()
-    if len(title_clean) <= 15:
-        title_size = 72
-        max_lines = 2
-    elif len(title_clean) <= 25:
-        title_size = 64
-        max_lines = 2
-    elif len(title_clean) <= 40:
-        title_size = 56
-        max_lines = 3
-    else:
-        title_size = 48
-        max_lines = 3
+    max_text_w = 1080  # 左右各留 60px
+    max_block_h = 500  # 文字區塊最大高度（上下各留 65px）
 
-    title_font = _font(FONT_CN_BOLD, title_size)
-    line_height = int(title_size * 1.35)
-    max_text_w = BANNER_W - 160  # 左右各留 80px
+    # 字級候選列表（固定 3 行，字盡量大）
+    size_candidates = [
+        (96, 3),   # 大字 3 行
+        (88, 3),   # 大字 3 行
+        (80, 3),   # 中大字 3 行
+        (72, 3),   # 中字 3 行
+        (64, 3),   # 中字 3 行
+        (56, 3),   # 小字 3 行
+        (48, 3),   # 最小 3 行
+    ]
 
-    title_lines = _wrap_text_smart(title_clean, title_font, max_text_w, max_lines=max_lines)
+    title_font = None
+    title_lines = None
+    title_size = 56
+    line_height = 78
 
-    # 副標題（description，限制在畫面寬度內）
-    desc_font = _font(FONT_CN_REGULAR, 22)
-    desc_max_w = BANNER_W - 200  # 左右各留 100px
-    desc_text = ""
-    if description:
-        # 逐字計算，確保不超出寬度
-        for ch in description:
-            test = desc_text + ch
-            tw = _text_width(draw, test + "…", desc_font)
-            if tw > desc_max_w:
-                desc_text += "…"
+    for size, max_lines in size_candidates:
+        test_font = _font(FONT_TITLE, size)
+        test_lh = int(size * 1.4)
+        test_lines = _wrap_text_smart(title_clean, test_font, max_text_w, max_lines=max_lines + 1)
+
+        # 檢查：是否在 max_lines 行內塞得下（沒被截斷）
+        if len(test_lines) <= max_lines:
+            block_h = len(test_lines) * test_lh
+            if block_h <= max_block_h:
+                title_font = test_font
+                title_lines = test_lines
+                title_size = size
+                line_height = test_lh
                 break
-            desc_text = test
-        else:
-            # 沒超出，不加省略號
-            pass
 
-    # 計算總高度來做垂直置中
-    tag_h = 32
-    gap_tag_title = 24
+    # 最終 fallback
+    if title_font is None:
+        title_size = 48
+        title_font = _font(FONT_TITLE, title_size)
+        line_height = int(title_size * 1.4)
+        title_lines = _wrap_text_smart(title_clean, title_font, max_text_w, max_lines=4)
+
+    # 垂直視覺居中（光學中心比數學中心略低）
     title_block_h = len(title_lines) * line_height
-    gap_title_desc = 28
-    desc_h = 30 if desc_text else 0
-    gap_desc_line = 30
-    line_deco_h = 4
+    block_center_y = BANNER_H // 2 + 10  # 光學中心微偏下
+    block_top = block_center_y - title_block_h // 2
 
-    total_h = tag_h + gap_tag_title + title_block_h + gap_title_desc + desc_h + gap_desc_line + line_deco_h
-    start_y = (BANNER_H - total_h) // 2
-
-    # 4. 繪製分類標籤 pill（置中）
-    tag_tw = _text_width(draw, tag_label, tag_font)
-    pill_w = tag_tw + 32
-    pill_h = 32
-    pill_x = (BANNER_W - pill_w) // 2
-    pill_y = start_y
-
-    # pill 背景（深色半透明效果）
-    pill_bg = (20, 50, 65)
-    draw.rounded_rectangle(
-        [(pill_x, pill_y), (pill_x + pill_w, pill_y + pill_h)],
-        radius=pill_h // 2,
-        fill=pill_bg,
-        outline=CYAN,
-        width=2
-    )
-    draw.text(
-        (pill_x + 16, pill_y + 5),
-        tag_label,
-        font=tag_font,
-        fill=CYAN
-    )
-
-    # 5. 繪製主標題（大字 Bold，置中）
-    title_y = pill_y + pill_h + gap_tag_title
-    for line in title_lines:
-        lw = _text_width(draw, line, title_font)
-        lx = (BANNER_W - lw) // 2
-        draw.text((lx, title_y), line, font=title_font, fill=WHITE)
-        title_y += line_height
-
-    # 6. 繪製副標題描述（CYAN 色，置中）
-    if desc_text:
-        desc_y = title_y + gap_title_desc
-        dw = _text_width(draw, desc_text, desc_font)
-        dx = (BANNER_W - dw) // 2
-        draw.text((dx, desc_y), desc_text, font=desc_font, fill=CYAN)
-        current_y = desc_y + desc_h
-    else:
-        current_y = title_y
-
-    # 7. 底部 CYAN 短線裝飾（置中）
-    line_w = 80
-    line_y = current_y + gap_desc_line
-    line_x = (BANNER_W - line_w) // 2
-    draw.line([(line_x, line_y), (line_x + line_w, line_y)], fill=CYAN, width=4)
-
-    # 8. 左下角品牌小字
-    brand_font = _font(FONT_CN_REGULAR, 16)
-    draw.text((40, BANNER_H - 50), "阿峰老師 Autolab", font=brand_font, fill=GRAY_400)
-
-    # 9. 右下角日期
-    if date_str:
-        date_font = _font(FONT_CN_REGULAR, 16)
-        date_display = str(date_str)
-        date_w = _text_width(draw, date_display, date_font)
-        draw.text(
-            (BANNER_W - 40 - date_w, BANNER_H - 50),
-            date_display,
-            font=date_font,
-            fill=GRAY_400
-        )
+    # 繪製標題（水平置中，白色大字）
+    for i, line in enumerate(title_lines):
+        line_center_y = block_top + i * line_height + line_height // 2
+        draw.text((BANNER_W // 2, line_center_y), line,
+                  font=title_font, fill=WHITE, anchor="mm")
 
     # 儲存 banner + thumbnail
     slug_dir = Path(output_dir) / slug
