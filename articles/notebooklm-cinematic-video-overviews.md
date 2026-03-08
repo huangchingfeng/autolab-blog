@@ -1,12 +1,11 @@
 ---
 author: 黃敬峰（AI峰哥）
 date: '2026-03-08'
-description: '** Google NotebookLM 推出 Cinematic Video Overviews，結合 Gemini 3、Veo 3、Nano
+description: 'Google NotebookLM 推出 Cinematic Video Overviews，結合 Gemini 3、Veo 3、Nano
   Banana Pro 三大 AI 模型，把簡報自動變成電影感影片。功能解析、應用場景與實戰建議。'
 keywords: []
 slug: notebooklm-cinematic-video-overviews
 tags:
-- '**'
 - NotebookLM
 - Google
 - AI
@@ -21,7 +20,7 @@ tags:
 - '3'
 - 企業培訓
 - 阿峰老師
-title: '** NotebookLM Cinematic Video Overviews 完整解析｜簡報秒變電影感影片'
+title: 'NotebookLM Cinematic Video Overviews 完整解析｜簡報秒變電影感影片'
 youtube_id: ''
 ---
 
