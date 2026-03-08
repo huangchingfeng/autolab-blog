@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemini 3.1 Pro 實測：5 分鐘做出高質感網頁｜AI 網頁生成教學 — 阿峰老師</title>
+  <meta name="description" content="Google Gemini 3.1 Pro 實測報告，只要 5 分鐘就能生成完整 Landing Page。三個實測場景分析、操作指南、適用對象一次看完。">
+  <meta name="keywords" content="Gemini 3.1 Pro、AI 做網頁、Landing Page 生成、AI 網頁設計、Gemini 網頁">
+  <meta name="author" content="黃敬峰（AI峰哥）">
+  <link rel="canonical" href="https://blog.autolab.cloud/gemini-3-1-pro-ai-landing-page-ai-gemini/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Gemini 3.1 Pro 實測：5 分鐘做出高質感網頁｜AI 網頁生成教學">
+  <meta property="og:description" content="Google Gemini 3.1 Pro 實測報告，只要 5 分鐘就能生成完整 Landing Page。三個實測場景分析、操作指南、適用對象一次看完。">
+  <meta property="og:image" content="https://blog.autolab.cloud/gemini-3-1-pro-ai-landing-page-ai-gemini/thumbnail.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://blog.autolab.cloud/gemini-3-1-pro-ai-landing-page-ai-gemini/">
+  <meta property="og:site_name" content="阿峰老師 Autolab">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="article:author" content="黃敬峰（AI峰哥）">
+  <meta property="article:published_time" content="2026-03-08T00:00:00+08:00">
+  <meta property="article:modified_time" content="2026-03-08T00:00:00+08:00">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gemini 3.1 Pro 實測：5 分鐘做出高質感網頁｜AI 網頁生成教學">
+  <meta name="twitter:description" content="Google Gemini 3.1 Pro 實測報告，只要 5 分鐘就能生成完整 Landing Page。三個實測場景分析、操作指南、適用對象一次看完。">
+  <meta name="twitter:image" content="https://blog.autolab.cloud/gemini-3-1-pro-ai-landing-page-ai-gemini/thumbnail.png">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Gemini 3.1 Pro 實測：5 分鐘做出高質感網頁｜AI 網頁生成教學", "description": "Google Gemini 3.1 Pro 實測報告，只要 5 分鐘就能生成完整 Landing Page。三個實測場景分析、操作指南、適用對象一次看完。", "author": {"@type": "Person", "name": "黃敬峰（AI峰哥）", "url": "https://www.autolab.cloud"}, "publisher": {"@type": "Organization", "name": "Autolab", "url": "https://www.autolab.cloud", "logo": {"@type": "ImageObject", "url": "https://blog.autolab.cloud/static/og-default.png"}}, "datePublished": "2026-03-08T00:00:00+08:00", "dateModified": "2026-03-08T00:00:00+08:00", "image": "https://blog.autolab.cloud/gemini-3-1-pro-ai-landing-page-ai-gemini/thumbnail.png", "mainEntityOfPage": "https://blog.autolab.cloud/gemini-3-1-pro-ai-landing-page-ai-gemini/", "keywords": "Gemini 3.1 Pro、AI 做網頁、Landing Page 生成、AI 網頁設計、Gemini 網頁", "inLanguage": "zh-Hant-TW"}</script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://blog.autolab.cloud/static/favicon.png">
+  <link rel="icon" type="image/x-icon" href="https://blog.autolab.cloud/static/favicon.ico">
+  <link rel="apple-touch-icon" href="https://blog.autolab.cloud/static/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="阿峰老師 Blog RSS" href="https://blog.autolab.cloud/feed.xml">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://blog.autolab.cloud/static/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至主要內容</a>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="https://www.autolab.cloud" class="nav-brand">
+        <span>Autolab</span> 阿峰老師
+      </a>
+      <div class="nav-links">
+        <a href="https://blog.autolab.cloud/">Blog</a>
+        <a href="https://www.autolab.cloud">官網</a>
+        <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="article-header">
+    <div class="article-meta">
+      <span>2026-03-08</span>
+      <span>黃敬峰（AI峰哥）</span>
+    </div>
+    <h1>Gemini 3.1 Pro 實測：5 分鐘做出高質感網頁｜AI 網頁生成教學</h1>
+    <div class="card-tags"><span class="tag">AI</span><span class="tag">Gemini</span><span class="tag">網頁設計</span><span class="tag">LandingPage</span><span class="tag">AI工具</span></div>
+  </header>
+
+  <!-- Featured Image -->
+  <div class="featured-image-wrapper"><img src="thumbnail.png" alt="Gemini 3.1 Pro 實測：5 分鐘做出高質感網頁｜AI 網頁生成教學" class="featured-image" loading="lazy" width="780" height="438"></div>
+
+  <!-- YouTube -->
+  
+
+  <!-- CONTENT -->
+  <main id="main-content">
+  <article class="article-content">
+    <h1 id="gemini-31-pro-5">Gemini 3.1 Pro 實測：5 分鐘做出高質感網頁，外包還有市場嗎？</h1>
+<blockquote>
+<p>本文是社群貼文的完整延伸版。
+社群版講了核心觀念，本文加上獨家深度分析和操作指南。</p>
+</blockquote>
+<hr />
+<h2 id="_1">重點回顧</h2>
+<p>Google 在 2026 年 2 月 19 日釋出 Gemini Pro 3.1 版，帶來兩大升級：抽象推理能力提升超過 2 倍、SVG 動畫能力大幅強化。實測結果顯示，只要 5 分鐘就能生成一個包含 Hero Section、產品卡片、滾動動畫的完整 Landing Page。這對中小企業來說，意味著不用花 3 萬外包、不用等兩週，自己就能搞定活動頁面。</p>
+<hr />
+<h2 id="gemini-31-pro">【獨家】Gemini 3.1 Pro 網頁生成完整實測報告</h2>
+<h3 id="_2">版號背後的意義</h3>
+<p>在軟體版本管理中，3.0 到 3.1 是「次版本」升級。意思是核心架構不變，但某些特定功能有顯著提升。這次 Google 選擇升級次版號而非修訂版號，代表改進幅度不小。</p>
+<h3 id="_3">三個實測場景詳細分析</h3>
+<p><strong>場景一：Windows 11 風格網頁介面</strong></p>
+<p>我請 Gemini 生成一個類似 Windows 11 桌面的網頁。結果大概 5 分鐘就完成了，包含桌面圖示排列、底部工作列、視窗切換效果。最厲害的是，所有程式碼都在一個 HTML 檔案裡，不需要額外安裝任何東西，直接用瀏覽器打開就能跑。</p>
+<p>這代表什麼？代表 AI 不只能做「網頁」，它能做「應用程式介面」。對企業來說，內部的簡單工具頁面、Dashboard、操作介面，都可以用這種方式快速產出。</p>
+<p><strong>場景二：信用卡 3D 翻轉效果</strong></p>
+<p>我測試了一張信用卡的翻轉動畫。正面有完整的卡號設計、品牌 Logo 佈局，背面有磁條和安全碼。翻轉效果全部用 CSS 實現，不需要任何 JavaScript 動畫庫。</p>
+<p>以前這種效果需要前端工程師花一兩個小時調整 CSS transform 和 perspective 參數。現在一句「做一張信用卡正反面翻轉效果」就搞定了。</p>
+<p><strong>場景三：完整 Landing Page（最實用）</strong></p>
+<p>Landing Page 是現代行銷的標配。你在 Facebook 看到廣告點進去的那個頁面，就是 Landing Page。它的結構通常包括：</p>
+<ol>
+<li><strong>Hero Section</strong>：全螢幕展示，大標題 + 副標題 + 行動按鈕</li>
+<li><strong>價值主張區</strong>：多張卡片展示產品特色</li>
+<li><strong>見證區</strong>：客戶評價或使用案例</li>
+<li><strong>CTA 區</strong>：表單、購買按鈕或註冊連結</li>
+</ol>
+<p>我只花了 3 分鐘，Gemini 就產出一個完整版本，包含滾動動畫、視差效果、深色主題設計。而且是響應式的，手機上看起來也很好。</p>
+<h3 id="svg">SVG 動畫：被低估的殺手功能</h3>
+<p>SVG（Scalable Vector Graphics）是用文字描述的 2D 向量圖形。跟 PNG、JPG 這些像素圖不同，SVG 放大縮小不會模糊，檔案又特別小，天生適合網頁使用。</p>
+<p>Gemini 3.1 Pro 的 SVG 動畫能力大幅強化，這意味著它能在網頁裡做出流暢的動態 Logo、圖表動畫、轉場效果，這些以前都需要設計師用 Illustrator 或 After Effects 花很多時間製作。</p>
+<hr />
+<h2 id="ai">【獨家】AI 做網頁的實用操作指南</h2>
+<h3 id="ai_1">誰最適合用 AI 做網頁？</h3>
+<table>
+<thead>
+<tr>
+<th>對象</th>
+<th>適合場景</th>
+<th>預期效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中小企業老闆</td>
+<td>活動頁面、產品介紹、徵才頁</td>
+<td>省 3 萬外包費，幾分鐘搞定</td>
+</tr>
+<tr>
+<td>行銷人員</td>
+<td>Landing Page A/B 測試</td>
+<td>快速產出多版本，不用等工程師</td>
+</tr>
+<tr>
+<td>業務人員</td>
+<td>客製化提案頁面</td>
+<td>每個客戶一個專屬頁面</td>
+</tr>
+<tr>
+<td>設計師</td>
+<td>快速原型、互動效果驗證</td>
+<td>跳過寫 code 的步驟</td>
+</tr>
+<tr>
+<td>教育訓練</td>
+<td>課程介紹頁、學員作品展示</td>
+<td>標準化製作流程</td>
+</tr>
+</tbody>
+</table>
+<h3 id="prompt">使用技巧（Prompt 寫法）</h3>
+<p>好的 Prompt 決定了生成品質。幾個關鍵原則：</p>
+<ol>
+<li><strong>明確描述結構</strong>：「做一個 Landing Page，包含 Hero Section、3 個產品卡片、客戶見證區、底部 CTA」</li>
+<li><strong>指定風格</strong>：「深色科技風」「簡約白底」「漸層背景」</li>
+<li><strong>說明互動效果</strong>：「卡片 hover 放大」「滾動時淡入」「按鈕有微動畫」</li>
+<li><strong>提供文案</strong>：把實際的標題、副標題、按鈕文字直接給它</li>
+</ol>
+<h3 id="_4">注意事項</h3>
+<p>AI 生成的網頁不是萬能的。以下場景還是需要工程師：</p>
+<ul>
+<li>需要後端功能的網站（會員系統、金流串接、資料庫）</li>
+<li>複雜的 Web App（如 CRM、ERP）</li>
+<li>需要持續維護更新的大型網站</li>
+<li>有嚴格安全要求的系統</li>
+</ul>
+<p>AI 最擅長的是「前端展示型頁面」，也就是不需要後端邏輯、純粹展示內容的網頁。</p>
+<hr />
+<h2 id="_5">阿峰觀點</h2>
+<p>我帶過 400 多家企業做 AI 培訓，每次講到「AI 會不會取代我」這個問題，現場氣氛都會變得有點緊張。</p>
+<p>我的觀察是這樣的：AI 不會取代整個職位，但會取代「工作中可以被自動化的部分」。</p>
+<p>以前端工程師為例。寫一個 Landing Page 可能佔他 10% 的工作量。AI 能做的是這 10%。剩下的 90%——系統架構設計、效能優化、複雜互動邏輯、團隊協作——這些 AI 目前做不了。</p>
+<p>但如果你是一個「只會切版的前端」，那確實要擔心。因為你最主要的工作，AI 已經做得比你快了。</p>
+<p>真正聰明的做法是：把 AI 當成你的加速器。用它快速產出第一版，你來做最後的調整和優化。這樣你的產出速度會快好幾倍，價值反而提升了。</p>
+<p>你是機長，AI 是機組人員。學會指揮，才能飛得又快又穩。</p>
+<hr />
+<h2 id="_6">本文提到的資源</h2>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>連結</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gemini</td>
+<td><a href="https://gemini.google.com">https://gemini.google.com</a></td>
+<td>Google AI 助手，3.1 Pro 版本</td>
+</tr>
+<tr>
+<td>Google AI Studio</td>
+<td><a href="https://aistudio.google.com">https://aistudio.google.com</a></td>
+<td>開發者版本，完整 API 存取</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>企業想導入 AI？阿峰老師服務過台積電、國泰金控、中華電信等超過 400 家企業。
+→ <a href="https://www.autolab.cloud">https://www.autolab.cloud</a></p>
+<hr />
+<h3 id="_7">關於作者</h3>
+<p>黃敬峰（AI峰哥），企業 AI 實戰培訓專家，400+ 企業合作、10,000+ 學員。
+核心心法：「會用、懂用、好用、每天用」
+官網：<a href="https://www.autolab.cloud">https://www.autolab.cloud</a></p>
+<hr />
+  </article>
+  </main>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <div class="cta-box-inner">
+      <h3>想用 AI 解決真問題？</h3>
+      <p>加入阿峰老師的 AI 實戰社群，一起從觀念到落地。</p>
+      <a href="https://reurl.cc/GGlLNx" class="cta-btn">加入 LINE 社群</a>
+      <div class="cta-links">
+        <a href="https://www.autolab.cloud">官網</a>
+        <a href="mailto:ai@autolab.cloud">聯繫合作</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2026 Autolab — 黃敬峰（AI峰哥）. All rights reserved.</p>
+    <p style="margin-top:8px">
+      <a href="https://blog.autolab.cloud/">Blog</a> ·
+      <a href="https://www.autolab.cloud">官網</a> ·
+      <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+    </p>
+  </footer>
+</body>
+</html>
