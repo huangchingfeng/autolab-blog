@@ -43,6 +43,10 @@ og_image: https://blog.autolab.cloud/claude-code-10-real-products/banner.png
 
 ## 案例 1：遊戲製作人的虛擬 KOL 工廠
 
+![Officers at work reviewing evidence and taking notes in an investigation setting.](images/case-study-1-kol.jpg)
+*Photo by [RDNE Stock project](https://www.pexels.com/@rdne) on [Pexels](https://www.pexels.com/photo/a-person-undergoing-interrogation-6069240/)*
+
+
 第一位分享者有 15 年遊戲製作經驗，轉行到諮詢業當特助。公司需要批量製作行銷素材，還要培養 5 位虛擬 KOL。
 
 他自己本地架了圖片生成設備，用 Claude Code 從零刻出一整套工作流管理系統：輸入目標 → AI 拆解任務 → 自動生產 → 追蹤狀態 → 發布 → 生成文案。
@@ -56,6 +60,10 @@ og_image: https://blog.autolab.cloud/claude-code-10-real-products/banner.png
 ---
 
 ## 案例 2：永續產業的低成本 AI 系統
+
+![A smartphone displays the ChatGPT interface on its screen, symbolizing modern AI technology.](images/case-study-2-ai.jpg)
+*Photo by [Airam Dato-on](https://www.pexels.com/@airamdphoto) on [Pexels](https://www.pexels.com/photo/close-up-of-a-smartphone-displaying-a-conversation-with-chatgpt-15940005/)*
+
 
 阿嶽做永續顧問，他面對的現實是：**永續部門通常沒有預算買軟體**。
 
@@ -72,6 +80,10 @@ og_image: https://blog.autolab.cloud/claude-code-10-real-products/banner.png
 ---
 
 ## 案例 3：Eason 的五合一 AI 產品線（最狠的一位）
+
+![Abstract 3D render showcasing a futuristic neural network and AI concept.](images/case-study-3-eason-ai.jpg)
+*Photo by [Google DeepMind](https://www.pexels.com/@googledeepmind) on [Pexels](https://www.pexels.com/photo/an-artist-s-illustration-of-artificial-intelligence-ai-this-image-represents-storage-of-collected-data-in-ai-it-was-created-by-wes-cockx-as-part-of-the-visualising-ai-project-launched-17486100/)*
+
 
 Eason 前京城資訊副總監、數據長，現在一個人用 Claude Code 做出了五個產品：
 

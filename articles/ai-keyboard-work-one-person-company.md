@@ -35,6 +35,10 @@ youtube_id: J9F-Obf-IcE
 
 ## 【獨家】你的工作有多少是「鍵盤工作」？自我檢測法
 
+![Detailed close-up of black and white mechanical keyboards on a desk, emphasizing key layout.](images/keyboard.jpg)
+*Photo by [Huy Phan](https://www.pexels.com/@huy-phan-316220) on [Pexels](https://www.pexels.com/photo/close-up-shot-of-black-and-white-keyboards-11382767/)*
+
+
 簡立峰博士的觀點讓我印象深刻，但很多人聽完可能會問：「所以我到底該怎麼辦？」
 
 我在企業培訓的時候，會請學員做一個簡單的練習：把你一天的工作列出來，然後標記每一項是「鍵盤工作」還是「非鍵盤工作」。
@@ -57,6 +61,10 @@ youtube_id: J9F-Obf-IcE
 ---
 
 ## 【獨家】一人公司實戰指南：從 0 到 1 的五個步驟
+
+![A young man adjusts a video camera outdoors using a tripod and plaid cover.](images/practice-0-1.jpg)
+*Photo by [Hannah Nelson](https://www.pexels.com/@hannah-nelson-390257) on [Pexels](https://www.pexels.com/photo/photo-of-man-setting-up-dslr-camera-on-tripod-1038348/)*
+
 
 影片中提到 OECD 預測今年全球會出現 200-300 萬家一人公司，我想進一步分享我觀察到的成功模式。
 
@@ -97,6 +105,10 @@ youtube_id: J9F-Obf-IcE
 ---
 
 ## 阿峰觀點
+
+![Asian man explaining a concept in a training session with a headset and flip chart.](images/business-training-learning.jpg)
+*Photo by [Mikhail Nilov](https://www.pexels.com/@mikhail-nilov) on [Pexels](https://www.pexels.com/photo/man-in-gray-suit-smiling-and-holding-black-headphones-near-paper-board-7681119/)*
+
 
 簡立峰博士有一句話我反覆在企業培訓中引用：「一問一答叫抄襲，十問十答叫學習，百問百答叫創造。」
 

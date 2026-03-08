@@ -37,6 +37,10 @@ youtube_id: Lxb5AZd5ySo
 
 ## 【獨家】幽靈繁榮：一個你必須懂的概念
 
+![Adorable paper ghost art on an orange straw, perfect for a fun Halloween setting.](images/ghost-prosperity.jpg)
+*Photo by [www.kaboompics.com](https://www.pexels.com/@karola-g) on [Pexels](https://www.pexels.com/photo/cute-ghost-on-a-drinking-straw-5478005/)*
+
+
 這篇文章裡有一個概念特別值得深究，叫做「幽靈繁榮」（Ghost Prosperity）。
 
 表面上看，GDP 在漲、企業營收在漲、股價在漲。但實際上消費端在萎縮。原因很簡單：AI 不消費。
@@ -54,6 +58,10 @@ youtube_id: Lxb5AZd5ySo
 ---
 
 ## 【獨家】我在 400 多家企業看到的真實情況
+
+![A modern humanoid robot with digital face and luminescent screen, symbolizing innovation in technology.](images/400-business.jpg)
+*Photo by [Kindel Media](https://www.pexels.com/@kindelmedia) on [Pexels](https://www.pexels.com/photo/low-angle-shot-of-robot-8566526/)*
+
 
 帶了這麼多企業做 AI 培訓，我可以很負責任地說：**被取代的不是整個崗位，而是崗位裡的重複性任務**。
 
@@ -76,6 +84,10 @@ youtube_id: Lxb5AZd5ySo
 ---
 
 ## 【獨家】Excel 啟示錄：為什麼我對未來偏樂觀
+
+![Black graduation stole with 'Black Grads Matter' on violet background, celebrating success.](images/excel-future.jpg)
+*Photo by [RDNE Stock project](https://www.pexels.com/@rdne) on [Pexels](https://www.pexels.com/photo/graduation-diploma-on-violet-background-7842702/)*
+
 
 影片裡我提到了 Excel 的例子，這裡我想更深入地展開。
 

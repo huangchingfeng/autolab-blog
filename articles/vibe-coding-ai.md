@@ -40,6 +40,10 @@ youtube_id: LGDQ3musYUQ
 
 ## 【獨家】Vibe Coding 入門實戰：5 步驟開始你的第一個專案
 
+![Professional video call between colleagues in an office setting, fostering connection and collaboration.](images/vibe-coding-practice-5.jpg)
+*Photo by [Vanessa Garcia](https://www.pexels.com/@vanessa-garcia) on [Pexels](https://www.pexels.com/photo/photo-of-men-talking-through-laptop-6326373/)*
+
+
 影片裡我講了 Vibe Coding 的三種形式（APP、工作流、提示詞），但沒有時間展開「具體怎麼開始」。這裡給你一套我實際帶企業學員操作過的 5 步驟框架：
 
 ### Step 1：找到你的「痛點」
@@ -83,6 +87,10 @@ youtube_id: LGDQ3musYUQ
 
 ## 【獨家】為什麼「先學工具再解決問題」是最大的陷阱
 
+![Close-up of YouTube logo displayed on a laptop screen in a dark environment.](images/tools.jpg)
+*Photo by [Zulfugar Karimov](https://www.pexels.com/@zulfugarkarimov) on [Pexels](https://www.pexels.com/photo/youtube-logo-on-laptop-screen-in-dark-setting-33440278/)*
+
+
 影片裡我提到很多人想當 YouTuber 就先去學 Final Cut Pro，這是錯的。但我沒有時間解釋背後的心理學原因。
 
 這其實是一種「生產力拖延症」（Productivity Procrastination）。
@@ -100,6 +108,10 @@ AI 時代的正確路徑是：
 ---
 
 ## 【獨家】台灣企業導入 Vibe Coding 的 3 個真實案例
+
+![Shiny metallic briefcase with a sleek chrome finish and clear reflection on black surface.](images/business-vibe-coding-3-case-study.jpg)
+*Photo by [michale scot](https://www.pexels.com/@michale-scot-49447) on [Pexels](https://www.pexels.com/photo/grey-metal-briefcase-177688/)*
+
 
 我在企業培訓中已經看到一些公司開始導入 Vibe Coding 的思維：
 
