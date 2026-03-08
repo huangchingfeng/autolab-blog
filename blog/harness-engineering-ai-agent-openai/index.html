@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenAI 駕馭工程：AI Agent 五個月零手寫百萬行程式碼，軟體開發典範轉移 — 阿峰老師</title>
+  <meta name="description" content="OpenAI 發表 Harness Engineering 研究，AI Agent 五個月從零寫出百萬行程式碼。拆解三大核心教訓、台灣企業實務對照，以及如何在你的工作中應用駕馭工程思維。">
+  <meta name="keywords" content="駕馭工程, Harness Engineering, AI Agent 寫程式, OpenAI 實驗, AI 取代工程師">
+  <meta name="author" content="黃敬峰（AI峰哥）">
+  <link rel="canonical" href="https://blog.autolab.cloud/harness-engineering-ai-agent-openai/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="OpenAI 駕馭工程：AI Agent 五個月零手寫百萬行程式碼，軟體開發典範轉移">
+  <meta property="og:description" content="OpenAI 發表 Harness Engineering 研究，AI Agent 五個月從零寫出百萬行程式碼。拆解三大核心教訓、台灣企業實務對照，以及如何在你的工作中應用駕馭工程思維。">
+  <meta property="og:image" content="https://blog.autolab.cloud/harness-engineering-ai-agent-openai/banner.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://blog.autolab.cloud/harness-engineering-ai-agent-openai/">
+  <meta property="og:site_name" content="阿峰老師 Autolab">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="article:author" content="黃敬峰（AI峰哥）">
+  <meta property="article:published_time" content="2026-03-09T00:00:00+08:00">
+  <meta property="article:modified_time" content="2026-03-09T00:00:00+08:00">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OpenAI 駕馭工程：AI Agent 五個月零手寫百萬行程式碼，軟體開發典範轉移">
+  <meta name="twitter:description" content="OpenAI 發表 Harness Engineering 研究，AI Agent 五個月從零寫出百萬行程式碼。拆解三大核心教訓、台灣企業實務對照，以及如何在你的工作中應用駕馭工程思維。">
+  <meta name="twitter:image" content="https://blog.autolab.cloud/harness-engineering-ai-agent-openai/banner.png">
+
+  <!-- Article Tags -->
+  <meta property="article:tag" content="AI">
+  <meta property="article:tag" content="OpenAI">
+  <meta property="article:tag" content="HarnessEngineering">
+  <meta property="article:tag" content="駕馭工程">
+  <meta property="article:tag" content="AIAgent">
+  <meta property="article:tag" content="軟體開發">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "OpenAI 駕馭工程：AI Agent 五個月零手寫百萬行程式碼，軟體開發典範轉移", "description": "OpenAI 發表 Harness Engineering 研究，AI Agent 五個月從零寫出百萬行程式碼。拆解三大核心教訓、台灣企業實務對照，以及如何在你的工作中應用駕馭工程思維。", "author": {"@type": "Person", "name": "黃敬峰（AI峰哥）", "url": "https://www.autolab.cloud"}, "publisher": {"@type": "Organization", "name": "Autolab", "url": "https://www.autolab.cloud", "logo": {"@type": "ImageObject", "url": "https://blog.autolab.cloud/static/og-default.png"}}, "datePublished": "2026-03-09T00:00:00+08:00", "dateModified": "2026-03-09T00:00:00+08:00", "image": "https://blog.autolab.cloud/harness-engineering-ai-agent-openai/banner.png", "mainEntityOfPage": "https://blog.autolab.cloud/harness-engineering-ai-agent-openai/", "keywords": "駕馭工程, Harness Engineering, AI Agent 寫程式, OpenAI 實驗, AI 取代工程師", "inLanguage": "zh-Hant-TW", "video": {"@type": "VideoObject", "name": "OpenAI 駕馭工程：AI Agent 五個月零手寫百萬行程式碼，軟體開發典範轉移", "description": "OpenAI 發表 Harness Engineering 研究，AI Agent 五個月從零寫出百萬行程式碼。拆解三大核心教訓、台灣企業實務對照，以及如何在你的工作中應用駕馭工程思維。", "thumbnailUrl": "https://img.youtube.com/vi/yvJYy-Pzz7o/maxresdefault.jpg", "uploadDate": "2026-03-09T00:00:00+08:00", "embedUrl": "https://www.youtube.com/embed/yvJYy-Pzz7o", "url": "https://www.youtube.com/watch?v=yvJYy-Pzz7o"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://blog.autolab.cloud/"}, {"@type": "ListItem", "position": 2, "name": "OpenAI 駕馭工程：AI Agent 五個月零手寫百萬行程式碼，軟體開發典範轉移", "item": "https://blog.autolab.cloud/harness-engineering-ai-agent-openai/"}]}</script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://blog.autolab.cloud/static/favicon.png">
+  <link rel="icon" type="image/x-icon" href="https://blog.autolab.cloud/static/favicon.ico">
+  <link rel="apple-touch-icon" href="https://blog.autolab.cloud/static/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="阿峰老師 Blog RSS" href="https://blog.autolab.cloud/feed.xml">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://blog.autolab.cloud/static/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至主要內容</a>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="https://blog.autolab.cloud/" class="nav-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 412 160" width="32" height="13" aria-hidden="true">
+          <defs><g id="wing"><polygon points="188,26 0,0 16,22 168,90"/><polygon points="166,100 34,60 42,72 170,114"/><polygon points="174,122 68,88 76,100 182,140"/></g></defs>
+          <use href="#wing" fill="#00D4FF"/><use href="#wing" fill="#00D4FF" transform="translate(392,0) scale(-1,1)"/>
+        </svg>
+        <span>Autolab</span> 阿峰老師
+      </a>
+      <div class="nav-links">
+        <a href="https://blog.autolab.cloud/">Blog</a>
+        <a href="https://www.autolab.cloud">官網</a>
+        <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs" aria-label="麵包屑導航">
+    <a href="https://blog.autolab.cloud/">Blog</a><span class="sep">›</span><span class="current">OpenAI 駕馭工程：AI Agent 五個月零手寫百萬行程式碼，軟體開發典範轉移</span>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="article-header">
+    <div class="article-meta">
+      <span>2026-03-09</span>
+      <span>黃敬峰（AI峰哥）</span>
+    </div>
+    <h1>OpenAI 駕馭工程：AI Agent 五個月零手寫百萬行程式碼，軟體開發典範轉移</h1>
+    <div class="card-tags"><span class="tag" data-color="yellow">AI</span><span class="tag" data-color="orange">OpenAI</span><span class="tag" data-color="cyan">HarnessEngineering</span><span class="tag" data-color="purple">駕馭工程</span><span class="tag" data-color="pink">AIAgent</span><span class="tag" data-color="cyan">軟體開發</span></div>
+  </header>
+
+  <!-- Featured Image -->
+  <div class="featured-image-wrapper"><img src="banner.png" alt="OpenAI 駕馭工程：AI Agent 五個月零手寫百萬行程式碼，軟體開發典範轉移" class="featured-image" loading="lazy" width="780" height="438"></div>
+
+  <!-- YouTube -->
+  <a href="https://www.youtube.com/watch?v=yvJYy-Pzz7o" target="_blank" rel="noopener" class="yt-banner" aria-label="在 YouTube 觀看：OpenAI 駕馭工程：AI Agent 五個月零手寫百萬行程式碼，軟體開發典範轉移">
+  <img src="https://img.youtube.com/vi/yvJYy-Pzz7o/maxresdefault.jpg"
+       onerror="this.src='https://img.youtube.com/vi/yvJYy-Pzz7o/hqdefault.jpg'"
+       alt="觀看影片：OpenAI 駕馭工程：AI Agent 五個月零手寫百萬行程式碼，軟體開發典範轉移" loading="lazy" width="1280" height="720">
+  <div class="yt-play" role="img" aria-hidden="true">&#9654;</div>
+</a>
+
+  <!-- CONTENT -->
+  <main id="main-content">
+  <article class="article-content">
+    <h1 id="openai-ai-agent">OpenAI 駕馭工程實驗：AI Agent 五個月零手寫，從零打造百萬行程式碼軟體</h1>
+<blockquote>
+<p>本文是 YouTube 影片「OpenAI 實驗震撼：五個月零手寫，AI Agent 從零寫出百萬行程式碼！駕馭工程時代來了」的延伸閱讀版。
+影片講了核心觀念，本文加上獨家分析和實務操作建議。
+影片版本：<a href="https://www.youtube.com/watch?v=yvJYy-Pzz7o">https://www.youtube.com/watch?v=yvJYy-Pzz7o</a></p>
+</blockquote>
+<hr />
+<h2 id="_1">影片重點回顧</h2>
+<p>OpenAI 發表了「Harness Engineering（駕馭工程）」研究，他們從 2025 年 8 月開始，讓 AI Agent 從一個空的程式碼倉庫，五個月寫出超過一百萬行程式碼，打造出一個完整的軟體產品。整個過程中，沒有任何一個人類工程師手寫過任何一行程式碼——包含產品程式、測試、CI/CD、內部文件，全部由 Agent 完成。</p>
+<hr />
+<h2 id="_2">【獨家】駕馭工程的三大核心教訓與台灣企業的實務對照</h2>
+<p><img alt="Abstract blurred motion of people walking indoors, depicting urban life and busy routines." src="images/business.jpg" />
+<em>Photo by <a href="https://www.pexels.com/@octocat">RPA studio</a> on <a href="https://www.pexels.com/photo/blurred-silhouettes-of-commuters-indoors-33289065/">Pexels</a></em></p>
+<h3 id="1">1. 指令架構：先給地圖，不給百科全書</h3>
+<p>OpenAI 在實驗初期踩了一個很典型的坑：他們把所有規則都塞進一個巨大的 <code>agents.md</code> 檔案裡，結果 Agent 讀不完就隨便抓重點，很多規則被忽略。</p>
+<p>後來他們把 <code>agents.md</code> 縮減到只有一兩百行，變成一個「目錄」。Agent 需要深入了解某個主題時，再自己去讀對應的詳細文件。</p>
+<p><strong>台灣企業實務對照：</strong></p>
+<p>我服務過超過 400 家企業，從台積電、國泰金控到傳統製造業，最常看到的問題就是「一次塞太多」。不管是 Prompt 還是 SOP 文件，大家習慣把所有東西寫在一起。</p>
+<p>正確的做法：
+- <strong>主文件只放架構和目錄</strong>，不超過 200 行
+- <strong>細節放在子文件</strong>，讓 AI 按需求自己去讀
+- <strong>每個子文件聚焦單一主題</strong>，不要混合</p>
+<p>這個原則不只適用於 AI Agent 開發，也適用於你每天在用的 ChatGPT 或 Claude。你的 Prompt 越簡潔清楚，AI 的回應品質就越高。</p>
+<h3 id="2">2. 瓶頸翻轉：從「確認再放行」到「先做再修正」</h3>
+<p>實驗中期最震撼的發現：最大的瓶頸不是 AI，是人類。</p>
+<p>人類工程師花在審核程式碼和 QA 測試的時間，反而拖慢了 Agent 的開發進度。於是他們把大部分程式碼審核也交給另一個 Agent，因為「修正錯誤的成本很低，但等待的成本很高」。</p>
+<p><strong>這對企業流程意味著什麼？</strong></p>
+<p>傳統企業的審核流程通常是：做完 → 主管審核 → 修改 → 再審核 → 通過。一個簡單的文件可能要來回三四次。</p>
+<p>但如果你導入 AI 輔助，實作速度會快十倍以上。這時候「等待審核」就變成最大的浪費。</p>
+<p>建議的新流程：
+1. <strong>AI 快速產出初稿</strong>（幾分鐘）
+2. <strong>另一個 AI 做初步審核</strong>（品質檢查、格式確認）
+3. <strong>人類只做最終決策</strong>（方向判斷、品牌調性）</p>
+<p>這樣既保留了人類的判斷力，又不讓人類的速度成為瓶頸。</p>
+<h3 id="3-agent">3. 端到端自動化：Agent 已經能完成工程師的完整工作流程</h3>
+<p>到實驗後期，Agent 已經可以自己看到 Bug、研究解法、寫修正程式碼、開 PR、回覆 Code Review 評論，甚至自己把 PR 合併。</p>
+<p>這代表什麼？工程師過去十年的標準工作流程——接到 Bug、分析需求、規劃方案、實作、Code Review、Merge——全部可以被 Agent 端到端完成。</p>
+<p><strong>但這不代表工程師失業。</strong> 這代表工程師的角色從「執行者」變成「架構師」。你不再需要自己寫每一行程式碼，但你需要：
+- 定義系統架構
+- 設定 Agent 的邊界和規則
+- 確保 AI 產出符合品質標準
+- 做架構層級的關鍵決策</p>
+<hr />
+<h2 id="_3">【獨家】如何在你的工作中應用「駕馭工程」思維</h2>
+<p><img alt="A blue SIM card on a dark background with vibrant red and purple accents." src="images/technology.jpg" />
+<em>Photo by <a href="https://www.pexels.com/@userpascal">Pascal 📷</a> on <a href="https://www.pexels.com/photo/minimalist-blue-sim-card-with-bold-colors-33092906/">Pexels</a></em></p>
+<p>不管你是不是工程師，「駕馭工程」的核心思維都可以應用在日常工作中。</p>
+<h3 id="step-1">Step 1：盤點你的工作流程</h3>
+<p>列出你每天做的事情，標記哪些是「執行性工作」（重複、有規則、可以標準化），哪些是「決策性工作」（需要判斷、創意、人際互動）。</p>
+<h3 id="step-2-ai">Step 2：把執行性工作交給 AI</h3>
+<ul>
+<li>寫報告 → ChatGPT / Claude 初稿 + 你審核</li>
+<li>數據分析 → AI 跑分析 + 你做決策</li>
+<li>Email 回覆 → AI 草稿 + 你確認語氣</li>
+<li>會議紀錄 → AI 轉錄 + 你補充重點</li>
+</ul>
+<h3 id="step-3agentsmd">Step 3：建立你的「agents.md」</h3>
+<p>寫一份你的工作規則文件，告訴 AI 你的偏好、標準、常用格式。這份文件就是你的「駕馭」工具，讓 AI 在你設定的範圍內高效運作。</p>
+<h3 id="step-4">Step 4：持續迭代</h3>
+<p>跟 OpenAI 的實驗一樣，你的規則會不斷修正。遇到 AI 做不好的事情，不是重試一次，而是去想「我的指令缺少什麼？」然後更新你的規則文件。</p>
+<hr />
+<h2 id="_4">阿峰觀點</h2>
+<p><img alt="Abstract illustration of AI with silhouette head full of eyes, symbolizing observation and technology." src="images/artificial-intelligence.jpg" />
+<em>Photo by <a href="https://www.pexels.com/@tara-winstead">Tara Winstead</a> on <a href="https://www.pexels.com/photo/an-artificial-intelligence-illustration-on-the-wall-8849295/">Pexels</a></em></p>
+<p>我常說：「你是機長，AI 是機組人員。」</p>
+<p>機長不需要自己推餐車、自己檢查引擎。但機長要知道飛機的整體狀態，要做關鍵決策。</p>
+<p>很多人擔心「認知外包」——過度使用 AI 會讓思考能力下降。但我實際深度使用這些工具之後，發現我的認知反而是上升的。AI 看到我以前沒看到的東西，提出我沒想過的設計方式。透過深度協作，我花更多時間在思考架構和策略。</p>
+<p>會思考的人，有了 AI 之後會思考得更好。不思考的人，有沒有 AI 都一樣不思考。</p>
+<p>2026 年的現在，手寫程式碼還是主流。但五年後回頭看，手寫程式碼可能就像現在看手抄報告一樣，是一門古老的技藝。</p>
+<hr />
+<h2 id="_5">本文提到的資源</h2>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>連結</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI</td>
+<td><a href="https://openai.com">https://openai.com</a></td>
+<td>Harness Engineering 研究發表方</td>
+</tr>
+<tr>
+<td>Claude AI</td>
+<td><a href="https://claude.ai">https://claude.ai</a></td>
+<td>Anthropic 的 AI 助手</td>
+</tr>
+<tr>
+<td>ChatGPT</td>
+<td><a href="https://chatgpt.com">https://chatgpt.com</a></td>
+<td>OpenAI 的 AI 助手</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>📌 企業 AI 培訓 — 阿峰老師服務過台積電、國泰金控、中華電信等超過 400 家企業
+→ <a href="https://www.autolab.cloud">https://www.autolab.cloud</a></p>
+<hr />
+<h3 id="_6">關於作者</h3>
+<p>黃敬峰（AI峰哥），企業 AI 實戰培訓專家，400+ 企業合作、10,000+ 學員。
+核心心法：「會用、懂用、好用、每天用」
+官網：<a href="https://www.autolab.cloud">https://www.autolab.cloud</a></p>
+  </article>
+  </main>
+
+  <!-- Share -->
+  <div class="share-section">
+    <h3>分享這篇文章</h3>
+    <div class="share-buttons">
+      <a href="https://social-plugins.line.me/lineit/share?url=https://blog.autolab.cloud/harness-engineering-ai-agent-openai/" target="_blank" rel="noopener" class="share-btn share-line" aria-label="分享到 LINE">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        LINE
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.autolab.cloud/harness-engineering-ai-agent-openai/" target="_blank" rel="noopener" class="share-btn share-fb" aria-label="分享到 Facebook">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook
+      </a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://blog.autolab.cloud/harness-engineering-ai-agent-openai/" target="_blank" rel="noopener" class="share-btn share-linkedin" aria-label="分享到 LinkedIn">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <button class="share-btn share-copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='已複製!';setTimeout(()=>{this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;><path fill=&quot;currentColor&quot; d=&quot;M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z&quot;/></svg> 複製連結'},2000)})" aria-label="複製連結">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        複製連結
+      </button>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <div class="cta-box-inner">
+      <h3>想用 AI 解決真問題？</h3>
+      <p>加入阿峰老師的 AI 實戰社群，一起從觀念到落地。</p>
+      <div class="cta-buttons">
+        <a href="https://reurl.cc/GGlLNx" class="cta-btn">加入 LINE 社群</a>
+        <a href="https://www.autolab.cloud" class="cta-btn outline">企業培訓諮詢</a>
+      </div>
+      <div class="cta-links">
+        <a href="https://www.autolab.cloud">官網</a>
+        <a href="mailto:ai@autolab.cloud">聯繫合作</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Articles -->
+  <section class="related-section">
+  <h2>你可能也想看</h2>
+  <div class="related-grid">
+    <a href="https://blog.autolab.cloud/ai-openai-codex-ai/" class="related-card">
+  <img class="related-card-thumb" src="../ai-openai-codex-ai/banner.png" alt="產品經理要消失了？OpenAI 內部 5 個震撼變化＋台灣企業導入 AI 實戰指南" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-07</div>
+    <div class="related-card-title">產品經理要消失了？OpenAI 內部 5 個震撼變化＋台灣企業導入 AI 實戰指南</div>
+  </div>
+</a><a href="https://blog.autolab.cloud/taiwan-ai-transformation-strategy/" class="related-card">
+  <img class="related-card-thumb" src="../taiwan-ai-transformation-strategy/banner.png" alt="台灣軟體業的 AI 產品化之戰：從接案代工到打進國際市場的關鍵轉折" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-09</div>
+    <div class="related-card-title">台灣軟體業的 AI 產品化之戰：從接案代工到打進國際市場的關鍵轉折</div>
+  </div>
+</a><a href="https://blog.autolab.cloud/chatgpt-skills-ai-skills-manus-skills/" class="related-card">
+  <img class="related-card-thumb" src="../chatgpt-skills-ai-skills-manus-skills/banner.png" alt="ChatGPT Skills 正式登場！比 GPT 5.4 更值得注意的新功能" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-08</div>
+    <div class="related-card-title">ChatGPT Skills 正式登場！比 GPT 5.4 更值得注意的新功能</div>
+  </div>
+</a>
+  </div>
+</section>
+
+  <!-- Article Navigation -->
+  <nav class="article-nav">
+  <a href="https://blog.autolab.cloud/taiwan-ai-transformation-strategy/" class="prev">
+  <div class="nav-label">← 上一篇</div>
+  <div class="nav-title">台灣軟體業的 AI 產品化之戰：從接案代工到打進國際市場的關鍵轉折</div>
+</a><a href="https://blog.autolab.cloud/notebooklm-cinematic-video-overviews/" class="next">
+  <div class="nav-label">下一篇 →</div>
+  <div class="nav-title">NotebookLM Cinematic Video Overviews 完整解析｜簡報秒變電影感影片</div>
+</a>
+</nav>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2026 Autolab — 黃敬峰（AI峰哥）. All rights reserved.</p>
+    <p style="margin-top:8px">
+      <a href="https://blog.autolab.cloud/">Blog</a> ·
+      <a href="https://www.autolab.cloud">官網</a> ·
+      <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+    </p>
+  </footer>
+</body>
+</html>

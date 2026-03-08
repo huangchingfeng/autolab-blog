@@ -25,6 +25,20 @@
       <category>AI Agent</category>
     </item>
     <item>
+      <title>OpenAI 駕馭工程：AI Agent 五個月零手寫百萬行程式碼，軟體開發典範轉移</title>
+      <link>https://blog.autolab.cloud/harness-engineering-ai-agent-openai/</link>
+      <guid>https://blog.autolab.cloud/harness-engineering-ai-agent-openai/</guid>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>OpenAI 發表 Harness Engineering 研究，AI Agent 五個月從零寫出百萬行程式碼。拆解三大核心教訓、台灣企業實務對照，以及如何在你的工作中應用駕馭工程思維。</description>
+      <category>AI</category>
+      <category>OpenAI</category>
+      <category>HarnessEngineering</category>
+      <category>駕馭工程</category>
+      <category>AIAgent</category>
+      <category>軟體開發</category>
+    </item>
+    <item>
       <title>NotebookLM Cinematic Video Overviews 完整解析｜簡報秒變電影感影片</title>
       <link>https://blog.autolab.cloud/notebooklm-cinematic-video-overviews/</link>
       <guid>https://blog.autolab.cloud/notebooklm-cinematic-video-overviews/</guid>
@@ -276,19 +290,6 @@
       <category>AI創業</category>
       <category>Daniel Priestley</category>
       <category>企業培訓</category>
-    </item>
-    <item>
-      <title>NotebookLM 逆向工程教學：3 步驟免費拆解百萬爆款影片結構（含完整提示詞）</title>
-      <link>https://blog.autolab.cloud/notebooklm-ai/</link>
-      <guid>https://blog.autolab.cloud/notebooklm-ai/</guid>
-      <pubDate>Mon, 02 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>用 Google NotebookLM 免費拆解百萬播放影片的底層結構，轉化為你自己的腳本藍圖。本文含完整提示詞範本、5 種進階應用場景，以及內容創作者的實戰心得。</description>
-      <category>NotebookLM</category>
-      <category>AI工具</category>
-      <category>內容逆向工程</category>
-      <category>腳本寫作</category>
-      <category>YouTube教學</category>
     </item>
   </channel>
 </rss>
