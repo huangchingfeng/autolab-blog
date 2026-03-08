@@ -236,11 +236,11 @@ def build_related_articles(current_meta, all_articles):
     for a in related:
         slug = a.get("slug", "")
         if a.get("has_banner"):
-            thumb = f'{slug}/banner.png'
+            thumb = f'../{slug}/banner.png'
         elif a.get("has_thumb"):
-            thumb = f'{slug}/thumbnail.png'
+            thumb = f'../{slug}/thumbnail.png'
         else:
-            thumb = "static/og-default.png"
+            thumb = "../static/og-default.png"
 
         title = html.escape(str(a.get("title", "")))
         cards_html.append(f'''<a href="{SITE_URL}/{slug}/" class="related-card">
