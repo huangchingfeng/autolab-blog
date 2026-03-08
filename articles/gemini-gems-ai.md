@@ -177,18 +177,57 @@ ChatGPT 有 GPTs，Claude 有 Projects，但 Gems 有一個其他平台比不上
 
 每個工作專人專辦，就像你不會讓財務去跑業務一樣。
 
-## 免費下載：Gems AI 員工團隊教學包
+<div style="background:#0F1D32;border:2px solid #00D4FF;border-radius:16px;padding:32px;margin:32px 0;text-align:center;">
+<h2 style="color:#00D4FF;margin-top:0;border:none;display:block;font-size:24px;">免費下載：Gems AI 員工團隊教學包</h2>
+<p style="color:#C7C7CC;margin-bottom:20px;">文章裡的 5 個 Gems 指令 + 完整教學手冊 + 學習資源，全部打包好了。<br>填寫 Email 後立即寄到你的信箱。</p>
+<div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:24px;">
+<span style="background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.25);border-radius:8px;padding:8px 16px;color:#C7C7CC;font-size:13px;">PDF 教學手冊</span>
+<span style="background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.25);border-radius:8px;padding:8px 16px;color:#C7C7CC;font-size:13px;">5 組指令文字檔</span>
+<span style="background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.25);border-radius:8px;padding:8px 16px;color:#C7C7CC;font-size:13px;">講師介紹與學習資源</span>
+</div>
+<div id="gems-form-area">
+<form id="gems-lead-form" style="max-width:400px;margin:0 auto;" novalidate>
+<input type="text" id="gems-name" name="name" placeholder="你的姓名" required style="width:100%;padding:12px 16px;border-radius:8px;border:1px solid #253350;background:#0A1628;color:#FFF;font-size:15px;margin-bottom:10px;box-sizing:border-box;">
+<input type="email" id="gems-email" name="email" placeholder="你的 Email" required style="width:100%;padding:12px 16px;border-radius:8px;border:1px solid #253350;background:#0A1628;color:#FFF;font-size:15px;margin-bottom:14px;box-sizing:border-box;">
+<button type="submit" id="gems-submit-btn" style="width:100%;padding:14px;border:none;border-radius:8px;background:#00D4FF;color:#0A1628;font-size:16px;font-weight:700;cursor:pointer;">免費下載教學包</button>
+<div id="gems-error-msg" style="color:#FF6B35;font-size:13px;margin-top:8px;display:none;"></div>
+<p style="color:#8B8FA3;font-size:11px;margin-top:10px;">我們重視你的隱私，不會寄送垃圾信。</p>
+</form>
+</div>
+<div id="gems-success-msg" style="display:none;">
+<div style="font-size:48px;margin-bottom:12px;">&#10003;</div>
+<h3 style="color:#00D4FF;margin-bottom:8px;">教學包已寄出！</h3>
+<p style="color:#C7C7CC;margin-bottom:16px;">請到信箱查收（記得看一下垃圾信匣）</p>
+<a href="https://blog.autolab.cloud/gems-download/gems-prompts.txt" download style="display:inline-block;padding:10px 24px;border-radius:8px;background:#00D4FF;color:#0A1628;font-weight:700;text-decoration:none;margin-bottom:10px;">下載 Gems 指令文字檔</a>
+<br>
+<a href="https://line.me/ti/g2/o6oRaGIHTzZ1nEofxnT9Rbv7_ZHAX-rylbJfKA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" style="display:inline-block;padding:10px 24px;border-radius:8px;background:rgba(0,212,255,.15);color:#00D4FF;font-weight:700;text-decoration:none;margin-top:8px;">加入 LINE 學員社群</a>
+</div>
+</div>
 
-看完這篇文章，想直接開始打造你的 AI 員工團隊？我把文章裡提到的 5 個 Gems 指令、完整教學手冊、以及學習資源全部打包好了，免費送給你。
-
-**教學包內含：**
-- Gems 教學手冊（PDF 簡報，16:9 精美排版）
-- 5 組 Gems 指令文字檔（直接複製貼上就能用）
-- 阿峰老師介紹與學習資源（加入 LINE 社群持續學習）
-
-👉 [**立即免費下載 Gems AI 員工團隊教學包**](https://blog.autolab.cloud/gems-download/)
-
-填寫 Email 後立即寄送到你的信箱，不用等。
+<script>
+(function(){
+  var WEBHOOK_URL='https://n8n.autolab.cloud/webhook/gems-lead';
+  var form=document.getElementById('gems-lead-form');
+  if(!form)return;
+  var btn=document.getElementById('gems-submit-btn');
+  var err=document.getElementById('gems-error-msg');
+  var area=document.getElementById('gems-form-area');
+  var ok=document.getElementById('gems-success-msg');
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();err.style.display='none';
+    var n=document.getElementById('gems-name').value.trim();
+    var em=document.getElementById('gems-email').value.trim();
+    if(!n){err.textContent='請輸入姓名';err.style.display='block';return;}
+    if(!em||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){err.textContent='請輸入正確的 Email';err.style.display='block';return;}
+    btn.disabled=true;btn.textContent='處理中...';
+    try{
+      var r=await fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:n,email:em,source:'gems-article-inline',timestamp:new Date().toISOString()})});
+      if(!r.ok)throw new Error('err');
+      area.style.display='none';ok.style.display='block';
+    }catch(x){err.textContent='發送失敗，請稍後再試';err.style.display='block';btn.disabled=false;btn.textContent='免費下載教學包';}
+  });
+})();
+</script>
 
 ## 結語
 
