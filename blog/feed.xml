@@ -13,6 +13,18 @@
       <link>https://blog.autolab.cloud/</link>
     </image>
     <item>
+      <title>讓 AI 記住你的工作方式：Claude Skill 實戰指南</title>
+      <link>https://blog.autolab.cloud/claude-skill-guide/</link>
+      <guid>https://blog.autolab.cloud/claude-skill-guide/</guid>
+      <pubDate>Tue, 10 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>你花在教 AI 怎麼配合你的時間，可能比 AI 幫你省的時間還多。Anthropic 官方 33 頁 Skills 指南的中文深度解讀，加上阿峰老師的企業導入建議。</description>
+      <category>Claude</category>
+      <category>AI工具</category>
+      <category>Skill</category>
+      <category>自動化</category>
+    </item>
+    <item>
       <title>當產品經理開始寫程式：AI 如何讓職業邊界消失</title>
       <link>https://blog.autolab.cloud/ai-agent-job-future/</link>
       <guid>https://blog.autolab.cloud/ai-agent-job-future/</guid>
@@ -267,19 +279,6 @@
       <category>提示詞</category>
       <category>Canvas</category>
       <category>費曼學習法</category>
-    </item>
-    <item>
-      <title>鍵盤敲越多越危險？AI 時代的個人生存法則｜簡立峰博士觀點</title>
-      <link>https://blog.autolab.cloud/ai-keyboard-work-one-person-company/</link>
-      <guid>https://blog.autolab.cloud/ai-keyboard-work-one-person-company/</guid>
-      <pubDate>Sat, 07 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>前 Google 台灣董事總經理簡立峰博士揭露 AI 時代職場真相：鍵盤工作比例越高越危險，但一人公司是巨大機會。含獨家自我檢測法和一人公司實戰指南。</description>
-      <category>AI</category>
-      <category>職場</category>
-      <category>簡立峰</category>
-      <category>一人公司</category>
-      <category>AI培訓</category>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>讓 AI 記住你的工作方式：Claude Skill 實戰指南 — 阿峰老師</title>
+  <meta name="description" content="你花在教 AI 怎麼配合你的時間，可能比 AI 幫你省的時間還多。Anthropic 官方 33 頁 Skills 指南的中文深度解讀，加上阿峰老師的企業導入建議。">
+  <meta name="keywords" content="Claude, AI工具, Skill, 自動化">
+  <meta name="author" content="黃敬峰（AI峰哥）">
+  <link rel="canonical" href="https://blog.autolab.cloud/claude-skill-guide/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="讓 AI 記住你的工作方式：Claude Skill 實戰指南">
+  <meta property="og:description" content="你花在教 AI 怎麼配合你的時間，可能比 AI 幫你省的時間還多。Anthropic 官方 33 頁 Skills 指南的中文深度解讀，加上阿峰老師的企業導入建議。">
+  <meta property="og:image" content="https://blog.autolab.cloud/claude-skill-guide/banner.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://blog.autolab.cloud/claude-skill-guide/">
+  <meta property="og:site_name" content="阿峰老師 Autolab">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="article:author" content="黃敬峰（AI峰哥）">
+  <meta property="article:published_time" content="2026-03-10T00:00:00+08:00">
+  <meta property="article:modified_time" content="2026-03-10T00:00:00+08:00">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="讓 AI 記住你的工作方式：Claude Skill 實戰指南">
+  <meta name="twitter:description" content="你花在教 AI 怎麼配合你的時間，可能比 AI 幫你省的時間還多。Anthropic 官方 33 頁 Skills 指南的中文深度解讀，加上阿峰老師的企業導入建議。">
+  <meta name="twitter:image" content="https://blog.autolab.cloud/claude-skill-guide/banner.png">
+
+  <!-- Article Tags -->
+  <meta property="article:tag" content="Claude">
+  <meta property="article:tag" content="AI工具">
+  <meta property="article:tag" content="Skill">
+  <meta property="article:tag" content="自動化">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "讓 AI 記住你的工作方式：Claude Skill 實戰指南", "description": "你花在教 AI 怎麼配合你的時間，可能比 AI 幫你省的時間還多。Anthropic 官方 33 頁 Skills 指南的中文深度解讀，加上阿峰老師的企業導入建議。", "author": {"@type": "Person", "name": "黃敬峰（AI峰哥）", "url": "https://www.autolab.cloud"}, "publisher": {"@type": "Organization", "name": "Autolab", "url": "https://www.autolab.cloud", "logo": {"@type": "ImageObject", "url": "https://blog.autolab.cloud/static/og-default.png"}}, "datePublished": "2026-03-10T00:00:00+08:00", "dateModified": "2026-03-10T00:00:00+08:00", "image": "https://blog.autolab.cloud/claude-skill-guide/banner.png", "mainEntityOfPage": "https://blog.autolab.cloud/claude-skill-guide/", "keywords": "Claude, AI工具, Skill, 自動化", "inLanguage": "zh-Hant-TW"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://blog.autolab.cloud/"}, {"@type": "ListItem", "position": 2, "name": "讓 AI 記住你的工作方式：Claude Skill 實戰指南", "item": "https://blog.autolab.cloud/claude-skill-guide/"}]}</script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://blog.autolab.cloud/static/favicon.png">
+  <link rel="icon" type="image/x-icon" href="https://blog.autolab.cloud/static/favicon.ico">
+  <link rel="apple-touch-icon" href="https://blog.autolab.cloud/static/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="阿峰老師 Blog RSS" href="https://blog.autolab.cloud/feed.xml">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://blog.autolab.cloud/static/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至主要內容</a>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="https://blog.autolab.cloud/" class="nav-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 412 160" width="32" height="13" aria-hidden="true">
+          <defs><g id="wing"><polygon points="188,26 0,0 16,22 168,90"/><polygon points="166,100 34,60 42,72 170,114"/><polygon points="174,122 68,88 76,100 182,140"/></g></defs>
+          <use href="#wing" fill="#00D4FF"/><use href="#wing" fill="#00D4FF" transform="translate(392,0) scale(-1,1)"/>
+        </svg>
+        <span>Autolab</span> 阿峰老師
+      </a>
+      <div class="nav-links">
+        <a href="https://blog.autolab.cloud/">Blog</a>
+        <a href="https://www.autolab.cloud">官網</a>
+        <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs" aria-label="麵包屑導航">
+    <a href="https://blog.autolab.cloud/">Blog</a><span class="sep">›</span><span class="current">讓 AI 記住你的工作方式：Claude Skill 實戰指南</span>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="article-header">
+    <div class="article-meta">
+      <span>2026-03-10</span>
+      <span>黃敬峰（AI峰哥）</span>
+    </div>
+    <h1>讓 AI 記住你的工作方式：Claude Skill 實戰指南</h1>
+    <div class="card-tags"><span class="tag" data-color="pink">Claude</span><span class="tag" data-color="yellow">AI工具</span><span class="tag" data-color="yellow">Skill</span><span class="tag" data-color="pink">自動化</span></div>
+  </header>
+
+  <!-- Featured Image -->
+  <div class="featured-image-wrapper"><img src="banner.png" alt="讓 AI 記住你的工作方式：Claude Skill 實戰指南" class="featured-image" loading="lazy" width="780" height="438"></div>
+
+  <!-- YouTube -->
+  
+
+  <!-- CONTENT -->
+  <main id="main-content">
+  <article class="article-content">
+    <h1 id="ai-claude-skill">讓 AI 記住你的工作方式：Claude Skill 實戰指南</h1>
+<blockquote>
+<p>本文是社群貼文的完整延伸版。
+社群版講了核心觀念，本文加上完整的運作原理和企業導入建議。</p>
+</blockquote>
+<hr />
+<h2 id="_1">重點回顧</h2>
+<p>你有沒有算過，每次跟 AI 合作時花多少時間在「重新解釋同樣的事」？報告格式、寫作語氣、公司規範、個人偏好——這些溝通成本加起來，可能比 AI 幫你省的時間還多。</p>
+<p>Anthropic 出了一份 33 頁的 Skills 建構指南，解決的就是這個問題。Skill 讓你花二十分鐘把規則設定好，之後每次使用就省十倍時間。本文整理了裡面的核心邏輯，加上我在企業培訓裡的實戰觀察。</p>
+<hr />
+<h2 id="prompt">【獨家】為什麼「長 Prompt」解決不了這個問題</h2>
+<p><img alt="A modern workspace with AI technology and digital screens." src="images/ai-workspace.jpg" />
+<em>Photo by <a href="https://www.pexels.com/@goumbik">Lukas</a> on <a href="https://www.pexels.com/photo/person-holding-silver-laptop-computer-577210/">Pexels</a></em></p>
+<p>很多人的第一反應是：「那我把常用的 Prompt 存起來不就好了？」</p>
+<p>我試過。存了一兩百個 Prompt 在筆記軟體裡。用了三個月後發現三個問題。</p>
+<p><strong>第一，找不到。</strong> 存了太多之後，光是搜尋正確的 Prompt 就要花時間。有時候找到了才發現上次改過但忘記存。</p>
+<p><strong>第二，改不動。</strong> Prompt 是一大段文字，改一個地方怕影響其他地方。沒有版本管理，不知道哪個版本是最新的。</p>
+<p><strong>第三，分享不了。</strong> 你的 Prompt 只有你會用。團隊其他人不知道你的 Prompt 在哪、怎麼用、什麼時候用。</p>
+<p>Skill 解決了這三個問題。它不是一段文字，是一個有結構的資料夾。</p>
+<h3 id="skill">Skill 的資料夾長什麼樣</h3>
+<div class="highlight"><pre><span></span><code>monthly-report/
+├── SKILL.md          ← 核心說明（唯一必要的檔案）
+├── scripts/          ← 自動化腳本（可選）
+├── references/       ← 延伸參考（可選）
+└── assets/           ← 模板、範本（可選）
+</code></pre></div>
+
+<p>SKILL.md 裡面分兩層。最上面是一張「標籤卡」，告訴 Claude 什麼時候該用這個 Skill、它做什麼。下面才是詳細的工作指令。</p>
+<p>這個設計很聰明。Claude 會先掃過所有 Skill 的標籤卡，只有判斷「這個跟現在的任務有關」才會往下讀詳細指令。就像你不會把整本員工手冊塞給新人——先給一頁懶人包，需要時再翻對應章節。</p>
+<h3 id="_2">為什麼分層這麼重要</h3>
+<p>AI 的「思考空間」是有限的。如果同時載入十個 Skill，每個都是五千字的完整指令，Claude 的表現反而會下降。</p>
+<p>分層讓 Claude 把注意力放在真正需要的地方。標籤卡只佔幾百字，不管掛載多少個 Skill 都不會拖慢速度。</p>
+<hr />
+<h2 id="skill_1">【獨家】企業導入 Skill 的三個階段</h2>
+<p><img alt="A team collaborating on technology projects with data visualization." src="images/team-collaboration.jpg" />
+<em>Photo by <a href="https://www.pexels.com/@fauxels">fauxels</a> on <a href="https://www.pexels.com/photo/photo-of-people-using-laptops-3184357/">Pexels</a></em></p>
+<p>我在企業培訓裡帶過超過 400 家企業，觀察到一個規律：AI 工具用得最好的團隊，不是技術最強的，而是最懂得「標準化」的。</p>
+<h3 id="1-2">階段一：個人版（1-2 週）</h3>
+<p>先讓團隊裡的 AI 愛好者各自建自己的 Skill。每個人挑一件每天都在重複做的事，花二十分鐘建出第一版。</p>
+<p>常見的起點：
+- 每週報告生成
+- Email 回覆模板
+- 會議紀錄整理
+- 客戶提案初稿</p>
+<p>這個階段的目標不是做出完美的 Skill，而是讓大家體驗「設定一次就不用再重複溝通」的感覺。一旦體驗過，就回不去了。</p>
+<h3 id="1-2_1">階段二：團隊版（1-2 個月）</h3>
+<p>個人版跑順之後，開始做團隊共用的 Skill。這時候需要的是「把最好的做法提煉出來」。</p>
+<p>舉個例子。假設業務團隊有五個人，每個人都有自己寫客戶提案的方式。找出成交率最高的那位，把他的寫法變成 Skill。以後五個人都用同一個 Skill，品質就拉到同一個水準。</p>
+<p>這個階段要注意的是：Skill 之間不能打架。如果你同時有「客戶提案 Skill」和「Email 回覆 Skill」，兩者的指令不能矛盾。比如一個說「語氣要正式」，另一個說「語氣要口語」，Claude 會很困惑。</p>
+<h3 id="_3">階段三：組織版（持續迭代）</h3>
+<p>當 Skill 覆蓋了主要工作場景後，重點轉向監控和迭代。哪些 Skill 用得最頻繁？哪些一直沒人用？用了之後品質真的有提升嗎？</p>
+<p>這就跟管理其他工具一樣——不是建完就結束，而是持續觀察、調整、優化。</p>
+<hr />
+<h2 id="_4">【獨家】常見的三個坑和怎麼避開</h2>
+<p><img alt="A professional developer working on code and documentation." src="images/developer-coding.jpg" />
+<em>Photo by <a href="https://www.pexels.com/@pixabay">Pixabay</a> on <a href="https://www.pexels.com/photo/blur-close-up-code-computer-546819/">Pexels</a></em></p>
+<h3 id="skill_2">坑一：Skill 做太大</h3>
+<p>最常見的錯誤。想把一個 Skill 做成萬能瑞士刀，結果指令太長、太複雜，Claude 反而搞不清楚該做什麼。</p>
+<p><strong>解法</strong>：一個 Skill 只解決一個問題。如果你發現 SKILL.md 超過五千字，就該拆成兩個。</p>
+<h3 id="_5">坑二：標籤寫太模糊</h3>
+<p>標籤卡如果寫「幫助處理工作」，Claude 完全不知道什麼時候該用。要寫具體的觸發詞。</p>
+<p><strong>好的寫法</strong>：「生成月度業務報告。使用者說『月報』『業績報告』或『上個月的數據』時啟用。」</p>
+<p><strong>壞的寫法</strong>：「協助數據分析相關工作。」</p>
+<h3 id="_6">坑三：建完就不管</h3>
+<p>很多人花時間建了 Skill，用了兩次就放著。三個月後發現根本不符合現在的需求了。</p>
+<p><strong>解法</strong>：每個月花十分鐘回顧一次。哪些 Skill 還在用？用的時候有沒有需要手動修正的地方？有的話就更新。</p>
+<hr />
+<h2 id="_7">阿峰觀點</h2>
+<p><img alt="A modern humanoid robot with digital face, symbolizing AI innovation." src="images/ai-robot.jpg" />
+<em>Photo by <a href="https://www.pexels.com/@tara-winstead">Tara Winstead</a> on <a href="https://www.pexels.com/photo/robot-pointing-on-a-wall-8386440/">Pexels</a></em></p>
+<p>我一直跟學員說：「你是機長，AI 是機組人員。」</p>
+<p>但一個好的機長，不會每次起飛前都從頭跟機組人員解釋飛行流程。他會確保每個人都有標準作業程序，熟悉了之後只需要簡短的指令就能完美配合。</p>
+<p>Skill 就是你跟 AI 之間的標準作業程序。</p>
+<p>我自己建了幾十個 Skill，覆蓋課程設計、客戶管理、內容產出各種場景。最大的體會是：建 Skill 的過程本身就很有價值。因為你必須把自己的工作流程想清楚、寫下來。很多時候你會發現「原來我一直在做多餘的步驟」或「原來這個環節可以更精簡」。</p>
+<p>所以 Skill 不只是 AI 工具，它也是逼你梳理工作流程的方法。</p>
+<p>如果你只記住一件事，記住這個：找一件你每天都在重複跟 AI 說的事，花二十分鐘把它變成 Skill。不用等到完美。能持續進化的工具，比做完就放著的值錢一百倍。</p>
+<hr />
+<h2 id="_8">本文提到的資源</h2>
+<table>
+<thead>
+<tr>
+<th>工具/資源</th>
+<th>連結</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude.ai</td>
+<td><a href="https://claude.ai">https://claude.ai</a></td>
+<td>Anthropic AI 對話平台</td>
+</tr>
+<tr>
+<td>Claude Code</td>
+<td><a href="https://docs.anthropic.com/en/docs/claude-code">https://docs.anthropic.com/en/docs/claude-code</a></td>
+<td>Claude 開發工具</td>
+</tr>
+<tr>
+<td>skill-creator</td>
+<td>Claude.ai 內建</td>
+<td>快速建立 Skill 的官方工具</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>企業想導入 AI？阿峰老師服務過超過 400 家企業。
+→ <a href="https://www.autolab.cloud">https://www.autolab.cloud</a></p>
+<hr />
+<h3 id="_9">關於作者</h3>
+<p>黃敬峰（AI峰哥），企業 AI 實戰培訓專家，400+ 企業合作、10,000+ 學員。
+核心心法：「會用、懂用、好用、每天用」
+官網：<a href="https://www.autolab.cloud">https://www.autolab.cloud</a></p>
+  </article>
+  </main>
+
+  <!-- Share -->
+  <div class="share-section">
+    <h3>分享這篇文章</h3>
+    <div class="share-buttons">
+      <a href="https://social-plugins.line.me/lineit/share?url=https://blog.autolab.cloud/claude-skill-guide/" target="_blank" rel="noopener" class="share-btn share-line" aria-label="分享到 LINE">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        LINE
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.autolab.cloud/claude-skill-guide/" target="_blank" rel="noopener" class="share-btn share-fb" aria-label="分享到 Facebook">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook
+      </a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://blog.autolab.cloud/claude-skill-guide/" target="_blank" rel="noopener" class="share-btn share-linkedin" aria-label="分享到 LinkedIn">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <button class="share-btn share-copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='已複製!';setTimeout(()=>{this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;><path fill=&quot;currentColor&quot; d=&quot;M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z&quot;/></svg> 複製連結'},2000)})" aria-label="複製連結">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        複製連結
+      </button>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <div class="cta-box-inner">
+      <h3>想用 AI 解決真問題？</h3>
+      <p>加入阿峰老師的 AI 實戰社群，一起從觀念到落地。</p>
+      <div class="cta-buttons">
+        <a href="https://reurl.cc/GGlLNx" class="cta-btn">加入 LINE 社群</a>
+        <a href="https://www.autolab.cloud" class="cta-btn outline">企業培訓諮詢</a>
+      </div>
+      <div class="cta-links">
+        <a href="https://www.autolab.cloud">官網</a>
+        <a href="mailto:ai@autolab.cloud">聯繫合作</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Articles -->
+  <section class="related-section">
+  <h2>你可能也想看</h2>
+  <div class="related-grid">
+    <a href="https://blog.autolab.cloud/perplexity-computer-ai-agent/" class="related-card">
+  <img class="related-card-thumb" src="../perplexity-computer-ai-agent/banner.png" alt="AI 不再只是聊天機器人：當 AI 學會自己完成工作" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-09</div>
+    <div class="related-card-title">AI 不再只是聊天機器人：當 AI 學會自己完成工作</div>
+  </div>
+</a><a href="https://blog.autolab.cloud/notebooklm-cinematic-video-overviews/" class="related-card">
+  <img class="related-card-thumb" src="../notebooklm-cinematic-video-overviews/banner.png" alt="NotebookLM Cinematic Video Overviews 完整解析｜簡報秒變電影感影片" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-08</div>
+    <div class="related-card-title">NotebookLM Cinematic Video Overviews 完整解析｜簡報秒變電影感影片</div>
+  </div>
+</a><a href="https://blog.autolab.cloud/claude-skills-claude-skills/" class="related-card">
+  <img class="related-card-thumb" src="../claude-skills-claude-skills/banner.png" alt="Claude Skills 完整教學：Skills vs 提示詞 vs MCP 差在哪？含實戰操作指南｜2026" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-08</div>
+    <div class="related-card-title">Claude Skills 完整教學：Skills vs 提示詞 vs MCP 差在哪？含實戰操作指南｜2026</div>
+  </div>
+</a>
+  </div>
+</section>
+
+  <!-- Article Navigation -->
+  <nav class="article-nav">
+  <div></div><a href="https://blog.autolab.cloud/ai-agent-job-future/" class="next">
+  <div class="nav-label">下一篇 →</div>
+  <div class="nav-title">當產品經理開始寫程式：AI 如何讓職業邊界消失</div>
+</a>
+</nav>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2026 Autolab — 黃敬峰（AI峰哥）. All rights reserved.</p>
+    <p style="margin-top:8px">
+      <a href="https://blog.autolab.cloud/">Blog</a> ·
+      <a href="https://www.autolab.cloud">官網</a> ·
+      <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+    </p>
+  </footer>
+</body>
+</html>
