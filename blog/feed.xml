@@ -37,6 +37,18 @@
       <category>Google AI</category>
     </item>
     <item>
+      <title>Perplexity Computer 實測：AI 代理真的能幫你賺錢嗎？</title>
+      <link>https://blog.autolab.cloud/perplexity-computer-ai-agent/</link>
+      <guid>https://blog.autolab.cloud/perplexity-computer-ai-agent/</guid>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>Perplexity Computer 5 大實測場景完整分析。30 分鐘找到 96 個廣告主、自動競品監控、投資研究——AI 代理時代來了。</description>
+      <category>Perplexity</category>
+      <category>AI代理</category>
+      <category>AI工具評測</category>
+      <category>自動化</category>
+    </item>
+    <item>
       <title>OpenAI 駕馭工程：AI Agent 五個月零手寫百萬行程式碼，軟體開發典範轉移</title>
       <link>https://blog.autolab.cloud/harness-engineering-ai-agent-openai/</link>
       <guid>https://blog.autolab.cloud/harness-engineering-ai-agent-openai/</guid>
@@ -271,19 +283,6 @@
       <category>AI教育</category>
       <category>蘋果</category>
       <category>Apple</category>
-    </item>
-    <item>
-      <title>2028全球智能危機解讀：白領會被AI取代嗎？400家企業培訓的真實觀察</title>
-      <link>https://blog.autolab.cloud/ai-white-collar-crisis/</link>
-      <guid>https://blog.autolab.cloud/ai-white-collar-crisis/</guid>
-      <pubDate>Fri, 06 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>一篇文章讓道瓊跌800點。AI會讓白領大規模失業嗎？幽靈繁榮是什麼？阿峰老師從400多家企業AI培訓經驗，分析白領就業危機的真相與機會。</description>
-      <category>AI失業</category>
-      <category>白領裁員</category>
-      <category>幽靈繁榮</category>
-      <category>AI趨勢</category>
-      <category>2028危機</category>
     </item>
   </channel>
 </rss>
