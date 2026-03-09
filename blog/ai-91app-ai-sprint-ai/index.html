@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 時代組織怎麼跑？91APP 三十幾個團隊的實戰經驗拆解｜阿峰老師 — 阿峰老師</title>
+  <meta name="description" content="91APP 有 30+ 個開發團隊全面導入 AI，產品長分享職稱邊界消失、Sprint 估點數失去意義的實戰觀察。阿峰老師獨家分析自動化工具的典範翻轉和 Agent UX 設計。">
+  <meta name="keywords" content="企業AI導入, 91APP AI, Sprint AI, Agent UX設計, AI組織創新">
+  <meta name="author" content="黃敬峰（AI峰哥）">
+  <link rel="canonical" href="https://blog.autolab.cloud/ai-91app-ai-sprint-ai/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AI 時代組織怎麼跑？91APP 三十幾個團隊的實戰經驗拆解｜阿峰老師">
+  <meta property="og:description" content="91APP 有 30+ 個開發團隊全面導入 AI，產品長分享職稱邊界消失、Sprint 估點數失去意義的實戰觀察。阿峰老師獨家分析自動化工具的典範翻轉和 Agent UX 設計。">
+  <meta property="og:image" content="https://blog.autolab.cloud/ai-91app-ai-sprint-ai/banner.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://blog.autolab.cloud/ai-91app-ai-sprint-ai/">
+  <meta property="og:site_name" content="阿峰老師 Autolab">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="article:author" content="黃敬峰（AI峰哥）">
+  <meta property="article:published_time" content="2026-03-09T00:00:00+08:00">
+  <meta property="article:modified_time" content="2026-03-09T00:00:00+08:00">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI 時代組織怎麼跑？91APP 三十幾個團隊的實戰經驗拆解｜阿峰老師">
+  <meta name="twitter:description" content="91APP 有 30+ 個開發團隊全面導入 AI，產品長分享職稱邊界消失、Sprint 估點數失去意義的實戰觀察。阿峰老師獨家分析自動化工具的典範翻轉和 Agent UX 設計。">
+  <meta name="twitter:image" content="https://blog.autolab.cloud/ai-91app-ai-sprint-ai/banner.png">
+
+  <!-- Article Tags -->
+  <meta property="article:tag" content="AI">
+  <meta property="article:tag" content="企業AI導入">
+  <meta property="article:tag" content="91APP">
+  <meta property="article:tag" content="Sprint">
+  <meta property="article:tag" content="AgentUX">
+  <meta property="article:tag" content="組織創新">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AI 時代組織怎麼跑？91APP 三十幾個團隊的實戰經驗拆解｜阿峰老師", "description": "91APP 有 30+ 個開發團隊全面導入 AI，產品長分享職稱邊界消失、Sprint 估點數失去意義的實戰觀察。阿峰老師獨家分析自動化工具的典範翻轉和 Agent UX 設計。", "author": {"@type": "Person", "name": "黃敬峰（AI峰哥）", "url": "https://www.autolab.cloud"}, "publisher": {"@type": "Organization", "name": "Autolab", "url": "https://www.autolab.cloud", "logo": {"@type": "ImageObject", "url": "https://blog.autolab.cloud/static/og-default.png"}}, "datePublished": "2026-03-09T00:00:00+08:00", "dateModified": "2026-03-09T00:00:00+08:00", "image": "https://blog.autolab.cloud/ai-91app-ai-sprint-ai/banner.png", "mainEntityOfPage": "https://blog.autolab.cloud/ai-91app-ai-sprint-ai/", "keywords": "企業AI導入, 91APP AI, Sprint AI, Agent UX設計, AI組織創新", "inLanguage": "zh-Hant-TW", "video": {"@type": "VideoObject", "name": "AI 時代組織怎麼跑？91APP 三十幾個團隊的實戰經驗拆解｜阿峰老師", "description": "91APP 有 30+ 個開發團隊全面導入 AI，產品長分享職稱邊界消失、Sprint 估點數失去意義的實戰觀察。阿峰老師獨家分析自動化工具的典範翻轉和 Agent UX 設計。", "thumbnailUrl": "https://img.youtube.com/vi/baZp2vDyuFI/maxresdefault.jpg", "uploadDate": "2026-03-09T00:00:00+08:00", "embedUrl": "https://www.youtube.com/embed/baZp2vDyuFI", "url": "https://www.youtube.com/watch?v=baZp2vDyuFI"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://blog.autolab.cloud/"}, {"@type": "ListItem", "position": 2, "name": "AI 時代組織怎麼跑？91APP 三十幾個團隊的實戰經驗拆解｜阿峰老師", "item": "https://blog.autolab.cloud/ai-91app-ai-sprint-ai/"}]}</script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://blog.autolab.cloud/static/favicon.png">
+  <link rel="icon" type="image/x-icon" href="https://blog.autolab.cloud/static/favicon.ico">
+  <link rel="apple-touch-icon" href="https://blog.autolab.cloud/static/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="阿峰老師 Blog RSS" href="https://blog.autolab.cloud/feed.xml">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://blog.autolab.cloud/static/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至主要內容</a>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="https://blog.autolab.cloud/" class="nav-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 412 160" width="32" height="13" aria-hidden="true">
+          <defs><g id="wing"><polygon points="188,26 0,0 16,22 168,90"/><polygon points="166,100 34,60 42,72 170,114"/><polygon points="174,122 68,88 76,100 182,140"/></g></defs>
+          <use href="#wing" fill="#00D4FF"/><use href="#wing" fill="#00D4FF" transform="translate(392,0) scale(-1,1)"/>
+        </svg>
+        <span>Autolab</span> 阿峰老師
+      </a>
+      <div class="nav-links">
+        <a href="https://blog.autolab.cloud/">Blog</a>
+        <a href="https://www.autolab.cloud">官網</a>
+        <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs" aria-label="麵包屑導航">
+    <a href="https://blog.autolab.cloud/">Blog</a><span class="sep">›</span><span class="current">AI 時代組織怎麼跑？91APP 三十幾個團隊的實戰經驗拆解｜阿峰老師</span>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="article-header">
+    <div class="article-meta">
+      <span>2026-03-09</span>
+      <span>黃敬峰（AI峰哥）</span>
+    </div>
+    <h1>AI 時代組織怎麼跑？91APP 三十幾個團隊的實戰經驗拆解｜阿峰老師</h1>
+    <div class="card-tags"><span class="tag" data-color="yellow">AI</span><span class="tag" data-color="cyan">企業AI導入</span><span class="tag" data-color="yellow">91APP</span><span class="tag" data-color="yellow">Sprint</span><span class="tag" data-color="green">AgentUX</span><span class="tag" data-color="cyan">組織創新</span></div>
+  </header>
+
+  <!-- Featured Image -->
+  <div class="featured-image-wrapper"><img src="banner.png" alt="AI 時代組織怎麼跑？91APP 三十幾個團隊的實戰經驗拆解｜阿峰老師" class="featured-image" loading="lazy" width="780" height="438"></div>
+
+  <!-- YouTube -->
+  <a href="https://www.youtube.com/watch?v=baZp2vDyuFI" target="_blank" rel="noopener" class="yt-banner" aria-label="在 YouTube 觀看：AI 時代組織怎麼跑？91APP 三十幾個團隊的實戰經驗拆解｜阿峰老師">
+  <img src="https://img.youtube.com/vi/baZp2vDyuFI/maxresdefault.jpg"
+       onerror="this.src='https://img.youtube.com/vi/baZp2vDyuFI/hqdefault.jpg'"
+       alt="觀看影片：AI 時代組織怎麼跑？91APP 三十幾個團隊的實戰經驗拆解｜阿峰老師" loading="lazy" width="1280" height="720">
+  <div class="yt-play" role="img" aria-hidden="true">&#9654;</div>
+</a>
+
+  <!-- CONTENT -->
+  <main id="main-content">
+  <article class="article-content">
+    <h1 id="ai-91app">AI 時代組織怎麼跑？91APP 三十幾個團隊的實戰經驗完整拆解</h1>
+<blockquote>
+<p>本文是 YouTube 影片「91APP 產品長揭露：AI 讓職業邊界消失，Sprint 估點數也沒用了」的延伸閱讀版。
+影片講了核心觀念，本文加上獨家分析和操作指南。
+影片版本：<a href="https://www.youtube.com/watch?v=baZp2vDyuFI">https://www.youtube.com/watch?v=baZp2vDyuFI</a></p>
+</blockquote>
+<hr />
+<h2 id="_1">影片重點回顧</h2>
+<p>91APP 有三十幾個開發團隊，全面導入 AI 三年。產品長 Happy 和前 iCHEF 共同創辦人 Spencer 分享了最前線的觀察：職稱邊界正在模糊化、Sprint 方法論被 AI 衝擊、Agent UX 不是聊天機器人，而是融入流程的隱形助手。更大膽的判斷是——未來軟體要服務 Agent，不再是服務人。</p>
+<hr />
+<h2 id="n8n-llm-first">【獨家】自動化工具的典範翻轉：從 N8N 到 LLM-first</h2>
+<p><img alt="Close-up view of a robotic arm equipped with a video camera, showcasing modern technology." src="images/automation-tools-n8n-llm-first.jpg" />
+<em>Photo by <a href="https://www.pexels.com/@pavel-danilyuk">Pavel Danilyuk</a> on <a href="https://www.pexels.com/photo/a-video-camera-on-a-stand-8438976/">Pexels</a></em></p>
+<p>影片中 Spencer 提到 N8N 的星星數在過去半年暴跌，這背後的邏輯值得深入分析。</p>
+<p>過去三年，自動化工具經歷了三個階段：</p>
+<p><strong>階段一：Rule-based 自動化（2020-2023）</strong>
+N8N、Zapier、Make 這類工具的核心邏輯是「你設定規則，軟體執行」。你得手動拉節點、設觸發條件、一個一個串接。語言模型只是其中一個步驟，被「封印」在有限的規則框架裡。</p>
+<p><strong>階段二：LLM + Rule-based 混合（2023-2024）</strong>
+開始有人把 ChatGPT API 塞進 N8N 的節點裡，讓 AI 在某些步驟做判斷。但整體架構還是 Rule-based，AI 只是一個更聰明的「節點」。</p>
+<p><strong>階段三：LLM-first 架構（2025-現在）</strong>
+Spencer 在影片中描述的方向：以語言模型為基礎，在上面疊控制。你用自然語言描述任務，AI 自動去技能組裡找工具、自動組合工作流。規則不再是框架，而是控制手段。</p>
+<p>這個翻轉的核心洞察是：以前是「有限集合上放無限可能」（等於封印），現在是「無限可能上加有限控制」（等於釋放）。</p>
+<p>我帶企業做 AI 培訓時，最常遇到的誤區就是第二階段的思維：把 AI 當工具塞進現有流程。但真正的突破在第三階段——讓 AI 重新定義流程本身。</p>
+<hr />
+<h2 id="sprint-ai">【獨家】Sprint 方法論的 AI 衝擊：五個正在發生的改變</h2>
+<p><img alt="A modern humanoid robot with digital face and luminescent screen, symbolizing innovation in technology." src="images/sprint-method-ai.jpg" />
+<em>Photo by <a href="https://www.pexels.com/@kindelmedia">Kindel Media</a> on <a href="https://www.pexels.com/photo/low-angle-shot-of-robot-8566526/">Pexels</a></em></p>
+<p>影片中 Happy 提到 Sprint 估點數失去意義，但他沒有展開的是，整個敏捷開發框架正在被根本性地挑戰。根據我服務超過四百家企業的觀察，以下五個改變正在發生：</p>
+<p><strong>1. 估點數 → 估方向</strong>
+以前一個 Ticket 估 3 天，AI 出現後可能 1 天就完成。重點不再是「多久」，而是「做不做」和「做到什麼程度」。</p>
+<p><strong>2. 角色固定 → 能力流動</strong>
+Happy 的觀察最精準：PO 可以寫程式、RD 可以做產品決策。Sprint 原本就有「任何人可以撿別人的工作」的原則，以前做不到，現在 AI 讓它成真了。</p>
+<p><strong>3. Sprint Review → 持續驗證</strong>
+以前要等一個 Sprint 結束才 Review，現在 Vibe Coding 可以在幾小時內做出 Prototype，直接拿給客戶看。驗證週期從兩週變成一天。</p>
+<p><strong>4. Backlog 管理 → 機會爆炸</strong>
+Happy 說「題目收不完」——員工瘋狂提案，用 AI 快速做出 POC 證明可行性。以前的問題是「資源不夠」，現在的問題是「機會太多，怎麼選」。</p>
+<p><strong>5. 團隊規模 → 重新定義</strong>
+如果一個人加 AI 可以做以前三個人的工作，團隊還需要 7-15 人嗎？91APP 目前沒有裁員，而是讓團隊做更多事。但長期來看，最佳團隊規模一定會改變。</p>
+<hr />
+<h2 id="_2">阿峰觀點</h2>
+<p><img alt="A modern humanoid robot with digital face and luminescent screen, symbolizing innovation in technology." src="images/artificial-intelligence-business.jpg" />
+<em>Photo by <a href="https://www.pexels.com/@kindelmedia">Kindel Media</a> on <a href="https://www.pexels.com/photo/low-angle-shot-of-robot-8566526/">Pexels</a></em></p>
+<p>聽完 Happy 和 Spencer 的分享，我最大的感觸是：台灣其實有很多企業已經走在 AI 導入的最前線，只是大家不太講。</p>
+<p>91APP 的做法有幾個值得學的地方：</p>
+<p>第一，<strong>從上到下全力支持</strong>。不是喊口號，是直接發錢訂閱 AI 工具。每人每月二十塊美金，看起來不多，但代表的是「你去用，公司買單」的態度。</p>
+<p>第二，<strong>不急著收斂</strong>。三十幾個團隊各自探索不同的 AI 工作方式，讓大家互相分享。這需要管理層的耐心和信任。</p>
+<p>第三，<strong>務實面對失敗</strong>。對話式 Agent 客戶不買單？那就換方向，做融入流程的隱形 AI。不是「AI 不行」，是「這個用法不對」。</p>
+<p>你是機長，AI 是機組人員。不要被職稱限住你的可能性。</p>
+<hr />
+<h2 id="_3">本文提到的資源</h2>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>連結</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>91APP</td>
+<td><a href="https://www.91app.com">https://www.91app.com</a></td>
+<td>台灣零售科技 SaaS 平台</td>
+</tr>
+<tr>
+<td>塞掐 Side Chat</td>
+<td><a href="https://www.youtube.com/watch?v=8QSNNvM7yEU">https://www.youtube.com/watch?v=8QSNNvM7yEU</a></td>
+<td>原始訪談完整版</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_4">影片中提到的資源</h2>
+<ul>
+<li>Cursor — AI 程式編輯器</li>
+<li>Claude Code — Anthropic 的 CLI 開發工具</li>
+<li>N8N — 開源自動化工具</li>
+<li>Open Claw（龍蝦）— 開源 AI Agent 平台</li>
+<li>Lublia — Spencer 的開源 AI 工作流工具</li>
+</ul>
+<hr />
+<p>📌 企業 AI 培訓服務
+→ <a href="https://www.autolab.cloud">https://www.autolab.cloud</a></p>
+<hr />
+<h3 id="_5">關於作者</h3>
+<p>黃敬峰（AI峰哥），企業 AI 實戰培訓專家，400+ 企業合作、10,000+ 學員。
+核心心法：「會用、懂用、好用、每天用」
+官網：<a href="https://www.autolab.cloud">https://www.autolab.cloud</a></p>
+  </article>
+  </main>
+
+  <!-- Share -->
+  <div class="share-section">
+    <h3>分享這篇文章</h3>
+    <div class="share-buttons">
+      <a href="https://social-plugins.line.me/lineit/share?url=https://blog.autolab.cloud/ai-91app-ai-sprint-ai/" target="_blank" rel="noopener" class="share-btn share-line" aria-label="分享到 LINE">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        LINE
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.autolab.cloud/ai-91app-ai-sprint-ai/" target="_blank" rel="noopener" class="share-btn share-fb" aria-label="分享到 Facebook">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook
+      </a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://blog.autolab.cloud/ai-91app-ai-sprint-ai/" target="_blank" rel="noopener" class="share-btn share-linkedin" aria-label="分享到 LinkedIn">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <button class="share-btn share-copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='已複製!';setTimeout(()=>{this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;><path fill=&quot;currentColor&quot; d=&quot;M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z&quot;/></svg> 複製連結'},2000)})" aria-label="複製連結">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        複製連結
+      </button>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <div class="cta-box-inner">
+      <h3>想用 AI 解決真問題？</h3>
+      <p>加入阿峰老師的 AI 實戰社群，一起從觀念到落地。</p>
+      <div class="cta-buttons">
+        <a href="https://reurl.cc/GGlLNx" class="cta-btn">加入 LINE 社群</a>
+        <a href="https://www.autolab.cloud" class="cta-btn outline">企業培訓諮詢</a>
+      </div>
+      <div class="cta-links">
+        <a href="https://www.autolab.cloud">官網</a>
+        <a href="mailto:ai@autolab.cloud">聯繫合作</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Articles -->
+  <section class="related-section">
+  <h2>你可能也想看</h2>
+  <div class="related-grid">
+    <a href="https://blog.autolab.cloud/taiwan-ai-transformation-strategy/" class="related-card">
+  <img class="related-card-thumb" src="../taiwan-ai-transformation-strategy/banner.png" alt="台灣軟體業的 AI 產品化之戰：從接案代工到打進國際市場的關鍵轉折" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-09</div>
+    <div class="related-card-title">台灣軟體業的 AI 產品化之戰：從接案代工到打進國際市場的關鍵轉折</div>
+  </div>
+</a><a href="https://blog.autolab.cloud/harness-engineering-ai-agent-openai/" class="related-card">
+  <img class="related-card-thumb" src="../harness-engineering-ai-agent-openai/banner.png" alt="OpenAI 駕馭工程：AI Agent 五個月零手寫百萬行程式碼，軟體開發典範轉移" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-09</div>
+    <div class="related-card-title">OpenAI 駕馭工程：AI Agent 五個月零手寫百萬行程式碼，軟體開發典範轉移</div>
+  </div>
+</a><a href="https://blog.autolab.cloud/chatgpt-skills-ai-skills-manus-skills/" class="related-card">
+  <img class="related-card-thumb" src="../chatgpt-skills-ai-skills-manus-skills/banner.png" alt="ChatGPT Skills 正式登場！比 GPT 5.4 更值得注意的新功能" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-08</div>
+    <div class="related-card-title">ChatGPT Skills 正式登場！比 GPT 5.4 更值得注意的新功能</div>
+  </div>
+</a>
+  </div>
+</section>
+
+  <!-- Article Navigation -->
+  <nav class="article-nav">
+  <a href="https://blog.autolab.cloud/perplexity-computer-ai-agent/" class="prev">
+  <div class="nav-label">← 上一篇</div>
+  <div class="nav-title">AI 不再只是聊天機器人：當 AI 學會自己完成工作</div>
+</a><a href="https://blog.autolab.cloud/ai-agent-sales-prompts/" class="next">
+  <div class="nav-label">下一篇 →</div>
+  <div class="nav-title">業務用 AI 不只是寫信：100+ 個 AI 代理提示詞揭露的差距</div>
+</a>
+</nav>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2026 Autolab — 黃敬峰（AI峰哥）. All rights reserved.</p>
+    <p style="margin-top:8px">
+      <a href="https://blog.autolab.cloud/">Blog</a> ·
+      <a href="https://www.autolab.cloud">官網</a> ·
+      <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+    </p>
+  </footer>
+</body>
+</html>

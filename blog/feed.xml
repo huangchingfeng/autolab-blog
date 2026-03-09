@@ -61,6 +61,20 @@
       <category>自動化</category>
     </item>
     <item>
+      <title>AI 時代組織怎麼跑？91APP 三十幾個團隊的實戰經驗拆解｜阿峰老師</title>
+      <link>https://blog.autolab.cloud/ai-91app-ai-sprint-ai/</link>
+      <guid>https://blog.autolab.cloud/ai-91app-ai-sprint-ai/</guid>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>91APP 有 30+ 個開發團隊全面導入 AI，產品長分享職稱邊界消失、Sprint 估點數失去意義的實戰觀察。阿峰老師獨家分析自動化工具的典範翻轉和 Agent UX 設計。</description>
+      <category>AI</category>
+      <category>企業AI導入</category>
+      <category>91APP</category>
+      <category>Sprint</category>
+      <category>AgentUX</category>
+      <category>組織創新</category>
+    </item>
+    <item>
       <title>業務用 AI 不只是寫信：100+ 個 AI 代理提示詞揭露的差距</title>
       <link>https://blog.autolab.cloud/ai-agent-sales-prompts/</link>
       <guid>https://blog.autolab.cloud/ai-agent-sales-prompts/</guid>
@@ -266,18 +280,6 @@
       <category>簡立峰</category>
       <category>一人公司</category>
       <category>AI培訓</category>
-    </item>
-    <item>
-      <title>10 個素人用 Claude Code 做出的真實產品｜最快 4.5 小時上線</title>
-      <link>https://blog.autolab.cloud/claude-code-10-real-products/</link>
-      <guid>https://blog.autolab.cloud/claude-code-10-real-products/</guid>
-      <pubDate>Fri, 06 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>設計師、廣告導演、露營旅館老闆⋯⋯10 個非工程師背景的人，用 Claude Code 做出 APP、SaaS、自動化系統。最快只花 4.5 小時。</description>
-      <category>Claude Code</category>
-      <category>Vibe Coding</category>
-      <category>AI開發</category>
-      <category>實戰案例</category>
     </item>
   </channel>
 </rss>
