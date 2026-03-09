@@ -13,6 +13,18 @@
       <link>https://blog.autolab.cloud/</link>
     </image>
     <item>
+      <title>當產品經理開始寫程式：AI 如何讓職業邊界消失</title>
+      <link>https://blog.autolab.cloud/ai-agent-job-future/</link>
+      <guid>https://blog.autolab.cloud/ai-agent-job-future/</guid>
+      <pubDate>Tue, 10 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>91APP 真實案例：20 幾個團隊因為 AI，產品經理開始做 prototype、工程師挑戰商業策略。從職稱消失到軟體要做給 Agent 用，企業培訓專家的第一手觀察。</description>
+      <category>AI代理</category>
+      <category>職場趨勢</category>
+      <category>組織變革</category>
+      <category>Vibe Coding</category>
+    </item>
+    <item>
       <title>台灣軟體業的 AI 產品化之戰：從接案代工到打進國際市場的關鍵轉折</title>
       <link>https://blog.autolab.cloud/taiwan-ai-transformation-strategy/</link>
       <guid>https://blog.autolab.cloud/taiwan-ai-transformation-strategy/</guid>
@@ -267,20 +279,6 @@
       <category>微軟CEO</category>
       <category>OpenAI</category>
       <category>AI實戰</category>
-    </item>
-    <item>
-      <title>MacBook Neo 科技平權：一萬六千九就能學 AI 的時代來了</title>
-      <link>https://blog.autolab.cloud/macbook-neo-ai/</link>
-      <guid>https://blog.autolab.cloud/macbook-neo-ai/</guid>
-      <pubDate>Fri, 06 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>蘋果 MacBook Neo 教育價一萬六千九，跑得動所有 AI 工具。從 1980 年代的教育策略到 2026 年的 AI 普及化，科技平權的意義比規格更重要。附一台筆電學 AI 的四週行動指南。</description>
-      <category>AI</category>
-      <category>MacBookNeo</category>
-      <category>科技平權</category>
-      <category>AI教育</category>
-      <category>蘋果</category>
-      <category>Apple</category>
     </item>
   </channel>
 </rss>
