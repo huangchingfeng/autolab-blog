@@ -51,6 +51,18 @@
       <category>軟體開發</category>
     </item>
     <item>
+      <title>2026 普通人必備的 6 個 AI 技能：一人公司的基礎建設</title>
+      <link>https://blog.autolab.cloud/six-ai-skills-for-beginners/</link>
+      <guid>https://blog.autolab.cloud/six-ai-skills-for-beginners/</guid>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>不用寫程式，這 6 個 AI 技能讓一個普通人扛起整間公司。結構化提示詞、AI 智能體、數字大腦、工作流自動化、零代碼開發、批量內容生成完整教學。</description>
+      <category>AI技能</category>
+      <category>AI工具教學</category>
+      <category>一人公司</category>
+      <category>NotebookLM</category>
+    </item>
+    <item>
       <title>NotebookLM 萬卷之王：一個筆記本裝無限技能，四步驟完整設定教學</title>
       <link>https://blog.autolab.cloud/notebooklm-gem/</link>
       <guid>https://blog.autolab.cloud/notebooklm-gem/</guid>
@@ -272,19 +284,6 @@
       <category>幽靈繁榮</category>
       <category>AI趨勢</category>
       <category>2028危機</category>
-    </item>
-    <item>
-      <title>AI 裁員潮來了？Block 砍 5000 人背後的真相與 5 步工作拆解法</title>
-      <link>https://blog.autolab.cloud/ai-block-2026-ai/</link>
-      <guid>https://blog.autolab.cloud/ai-block-2026-ai/</guid>
-      <pubDate>Mon, 02 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>Block 因 AI 裁員 5000 人，Anthropic 因拒絕開發自動武器被川普封殺。三個關鍵觀察加上獨家 5 步工作拆解法，教你找出自己的不可取代區。</description>
-      <category>AI裁員</category>
-      <category>AI安全</category>
-      <category>職場AI</category>
-      <category>Block</category>
-      <category>Anthropic</category>
     </item>
   </channel>
 </rss>
