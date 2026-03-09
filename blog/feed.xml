@@ -51,6 +51,19 @@
       <category>軟體開發</category>
     </item>
     <item>
+      <title>NotebookLM 萬卷之王：一個筆記本裝無限技能，四步驟完整設定教學</title>
+      <link>https://blog.autolab.cloud/notebooklm-gem/</link>
+      <guid>https://blog.autolab.cloud/notebooklm-gem/</guid>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>NotebookLM 可以像手機裝外掛！把 Gem 的行為指示變成可勾選技能，一個筆記本搞定所有工作流。四步驟完整教學，含指令架構師、動態指令解析、實戰案例。</description>
+      <category>NotebookLM</category>
+      <category>Gem</category>
+      <category>AI教學</category>
+      <category>Google</category>
+      <category>萬卷之王</category>
+    </item>
+    <item>
       <title>NotebookLM Cinematic Video Overviews 完整解析｜簡報秒變電影感影片</title>
       <link>https://blog.autolab.cloud/notebooklm-cinematic-video-overviews/</link>
       <guid>https://blog.autolab.cloud/notebooklm-cinematic-video-overviews/</guid>
@@ -272,23 +285,6 @@
       <category>職場AI</category>
       <category>Block</category>
       <category>Anthropic</category>
-    </item>
-    <item>
-      <title>Claude 被封殺、Block 裁員一半：AI 時代職場生存指南（2026）</title>
-      <link>https://blog.autolab.cloud/ai-block-claude/</link>
-      <guid>https://blog.autolab.cloud/ai-block-claude/</guid>
-      <pubDate>Mon, 02 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>Block CEO Jack Dorsey 裁掉 4,000 人，說是因為 AI；Anthropic 因拒絕移除安全限制遭美國政府全面封殺。這兩件同時發生的大事，說明了 AI 取代人力已不是預言，而是現在式。本文深度分析數據、各大廠立場，並告訴你現在該怎麼做。</description>
-      <category>AI</category>
-      <category>AI裁員</category>
-      <category>Block</category>
-      <category>Anthropic</category>
-      <category>Claude</category>
-      <category>JackDorsey</category>
-      <category>DarioAmodei</category>
-      <category>AI職場</category>
-      <category>AI安全</category>
     </item>
   </channel>
 </rss>
