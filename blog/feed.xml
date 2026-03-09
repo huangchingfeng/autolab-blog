@@ -25,6 +25,18 @@
       <category>AI Agent</category>
     </item>
     <item>
+      <title>萬卷之王：把 Gemini Gem 技能外掛到 NotebookLM 的終極玩法</title>
+      <link>https://blog.autolab.cloud/gemini-notebooklm-skills/</link>
+      <guid>https://blog.autolab.cloud/gemini-notebooklm-skills/</guid>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>教你把所有 Gemini Gem 的技能裝進 NotebookLM，一個筆記本搞定多步驟工作流。四步驟完整教學。</description>
+      <category>NotebookLM</category>
+      <category>Gemini</category>
+      <category>AI工具教學</category>
+      <category>Google AI</category>
+    </item>
+    <item>
       <title>OpenAI 駕馭工程：AI Agent 五個月零手寫百萬行程式碼，軟體開發典範轉移</title>
       <link>https://blog.autolab.cloud/harness-engineering-ai-agent-openai/</link>
       <guid>https://blog.autolab.cloud/harness-engineering-ai-agent-openai/</guid>
@@ -277,19 +289,6 @@
       <category>DarioAmodei</category>
       <category>AI職場</category>
       <category>AI安全</category>
-    </item>
-    <item>
-      <title>AI 時代創業不再靠資金，靠的是這六個步驟｜阿峰老師</title>
-      <link>https://blog.autolab.cloud/ai-new-business-rules/</link>
-      <guid>https://blog.autolab.cloud/ai-new-business-rules/</guid>
-      <pubDate>Mon, 02 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>Daniel Priestley 的六步驟創業框架 + 台灣企業培訓實戰觀察。AI 降低了技術門檻，但真正稀缺的是決策勇氣和行動力。附台灣職場實戰案例。</description>
-      <category>AI</category>
-      <category>創業</category>
-      <category>AI創業</category>
-      <category>Daniel Priestley</category>
-      <category>企業培訓</category>
     </item>
   </channel>
 </rss>

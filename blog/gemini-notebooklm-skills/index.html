@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>萬卷之王：把 Gemini Gem 技能外掛到 NotebookLM 的終極玩法 — 阿峰老師</title>
+  <meta name="description" content="教你把所有 Gemini Gem 的技能裝進 NotebookLM，一個筆記本搞定多步驟工作流。四步驟完整教學。">
+  <meta name="keywords" content="NotebookLM, Gemini, AI工具教學, Google AI">
+  <meta name="author" content="黃敬峰（AI峰哥）">
+  <link rel="canonical" href="https://blog.autolab.cloud/gemini-notebooklm-skills/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="萬卷之王：把 Gemini Gem 技能外掛到 NotebookLM 的終極玩法">
+  <meta property="og:description" content="教你把所有 Gemini Gem 的技能裝進 NotebookLM，一個筆記本搞定多步驟工作流。四步驟完整教學。">
+  <meta property="og:image" content="https://blog.autolab.cloud/gemini-notebooklm-skills/banner.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://blog.autolab.cloud/gemini-notebooklm-skills/">
+  <meta property="og:site_name" content="阿峰老師 Autolab">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="article:author" content="黃敬峰（AI峰哥）">
+  <meta property="article:published_time" content="2026-03-09T00:00:00+08:00">
+  <meta property="article:modified_time" content="2026-03-09T00:00:00+08:00">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="萬卷之王：把 Gemini Gem 技能外掛到 NotebookLM 的終極玩法">
+  <meta name="twitter:description" content="教你把所有 Gemini Gem 的技能裝進 NotebookLM，一個筆記本搞定多步驟工作流。四步驟完整教學。">
+  <meta name="twitter:image" content="https://blog.autolab.cloud/gemini-notebooklm-skills/banner.png">
+
+  <!-- Article Tags -->
+  <meta property="article:tag" content="NotebookLM">
+  <meta property="article:tag" content="Gemini">
+  <meta property="article:tag" content="AI工具教學">
+  <meta property="article:tag" content="Google AI">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "萬卷之王：把 Gemini Gem 技能外掛到 NotebookLM 的終極玩法", "description": "教你把所有 Gemini Gem 的技能裝進 NotebookLM，一個筆記本搞定多步驟工作流。四步驟完整教學。", "author": {"@type": "Person", "name": "黃敬峰（AI峰哥）", "url": "https://www.autolab.cloud"}, "publisher": {"@type": "Organization", "name": "Autolab", "url": "https://www.autolab.cloud", "logo": {"@type": "ImageObject", "url": "https://blog.autolab.cloud/static/og-default.png"}}, "datePublished": "2026-03-09T00:00:00+08:00", "dateModified": "2026-03-09T00:00:00+08:00", "image": "https://blog.autolab.cloud/gemini-notebooklm-skills/banner.png", "mainEntityOfPage": "https://blog.autolab.cloud/gemini-notebooklm-skills/", "keywords": "NotebookLM, Gemini, AI工具教學, Google AI", "inLanguage": "zh-Hant-TW"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://blog.autolab.cloud/"}, {"@type": "ListItem", "position": 2, "name": "萬卷之王：把 Gemini Gem 技能外掛到 NotebookLM 的終極玩法", "item": "https://blog.autolab.cloud/gemini-notebooklm-skills/"}]}</script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://blog.autolab.cloud/static/favicon.png">
+  <link rel="icon" type="image/x-icon" href="https://blog.autolab.cloud/static/favicon.ico">
+  <link rel="apple-touch-icon" href="https://blog.autolab.cloud/static/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="阿峰老師 Blog RSS" href="https://blog.autolab.cloud/feed.xml">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://blog.autolab.cloud/static/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至主要內容</a>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="https://blog.autolab.cloud/" class="nav-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 412 160" width="32" height="13" aria-hidden="true">
+          <defs><g id="wing"><polygon points="188,26 0,0 16,22 168,90"/><polygon points="166,100 34,60 42,72 170,114"/><polygon points="174,122 68,88 76,100 182,140"/></g></defs>
+          <use href="#wing" fill="#00D4FF"/><use href="#wing" fill="#00D4FF" transform="translate(392,0) scale(-1,1)"/>
+        </svg>
+        <span>Autolab</span> 阿峰老師
+      </a>
+      <div class="nav-links">
+        <a href="https://blog.autolab.cloud/">Blog</a>
+        <a href="https://www.autolab.cloud">官網</a>
+        <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs" aria-label="麵包屑導航">
+    <a href="https://blog.autolab.cloud/">Blog</a><span class="sep">›</span><span class="current">萬卷之王：把 Gemini Gem 技能外掛到 NotebookLM 的終極玩法</span>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="article-header">
+    <div class="article-meta">
+      <span>2026-03-09</span>
+      <span>黃敬峰（AI峰哥）</span>
+    </div>
+    <h1>萬卷之王：把 Gemini Gem 技能外掛到 NotebookLM 的終極玩法</h1>
+    <div class="card-tags"><span class="tag" data-color="green">NotebookLM</span><span class="tag" data-color="pink">Gemini</span><span class="tag" data-color="green">AI工具教學</span><span class="tag" data-color="green">Google AI</span></div>
+  </header>
+
+  <!-- Featured Image -->
+  <div class="featured-image-wrapper"><img src="banner.png" alt="萬卷之王：把 Gemini Gem 技能外掛到 NotebookLM 的終極玩法" class="featured-image" loading="lazy" width="780" height="438"></div>
+
+  <!-- YouTube -->
+  
+
+  <!-- CONTENT -->
+  <main id="main-content">
+  <article class="article-content">
+    <h1 id="gemini-gem-notebooklm">萬卷之王：把 Gemini Gem 技能外掛到 NotebookLM 的終極玩法</h1>
+<blockquote>
+<p>本文是社群貼文的完整延伸版。
+社群版講了核心概念，本文加上獨家操作指南和進階技巧。</p>
+</blockquote>
+<hr />
+<h2 id="_1">重點回顧</h2>
+<p>Gemini 的 Gem（自訂機器人）很好用，但有個致命缺點：左邊欄位只能釘選 5 個。如果你做了十幾個 Gem，每次找就要翻半天。而且做多步驟工作流的時候，要在不同 Gem 之間切換複製貼上，超級麻煩。</p>
+<p>「萬卷之王」就是一個解決方案：把所有 Gem 的技能「外掛」到 NotebookLM，一個筆記本裝好幾個技能，用勾選切換，還能搭配你的資料一起運作。</p>
+<hr />
+<h2 id="notebooklm">【獨家】完整操作指南：四步驟把技能裝進 NotebookLM</h2>
+<p><img alt="A minimalist workspace featuring a laptop, smartphone, and an apple on a clean white desk." src="images/notebooklm.jpg" />
+<em>Photo by <a href="https://www.pexels.com/@morningtrain">karsten madsen</a> on <a href="https://www.pexels.com/photo/macbook-pro-near-iphone-and-apple-fruit-18105/">Pexels</a></em></p>
+<h3 id="gem">步驟一：製作「生成技能的 Gem」</h3>
+<p>在 Gemini 左邊選單找到「Gem」，新增一個叫「對話機器人指令架構師」的 Gem。這個 Gem 的功能是：你告訴它你想要什麼機器人，它就幫你寫好完整的行為指示（提示詞）。</p>
+<p><strong>使用方式</strong>：
+1. 打開 Gemini → 左邊選單 → Gem → 新增 Gem
+2. 在「使用說明」貼上指令架構師的系統提示
+3. 儲存</p>
+<p>之後你只要對它說「幫我寫一個能生成一頁式漫畫的機器人」，它就會幫你產出完整的行為指示，包含版本號、角色設定、輸出格式等等。</p>
+<h3 id="gem_1">步驟二：製作「生圖專用 Gem」</h3>
+<p>因為 NotebookLM 本身不能生成圖片，所以我們需要一個專門負責生圖的 Gem。這個 Gem 很簡單——你貼提示詞給它，它就直接生圖，不囉嗦。</p>
+<p><strong>重點</strong>：以後所有要生圖的需求，都統一透過這一個 Gem 處理。NotebookLM 負責產出圖片提示詞，生圖 Gem 負責執行。各司其職。</p>
+<h3 id="notebooklm_1">步驟三：設定 NotebookLM 自訂提示詞</h3>
+<p>這是最關鍵的一步。在 NotebookLM 右上角找到「設定筆記本」→「自訂提示詞」，貼上一段叫「動態指令解析與執行專家」的系統提示。</p>
+<p><strong>這段提示做了什麼</strong>：
+- 自動偵測來源資料裡的行為指令（角色設定、操作指令、SOP）
+- 將偵測到的指令內化為筆記本的運作邏輯
+- 行為指令不會出現在輸出結果中
+- 如果有多組指令，依據當下問題選擇最相關的</p>
+<p>白話說：貼上這段提示之後，你的 NotebookLM 就變成一個「可以讀取並套用技能」的筆記本。</p>
+<p><strong>每一本筆記本都可以這樣設定</strong>，包括舊的筆記本。</p>
+<h3 id="google">步驟四：用 Google 文件存技能</h3>
+<p>把步驟一生成的行為指示，或你原本 Gem 的行為指示，存成 Google 文件。然後在 NotebookLM 左邊「新增來源」→「雲端硬碟」→ 選擇該文件 → 插入。</p>
+<p><strong>為什麼用 Google 文件而不是直接貼文字</strong>：
+- Google 文件更新後，NotebookLM 按一下就能同步更新
+- 貼文字的話，每次修改都要重新新增來源</p>
+<p>一個 Google 文件 = 一個技能。要用哪個技能，就勾選哪個來源。</p>
+<hr />
+<h2 id="gem-notebooklm">【獨家】進階技巧：把舊的生圖 Gem 轉成 NotebookLM 技能</h2>
+<p><img alt="A colorful assortment of polished gemstones showcasing natural beauty and luster." src="images/gem-notebooklm.jpg" />
+<em>Photo by <a href="https://www.pexels.com/@markus-winkler-1430818">Markus Winkler</a> on <a href="https://www.pexels.com/photo/a-pile-of-colorful-stones-and-rocks-19902306/">Pexels</a></em></p>
+<p>如果你原本的 Gem 是直接生成圖片的（比如字母解謎、漫畫生成），要怎麼轉？</p>
+<ol>
+<li>把原本 Gem 的行為指示全部複製</li>
+<li>在 NotebookLM 裡勾選「指令架構師」技能</li>
+<li>把行為指示貼上，告訴它：「把最後的輸出規則改成輸出 YAML 格式的 AI 生成圖片提示詞」</li>
+<li>它會幫你在原版本基礎上修改（比如從 2.0 改成 2.1），保留原本邏輯</li>
+</ol>
+<p>改好之後存成 Google 文件，新增為 NotebookLM 來源。以後要用這個技能時：
+1. 勾選該技能 + 你的資料
+2. NotebookLM 產出圖片提示詞
+3. 到生圖 Gem 執行</p>
+<h3 id="_2">多技能同時使用</h3>
+<p>你可以同時勾選兩個不衝突的技能。比如：
+- 勾選「漫畫技能」+ 教材 PDF → 生成分鏡腳本
+- 再勾選「字母解謎技能」→ 把關鍵字轉成解謎遊戲</p>
+<p>如果對話開始跑掉，刪除對話記錄重新來。NotebookLM 有記憶效應，前面的對話會影響後面的結果。</p>
+<h3 id="google_1">Google 生圖的小提醒</h3>
+<p>Google 目前的策略是：不管你選什麼模型，第一次都用 Imagen 2 生成（省資源）。如果不滿意，點「重做」選 Imagen Pro 才會用更好的模型。</p>
+<hr />
+<h2 id="_3">阿峰觀點</h2>
+<p><img alt="A modern humanoid robot with digital face and luminescent screen, symbolizing innovation in technology." src="images/artificial-intelligence-business.jpg" />
+<em>Photo by <a href="https://www.pexels.com/@kindelmedia">Kindel Media</a> on <a href="https://www.pexels.com/photo/low-angle-shot-of-robot-8566526/">Pexels</a></em></p>
+<p>我帶過超過 400 家企業做 AI 培訓，最常被問的就是：「這些工具我一個一個都會用，但怎麼串在一起？」</p>
+<p>萬卷之王就是一個絕佳範例：
+- <strong>NotebookLM</strong> 負責處理資料和套用技能（遵照度最高）
+- <strong>Gem</strong> 負責生圖（NotebookLM 做不到的事）
+- <strong>Google 文件</strong> 負責存技能（同步更新）</p>
+<p>每個工具各司其職，組合起來就是一個完整的工作流。</p>
+<p>這個方法最大的價值不是省了幾分鐘，而是讓你的 AI 工作流程變得「可組合」。你可以不斷新增技能、分享技能，甚至跟同事交換技能。這才是真正的 AI 協作。</p>
+<p>「你是機長，AI 是機組人員。」你不需要每個工具都精通，但你要知道什麼時候該派誰上場。</p>
+<hr />
+<h2 id="_4">本文提到的資源</h2>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>連結</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NotebookLM</td>
+<td><a href="https://notebooklm.google.com">https://notebooklm.google.com</a></td>
+<td>Google AI 筆記本</td>
+</tr>
+<tr>
+<td>Gemini</td>
+<td><a href="https://gemini.google.com">https://gemini.google.com</a></td>
+<td>Google AI 聊天 + Gem</td>
+</tr>
+<tr>
+<td>原始直播影片</td>
+<td><a href="https://www.youtube.com/watch?v=CkAs29S4ZxY">https://www.youtube.com/watch?v=CkAs29S4ZxY</a></td>
+<td>萬卷之王完整教學</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>企業想導入 AI？阿峰老師服務過台積電、國泰金控、中華電信等超過 400 家企業
+→ <a href="https://www.autolab.cloud">https://www.autolab.cloud</a></p>
+<hr />
+<h3 id="_5">關於作者</h3>
+<p>黃敬峰（AI峰哥），企業 AI 實戰培訓專家，400+ 企業合作、10,000+ 學員。
+核心心法：「會用、懂用、好用、每天用」
+官網：<a href="https://www.autolab.cloud">https://www.autolab.cloud</a></p>
+  </article>
+  </main>
+
+  <!-- Share -->
+  <div class="share-section">
+    <h3>分享這篇文章</h3>
+    <div class="share-buttons">
+      <a href="https://social-plugins.line.me/lineit/share?url=https://blog.autolab.cloud/gemini-notebooklm-skills/" target="_blank" rel="noopener" class="share-btn share-line" aria-label="分享到 LINE">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        LINE
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.autolab.cloud/gemini-notebooklm-skills/" target="_blank" rel="noopener" class="share-btn share-fb" aria-label="分享到 Facebook">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook
+      </a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://blog.autolab.cloud/gemini-notebooklm-skills/" target="_blank" rel="noopener" class="share-btn share-linkedin" aria-label="分享到 LinkedIn">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <button class="share-btn share-copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='已複製!';setTimeout(()=>{this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;><path fill=&quot;currentColor&quot; d=&quot;M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z&quot;/></svg> 複製連結'},2000)})" aria-label="複製連結">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        複製連結
+      </button>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <div class="cta-box-inner">
+      <h3>想用 AI 解決真問題？</h3>
+      <p>加入阿峰老師的 AI 實戰社群，一起從觀念到落地。</p>
+      <div class="cta-buttons">
+        <a href="https://reurl.cc/GGlLNx" class="cta-btn">加入 LINE 社群</a>
+        <a href="https://www.autolab.cloud" class="cta-btn outline">企業培訓諮詢</a>
+      </div>
+      <div class="cta-links">
+        <a href="https://www.autolab.cloud">官網</a>
+        <a href="mailto:ai@autolab.cloud">聯繫合作</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Articles -->
+  <section class="related-section">
+  <h2>你可能也想看</h2>
+  <div class="related-grid">
+    <a href="https://blog.autolab.cloud/notebooklm-cinematic-video-overviews/" class="related-card">
+  <img class="related-card-thumb" src="../notebooklm-cinematic-video-overviews/banner.png" alt="NotebookLM Cinematic Video Overviews 完整解析｜簡報秒變電影感影片" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-08</div>
+    <div class="related-card-title">NotebookLM Cinematic Video Overviews 完整解析｜簡報秒變電影感影片</div>
+  </div>
+</a><a href="https://blog.autolab.cloud/gemini-3-1-pro-ai-landing-page-ai-gemini/" class="related-card">
+  <img class="related-card-thumb" src="../gemini-3-1-pro-ai-landing-page-ai-gemini/banner.png" alt="Gemini 3.1 Pro 實測：5 分鐘做出高質感網頁｜AI 網頁生成教學" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-08</div>
+    <div class="related-card-title">Gemini 3.1 Pro 實測：5 分鐘做出高質感網頁｜AI 網頁生成教學</div>
+  </div>
+</a><a href="https://blog.autolab.cloud/gemini-gems-ai/" class="related-card">
+  <img class="related-card-thumb" src="../gemini-gems-ai/banner.png" alt="Gemini Gems 完全攻略：5 個 AI 員工幫你每天省 3 小時｜阿峰老師" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-07</div>
+    <div class="related-card-title">Gemini Gems 完全攻略：5 個 AI 員工幫你每天省 3 小時｜阿峰老師</div>
+  </div>
+</a>
+  </div>
+</section>
+
+  <!-- Article Navigation -->
+  <nav class="article-nav">
+  <a href="https://blog.autolab.cloud/taiwan-ai-transformation-strategy/" class="prev">
+  <div class="nav-label">← 上一篇</div>
+  <div class="nav-title">台灣軟體業的 AI 產品化之戰：從接案代工到打進國際市場的關鍵轉折</div>
+</a><a href="https://blog.autolab.cloud/harness-engineering-ai-agent-openai/" class="next">
+  <div class="nav-label">下一篇 →</div>
+  <div class="nav-title">OpenAI 駕馭工程：AI Agent 五個月零手寫百萬行程式碼，軟體開發典範轉移</div>
+</a>
+</nav>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2026 Autolab — 黃敬峰（AI峰哥）. All rights reserved.</p>
+    <p style="margin-top:8px">
+      <a href="https://blog.autolab.cloud/">Blog</a> ·
+      <a href="https://www.autolab.cloud">官網</a> ·
+      <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+    </p>
+  </footer>
+</body>
+</html>
