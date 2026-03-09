@@ -37,14 +37,14 @@
       <category>Google AI</category>
     </item>
     <item>
-      <title>Perplexity Computer 實測：AI 代理真的能幫你賺錢嗎？</title>
+      <title>AI 不再只是聊天機器人：當 AI 學會自己完成工作</title>
       <link>https://blog.autolab.cloud/perplexity-computer-ai-agent/</link>
       <guid>https://blog.autolab.cloud/perplexity-computer-ai-agent/</guid>
       <pubDate>Mon, 09 Mar 2026 00:00:00 +0800</pubDate>
       <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>Perplexity Computer 5 大實測場景完整分析。30 分鐘找到 96 個廣告主、自動競品監控、投資研究——AI 代理時代來了。</description>
-      <category>Perplexity</category>
+      <description>AI 代理不再等你問問題，直接幫你完成任務。從客製化聯繫、競品追蹤到內容多平台轉換，企業培訓專家的第一手觀察。</description>
       <category>AI代理</category>
+      <category>Perplexity</category>
       <category>AI工具評測</category>
       <category>自動化</category>
     </item>
@@ -61,6 +61,19 @@
       <category>駕馭工程</category>
       <category>AIAgent</category>
       <category>軟體開發</category>
+    </item>
+    <item>
+      <title>2026 年普通人必備 6 個 AI 技能：精準提問、AI 搜尋、寫作、圖片、影片、自動化完整教學</title>
+      <link>https://blog.autolab.cloud/ai-2026-ai/</link>
+      <guid>https://blog.autolab.cloud/ai-2026-ai/</guid>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>不用寫程式也能用 AI 改變工作方式！精準提問四要素、Perplexity AI 搜尋、AI 寫作三段位、圖片影片生成、自動化工作流，六個實戰技能完整教學。</description>
+      <category>AI技能</category>
+      <category>AI教學</category>
+      <category>ChatGPT</category>
+      <category>精準提問</category>
+      <category>Perplexity</category>
     </item>
     <item>
       <title>2026 普通人必備的 6 個 AI 技能：一人公司的基礎建設</title>
@@ -229,21 +242,6 @@
       <category>簡立峰</category>
       <category>一人公司</category>
       <category>AI培訓</category>
-    </item>
-    <item>
-      <title>2026必懂17款AI工具完全指南｜Gemini、Claude、Cursor、Manus四大分類評測</title>
-      <link>https://blog.autolab.cloud/ai-2026-ai/</link>
-      <guid>https://blog.autolab.cloud/ai-2026-ai/</guid>
-      <pubDate>Sat, 07 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>結合數位時代評選、a16z百大排行與400+企業培訓經驗，精選17款AI工具完整評測。從核心助理到AI Agent，告訴你每款適合誰、什麼時候該用。</description>
-      <category>AI工具</category>
-      <category>AI教學</category>
-      <category>Gemini</category>
-      <category>Claude</category>
-      <category>Cursor</category>
-      <category>Manus</category>
-      <category>2026AI</category>
     </item>
     <item>
       <title>10 個素人用 Claude Code 做出的真實產品｜最快 4.5 小時上線</title>

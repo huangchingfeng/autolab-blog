@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>免費下載：萬卷之王指令包 — NotebookLM 技能系統完整提示詞 — 阿峰老師</title>
+  <meta name="description" content="免費下載「萬卷之王」三組完整提示詞，把 Gemini Gem 的技能外掛到 NotebookLM，一個筆記本裝無限技能。含動態指令解析專家、指令架構師、生圖專用 Gem。">
+  <meta name="keywords" content="萬卷之王, NotebookLM, Gemini Gem, 提示詞, AI教學, 阿峰老師">
+  <link rel="canonical" href="https://blog.autolab.cloud/notebooklm-skills-download/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="免費下載：萬卷之王指令包 — NotebookLM 技能系統完整提示詞">
+  <meta property="og:description" content="三組完整提示詞，把 Gemini Gem 技能外掛到 NotebookLM，一個筆記本裝無限技能。">
+  <meta property="og:url" content="https://blog.autolab.cloud/notebooklm-skills-download/">
+  <meta property="og:site_name" content="阿峰老師 Autolab">
+  <meta property="og:locale" content="zh_TW">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #00D4FF;
+      --bg: #0A1628;
+      --card: #0F1D32;
+      --border: #152035;
+      --accent: #FF6B35;
+      --text: #E8E8ED;
+      --text-muted: #8B8FA3;
+      --white: #FFFFFF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans TC', 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { opacity: .8; }
+
+    /* NAV */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,22,40,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .nav-inner {
+      width: 100%; max-width: 1080px;
+      padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-brand {
+      font-size: 1.1rem; font-weight: 700; color: var(--white);
+    }
+    .nav-brand span { color: var(--primary); }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { color: var(--text-muted); font-size: .9rem; }
+    .nav-links a:hover { color: var(--white); }
+
+    /* HERO */
+    .hero {
+      max-width: 720px; margin: 0 auto;
+      padding: 72px 24px 48px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(0,212,255,.1);
+      border: 1px solid rgba(0,212,255,.2);
+      color: var(--primary);
+      padding: 6px 20px;
+      border-radius: 24px;
+      font-size: .85rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: 2.2rem; font-weight: 900;
+      color: var(--white);
+      line-height: 1.35;
+      margin-bottom: 20px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--primary);
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    /* FEATURES */
+    .features {
+      max-width: 720px; margin: 0 auto;
+      padding: 0 24px 48px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .feature {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+    }
+    .feature-number {
+      display: inline-block;
+      background: rgba(0,212,255,.15);
+      color: var(--primary);
+      font-weight: 800;
+      font-size: .85rem;
+      width: 28px; height: 28px;
+      line-height: 28px;
+      text-align: center;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    .feature h3 {
+      color: var(--white);
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .feature p {
+      color: var(--text-muted);
+      font-size: .9rem;
+      line-height: 1.6;
+    }
+    .feature .tag {
+      display: inline-block;
+      background: rgba(255,107,53,.1);
+      color: var(--accent);
+      font-size: .78rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 6px;
+      margin-top: 8px;
+    }
+
+    /* DOWNLOAD SECTION */
+    .download-section {
+      max-width: 520px; margin: 0 auto;
+      padding: 0 24px 64px;
+    }
+    .download-card {
+      background: linear-gradient(135deg, rgba(0,212,255,.08), rgba(255,107,53,.04));
+      border: 1px solid rgba(0,212,255,.2);
+      border-radius: 16px;
+      padding: 40px 36px;
+      text-align: center;
+    }
+    .download-card h2 {
+      color: var(--white);
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .download-card .subtitle {
+      color: var(--text-muted);
+      font-size: .92rem;
+      margin-bottom: 28px;
+    }
+    .download-btn {
+      display: inline-block;
+      width: 100%;
+      padding: 16px;
+      background: var(--primary);
+      color: var(--bg);
+      font-size: 1.1rem;
+      font-weight: 800;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: opacity .2s, transform .1s;
+      font-family: inherit;
+      text-align: center;
+    }
+    .download-btn:hover {
+      opacity: .9;
+      color: var(--bg);
+    }
+    .download-btn:active {
+      transform: scale(.98);
+    }
+    .download-note {
+      color: var(--text-muted);
+      font-size: .82rem;
+      margin-top: 16px;
+      line-height: 1.6;
+    }
+
+    /* VIDEO */
+    .video-section {
+      max-width: 720px; margin: 0 auto;
+      padding: 0 24px 48px;
+    }
+    .video-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .video-card .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
+    .video-card .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+    .video-card .video-info {
+      padding: 20px 24px;
+    }
+    .video-card .video-info h3 {
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .video-card .video-info p {
+      color: var(--text-muted);
+      font-size: .88rem;
+    }
+
+    /* COMMUNITY */
+    .community-section {
+      max-width: 520px; margin: 0 auto;
+      padding: 0 24px 48px;
+      text-align: center;
+    }
+    .community-btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: #06C755;
+      color: var(--white) !important;
+      font-weight: 700;
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: opacity .2s;
+    }
+    .community-btn:hover {
+      opacity: .85;
+      color: var(--white) !important;
+    }
+    .community-text {
+      color: var(--text-muted);
+      font-size: .92rem;
+      margin-bottom: 16px;
+    }
+
+    /* TEACHER SECTION */
+    .teacher {
+      max-width: 720px; margin: 0 auto;
+      padding: 0 24px 64px;
+    }
+    .teacher-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px;
+    }
+    .teacher-card h2 {
+      color: var(--white);
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .teacher-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    .teacher-stat {
+      text-align: center;
+      padding: 16px;
+      background: rgba(0,212,255,.05);
+      border-radius: 10px;
+    }
+    .teacher-stat .number {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .teacher-stat .label {
+      font-size: .82rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .teacher-desc {
+      color: var(--text-muted);
+      font-size: .95rem;
+      line-height: 1.8;
+    }
+
+    /* ENTERPRISE */
+    .enterprise {
+      max-width: 720px; margin: 0 auto;
+      padding: 0 24px 64px;
+    }
+    .enterprise-card {
+      background: linear-gradient(135deg, rgba(255,107,53,.08), rgba(0,212,255,.04));
+      border: 1px solid rgba(255,107,53,.2);
+      border-radius: 16px;
+      padding: 40px 36px;
+      text-align: center;
+    }
+    .enterprise-card h2 {
+      color: var(--white);
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .enterprise-card .tagline {
+      color: var(--accent);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .enterprise-contact {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .enterprise-contact a {
+      padding: 12px 28px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: .95rem;
+      transition: opacity .2s;
+    }
+    .contact-email {
+      background: var(--accent);
+      color: var(--white) !important;
+    }
+    .contact-phone {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent) !important;
+    }
+
+    /* FOOTER */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      font-size: .85rem;
+      color: var(--text-muted);
+    }
+    .footer a { margin: 0 8px; }
+
+    /* RWD */
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 1.6rem; }
+      .teacher-info { grid-template-columns: 1fr 1fr; }
+      .download-card { padding: 28px 20px; }
+      .enterprise-contact { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="https://www.autolab.cloud" class="nav-brand">
+        <span>Autolab</span> 阿峰老師
+      </a>
+      <div class="nav-links">
+        <a href="https://blog.autolab.cloud/">Blog</a>
+        <a href="https://www.autolab.cloud">官網</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">免費下載 TXT 指令包</div>
+    <h1>萬卷之王指令包<br><em>NotebookLM 技能系統</em></h1>
+    <p>三組完整提示詞，讓你的 NotebookLM 變成可外掛技能的智慧中樞。</p>
+    <p>複製貼上就能用，一個筆記本裝無限技能。</p>
+  </section>
+
+  <!-- 包含什麼 -->
+  <section class="features">
+    <div class="feature">
+      <div class="feature-number">1</div>
+      <h3>動態指令解析與執行專家</h3>
+      <p>貼到 NotebookLM 的「自訂提示詞」，讓筆記本自動偵測來源資料中的行為指令，將技能內化為運作邏輯。</p>
+      <span class="tag">NotebookLM 自訂提示詞</span>
+    </div>
+    <div class="feature">
+      <div class="feature-number">2</div>
+      <h3>對話機器人指令架構師 Gem</h3>
+      <p>「機器人生機器人」的超級工具。用自然語言描述需求，自動產出結構完整的行為指示，包含角色設定、輸出格式、操作流程。</p>
+      <span class="tag">Gemini Gem 使用說明</span>
+    </div>
+    <div class="feature">
+      <div class="feature-number">3</div>
+      <h3>生圖專用 Gem</h3>
+      <p>NotebookLM 不能生圖？沒關係。先用技能產出圖片提示詞，再貼到這個 Gem 直接生成。不囉嗦，貼了就生。</p>
+      <span class="tag">Gemini Gem 使用說明</span>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section class="download-section">
+    <div class="download-card">
+      <h2>立即免費下載</h2>
+      <p class="subtitle">TXT 純文字檔，打開就能複製貼上</p>
+      <a href="https://blog.autolab.cloud/notebooklm-skills-download/notebooklm-skills-prompts.txt" download class="download-btn">
+        下載萬卷之王指令包（.txt）
+      </a>
+      <p class="download-note">不需要填寫 Email，直接下載。<br>覺得實用的話，歡迎分享給朋友！</p>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="video-section">
+    <div class="video-card">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/CkAs29S4ZxY" title="萬卷之王完整教學" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="video-info">
+        <h3>萬卷之王完整教學影片</h3>
+        <p>四步驟設定教學，從零開始打造 NotebookLM 技能系統</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section class="community-section">
+    <p class="community-text">加入 LINE 學員社群，跟 10,000+ 學員一起玩 AI</p>
+    <a href="https://reurl.cc/GGlLNx" target="_blank" class="community-btn">
+      加入 LINE 學員社群
+    </a>
+  </section>
+
+  <!-- 講師介紹 -->
+  <section class="teacher">
+    <div class="teacher-card">
+      <h2>關於講師 — AI峰哥（黃敬峰）</h2>
+      <div class="teacher-info">
+        <div class="teacher-stat">
+          <div class="number">400+</div>
+          <div class="label">企業與機關合作</div>
+        </div>
+        <div class="teacher-stat">
+          <div class="number">10,000+</div>
+          <div class="label">學員人次</div>
+        </div>
+      </div>
+      <p class="teacher-desc">
+        企業 AI 實戰培訓專家，交點文化創辦人。擅長將 AI 技術轉化為企業可落地的實戰方案。教學心法：「會用、懂用、好用、每天用」。
+      </p>
+    </div>
+  </section>
+
+  <!-- 企業包班 -->
+  <section class="enterprise">
+    <div class="enterprise-card">
+      <h2>想讓整個團隊都會用 AI？</h2>
+      <div class="tagline">企業包班培訓，量身打造你的 AI 課程</div>
+      <div class="enterprise-contact">
+        <a href="mailto:ai@autolab.cloud" class="contact-email">洽詢企業包班</a>
+        <a href="tel:0976715102" class="contact-phone">0976-715-102</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2026 Autolab — 黃敬峰（AI峰哥）. All rights reserved.</p>
+    <p style="margin-top:8px">
+      <a href="https://blog.autolab.cloud/">Blog</a> ·
+      <a href="https://www.autolab.cloud">官網</a> ·
+      <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+    </p>
+  </footer>
+
+</body>
+</html>
