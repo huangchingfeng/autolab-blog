@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>業務用 AI 不只是寫信：100+ 個 AI 代理提示詞揭露的差距 — 阿峰老師</title>
+  <meta name="description" content="國外業務團隊已經用 AI 代理分析贏單模式、準備客戶通話、監控 Pipeline。Highspot 整理的 100+ 提示詞，揭露台灣企業與國際的 AI 應用差距。">
+  <meta name="keywords" content="AI代理, 業務自動化, 企業AI, 提示詞">
+  <meta name="author" content="黃敬峰（AI峰哥）">
+  <link rel="canonical" href="https://blog.autolab.cloud/ai-agent-sales-prompts/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="業務用 AI 不只是寫信：100+ 個 AI 代理提示詞揭露的差距">
+  <meta property="og:description" content="國外業務團隊已經用 AI 代理分析贏單模式、準備客戶通話、監控 Pipeline。Highspot 整理的 100+ 提示詞，揭露台灣企業與國際的 AI 應用差距。">
+  <meta property="og:image" content="https://blog.autolab.cloud/ai-agent-sales-prompts/banner.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://blog.autolab.cloud/ai-agent-sales-prompts/">
+  <meta property="og:site_name" content="阿峰老師 Autolab">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="article:author" content="黃敬峰（AI峰哥）">
+  <meta property="article:published_time" content="2026-03-09T00:00:00+08:00">
+  <meta property="article:modified_time" content="2026-03-09T00:00:00+08:00">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="業務用 AI 不只是寫信：100+ 個 AI 代理提示詞揭露的差距">
+  <meta name="twitter:description" content="國外業務團隊已經用 AI 代理分析贏單模式、準備客戶通話、監控 Pipeline。Highspot 整理的 100+ 提示詞，揭露台灣企業與國際的 AI 應用差距。">
+  <meta name="twitter:image" content="https://blog.autolab.cloud/ai-agent-sales-prompts/banner.png">
+
+  <!-- Article Tags -->
+  <meta property="article:tag" content="AI代理">
+  <meta property="article:tag" content="業務自動化">
+  <meta property="article:tag" content="企業AI">
+  <meta property="article:tag" content="提示詞">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "業務用 AI 不只是寫信：100+ 個 AI 代理提示詞揭露的差距", "description": "國外業務團隊已經用 AI 代理分析贏單模式、準備客戶通話、監控 Pipeline。Highspot 整理的 100+ 提示詞，揭露台灣企業與國際的 AI 應用差距。", "author": {"@type": "Person", "name": "黃敬峰（AI峰哥）", "url": "https://www.autolab.cloud"}, "publisher": {"@type": "Organization", "name": "Autolab", "url": "https://www.autolab.cloud", "logo": {"@type": "ImageObject", "url": "https://blog.autolab.cloud/static/og-default.png"}}, "datePublished": "2026-03-09T00:00:00+08:00", "dateModified": "2026-03-09T00:00:00+08:00", "image": "https://blog.autolab.cloud/ai-agent-sales-prompts/banner.png", "mainEntityOfPage": "https://blog.autolab.cloud/ai-agent-sales-prompts/", "keywords": "AI代理, 業務自動化, 企業AI, 提示詞", "inLanguage": "zh-Hant-TW"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://blog.autolab.cloud/"}, {"@type": "ListItem", "position": 2, "name": "業務用 AI 不只是寫信：100+ 個 AI 代理提示詞揭露的差距", "item": "https://blog.autolab.cloud/ai-agent-sales-prompts/"}]}</script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://blog.autolab.cloud/static/favicon.png">
+  <link rel="icon" type="image/x-icon" href="https://blog.autolab.cloud/static/favicon.ico">
+  <link rel="apple-touch-icon" href="https://blog.autolab.cloud/static/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="阿峰老師 Blog RSS" href="https://blog.autolab.cloud/feed.xml">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://blog.autolab.cloud/static/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至主要內容</a>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="https://blog.autolab.cloud/" class="nav-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 412 160" width="32" height="13" aria-hidden="true">
+          <defs><g id="wing"><polygon points="188,26 0,0 16,22 168,90"/><polygon points="166,100 34,60 42,72 170,114"/><polygon points="174,122 68,88 76,100 182,140"/></g></defs>
+          <use href="#wing" fill="#00D4FF"/><use href="#wing" fill="#00D4FF" transform="translate(392,0) scale(-1,1)"/>
+        </svg>
+        <span>Autolab</span> 阿峰老師
+      </a>
+      <div class="nav-links">
+        <a href="https://blog.autolab.cloud/">Blog</a>
+        <a href="https://www.autolab.cloud">官網</a>
+        <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs" aria-label="麵包屑導航">
+    <a href="https://blog.autolab.cloud/">Blog</a><span class="sep">›</span><span class="current">業務用 AI 不只是寫信：100+ 個 AI 代理提示詞揭露的差距</span>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="article-header">
+    <div class="article-meta">
+      <span>2026-03-09</span>
+      <span>黃敬峰（AI峰哥）</span>
+    </div>
+    <h1>業務用 AI 不只是寫信：100+ 個 AI 代理提示詞揭露的差距</h1>
+    <div class="card-tags"><span class="tag" data-color="pink">AI代理</span><span class="tag" data-color="yellow">業務自動化</span><span class="tag" data-color="pink">企業AI</span><span class="tag" data-color="purple">提示詞</span></div>
+  </header>
+
+  <!-- Featured Image -->
+  <div class="featured-image-wrapper"><img src="banner.png" alt="業務用 AI 不只是寫信：100+ 個 AI 代理提示詞揭露的差距" class="featured-image" loading="lazy" width="780" height="438"></div>
+
+  <!-- YouTube -->
+  
+
+  <!-- CONTENT -->
+  <main id="main-content">
+  <article class="article-content">
+    <h1 id="ai-100-ai">業務用 AI 不只是寫信：100+ 個 AI 代理提示詞揭露的差距</h1>
+<blockquote>
+<p>本文是社群貼文的完整延伸版。
+社群版講了核心觀念，本文加上獨家深度分析和台灣企業的導入建議。</p>
+</blockquote>
+<hr />
+<h2 id="_1">重點回顧</h2>
+<p>美國 Highspot 整理了超過 100 條 AI 代理在業務場景的提示詞。這不是「幫我寫一封 Email」的等級。這是 AI 代理主動分析贏單模式、準備客戶通話、監控 Pipeline 健康度的完整操作手冊。</p>
+<p>更關鍵的是，AI 代理不只是業務工具——它覆蓋了整個 GTM（Go-To-Market）組織，包含業務、行銷、訓練、營運。</p>
+<p>BCG 報告：51% 北美企業正在試用 AI 代理。Google 報告：53% 金融服務高管已在日常使用。台灣企業不能再等了。</p>
+<hr />
+<h2 id="ai">【獨家】七大角色的 AI 代理應用場景</h2>
+<p><img alt="A professional sales team collaborating with technology and data dashboards." src="images/sales-team.jpg" />
+<em>Photo by <a href="https://www.pexels.com/@fauxels">fauxels</a> on <a href="https://www.pexels.com/photo/photo-of-people-using-laptops-3184357/">Pexels</a></em></p>
+<p>Highspot 把 AI 代理的提示詞分成七大角色。這個分類本身就很有意義——它告訴你，AI 代理不是某個人的工具，是整個組織的基礎建設。</p>
+<h3 id="1">1. 業務人員：從翻資料到被推薦</h3>
+<p>傳統業務要自己翻 CRM、找素材、準備通話。AI 代理徹底改變了這個流程。</p>
+<p><strong>Deal 策略</strong>：
+- 「上個月類似的案子，成交時用了哪些素材？」
+- 「根據買家的產業和階段，推薦一份簡報。」
+- 「分析我最近通話的 Talk-to-Listen Ratio。」</p>
+<p><strong>通話準備</strong>：
+- 「明天的 Discovery Call 我應該複習什麼？」
+- 「根據意圖數據，什麼時候是最佳跟進時機？」
+- 「這個產品異議，我應該用什麼話術？」</p>
+<p><strong>Pipeline 洞察</strong>：
+- 「誰曾經成交過類似的案子？他們怎麼做的？」
+- 「超過 10 萬美金的成交案，哪些素材幫助最大？」
+- 「彙整最近的買家行為，建議下一步。」</p>
+<p>這裡的關鍵字是「主動推薦」。不是你去問 AI，是 AI 根據你的情境主動告訴你該做什麼。</p>
+<h3 id="2-coaching">2. 業務經理：精準 Coaching 不靠直覺</h3>
+<p>以前業務經理要花整晚聽通話錄音、翻報表，才能找到 coaching 的切入點。</p>
+<p>現在可以直接問：
+- 「哪些業務的預測落後了？」
+- 「他們最近三通電話裡有哪些 coaching 時刻？」
+- 「Top Performer 有哪些特質是這個業務缺少的？」
+- 「比較這個業務跟 Top Performer 的活動數據。」</p>
+<p>AI 代理不只是告訴你「誰表現不好」，它告訴你「差在哪、怎麼教」。</p>
+<h3 id="3">3. 業務主管：從直覺到數據決策</h3>
+<p>VP 層級的業務主管，需要的不是細節，是全局視野。</p>
+<ul>
+<li>「各區域的案子卡在哪個階段最多？」</li>
+<li>「按競爭對手分類的 Closed-Lost 分析。」</li>
+<li>「哪些業務行為跟勝率上升有相關性？」</li>
+<li>「根據 Pipeline、Deal Size、人力，預測下一季的人力需求。」</li>
+</ul>
+<p>進階版甚至可以讓 AI 做三種情境的營收模型（保守、基準、積極），直接生成給董事會的報告。</p>
+<h3 id="4">4. 行銷團隊：內容不是做完就好</h3>
+<p>行銷做了很多素材，但哪些真的有用？</p>
+<ul>
+<li>「哪些素材被大量使用但客戶互動很低？」代表素材本身有問題。</li>
+<li>「哪些素材最近沒有任何業務分享？」代表可能要退役。</li>
+<li>「哪個素材影響了最多營收？」代表要加碼推廣。</li>
+<li>「建立一份『退役或更新』的素材清單，附優先排序。」</li>
+</ul>
+<p>這讓行銷從「做內容」變成「管理內容績效」。</p>
+<h3 id="5-roi">5. 行銷主管：證明行銷的 ROI</h3>
+<p>行銷主管最常被問的問題：「你們的活動對營收有什麼貢獻？」</p>
+<p>AI 代理可以直接回答：
+- 「比較活動產生的商機 vs Pipeline 影響。」
+- 「Q2 成交的案子裡，有哪些受到某個活動影響？」
+- 「追蹤新產品上線素材的使用率，按區域和業務層級分類。」</p>
+<p>這不是行銷自己寫的 PPT。這是有數據支持的 ROI 報告。</p>
+<h3 id="6-sales-enablement">6. Sales Enablement：訓練不是做完就好</h3>
+<p>訓練團隊最頭痛的問題：「到底有多少人真的完成了訓練？完成之後有沒有用？」</p>
+<ul>
+<li>「哪些業務還沒完成新人訓練的里程碑？」</li>
+<li>「哪個學習路徑的完成率最低？」</li>
+<li>「哪些通話主題顯示業務的知識有缺口？」</li>
+<li>「比較訓練成果和實際的業務表現。」</li>
+</ul>
+<p>AI 代理讓訓練從「完成率」進化到「績效影響」。</p>
+<h3 id="7-revenue-operations">7. Revenue Operations：串起整個組織</h3>
+<p>RevOps 是最需要全局數據的角色。AI 代理在這裡發揮最大價值。</p>
+<ul>
+<li>「各產業、各區域的平均成交速度是多少？」</li>
+<li>「過去 12 個月的 Win-Loss 分析，哪個區域配合哪個 Play 值得擴大？」</li>
+<li>「建議整合哪些工具，估算節省的成本。」</li>
+<li>「模擬三種成長情境，結合 Pipeline、Deal Size、人力數據。」</li>
+</ul>
+<hr />
+<h2 id="ai_1">【獨家】台灣企業的 AI 代理導入路徑</h2>
+<p><img alt="A modern workspace with AI technology and digital transformation." src="images/ai-workspace.jpg" />
+<em>Photo by <a href="https://www.pexels.com/@goumbik">Lukas</a> on <a href="https://www.pexels.com/photo/person-holding-silver-laptop-computer-577210/">Pexels</a></em></p>
+<p>看完國外的 100+ 提示詞，你可能會想：「我們公司沒有這種系統怎麼辦？」</p>
+<p>不用急。我在企業培訓裡帶過超過 400 家企業，我的建議是三步走：</p>
+<h3 id="_2">第一步：盤點你的「人力浪費點」</h3>
+<p>你的業務團隊每天花多少時間在：
+- 翻 CRM 找客戶資料？
+- 準備通話前的研究？
+- 寫會議紀錄和跟進信？
+- 手動整理 Pipeline 報表？</p>
+<p>這些都是「人在做 AI 該做的事」。</p>
+<h3 id="_3">第二步：從一個場景開始</h3>
+<p>不需要一次導入整套 AI 代理平台。先挑一個最痛的場景，用現有的 AI 工具（ChatGPT、Gemini、Claude）模擬 AI 代理的工作方式。</p>
+<p>例如：每次通話前，把客戶資料丟給 AI，請它幫你產出準備清單和可能的反對意見。做三個月，看看成交率有沒有變化。</p>
+<h3 id="_4">第三步：擴展到組織層級</h3>
+<p>當一個場景驗證成功，再擴展到業務經理的 coaching、行銷的素材績效追蹤、RevOps 的 Pipeline 分析。</p>
+<p>關鍵是：<strong>先改流程，再買工具。</strong> 很多企業的問題不是沒有好工具，是流程沒有為 AI 設計。</p>
+<hr />
+<h2 id="_5">阿峰觀點</h2>
+<p><img alt="A modern humanoid robot with digital face and luminescent screen, symbolizing innovation in technology." src="images/artificial-intelligence-business.jpg" />
+<em>Photo by <a href="https://www.pexels.com/@tara-winstead">Tara Winstead</a> on <a href="https://www.pexels.com/photo/robot-pointing-on-a-wall-8386440/">Pexels</a></em></p>
+<p>我在企業培訓裡一直說：「你是機長，AI 是機組人員。」</p>
+<p>Highspot 的這份 100+ 提示詞清單，讓我看到一件事：機組人員的能力已經遠超過大部分機長的想像。</p>
+<p>大部分台灣企業還在讓 AI 幫忙「端咖啡」——寫信、翻譯、整理筆記。但國外的領先企業已經讓 AI 代理「看儀表板、監控油量、回報天氣、協調降落」了。</p>
+<p>差距不是在工具，是在想像力。</p>
+<p>51% 北美企業正在試用 AI 代理，53% 金融高管已在日常使用。這不是趨勢預測，是已經發生的事實。台灣企業如果現在不開始，等到國外企業把 AI 代理玩成熟了，差距會從「半年」變成「三年」。</p>
+<p>好消息是：起步不需要大投資。你需要的不是一套百萬美金的系統，而是一次認真的流程重新設計。</p>
+<p>先問自己：「我的團隊每天有多少時間花在 AI 可以代勞的事情上？」</p>
+<p>答案通常會嚇到你。</p>
+<hr />
+<h2 id="_6">本文提到的資源</h2>
+<p><img alt="An open professional tool case filled with various tools and equipment, set in a snowy outdoor environment." src="images/tools.jpg" />
+<em>Photo by <a href="https://www.pexels.com/@andreas-naslund-92380530">Andreas Näslund</a> on <a href="https://www.pexels.com/photo/professional-tool-case-open-in-snowy-environment-30562825/">Pexels</a></em></p>
+<table>
+<thead>
+<tr>
+<th>工具/資源</th>
+<th>連結</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Highspot</td>
+<td><a href="https://www.highspot.com">https://www.highspot.com</a></td>
+<td>AI 銷售賦能平台，原文出處</td>
+</tr>
+<tr>
+<td>ChatGPT</td>
+<td><a href="https://chatgpt.com">https://chatgpt.com</a></td>
+<td>AI 對話工具</td>
+</tr>
+<tr>
+<td>Gemini</td>
+<td><a href="https://gemini.google.com">https://gemini.google.com</a></td>
+<td>Google AI 工具</td>
+</tr>
+<tr>
+<td>Claude AI</td>
+<td><a href="https://claude.ai">https://claude.ai</a></td>
+<td>Anthropic AI 工具</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>企業想導入 AI？阿峰老師服務過台積電、國泰金控、中華電信等超過 400 家企業。
+→ <a href="https://www.autolab.cloud">https://www.autolab.cloud</a></p>
+<hr />
+<h3 id="_7">關於作者</h3>
+<p>黃敬峰（AI峰哥），企業 AI 實戰培訓專家，400+ 企業合作、10,000+ 學員。
+核心心法：「會用、懂用、好用、每天用」
+官網：<a href="https://www.autolab.cloud">https://www.autolab.cloud</a></p>
+  </article>
+  </main>
+
+  <!-- Share -->
+  <div class="share-section">
+    <h3>分享這篇文章</h3>
+    <div class="share-buttons">
+      <a href="https://social-plugins.line.me/lineit/share?url=https://blog.autolab.cloud/ai-agent-sales-prompts/" target="_blank" rel="noopener" class="share-btn share-line" aria-label="分享到 LINE">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        LINE
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.autolab.cloud/ai-agent-sales-prompts/" target="_blank" rel="noopener" class="share-btn share-fb" aria-label="分享到 Facebook">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook
+      </a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://blog.autolab.cloud/ai-agent-sales-prompts/" target="_blank" rel="noopener" class="share-btn share-linkedin" aria-label="分享到 LinkedIn">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <button class="share-btn share-copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='已複製!';setTimeout(()=>{this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;><path fill=&quot;currentColor&quot; d=&quot;M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z&quot;/></svg> 複製連結'},2000)})" aria-label="複製連結">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        複製連結
+      </button>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <div class="cta-box-inner">
+      <h3>想用 AI 解決真問題？</h3>
+      <p>加入阿峰老師的 AI 實戰社群，一起從觀念到落地。</p>
+      <div class="cta-buttons">
+        <a href="https://reurl.cc/GGlLNx" class="cta-btn">加入 LINE 社群</a>
+        <a href="https://www.autolab.cloud" class="cta-btn outline">企業培訓諮詢</a>
+      </div>
+      <div class="cta-links">
+        <a href="https://www.autolab.cloud">官網</a>
+        <a href="mailto:ai@autolab.cloud">聯繫合作</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Articles -->
+  <section class="related-section">
+  <h2>你可能也想看</h2>
+  <div class="related-grid">
+    <a href="https://blog.autolab.cloud/ai-agent-job-future/" class="related-card">
+  <img class="related-card-thumb" src="../ai-agent-job-future/banner.png" alt="當產品經理開始寫程式：AI 如何讓職業邊界消失" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-10</div>
+    <div class="related-card-title">當產品經理開始寫程式：AI 如何讓職業邊界消失</div>
+  </div>
+</a><a href="https://blog.autolab.cloud/perplexity-computer-ai-agent/" class="related-card">
+  <img class="related-card-thumb" src="../perplexity-computer-ai-agent/banner.png" alt="AI 不再只是聊天機器人：當 AI 學會自己完成工作" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-09</div>
+    <div class="related-card-title">AI 不再只是聊天機器人：當 AI 學會自己完成工作</div>
+  </div>
+</a><a href="https://blog.autolab.cloud/chatgpt-skills-ai-skills-manus-skills/" class="related-card">
+  <img class="related-card-thumb" src="../chatgpt-skills-ai-skills-manus-skills/banner.png" alt="ChatGPT Skills 正式登場！比 GPT 5.4 更值得注意的新功能" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-08</div>
+    <div class="related-card-title">ChatGPT Skills 正式登場！比 GPT 5.4 更值得注意的新功能</div>
+  </div>
+</a>
+  </div>
+</section>
+
+  <!-- Article Navigation -->
+  <nav class="article-nav">
+  <a href="https://blog.autolab.cloud/perplexity-computer-ai-agent/" class="prev">
+  <div class="nav-label">← 上一篇</div>
+  <div class="nav-title">AI 不再只是聊天機器人：當 AI 學會自己完成工作</div>
+</a><a href="https://blog.autolab.cloud/harness-engineering-ai-agent-openai/" class="next">
+  <div class="nav-label">下一篇 →</div>
+  <div class="nav-title">OpenAI 駕馭工程：AI Agent 五個月零手寫百萬行程式碼，軟體開發典範轉移</div>
+</a>
+</nav>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2026 Autolab — 黃敬峰（AI峰哥）. All rights reserved.</p>
+    <p style="margin-top:8px">
+      <a href="https://blog.autolab.cloud/">Blog</a> ·
+      <a href="https://www.autolab.cloud">官網</a> ·
+      <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+    </p>
+  </footer>
+</body>
+</html>

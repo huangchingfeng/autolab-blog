@@ -61,6 +61,18 @@
       <category>自動化</category>
     </item>
     <item>
+      <title>業務用 AI 不只是寫信：100+ 個 AI 代理提示詞揭露的差距</title>
+      <link>https://blog.autolab.cloud/ai-agent-sales-prompts/</link>
+      <guid>https://blog.autolab.cloud/ai-agent-sales-prompts/</guid>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>國外業務團隊已經用 AI 代理分析贏單模式、準備客戶通話、監控 Pipeline。Highspot 整理的 100+ 提示詞，揭露台灣企業與國際的 AI 應用差距。</description>
+      <category>AI代理</category>
+      <category>業務自動化</category>
+      <category>企業AI</category>
+      <category>提示詞</category>
+    </item>
+    <item>
       <title>OpenAI 駕馭工程：AI Agent 五個月零手寫百萬行程式碼，軟體開發典範轉移</title>
       <link>https://blog.autolab.cloud/harness-engineering-ai-agent-openai/</link>
       <guid>https://blog.autolab.cloud/harness-engineering-ai-agent-openai/</guid>
@@ -266,19 +278,6 @@
       <category>Vibe Coding</category>
       <category>AI開發</category>
       <category>實戰案例</category>
-    </item>
-    <item>
-      <title>Satya Nadella 的 10 億美元 AI 豪賭｜3 個不確定性思維 + 實操模板</title>
-      <link>https://blog.autolab.cloud/satya-nadella-ai-ceo/</link>
-      <guid>https://blog.autolab.cloud/satya-nadella-ai-ceo/</guid>
-      <pubDate>Fri, 06 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>微軟 CEO Satya Nadella 在 2019 年砸 10 億投資 OpenAI，本文拆解他的 3 個 AI 決策思維，加上阿峰老師獨家「降低門檻+提高天花板」實操模板，教你用不對稱風險策略擁抱 AI。</description>
-      <category>AI趨勢</category>
-      <category>SatyaNadella</category>
-      <category>微軟CEO</category>
-      <category>OpenAI</category>
-      <category>AI實戰</category>
     </item>
   </channel>
 </rss>
