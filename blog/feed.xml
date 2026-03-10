@@ -5,13 +5,27 @@
     <link>https://blog.autolab.cloud/</link>
     <description>企業 AI 培訓、Vibe Coding、AI 工具教學，從觀念到落地。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 10 Mar 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 11 Mar 2026 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://blog.autolab.cloud/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://blog.autolab.cloud/static/og-default.png</url>
       <title>阿峰老師 AI 實戰部落格</title>
       <link>https://blog.autolab.cloud/</link>
     </image>
+    <item>
+      <title>OpenClaw 全解析：當 AI 從顧問變成員工，台灣企業需要知道什麼</title>
+      <link>https://blog.autolab.cloud/openclaw-ai-agent-guide-taiwan-enterprise/</link>
+      <guid>https://blog.autolab.cloud/openclaw-ai-agent-guide-taiwan-enterprise/</guid>
+      <pubDate>Wed, 11 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>GitHub 全球第一的 AI Agent 系統 OpenClaw，5 個月超越 React。本文深入解析技術架構、安全風險、部署方式，以及台灣企業真正需要評估的三個面向。</description>
+      <category>OpenClaw</category>
+      <category>AI Agent</category>
+      <category>企業AI</category>
+      <category>自托管</category>
+      <category>數位轉型</category>
+      <category>AI工具</category>
+    </item>
     <item>
       <title>讓 AI 記住你的工作方式：Claude Skill 實戰指南</title>
       <link>https://blog.autolab.cloud/claude-skill-guide/</link>
@@ -25,18 +39,6 @@
       <category>自動化</category>
     </item>
     <item>
-      <title>當產品經理開始寫程式：AI 如何讓職業邊界消失</title>
-      <link>https://blog.autolab.cloud/ai-agent-job-future/</link>
-      <guid>https://blog.autolab.cloud/ai-agent-job-future/</guid>
-      <pubDate>Tue, 10 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>91APP 真實案例：20 幾個團隊因為 AI，產品經理開始做 prototype、工程師挑戰商業策略。從職稱消失到軟體要做給 Agent 用，企業培訓專家的第一手觀察。</description>
-      <category>AI代理</category>
-      <category>職場趨勢</category>
-      <category>組織變革</category>
-      <category>Vibe Coding</category>
-    </item>
-    <item>
       <title>NotebookLM 資訊圖表不再千篇一律：10 種風格 × 3 種閱讀動線完整攻略</title>
       <link>https://blog.autolab.cloud/notebooklm-infographic-styles-guide/</link>
       <guid>https://blog.autolab.cloud/notebooklm-infographic-styles-guide/</guid>
@@ -47,30 +49,6 @@
       <category>AI工具</category>
       <category>資訊圖表</category>
       <category>Google</category>
-    </item>
-    <item>
-      <title>台灣軟體業的 AI 產品化之戰：從接案代工到打進國際市場的關鍵轉折</title>
-      <link>https://blog.autolab.cloud/taiwan-ai-transformation-strategy/</link>
-      <guid>https://blog.autolab.cloud/taiwan-ai-transformation-strategy/</guid>
-      <pubDate>Mon, 09 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>數發部長、軟體工會理事長、瑞洋資訊總經理深度對談：台灣軟體如何從 Project 走向 Product，搶攻 AI 兆元商機。</description>
-      <category>AI</category>
-      <category>台灣軟體產業</category>
-      <category>數位轉型</category>
-      <category>AI Agent</category>
-    </item>
-    <item>
-      <title>萬卷之王：把 Gemini Gem 技能外掛到 NotebookLM 的終極玩法</title>
-      <link>https://blog.autolab.cloud/gemini-notebooklm-skills/</link>
-      <guid>https://blog.autolab.cloud/gemini-notebooklm-skills/</guid>
-      <pubDate>Mon, 09 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>教你把所有 Gemini Gem 的技能裝進 NotebookLM，一個筆記本搞定多步驟工作流。四步驟完整教學。</description>
-      <category>NotebookLM</category>
-      <category>Gemini</category>
-      <category>AI工具教學</category>
-      <category>Google AI</category>
     </item>
     <item>
       <title>AI 不再只是聊天機器人：當 AI 學會自己完成工作</title>
@@ -150,36 +128,6 @@
       <category>NotebookLM</category>
     </item>
     <item>
-      <title>NotebookLM 萬卷之王：一個筆記本裝無限技能，四步驟完整設定教學</title>
-      <link>https://blog.autolab.cloud/notebooklm-gem/</link>
-      <guid>https://blog.autolab.cloud/notebooklm-gem/</guid>
-      <pubDate>Mon, 09 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>NotebookLM 可以像手機裝外掛！把 Gem 的行為指示變成可勾選技能，一個筆記本搞定所有工作流。四步驟完整教學，含指令架構師、動態指令解析、實戰案例。</description>
-      <category>NotebookLM</category>
-      <category>Gem</category>
-      <category>AI教學</category>
-      <category>Google</category>
-      <category>萬卷之王</category>
-    </item>
-    <item>
-      <title>NotebookLM Cinematic Video Overviews 完整解析｜簡報秒變電影感影片</title>
-      <link>https://blog.autolab.cloud/notebooklm-cinematic-video-overviews/</link>
-      <guid>https://blog.autolab.cloud/notebooklm-cinematic-video-overviews/</guid>
-      <pubDate>Sun, 08 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>Google NotebookLM 推出 Cinematic Video Overviews，結合 Gemini 3、Veo 3、Nano Banana Pro 三大 AI 模型，把簡報自動變成電影感影片。功能解析、應用場景與實戰建議。</description>
-      <category>NotebookLM</category>
-      <category>Google AI</category>
-      <category>Cinematic Video Overviews</category>
-      <category>AI工具</category>
-      <category>影片生成</category>
-      <category>Gemini 3</category>
-      <category>Veo 3</category>
-      <category>企業培訓</category>
-      <category>阿峰老師</category>
-    </item>
-    <item>
       <title>ChatGPT Skills 正式登場！比 GPT 5.4 更值得注意的新功能</title>
       <link>https://blog.autolab.cloud/chatgpt-skills-ai-skills-manus-skills/</link>
       <guid>https://blog.autolab.cloud/chatgpt-skills-ai-skills-manus-skills/</guid>
@@ -206,36 +154,6 @@
       <category>人機協作</category>
     </item>
     <item>
-      <title>Claude Skills 完整教學：Skills vs 提示詞 vs MCP 差在哪？含實戰操作指南｜2026</title>
-      <link>https://blog.autolab.cloud/claude-skills-claude-skills/</link>
-      <guid>https://blog.autolab.cloud/claude-skills-claude-skills/</guid>
-      <pubDate>Sun, 08 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>一次搞懂 Claude Skills 是什麼、跟提示詞和 MCP 的差別。含從零建立 Skill 的 5 步驟指南、進階組合技玩法、企業培訓實戰經驗分享。</description>
-      <category>ClaudeSkills</category>
-      <category>AI教學</category>
-      <category>Anthropic</category>
-      <category>MCP</category>
-      <category>AI工具</category>
-      <category>AI生產力</category>
-    </item>
-    <item>
-      <title>Cursor進入戰時狀態：Claude Code 25倍補貼搶市場，AI寫程式工具未來分析</title>
-      <link>https://blog.autolab.cloud/cursor-claude-code-ai/</link>
-      <guid>https://blog.autolab.cloud/cursor-claude-code-ai/</guid>
-      <pubDate>Sun, 08 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>富比世揭露 Claude Code 每月收 200 美元實際成本 5000 美元，Anthropic 用 25 倍補貼搶市場。Cursor 營收 20 億卻面臨 Claude Code 六個月超車的危機。阿峰老師深度分析 AI 寫程式工具大戰。</description>
-      <category>AI</category>
-      <category>Cursor</category>
-      <category>ClaudeCode</category>
-      <category>Anthropic</category>
-      <category>AI寫程式</category>
-      <category>AI工具</category>
-      <category>程式設計</category>
-      <category>AI趨勢</category>
-    </item>
-    <item>
       <title>Gemini 3.1 Pro 實測：5 分鐘做出高質感網頁｜AI 網頁生成教學</title>
       <link>https://blog.autolab.cloud/gemini-3-1-pro-ai-landing-page-ai-gemini/</link>
       <guid>https://blog.autolab.cloud/gemini-3-1-pro-ai-landing-page-ai-gemini/</guid>
@@ -249,19 +167,6 @@
       <category>AI工具</category>
     </item>
     <item>
-      <title>產品經理要消失了？OpenAI 內部 5 個震撼變化＋台灣企業導入 AI 實戰指南</title>
-      <link>https://blog.autolab.cloud/ai-openai-codex-ai/</link>
-      <guid>https://blog.autolab.cloud/ai-openai-codex-ai/</guid>
-      <pubDate>Sat, 07 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>OpenAI Codex 產品負責人揭露內部真相：大部分程式碼是 AI 寫的、PM 角色被壓縮、AGI 瓶頸是人類自己。阿峰老師加碼分析台灣企業該如何導入 AI。</description>
-      <category>AI</category>
-      <category>產品經理</category>
-      <category>OpenAI</category>
-      <category>人才棧壓縮</category>
-      <category>企業AI培訓</category>
-    </item>
-    <item>
       <title>八千萬人閱讀的 AI 末日預言｜Matt Shumer 警告大事要發生了</title>
       <link>https://blog.autolab.cloud/ai-matt-shumer-something-big-ai/</link>
       <guid>https://blog.autolab.cloud/ai-matt-shumer-something-big-ai/</guid>
@@ -273,6 +178,101 @@
       <category>MattShumer</category>
       <category>DarioAmodei</category>
       <category>AI趨勢</category>
+    </item>
+    <item>
+      <title>鍵盤敲越多越危險？AI 時代的個人生存法則｜簡立峰博士觀點</title>
+      <link>https://blog.autolab.cloud/ai-keyboard-work-one-person-company/</link>
+      <guid>https://blog.autolab.cloud/ai-keyboard-work-one-person-company/</guid>
+      <pubDate>Sat, 07 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>前 Google 台灣董事總經理簡立峰博士揭露 AI 時代職場真相：鍵盤工作比例越高越危險，但一人公司是巨大機會。含獨家自我檢測法和一人公司實戰指南。</description>
+      <category>AI</category>
+      <category>職場</category>
+      <category>簡立峰</category>
+      <category>一人公司</category>
+      <category>AI培訓</category>
+    </item>
+    <item>
+      <title>Satya Nadella 的 10 億美元 AI 豪賭｜3 個不確定性思維 + 實操模板</title>
+      <link>https://blog.autolab.cloud/satya-nadella-ai-ceo/</link>
+      <guid>https://blog.autolab.cloud/satya-nadella-ai-ceo/</guid>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>微軟 CEO Satya Nadella 在 2019 年砸 10 億投資 OpenAI，本文拆解他的 3 個 AI 決策思維，加上阿峰老師獨家「降低門檻+提高天花板」實操模板，教你用不對稱風險策略擁抱 AI。</description>
+      <category>AI趨勢</category>
+      <category>SatyaNadella</category>
+      <category>微軟CEO</category>
+      <category>OpenAI</category>
+      <category>AI實戰</category>
+    </item>
+    <item>
+      <title>2028全球智能危機解讀：白領會被AI取代嗎？400家企業培訓的真實觀察</title>
+      <link>https://blog.autolab.cloud/ai-white-collar-crisis/</link>
+      <guid>https://blog.autolab.cloud/ai-white-collar-crisis/</guid>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>一篇文章讓道瓊跌800點。AI會讓白領大規模失業嗎？幽靈繁榮是什麼？阿峰老師從400多家企業AI培訓經驗，分析白領就業危機的真相與機會。</description>
+      <category>AI失業</category>
+      <category>白領裁員</category>
+      <category>幽靈繁榮</category>
+      <category>AI趨勢</category>
+      <category>2028危機</category>
+    </item>
+    <item>
+      <title>AI 裁員潮來了？Block 砍 5000 人背後的真相與 5 步工作拆解法</title>
+      <link>https://blog.autolab.cloud/ai-block-2026-ai/</link>
+      <guid>https://blog.autolab.cloud/ai-block-2026-ai/</guid>
+      <pubDate>Mon, 02 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>Block 因 AI 裁員 5000 人，Anthropic 因拒絕開發自動武器被川普封殺。三個關鍵觀察加上獨家 5 步工作拆解法，教你找出自己的不可取代區。</description>
+      <category>AI裁員</category>
+      <category>AI安全</category>
+      <category>職場AI</category>
+      <category>Block</category>
+      <category>Anthropic</category>
+    </item>
+    <item>
+      <title>Claude 被封殺、Block 裁員一半：AI 時代職場生存指南（2026）</title>
+      <link>https://blog.autolab.cloud/ai-block-claude/</link>
+      <guid>https://blog.autolab.cloud/ai-block-claude/</guid>
+      <pubDate>Mon, 02 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>Block CEO Jack Dorsey 裁掉 4,000 人，說是因為 AI；Anthropic 因拒絕移除安全限制遭美國政府全面封殺。這兩件同時發生的大事，說明了 AI 取代人力已不是預言，而是現在式。本文深度分析數據、各大廠立場，並告訴你現在該怎麼做。</description>
+      <category>AI</category>
+      <category>AI裁員</category>
+      <category>Block</category>
+      <category>Anthropic</category>
+      <category>Claude</category>
+      <category>JackDorsey</category>
+      <category>DarioAmodei</category>
+      <category>AI職場</category>
+      <category>AI安全</category>
+    </item>
+    <item>
+      <title>NotebookLM 逆向工程教學：3 步驟免費拆解百萬爆款影片結構（含完整提示詞）</title>
+      <link>https://blog.autolab.cloud/notebooklm-ai/</link>
+      <guid>https://blog.autolab.cloud/notebooklm-ai/</guid>
+      <pubDate>Mon, 02 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>用 Google NotebookLM 免費拆解百萬播放影片的底層結構，轉化為你自己的腳本藍圖。本文含完整提示詞範本、5 種進階應用場景，以及內容創作者的實戰心得。</description>
+      <category>NotebookLM</category>
+      <category>AI工具</category>
+      <category>內容逆向工程</category>
+      <category>腳本寫作</category>
+      <category>YouTube教學</category>
+    </item>
+    <item>
+      <title>Vibe Coding 入門指南：工具人時代結束，用 AI 協作解決真問題</title>
+      <link>https://blog.autolab.cloud/vibe-coding-ai/</link>
+      <guid>https://blog.autolab.cloud/vibe-coding-ai/</guid>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>矽谷工程師被裁、公司錢拿去買 GPU。AI 時代工具人正在被淘汰，Vibe Coding 是你從工具人躍遷為擁有者的最快路徑。含 5 步驟入門實戰、台灣企業案例。</description>
+      <category>AI</category>
+      <category>Vibe Coding</category>
+      <category>AI趨勢</category>
+      <category>AI工作流</category>
+      <category>企業AI培訓</category>
     </item>
   </channel>
 </rss>
