@@ -5,7 +5,7 @@
     <link>https://blog.autolab.cloud/</link>
     <description>企業 AI 培訓、Vibe Coding、AI 工具教學，從觀念到落地。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Mon, 09 Mar 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 10 Mar 2026 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://blog.autolab.cloud/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://blog.autolab.cloud/static/og-default.png</url>
@@ -35,6 +35,18 @@
       <category>職場趨勢</category>
       <category>組織變革</category>
       <category>Vibe Coding</category>
+    </item>
+    <item>
+      <title>NotebookLM 資訊圖表不再千篇一律：10 種風格 × 3 種閱讀動線完整攻略</title>
+      <link>https://blog.autolab.cloud/notebooklm-infographic-styles-guide/</link>
+      <guid>https://blog.autolab.cloud/notebooklm-infographic-styles-guide/</guid>
+      <pubDate>Tue, 10 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>Google NotebookLM 資訊圖表三月大更新，新增 10 種視覺風格。但光換風格不夠，閱讀動線才是讓圖表從「好看」變「好懂」的關鍵。三種動線 × 十種風格的實戰搭配指南。</description>
+      <category>NotebookLM</category>
+      <category>AI工具</category>
+      <category>資訊圖表</category>
+      <category>Google</category>
     </item>
     <item>
       <title>台灣軟體業的 AI 產品化之戰：從接案代工到打進國際市場的關鍵轉折</title>
@@ -261,24 +273,6 @@
       <category>MattShumer</category>
       <category>DarioAmodei</category>
       <category>AI趨勢</category>
-    </item>
-    <item>
-      <title>Gemini Gems 完全攻略：5 個 AI 員工幫你每天省 3 小時｜阿峰老師</title>
-      <link>https://blog.autolab.cloud/gemini-gems-ai/</link>
-      <guid>https://blog.autolab.cloud/gemini-gems-ai/</guid>
-      <pubDate>Sat, 07 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>Gemini Gems 功能教學，用 5 個實戰案例打造專屬 AI 員工：說人話文案、文件分析、數據整理、高情商溝通、學習助手。含 3 個進階技巧，培訓一次終身受用。</description>
-      <category>Gemini</category>
-      <category>Gems</category>
-      <category>AI員工</category>
-      <category>AI工具</category>
-      <category>Google</category>
-      <category>AI</category>
-      <category>AI辦公</category>
-      <category>提示詞</category>
-      <category>Canvas</category>
-      <category>費曼學習法</category>
     </item>
   </channel>
 </rss>
