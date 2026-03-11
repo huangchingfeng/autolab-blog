@@ -1073,13 +1073,11 @@
       </div>
 
       <form class="lead-form" id="leadForm" action="https://formsubmit.co/ai@autolab.cloud" method="POST">
-        <!-- FormSubmit config -->
-        <input type="hidden" name="_subject" value="[JCI AI Bootcamp] New Lead - AI Tools Cheatsheet">
+        <input type="hidden" name="_subject" value="[JCI AI Bootcamp] New Lead">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
         <input type="text" name="_honey" style="display:none">
         <input type="hidden" name="_next" value="https://blog.autolab.cloud/jci-ai-tools/">
-
         <div class="form-group">
           <label>
             <span class="zh">姓名 Name</span>
@@ -1188,12 +1186,11 @@
       event.target.classList.add('active');
     }
 
-    // Handle form submission with AJAX to show success message
+    // FormSubmit.co → 寄到 ai@autolab.cloud
     const form = document.getElementById('leadForm');
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       const formData = new FormData(form);
-
       fetch(form.action, {
         method: 'POST',
         body: formData,
@@ -1207,7 +1204,6 @@
           alert('Oops! Something went wrong. Please try again.');
         }
       }).catch(() => {
-        // Fallback: if AJAX fails, submit normally
         form.submit();
       });
     });
