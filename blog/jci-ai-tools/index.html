@@ -1077,7 +1077,7 @@
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
         <input type="text" name="_honey" style="display:none">
-        <input type="hidden" name="_next" value="https://blog.autolab.cloud/jci-ai-tools/">
+        <input type="hidden" name="_next" value="https://blog.autolab.cloud/jci-ai-tools/?submitted=true">
         <div class="form-group">
           <label>
             <span class="zh">姓名 Name</span>
@@ -1186,27 +1186,18 @@
       event.target.classList.add('active');
     }
 
-    // FormSubmit.co → 寄到 ai@autolab.cloud
-    const form = document.getElementById('leadForm');
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const formData = new FormData(form);
-      fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      }).then(response => {
-        if (response.ok) {
-          form.style.display = 'none';
-          document.getElementById('successMsg').style.display = 'block';
-          document.querySelector('.lead-form-section .form-desc').style.display = 'none';
-        } else {
-          alert('Oops! Something went wrong. Please try again.');
-        }
-      }).catch(() => {
-        form.submit();
-      });
-    });
+    // 表單直接 POST 到 FormSubmit，提交後會自動跳轉回本頁（_next）
+    // 檢查 URL 參數，如果從 FormSubmit 跳轉回來就顯示成功訊息
+    if (window.location.search.includes('submitted=true') || document.referrer.includes('formsubmit.co')) {
+      var form = document.getElementById('leadForm');
+      var successMsg = document.getElementById('successMsg');
+      var formDesc = document.querySelector('.lead-form-section .form-desc');
+      if (form) form.style.display = 'none';
+      if (successMsg) successMsg.style.display = 'block';
+      if (formDesc) formDesc.style.display = 'none';
+      // 滾動到成功訊息
+      document.getElementById('lead-form-section').scrollIntoView({ behavior: 'smooth' });
+    }
   </script>
 
 </body>
