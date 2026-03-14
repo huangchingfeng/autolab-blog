@@ -5,13 +5,26 @@
     <link>https://blog.autolab.cloud/</link>
     <description>企業 AI 培訓、Vibe Coding、AI 工具教學，從觀念到落地。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Wed, 11 Mar 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 14 Mar 2026 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://blog.autolab.cloud/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://blog.autolab.cloud/static/og-default.png</url>
       <title>阿峰老師 AI 實戰部落格</title>
       <link>https://blog.autolab.cloud/</link>
     </image>
+    <item>
+      <title>2026 AI 代勞元年：iKala 程世嘉的三個判斷，和你現在就該做的事</title>
+      <link>https://blog.autolab.cloud/ikala-sega-ai-agent-era-2026/</link>
+      <guid>https://blog.autolab.cloud/ikala-sega-ai-agent-era-2026/</guid>
+      <pubDate>Sat, 14 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>iKala 董事長程世嘉判斷 2026 年是 AI 代勞元年。全球 57% 企業已正式導入 AI Agent，台灣企業該怎麼跟上？阿峰老師從 400+ 企業培訓經驗分析三道隱形門檻和解法。</description>
+      <category>AI代勞元年</category>
+      <category>AIAgent</category>
+      <category>程世嘉</category>
+      <category>iKala</category>
+      <category>企業AI導入</category>
+    </item>
     <item>
       <title>OpenClaw 全解析：當 AI 從顧問變成員工，台灣企業需要知道什麼</title>
       <link>https://blog.autolab.cloud/openclaw-ai-agent-guide-taiwan-enterprise/</link>
@@ -260,19 +273,6 @@
       <category>內容逆向工程</category>
       <category>腳本寫作</category>
       <category>YouTube教學</category>
-    </item>
-    <item>
-      <title>Vibe Coding 入門指南：工具人時代結束，用 AI 協作解決真問題</title>
-      <link>https://blog.autolab.cloud/vibe-coding-ai/</link>
-      <guid>https://blog.autolab.cloud/vibe-coding-ai/</guid>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>矽谷工程師被裁、公司錢拿去買 GPU。AI 時代工具人正在被淘汰，Vibe Coding 是你從工具人躍遷為擁有者的最快路徑。含 5 步驟入門實戰、台灣企業案例。</description>
-      <category>AI</category>
-      <category>Vibe Coding</category>
-      <category>AI趨勢</category>
-      <category>AI工作流</category>
-      <category>企業AI培訓</category>
     </item>
   </channel>
 </rss>
