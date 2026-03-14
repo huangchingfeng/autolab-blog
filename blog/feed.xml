@@ -13,6 +13,18 @@
       <link>https://blog.autolab.cloud/</link>
     </image>
     <item>
+      <title>新加坡總理親自管 AI，台灣企業的行動差距有多大？</title>
+      <link>https://blog.autolab.cloud/singapore-vs-taiwan-ai-gap-2026/</link>
+      <guid>https://blog.autolab.cloud/singapore-vs-taiwan-ai-gap-2026/</guid>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>新加坡總理親自當 AI 理事會主席，三年一萬家企業導入 AI。台灣半導體全球最強，但 AI 落地速度差在哪？</description>
+      <category>新加坡AI戰略</category>
+      <category>台灣AI差距</category>
+      <category>AI甘榜</category>
+      <category>企業AI導入</category>
+    </item>
+    <item>
       <title>台灣企業 AI 導入太慢？從新加坡 2026 預算案看你該立刻行動的理由</title>
       <link>https://blog.autolab.cloud/singapore-budget-2026-ai-national-strategy/</link>
       <guid>https://blog.autolab.cloud/singapore-budget-2026-ai-national-strategy/</guid>
@@ -37,6 +49,14 @@
       <category>程世嘉</category>
       <category>iKala</category>
       <category>企業AI導入</category>
+    </item>
+    <item>
+      <title>Untitled</title>
+      <link>https://blog.autolab.cloud/untitled/</link>
+      <guid>https://blog.autolab.cloud/untitled/</guid>
+      <pubDate>Sat, 14 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description></description>
     </item>
     <item>
       <title>OpenClaw 全解析：當 AI 從顧問變成員工，台灣企業需要知道什麼</title>
@@ -243,36 +263,6 @@
       <category>幽靈繁榮</category>
       <category>AI趨勢</category>
       <category>2028危機</category>
-    </item>
-    <item>
-      <title>AI 裁員潮來了？Block 砍 5000 人背後的真相與 5 步工作拆解法</title>
-      <link>https://blog.autolab.cloud/ai-block-2026-ai/</link>
-      <guid>https://blog.autolab.cloud/ai-block-2026-ai/</guid>
-      <pubDate>Mon, 02 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>Block 因 AI 裁員 5000 人，Anthropic 因拒絕開發自動武器被川普封殺。三個關鍵觀察加上獨家 5 步工作拆解法，教你找出自己的不可取代區。</description>
-      <category>AI裁員</category>
-      <category>AI安全</category>
-      <category>職場AI</category>
-      <category>Block</category>
-      <category>Anthropic</category>
-    </item>
-    <item>
-      <title>Claude 被封殺、Block 裁員一半：AI 時代職場生存指南（2026）</title>
-      <link>https://blog.autolab.cloud/ai-block-claude/</link>
-      <guid>https://blog.autolab.cloud/ai-block-claude/</guid>
-      <pubDate>Mon, 02 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>Block CEO Jack Dorsey 裁掉 4,000 人，說是因為 AI；Anthropic 因拒絕移除安全限制遭美國政府全面封殺。這兩件同時發生的大事，說明了 AI 取代人力已不是預言，而是現在式。本文深度分析數據、各大廠立場，並告訴你現在該怎麼做。</description>
-      <category>AI</category>
-      <category>AI裁員</category>
-      <category>Block</category>
-      <category>Anthropic</category>
-      <category>Claude</category>
-      <category>JackDorsey</category>
-      <category>DarioAmodei</category>
-      <category>AI職場</category>
-      <category>AI安全</category>
     </item>
   </channel>
 </rss>
