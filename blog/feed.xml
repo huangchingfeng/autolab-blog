@@ -26,6 +26,19 @@
       <category>企業培訓</category>
     </item>
     <item>
+      <title>AI 用不穩？問題不在工具，在你的工作環境</title>
+      <link>https://blog.autolab.cloud/ai-work-environment-three-steps/</link>
+      <guid>https://blog.autolab.cloud/ai-work-environment-three-steps/</guid>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>為什麼同一個 AI 工具，有人用得順到飛起來，有人每次都在重來？差別不在 prompt 寫得好不好，而是你有沒有幫 AI 建一套工作環境。三個步驟教你升級。</description>
+      <category>AI</category>
+      <category>Claude Cowork</category>
+      <category>工作環境</category>
+      <category>企業AI</category>
+      <category>數位轉型</category>
+    </item>
+    <item>
       <title>Obsidian + Claude Code：矽谷 AI 圈都在用的第二大腦組合，為什麼比 Notion 更適合 AI 時代？</title>
       <link>https://blog.autolab.cloud/obsidian-claude-code-second-brain/</link>
       <guid>https://blog.autolab.cloud/obsidian-claude-code-second-brain/</guid>
@@ -253,19 +266,6 @@
       <category>AI工具教學</category>
       <category>一人公司</category>
       <category>NotebookLM</category>
-    </item>
-    <item>
-      <title>ChatGPT Skills 正式登場！比 GPT 5.4 更值得注意的新功能</title>
-      <link>https://blog.autolab.cloud/chatgpt-skills-ai-skills-manus-skills/</link>
-      <guid>https://blog.autolab.cloud/chatgpt-skills-ai-skills-manus-skills/</guid>
-      <pubDate>Sun, 08 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>ChatGPT 悄悄上線 Skills 功能，讓你幫 AI 設定固定工作流程。本文完整解析 Skills 操作指南、Manus 匯入教學，以及企業如何用 Skills 解決 AI 產出不穩定的問題。</description>
-      <category>AI</category>
-      <category>ChatGPT</category>
-      <category>Skills</category>
-      <category>Manus</category>
-      <category>企業AI</category>
     </item>
   </channel>
 </rss>
