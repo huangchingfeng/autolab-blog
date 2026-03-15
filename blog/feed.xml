@@ -5,13 +5,68 @@
     <link>https://blog.autolab.cloud/</link>
     <description>企業 AI 培訓、Vibe Coding、AI 工具教學，從觀念到落地。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 14 Mar 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://blog.autolab.cloud/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://blog.autolab.cloud/static/og-default.png</url>
       <title>阿峰老師 AI 實戰部落格</title>
       <link>https://blog.autolab.cloud/</link>
     </image>
+    <item>
+      <title>企業選 AI 工具的四個判斷軸：從日本最大 AI 社群的觀察到台灣培訓現場的實戰經驗</title>
+      <link>https://blog.autolab.cloud/enterprise-ai-selection-framework-2026/</link>
+      <guid>https://blog.autolab.cloud/enterprise-ai-selection-framework-2026/</guid>
+      <pubDate>Sat, 21 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>企業評估 AI 工具不該看跑分排行，而是看長文處理、資料安全、組織展開、輸出穩定四個面向。結合日本 SHIFT AI 木内翔大的框架與阿峰老師 400+ 企業培訓經驗的完整分析。</description>
+      <category>AI</category>
+      <category>企業AI導入</category>
+      <category>Claude</category>
+      <category>工具選擇</category>
+      <category>企業培訓</category>
+    </item>
+    <item>
+      <title>Obsidian + Claude Code：矽谷 AI 圈都在用的第二大腦組合，為什麼比 Notion 更適合 AI 時代？</title>
+      <link>https://blog.autolab.cloud/obsidian-claude-code-second-brain/</link>
+      <guid>https://blog.autolab.cloud/obsidian-claude-code-second-brain/</guid>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>Robert Scoble 說矽谷 AI 核心技術人都在用 Obsidian。本文深度分析 Obsidian + Claude Code 為何成為 AI 時代最佳知識管理組合，含操作指南與企業應用場景。</description>
+      <category>AI</category>
+      <category>Obsidian</category>
+      <category>Claude Code</category>
+      <category>第二大腦</category>
+      <category>知識管理</category>
+      <category>Notion</category>
+    </item>
+    <item>
+      <title>Claude Cowork 五層架構：從工具變成環境的完整指南（2026 最新）</title>
+      <link>https://blog.autolab.cloud/claude-cowork-five-layer-architecture-guide/</link>
+      <guid>https://blog.autolab.cloud/claude-cowork-five-layer-architecture-guide/</guid>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>Claude Cowork 用得不穩定？問題不在 AI，在環境。用五層架構（Context、Instructions、Skills、Connectors、Scheduled Tasks）把 Cowork 從工具升級成自動化工作系統，附一個月建置路線圖。</description>
+      <category>AI</category>
+      <category>Claude Cowork</category>
+      <category>Anthropic</category>
+      <category>MCP</category>
+      <category>AI工作環境</category>
+      <category>企業AI</category>
+    </item>
+    <item>
+      <title>Claude Code 進階：你可能不知道的六層架構與上下文管理術</title>
+      <link>https://blog.autolab.cloud/claude-code-architecture-context-engineering/</link>
+      <guid>https://blog.autolab.cloud/claude-code-architecture-context-engineering/</guid>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>Claude Code 不是聊天機器人，是六層代理系統。從上下文分層、MCP 管理到 Prompt Caching，完整解析讓你從「會用」升級到「用得好」的關鍵實踐。</description>
+      <category>AI</category>
+      <category>Claude Code</category>
+      <category>上下文工程</category>
+      <category>MCP</category>
+      <category>CLAUDE.md</category>
+      <category>開發工具</category>
+    </item>
     <item>
       <title>新加坡總理親自管 AI，台灣企業的行動差距有多大？</title>
       <link>https://blog.autolab.cloud/singapore-vs-taiwan-ai-gap-2026/</link>
@@ -211,58 +266,6 @@
       <category>網頁設計</category>
       <category>LandingPage</category>
       <category>AI工具</category>
-    </item>
-    <item>
-      <title>八千萬人閱讀的 AI 末日預言｜Matt Shumer 警告大事要發生了</title>
-      <link>https://blog.autolab.cloud/ai-matt-shumer-something-big-ai/</link>
-      <guid>https://blog.autolab.cloud/ai-matt-shumer-something-big-ai/</guid>
-      <pubDate>Sat, 07 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>AI 新創創辦人 Matt Shumer 在 X 發文獲 8300 萬閱讀，警告 50% 白領工作將在 1-5 年消失。深度解讀他的五個建議，以及 Anthropic CEO 的超級國家思想實驗。</description>
-      <category>AI</category>
-      <category>AI取代工作</category>
-      <category>MattShumer</category>
-      <category>DarioAmodei</category>
-      <category>AI趨勢</category>
-    </item>
-    <item>
-      <title>鍵盤敲越多越危險？AI 時代的個人生存法則｜簡立峰博士觀點</title>
-      <link>https://blog.autolab.cloud/ai-keyboard-work-one-person-company/</link>
-      <guid>https://blog.autolab.cloud/ai-keyboard-work-one-person-company/</guid>
-      <pubDate>Sat, 07 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>前 Google 台灣董事總經理簡立峰博士揭露 AI 時代職場真相：鍵盤工作比例越高越危險，但一人公司是巨大機會。含獨家自我檢測法和一人公司實戰指南。</description>
-      <category>AI</category>
-      <category>職場</category>
-      <category>簡立峰</category>
-      <category>一人公司</category>
-      <category>AI培訓</category>
-    </item>
-    <item>
-      <title>Satya Nadella 的 10 億美元 AI 豪賭｜3 個不確定性思維 + 實操模板</title>
-      <link>https://blog.autolab.cloud/satya-nadella-ai-ceo/</link>
-      <guid>https://blog.autolab.cloud/satya-nadella-ai-ceo/</guid>
-      <pubDate>Fri, 06 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>微軟 CEO Satya Nadella 在 2019 年砸 10 億投資 OpenAI，本文拆解他的 3 個 AI 決策思維，加上阿峰老師獨家「降低門檻+提高天花板」實操模板，教你用不對稱風險策略擁抱 AI。</description>
-      <category>AI趨勢</category>
-      <category>SatyaNadella</category>
-      <category>微軟CEO</category>
-      <category>OpenAI</category>
-      <category>AI實戰</category>
-    </item>
-    <item>
-      <title>2028全球智能危機解讀：白領會被AI取代嗎？400家企業培訓的真實觀察</title>
-      <link>https://blog.autolab.cloud/ai-white-collar-crisis/</link>
-      <guid>https://blog.autolab.cloud/ai-white-collar-crisis/</guid>
-      <pubDate>Fri, 06 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>一篇文章讓道瓊跌800點。AI會讓白領大規模失業嗎？幽靈繁榮是什麼？阿峰老師從400多家企業AI培訓經驗，分析白領就業危機的真相與機會。</description>
-      <category>AI失業</category>
-      <category>白領裁員</category>
-      <category>幽靈繁榮</category>
-      <category>AI趨勢</category>
-      <category>2028危機</category>
     </item>
   </channel>
 </rss>
