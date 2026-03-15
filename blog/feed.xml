@@ -40,6 +40,32 @@
       <category>Notion</category>
     </item>
     <item>
+      <title>Google Workspace 大更新：Gemini 深度整合 Docs、Sheets、Slides、Drive，AI 辦公進入新階段</title>
+      <link>https://blog.autolab.cloud/google-workspace-gemini-ai-update-2026/</link>
+      <guid>https://blog.autolab.cloud/google-workspace-gemini-ai-update-2026/</guid>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>Google 在 2026 年 3 月發布 Workspace 歷來最大 AI 整合更新。Gemini 深度整合進 Docs、Sheets、Slides、Drive，跨應用整合、一句話建表、自動填資料等功能全面上線。本文完整解析四大 App 升級內容、三大巨頭競爭格局，以及企業該怎麼選。</description>
+      <category>AI</category>
+      <category>Google Workspace</category>
+      <category>Gemini</category>
+      <category>工具教學</category>
+      <category>企業AI</category>
+    </item>
+    <item>
+      <title>Naval Ravikant 的施法者理論：AI 時代你拿到魔杖了，然後呢？</title>
+      <link>https://blog.autolab.cloud/naval-ravikant-spellcaster-ai-magic-wand/</link>
+      <guid>https://blog.autolab.cloud/naval-ravikant-spellcaster-ai-magic-wand/</guid>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>Naval Ravikant 說 AI 是每個人手中的魔杖，我們正在進入施法者的時代。但魔杖人人都有，真正的差距在哪？400+ 企業培訓經驗告訴你答案。</description>
+      <category>AI</category>
+      <category>Naval Ravikant</category>
+      <category>施法者</category>
+      <category>企業培訓</category>
+      <category>AI策略</category>
+    </item>
+    <item>
       <title>Claude Cowork 五層架構：從工具變成環境的完整指南（2026 最新）</title>
       <link>https://blog.autolab.cloud/claude-cowork-five-layer-architecture-guide/</link>
       <guid>https://blog.autolab.cloud/claude-cowork-five-layer-architecture-guide/</guid>
@@ -240,32 +266,6 @@
       <category>Skills</category>
       <category>Manus</category>
       <category>企業AI</category>
-    </item>
-    <item>
-      <title>AI 翻譯為何翻不好「林宅血案」？元首口譯揭開文化轉譯的真正難題</title>
-      <link>https://blog.autolab.cloud/article-2026-03-08/</link>
-      <guid>https://blog.autolab.cloud/article-2026-03-08/</guid>
-      <pubDate>Sun, 08 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>華視林宅血案訪談推向國際，AI 翻譯卻慘不忍睹。元首口譯葉妍伶接手後揭露 AI 翻譯三大盲區：同音字辨識、簡體語境偏差、文化意象轉換。本文深度分析 AI 翻譯的限制與人機協作的未來。</description>
-      <category>AI</category>
-      <category>翻譯</category>
-      <category>口譯</category>
-      <category>文化轉譯</category>
-      <category>人機協作</category>
-    </item>
-    <item>
-      <title>Gemini 3.1 Pro 實測：5 分鐘做出高質感網頁｜AI 網頁生成教學</title>
-      <link>https://blog.autolab.cloud/gemini-3-1-pro-ai-landing-page-ai-gemini/</link>
-      <guid>https://blog.autolab.cloud/gemini-3-1-pro-ai-landing-page-ai-gemini/</guid>
-      <pubDate>Sun, 08 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>Google Gemini 3.1 Pro 實測報告，只要 5 分鐘就能生成完整 Landing Page。三個實測場景分析、操作指南、適用對象一次看完。</description>
-      <category>AI</category>
-      <category>Gemini</category>
-      <category>網頁設計</category>
-      <category>LandingPage</category>
-      <category>AI工具</category>
     </item>
   </channel>
 </rss>

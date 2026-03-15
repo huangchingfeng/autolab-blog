@@ -1,6 +1,6 @@
 ---
 title: "企業選 AI 工具的四個判斷軸：從日本最大 AI 社群的觀察到台灣培訓現場的實戰經驗"
-slug: "enterprise-ai-selection-framework-2026"
+slug: enterprise-ai-selection-framework-2026
 date: "2026-03-21"
 description: "企業評估 AI 工具不該看跑分排行，而是看長文處理、資料安全、組織展開、輸出穩定四個面向。結合日本 SHIFT AI 木内翔大的框架與阿峰老師 400+ 企業培訓經驗的完整分析。"
 tags: [AI, 企業AI導入, Claude, 工具選擇, 企業培訓]
@@ -21,6 +21,10 @@ author: "黃敬峰（AI峰哥）"
 ---
 
 ## 【獨家】為什麼「最強的 AI」反而不適合你的公司？
+
+![Abstract illustration of AI with silhouette head full of eyes, symbolizing observation and technology.](images/ai.jpg)
+*Photo by [Tara Winstead](https://www.pexels.com/@tara-winstead) on [Pexels](https://www.pexels.com/photo/an-artificial-intelligence-illustration-on-the-wall-8849295/)*
+
 
 ### 跑分迷思：排行榜看不到的事
 
@@ -47,6 +51,10 @@ author: "黃敬峰（AI峰哥）"
 ---
 
 ## 【獨家】四個判斷軸的深度拆解：台灣企業版
+
+![A woman with protective gear aiming a sniper rifle at an indoor shooting range.](images/business.jpg)
+*Photo by [Tima Miroshnichenko](https://www.pexels.com/@tima-miroshnichenko) on [Pexels](https://www.pexels.com/photo/woman-in-black-jacket-holding-rifle-6090781/)*
+
 
 木内翔大提出的四個判斷軸，我加上在台灣培訓現場的實戰經驗，做更深入的拆解。
 
@@ -105,6 +113,10 @@ author: "黃敬峰（AI峰哥）"
 ---
 
 ## 【獨家】Claude Code：為什麼管理者應該關注？
+
+![A man deeply engaged in software development with two laptops and a desktop monitor.](images/claude-code-management.jpg)
+*Photo by [olia danilevich](https://www.pexels.com/@olia-danilevich) on [Pexels](https://www.pexels.com/photo/man-sitting-in-front-of-three-computers-4974915/)*
+
 
 這是木内翔大那篇文章裡最讓我拍案叫絕的觀點，我要花更多篇幅展開。
 

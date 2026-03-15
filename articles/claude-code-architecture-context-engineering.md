@@ -1,6 +1,6 @@
 ---
 title: "Claude Code 進階：你可能不知道的六層架構與上下文管理術"
-slug: "claude-code-architecture-context-engineering"
+slug: claude-code-architecture-context-engineering
 date: "2026-03-17"
 description: "Claude Code 不是聊天機器人，是六層代理系統。從上下文分層、MCP 管理到 Prompt Caching，完整解析讓你從「會用」升級到「用得好」的關鍵實踐。"
 tags: [AI, Claude Code, 上下文工程, MCP, CLAUDE.md, 開發工具]
@@ -25,6 +25,10 @@ author: "黃敬峰（AI峰哥）"
 ---
 
 ## 【獨家】上下文分層管理實戰指南
+
+![Team engaged in a presentation at a modern office using digital technology.](images/management-practice.jpg)
+*Photo by [Luis Sevilla](https://www.pexels.com/@luis-sevilla-252657) on [Pexels](https://www.pexels.com/photo/business-meeting-presentation-in-modern-office-34221175/)*
+
 
 社群貼文提到了「上下文是最重要的系統約束」，這裡我把在企業培訓現場教的完整分層框架攤開來講。
 
@@ -66,6 +70,10 @@ author: "黃敬峰（AI峰哥）"
 
 ## 【獨家】MCP 瘦身實戰：從 25,000 tokens 降到 5,000
 
+![Clean and professional dental office setup with tools ready for patient treatment.](images/mcp-practice-25-000-tokens.jpg)
+*Photo by [Daniel Frank](https://www.pexels.com/@fr3nks) on [Pexels](https://www.pexels.com/photo/dental-tool-set-305566/)*
+
+
 MCP（Model Context Protocol）是 Claude Code 連接外部工具的協議。每個 MCP Server 的工具定義會被注入到上下文的固定開銷中，包含工具名稱、描述、完整的 JSON Schema 參數定義。
 
 ### 數學很簡單
@@ -97,6 +105,10 @@ MCP（Model Context Protocol）是 Claude Code 連接外部工具的協議。每
 ---
 
 ## 【獨家】Prompt Caching 省錢攻略：三條規則砍半帳單
+
+![Close-up of hands writing in a spiral notebook with a pen, seated comfortably.](images/prompt-caching.jpg)
+*Photo by [RDNE Stock project](https://www.pexels.com/@rdne) on [Pexels](https://www.pexels.com/photo/close-up-shot-of-a-person-writing-on-a-notebook-5756564/)*
+
 
 Prompt Caching 是 Claude Code 的底層架構核心，但多數使用者完全不知道它的存在。簡單說：Claude Code 會把對話中重複出現的前綴（系統 Prompt、工具定義、之前的對話歷史）快取起來，下一輪對話時直接從快取讀取，不用重新計算 token 費用。
 
