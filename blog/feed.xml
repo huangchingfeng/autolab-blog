@@ -107,6 +107,19 @@
       <category>開發工具</category>
     </item>
     <item>
+      <title>AI 吸血鬼：效率越高，人越累？矽谷工程師的警告與解法</title>
+      <link>https://blog.autolab.cloud/ai-vampire-burnout/</link>
+      <guid>https://blog.autolab.cloud/ai-vampire-burnout/</guid>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>用 AI 工作效率提升 10 倍，但為什麼反而更累了？矽谷 40 年工程師 Steve Yegge 把這個現象叫做 AI 吸血鬼。哈佛商業評論追蹤 200 人也確認了惡性循環。本文帶你看清楚問題在哪，以及怎麼應對。</description>
+      <category>AI</category>
+      <category>生產力</category>
+      <category>職場</category>
+      <category>AI倦怠</category>
+      <category>工作效率</category>
+    </item>
+    <item>
       <title>新加坡總理親自管 AI，台灣企業的行動差距有多大？</title>
       <link>https://blog.autolab.cloud/singapore-vs-taiwan-ai-gap-2026/</link>
       <guid>https://blog.autolab.cloud/singapore-vs-taiwan-ai-gap-2026/</guid>
@@ -143,6 +156,32 @@
       <category>人才觀</category>
       <category>AdityaAgarwal</category>
       <category>AI適應力</category>
+    </item>
+    <item>
+      <title>Claude Code /btw 指令完整解析：問一下就好，不消耗 context window</title>
+      <link>https://blog.autolab.cloud/claude-code-btw-feature/</link>
+      <guid>https://blog.autolab.cloud/claude-code-btw-feature/</guid>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>Claude Code 2.1.72 新推出 /btw 旁問功能，讓你在工作流中插問一個問題，不進入對話歷史、不消耗 context window，可減少約 50% token 消耗。本文完整說明使用方式、限制與場景。</description>
+      <category>Claude Code</category>
+      <category>AI工具</category>
+      <category>開發工具</category>
+      <category>token優化</category>
+    </item>
+    <item>
+      <title>Claude 終於有記憶了！記憶功能 + 聊天搜尋完整教學，讓 AI 越用越懂你</title>
+      <link>https://blog.autolab.cloud/claude-memory-chat-search-2026/</link>
+      <guid>https://blog.autolab.cloud/claude-memory-chat-search-2026/</guid>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>Anthropic 2026 年 3 月重大更新：記憶功能全員免費開放，聊天搜尋讓歷史對話變知識庫，跨 AI 工具記憶搬家。本文完整教你怎麼設定、怎麼用、企業版有哪些控制機制。</description>
+      <category>Claude</category>
+      <category>記憶功能</category>
+      <category>ChatSearch</category>
+      <category>AI個人化</category>
+      <category>Anthropic</category>
+      <category>企業AI</category>
     </item>
     <item>
       <title>台灣企業 AI 導入太慢？從新加坡 2026 預算案看你該立刻行動的理由</title>
@@ -227,46 +266,6 @@
       <category>Perplexity</category>
       <category>AI工具評測</category>
       <category>自動化</category>
-    </item>
-    <item>
-      <title>AI 時代組織怎麼跑？91APP 三十幾個團隊的實戰經驗拆解｜阿峰老師</title>
-      <link>https://blog.autolab.cloud/ai-91app-ai-sprint-ai/</link>
-      <guid>https://blog.autolab.cloud/ai-91app-ai-sprint-ai/</guid>
-      <pubDate>Mon, 09 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>91APP 有 30+ 個開發團隊全面導入 AI，產品長分享職稱邊界消失、Sprint 估點數失去意義的實戰觀察。阿峰老師獨家分析自動化工具的典範翻轉和 Agent UX 設計。</description>
-      <category>AI</category>
-      <category>企業AI導入</category>
-      <category>91APP</category>
-      <category>Sprint</category>
-      <category>AgentUX</category>
-      <category>組織創新</category>
-    </item>
-    <item>
-      <title>業務用 AI 不只是寫信：100+ 個 AI 代理提示詞揭露的差距</title>
-      <link>https://blog.autolab.cloud/ai-agent-sales-prompts/</link>
-      <guid>https://blog.autolab.cloud/ai-agent-sales-prompts/</guid>
-      <pubDate>Mon, 09 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>國外業務團隊已經用 AI 代理分析贏單模式、準備客戶通話、監控 Pipeline。Highspot 整理的 100+ 提示詞，揭露台灣企業與國際的 AI 應用差距。</description>
-      <category>AI代理</category>
-      <category>業務自動化</category>
-      <category>企業AI</category>
-      <category>提示詞</category>
-    </item>
-    <item>
-      <title>OpenAI 駕馭工程：AI Agent 五個月零手寫百萬行程式碼，軟體開發典範轉移</title>
-      <link>https://blog.autolab.cloud/harness-engineering-ai-agent-openai/</link>
-      <guid>https://blog.autolab.cloud/harness-engineering-ai-agent-openai/</guid>
-      <pubDate>Mon, 09 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>OpenAI 發表 Harness Engineering 研究，AI Agent 五個月從零寫出百萬行程式碼。拆解三大核心教訓、台灣企業實務對照，以及如何在你的工作中應用駕馭工程思維。</description>
-      <category>AI</category>
-      <category>OpenAI</category>
-      <category>HarnessEngineering</category>
-      <category>駕馭工程</category>
-      <category>AIAgent</category>
-      <category>軟體開發</category>
     </item>
   </channel>
 </rss>

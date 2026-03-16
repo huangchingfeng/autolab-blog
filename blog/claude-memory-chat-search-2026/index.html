@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude 終於有記憶了！記憶功能 + 聊天搜尋完整教學，讓 AI 越用越懂你 — 阿峰老師</title>
+  <meta name="description" content="Anthropic 2026 年 3 月重大更新：記憶功能全員免費開放，聊天搜尋讓歷史對話變知識庫，跨 AI 工具記憶搬家。本文完整教你怎麼設定、怎麼用、企業版有哪些控制機制。">
+  <meta name="keywords" content="Claude, 記憶功能, ChatSearch, AI個人化, Anthropic, 企業AI">
+  <meta name="author" content="黃敬峰（AI峰哥）">
+  <link rel="canonical" href="https://blog.autolab.cloud/claude-memory-chat-search-2026/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Claude 終於有記憶了！記憶功能 + 聊天搜尋完整教學，讓 AI 越用越懂你">
+  <meta property="og:description" content="Anthropic 2026 年 3 月重大更新：記憶功能全員免費開放，聊天搜尋讓歷史對話變知識庫，跨 AI 工具記憶搬家。本文完整教你怎麼設定、怎麼用、企業版有哪些控制機制。">
+  <meta property="og:image" content="https://blog.autolab.cloud/claude-memory-chat-search-2026/banner.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://blog.autolab.cloud/claude-memory-chat-search-2026/">
+  <meta property="og:site_name" content="阿峰老師 Autolab">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="article:author" content="黃敬峰（AI峰哥）">
+  <meta property="article:published_time" content="2026-03-16T00:00:00+08:00">
+  <meta property="article:modified_time" content="2026-03-16T00:00:00+08:00">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Claude 終於有記憶了！記憶功能 + 聊天搜尋完整教學，讓 AI 越用越懂你">
+  <meta name="twitter:description" content="Anthropic 2026 年 3 月重大更新：記憶功能全員免費開放，聊天搜尋讓歷史對話變知識庫，跨 AI 工具記憶搬家。本文完整教你怎麼設定、怎麼用、企業版有哪些控制機制。">
+  <meta name="twitter:image" content="https://blog.autolab.cloud/claude-memory-chat-search-2026/banner.png">
+
+  <!-- Article Tags -->
+  <meta property="article:tag" content="Claude">
+  <meta property="article:tag" content="記憶功能">
+  <meta property="article:tag" content="ChatSearch">
+  <meta property="article:tag" content="AI個人化">
+  <meta property="article:tag" content="Anthropic">
+  <meta property="article:tag" content="企業AI">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Claude 終於有記憶了！記憶功能 + 聊天搜尋完整教學，讓 AI 越用越懂你", "description": "Anthropic 2026 年 3 月重大更新：記憶功能全員免費開放，聊天搜尋讓歷史對話變知識庫，跨 AI 工具記憶搬家。本文完整教你怎麼設定、怎麼用、企業版有哪些控制機制。", "author": {"@type": "Person", "name": "黃敬峰（AI峰哥）", "url": "https://www.autolab.cloud"}, "publisher": {"@type": "Organization", "name": "Autolab", "url": "https://www.autolab.cloud", "logo": {"@type": "ImageObject", "url": "https://blog.autolab.cloud/static/og-default.png"}}, "datePublished": "2026-03-16T00:00:00+08:00", "dateModified": "2026-03-16T00:00:00+08:00", "image": "https://blog.autolab.cloud/claude-memory-chat-search-2026/banner.png", "mainEntityOfPage": "https://blog.autolab.cloud/claude-memory-chat-search-2026/", "keywords": "Claude, 記憶功能, ChatSearch, AI個人化, Anthropic, 企業AI", "inLanguage": "zh-Hant-TW"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://blog.autolab.cloud/"}, {"@type": "ListItem", "position": 2, "name": "Claude 終於有記憶了！記憶功能 + 聊天搜尋完整教學，讓 AI 越用越懂你", "item": "https://blog.autolab.cloud/claude-memory-chat-search-2026/"}]}</script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://blog.autolab.cloud/static/favicon.png">
+  <link rel="icon" type="image/x-icon" href="https://blog.autolab.cloud/static/favicon.ico">
+  <link rel="apple-touch-icon" href="https://blog.autolab.cloud/static/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="阿峰老師 Blog RSS" href="https://blog.autolab.cloud/feed.xml">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://blog.autolab.cloud/static/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至主要內容</a>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="https://blog.autolab.cloud/" class="nav-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 412 160" width="32" height="13" aria-hidden="true">
+          <defs><g id="wing"><polygon points="188,26 0,0 16,22 168,90"/><polygon points="166,100 34,60 42,72 170,114"/><polygon points="174,122 68,88 76,100 182,140"/></g></defs>
+          <use href="#wing" fill="#00D4FF"/><use href="#wing" fill="#00D4FF" transform="translate(392,0) scale(-1,1)"/>
+        </svg>
+        <span>Autolab</span> 阿峰老師
+      </a>
+      <div class="nav-links">
+        <a href="https://blog.autolab.cloud/">Blog</a>
+        <a href="https://www.autolab.cloud">官網</a>
+        <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs" aria-label="麵包屑導航">
+    <a href="https://blog.autolab.cloud/">Blog</a><span class="sep">›</span><span class="current">Claude 終於有記憶了！記憶功能 + 聊天搜尋完整教學，讓 AI 越用越懂你</span>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="article-header">
+    <div class="article-meta">
+      <span>2026-03-16</span>
+      <span>黃敬峰（AI峰哥）</span>
+    </div>
+    <h1>Claude 終於有記憶了！記憶功能 + 聊天搜尋完整教學，讓 AI 越用越懂你</h1>
+    <div class="card-tags"><span class="tag" data-color="pink">Claude</span><span class="tag" data-color="yellow">記憶功能</span><span class="tag" data-color="yellow">ChatSearch</span><span class="tag" data-color="pink">AI個人化</span><span class="tag" data-color="green">Anthropic</span><span class="tag" data-color="pink">企業AI</span></div>
+  </header>
+
+  <!-- Featured Image -->
+  <div class="featured-image-wrapper"><img src="banner.png" alt="Claude 終於有記憶了！記憶功能 + 聊天搜尋完整教學，讓 AI 越用越懂你" class="featured-image" loading="lazy" width="780" height="438"></div>
+
+  <!-- YouTube -->
+  
+
+  <!-- CONTENT -->
+  <main id="main-content">
+  <article class="article-content">
+    <blockquote>
+<p>本文是社群貼文的完整延伸版。
+社群版講了核心觀念，本文加上獨家深度分析、逐步設定教學和企業導入建議。</p>
+</blockquote>
+<hr />
+<h2 id="_1">重點回顧</h2>
+<p>Anthropic 在 2026 年 3 月推出了 Claude 的兩大功能更新：<strong>記憶功能（Memory）</strong> 全員免費開放，<strong>聊天搜尋（Chat Search）</strong> 付費方案可用。前者讓 Claude 記住你是誰、越用越懂你；後者讓你可以搜尋和自己所有的歷史對話。另外，實驗性的跨 AI 工具記憶遷移功能，讓你不再被鎖死在單一工具裡。</p>
+<hr />
+<h2 id="_2">為什麼這次更新很重要？</h2>
+<p>我帶過超過 400 家企業做 AI 工具導入評估。不管是金融業、製造業還是科技公司，幾乎每個人在開始用 AI 的頭幾個月都說過同樣的話：</p>
+<p>「為什麼每次打開新視窗，AI 就不認識我了？」</p>
+<p>這不是使用者的問題，是 AI 工具的設計問題。早期的 AI 是「無狀態（stateless）」的——每次對話都是全新開始，AI 完全沒有記憶。你花 5 分鐘設定背景資料、說明公司業務、調整語氣偏好，關掉視窗，一切歸零。</p>
+<p>這種體驗造成的直接後果不是「不方便」，而是<strong>浪費</strong>。以一個中型企業 50 人團隊來算，如果每人每天花 10 分鐘設定 AI 背景，一年的浪費就超過 2000 個工時。這些時間本來可以拿來真正解決問題。</p>
+<p>記憶功能的出現，讓這個問題正式被解決。</p>
+<hr />
+<h2 id="_3">【獨家教學】記憶功能完整設定指南</h2>
+<h3 id="_4">什麼是記憶功能？</h3>
+<p>Claude 的記憶功能會自動分析你跟它的對話內容，整理出一份「背景摘要」：你的職業背景、工作習慣、語氣偏好、常用術語。這份摘要每 24 小時更新一次，每次你開新對話，它自動帶入。</p>
+<p>Claude 認識你了，不需要你每次重新自我介紹。</p>
+<h3 id="_5">如何開啟記憶功能（逐步）</h3>
+<p><strong>Step 1：進入設定</strong>
+點選右上角頭像 → 選擇「設定（Settings）」</p>
+<p><strong>Step 2：找到記憶功能</strong>
+設定 → 功能（Features）→ 記憶（Memory）</p>
+<p><strong>Step 3：確認已開啟</strong>
+確認「從聊天記錄生成記憶」的開關是開啟狀態</p>
+<p><strong>Step 4：查看現有記憶</strong>
+點「檢視和編輯記憶（View and edit memory）」，看看 Claude 已經記住了什麼</p>
+<h3 id="_6">你可以對記憶做的事</h3>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>查看</strong></td>
+<td>看到 Claude 整理出的完整背景摘要</td>
+</tr>
+<tr>
+<td><strong>直接告訴 Claude</strong></td>
+<td>對話中說「記住我喜歡用繁體中文回覆」，Claude 會主動更新記憶</td>
+</tr>
+<tr>
+<td><strong>修改</strong></td>
+<td>在記憶設定頁面直接編輯內容</td>
+</tr>
+<tr>
+<td><strong>刪除特定記憶</strong></td>
+<td>選取不想被記住的項目刪除</td>
+</tr>
+<tr>
+<td><strong>一鍵關閉</strong></td>
+<td>完全停用記憶功能</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">記憶功能的更新機制</h3>
+<p>記憶摘要每 24 小時更新一次。這意味著你今天跟 Claude 大量討論的專案內容，明天開新對話時就已經被整合進它對你的理解。</p>
+<p>這不是「訓練模型」，是「記住你這個用戶的偏好」。兩件事差很多——你的資料不會被用來訓練通用模型，而是只用於你自己的使用體驗。</p>
+<h3 id="incognito">無痕聊天（Incognito）</h3>
+<p>不想被某次對話記住？用無痕聊天。</p>
+<p>這個功能所有方案都有，包含免費方案。無痕模式下的對話不會被記憶功能分析，也不會出現在聊天搜尋的結果裡。適合處理敏感資訊、試驗性討論、或任何你不想留下紀錄的對話。</p>
+<hr />
+<h2 id="_8">【獨家教學】聊天搜尋完整使用指南</h2>
+<h3 id="_9">什麼是聊天搜尋？</h3>
+<p>聊天搜尋讓你可以用自然語言搜尋你和 Claude 所有的歷史對話。</p>
+<p>舉個具體例子：假設你三個月前跟 Claude 分析過一份競品比較報告、寫過一套 Cold Email 話術、討論過某個人事決策的利弊。現在你需要找回當時的結論，你完全不記得是哪天聊的，對話標題也不知道。</p>
+<p>以前：只能自己一頁一頁翻。
+現在：直接問 Claude「找出我之前討論過的競品分析結果」，它用 RAG（檢索增強生成）技術搜出來，還附上原始對話的連結。</p>
+<h3 id="_10">哪些方案可以用？</h3>
+<table>
+<thead>
+<tr>
+<th>方案</th>
+<th>記憶功能</th>
+<th>聊天搜尋</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>免費方案</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Claude Pro</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Claude Team</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Claude Enterprise</td>
+<td>✅</td>
+<td>✅ + 組織層級控制</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_11">怎麼用聊天搜尋？</h3>
+<p>當你在對話中提問時，Claude 會自動判斷是否需要搜尋歷史對話。你也可以直接告訴它：</p>
+<ul>
+<li>「找出我之前討論的那份行銷策略提案」</li>
+<li>「我上次跟你說的供應商條件是什麼？」</li>
+<li>「搜尋我之前問過的 Python 程式碼問題」</li>
+</ul>
+<p>搜尋結果會顯示為工具呼叫（tool call），並附上原始對話的連結，讓你可以直接跳回去查看完整脈絡。</p>
+<h3 id="_12">從知識庫的角度想這件事</h3>
+<p>我建議大家把聊天搜尋用這個心態來用：<strong>每次跟 Claude 的對話，都是在建立你的個人知識庫。</strong></p>
+<p>你分析的市場報告、你和 Claude 一起寫的提案、你討論過的技術架構決策——這些都可以日後被搜尋、被找回、被再次利用。這是一個「越用越有價值」的正向循環。</p>
+<hr />
+<h2 id="ai">【獨家解析】跨 AI 工具記憶遷移</h2>
+<h3 id="_13">這是什麼？</h3>
+<p>Anthropic 推出了記憶匯入/匯出工具（目前為實驗性功能）。你可以：</p>
+<ol>
+<li>把在 ChatGPT 或 Gemini 裡積累的個人背景資料，匯入到 Claude</li>
+<li>把 Claude 的記憶匯出，備份或遷移到其他工具</li>
+</ol>
+<h3 id="_14">為什麼這件事很重要？</h3>
+<p>對 AI 工具的選擇，很多人有一個隱形的考量：「如果我在這個工具投入了很多時間設定、訓練它認識我，換工具的成本會不會很高？」</p>
+<p>記憶遷移功能直接回答了這個問題：<strong>你的 AI 人設是屬於你的，不是哪個工具的資產。</strong></p>
+<p>換到 Claude 不用從零開始，離開 Claude 也不會失去積累。這個設計，其實是對使用者非常有誠意的選擇。</p>
+<h3 id="_15">如何使用記憶匯入/匯出</h3>
+<p>目前的入口：設定 → 功能 → 記憶 → 匯入/匯出選項（需確認帳戶是否已解鎖此實驗性功能）</p>
+<hr />
+<h2 id="4">【企業版深度解析】4 個組織層級控制機制</h2>
+<h3 id="_16">為什麼企業版需要特別設計？</h3>
+<p>帶過超過 400 家企業做 AI 培訓，第一個問題永遠是：「我們公司的資料安全嗎？」</p>
+<p>Claude Enterprise 版在這方面的設計，我覺得是認真考慮過企業環境需求的。</p>
+<h3 id="_17">機制一：組織層級開關</h3>
+<p>Enterprise 的 Owner 和 Primary Owner 可以在整個組織層級控制記憶功能：</p>
+<ul>
+<li>預設狀態：組織層級的「從對話歷史生成記憶」是<strong>開啟</strong>的</li>
+<li>可以一鍵在組織層級<strong>關閉</strong>此功能</li>
+<li>當組織層級開啟時，個別用戶可以管理自己的記憶設定</li>
+<li>當組織層級關閉時，所有用戶的記憶功能全部停用</li>
+</ul>
+<p>適用場景：金融業、醫療業、法律業等有嚴格資料治理需求的組織。</p>
+<h3 id="_18">機制二：專案隔離記憶空間</h3>
+<p>不同的 Project 有各自獨立的記憶空間。</p>
+<p>這代表：你在「產品上市計畫」這個專案裡告訴 Claude 的策略細節，不會在「客服回覆」專案的對話裡出現。業務資料不混淆，部門資訊不外洩。</p>
+<h3 id="_19">機制三：無痕模式全員開放</h3>
+<p>不管是免費方案還是企業版，所有用戶都可以使用無痕聊天。</p>
+<p>無痕模式的對話不會被記憶功能分析、不會出現在聊天搜尋結果、對話結束後不保留任何紀錄。這讓 HR 在討論人事案、法務在分析合約、財務在處理敏感數字時，有一個安全的操作空間。</p>
+<h3 id="_20">機制四：記憶資料可依政策匯出</h3>
+<p>Enterprise admin 可以依照公司的資料保留政策，匯出所有用戶的記憶資料。</p>
+<p>這讓資安部門可以核查、讓法務部門可以確認合規、讓 IT 部門可以做資料管理。這種透明度，是企業環境真正需要的。</p>
+<hr />
+<h2 id="_21">方案選擇建議</h2>
+<p>如果你是個人使用者：先開啟免費方案的記憶功能，用一個月感受差異。如果你需要找回歷史對話，再考慮升級 Pro 方案使用聊天搜尋。</p>
+<p>如果你是中小企業主：Team 方案的組織記憶功能加上聊天搜尋，對於有多個進行中專案的團隊來說，投資報酬率很高。建議先讓 2-3 個同事試用一個月，再評估全組織導入。</p>
+<p>如果你是大型企業 IT 主管或 HR：Enterprise 版的組織層級控制、專案隔離、資料匯出這三個機制，是在合規環境裡落地 AI 工具的關鍵配備。建議評估時直接找 Anthropic 的企業業務談 POC。</p>
+<hr />
+<h2 id="_22">阿峰觀點</h2>
+<p>我想說一件很多人沒有注意到的事。</p>
+<p>記憶功能的出現，本質上是 AI 工具定位的轉變：<strong>從「無狀態的執行工具」，變成「有狀態的工作夥伴」。</strong></p>
+<p>這兩種定位，用法完全不同。</p>
+<p>無狀態工具，你每次用都要帶著完整的背景資料，你是在「使用」它。有狀態的工作夥伴，它會隨著時間理解你，你是在「培養」它。</p>
+<p>「培養」的關係是有複利的。你投入的時間越多，它對你的幫助越大，你的工作效率的提升也越大。這是一個正向循環。</p>
+<p>我建議大家做一個小測試：開啟記憶功能，接下來兩週，每天跟 Claude 聊你正在處理的工作。兩週後，打開一個新對話，問一個你最近討論過的問題，看看 Claude 有沒有主動帶入背景資訊。</p>
+<p>這個時刻你會真正理解「有記憶的 AI」跟「沒有記憶的 AI」的差別。</p>
+<hr />
+<h2 id="_23">本文提到的資源</h2>
+<!-- wp:html -->
+<table style="border-collapse:collapse;width:100%;font-size:15px;">
+  <thead>
+    <tr style="background:#00D4FF;color:#fff;">
+      <th style="padding:10px 16px;text-align:left;font-weight:bold;">資源</th>
+      <th style="padding:10px 16px;text-align:left;font-weight:bold;">連結</th>
+      <th style="padding:10px 16px;text-align:left;font-weight:bold;">說明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background:#ffffff;">
+      <td style="padding:10px 16px;font-weight:bold;border:1px solid #e0e0e0;">Claude 記憶設定</td>
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;"><a href="https://support.claude.com/zh-TW/articles/11817273" style="color:#00D4FF;">官方說明文件</a></td>
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;">記憶 + 聊天搜尋完整說明</td>
+    </tr>
+    <tr style="background:#f8f9fa;">
+      <td style="padding:10px 16px;font-weight:bold;border:1px solid #e0e0e0;">記憶匯入/匯出</td>
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;"><a href="https://support.claude.com/en/articles/12123587-importing-and-exporting-your-memory-from-claude" style="color:#00D4FF;">跨 AI 工具記憶遷移</a></td>
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;">實驗性功能，從 ChatGPT/Gemini 匯入</td>
+    </tr>
+    <tr style="background:#ffffff;">
+      <td style="padding:10px 16px;font-weight:bold;border:1px solid #e0e0e0;">Claude 發行說明</td>
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;"><a href="https://support.claude.com/zh-TW/articles/12138966" style="color:#00D4FF;">2026 年 3 月更新</a></td>
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;">完整功能更新時程</td>
+    </tr>
+    <tr style="background:#f8f9fa;">
+      <td style="padding:10px 16px;font-weight:bold;border:1px solid #e0e0e0;">企業 AI 培訓</td>
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;"><a href="https://www.autolab.cloud" style="color:#00D4FF;">autolab.cloud</a></td>
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;">帶你的團隊從「聽過 AI」到「每天用 AI」</td>
+    </tr>
+  </tbody>
+</table>
+<!-- /wp:html -->
+
+<hr />
+<p>如果你的公司也在評估 AI 工具該怎麼讓整個團隊落地使用，歡迎到官網找我。
+我帶過超過 400 家企業，從工具選型、培訓設計到實際導入，都有完整的方法論可以分享。</p>
+<p>→ <a href="https://www.autolab.cloud">企業 AI 培訓洽詢</a></p>
+<hr />
+<div style="background:#f8f9fa;padding:20px;border-radius:8px;margin:2em 0;">
+<p style="font-weight:700;font-size:1.1em;margin:0 0 12px 0;color:#0A1628;">🔗 追蹤阿峰老師</p>
+<ul style="margin:0;padding-left:20px;list-style:none;">
+<li>📝 部落格：<a href="https://blog.autolab.cloud" style="color:#00D4FF;">blog.autolab.cloud</a></li>
+<li>🎬 YouTube：<a href="https://www.youtube.com/channel/UCVVZz6m4T4k6-PZxFSlCkRQ" style="color:#00D4FF;">黃敬峰</a></li>
+<li>📘 Facebook：<a href="https://www.facebook.com/nikeshoxmiles" style="color:#00D4FF;">黃敬峰</a></li>
+<li>📸 Instagram：<a href="https://www.instagram.com/nikeshoxmiles/" style="color:#00D4FF;">@nikeshoxmiles</a></li>
+<li>🧵 Threads：<a href="https://www.threads.net/@nikeshoxmiles" style="color:#00D4FF;">@nikeshoxmiles</a></li>
+<li>💬 LINE 官方：<a href="https://lin.ee/mUvPZwJC" style="color:#00D4FF;">加入好友</a></li>
+</ul>
+</div>
+
+<hr />
+<h3 id="_24">關於作者</h3>
+<p>黃敬峰（AI峰哥），企業 AI 實戰培訓專家，服務超過 400 家企業、10,000+ 學員。
+核心心法：「會用、懂用、好用、每天用」
+官網：<a href="https://www.autolab.cloud">https://www.autolab.cloud</a></p>
+<hr />
+<p><strong>SEO:</strong>
+- Meta Title：Claude 記憶功能完整教學 2026｜讓 AI 越用越懂你
+- Meta Description：Anthropic 2026 年 3 月重大更新：記憶功能免費全員開放、聊天搜尋付費可用、跨 AI 記憶搬家。本文附逐步設定教學 + 企業版控制機制完整解析。
+- Tags：#Claude #記憶功能 #ChatSearch #Anthropic #企業AI #AI工具教學
+- Target Keywords：Claude 記憶功能、Claude Memory、Claude 聊天搜尋、AI 工具設定、企業 AI 導入</p>
+  </article>
+  </main>
+
+  <!-- Share -->
+  <div class="share-section">
+    <h3>分享這篇文章</h3>
+    <div class="share-buttons">
+      <a href="https://social-plugins.line.me/lineit/share?url=https://blog.autolab.cloud/claude-memory-chat-search-2026/" target="_blank" rel="noopener" class="share-btn share-line" aria-label="分享到 LINE">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        LINE
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.autolab.cloud/claude-memory-chat-search-2026/" target="_blank" rel="noopener" class="share-btn share-fb" aria-label="分享到 Facebook">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook
+      </a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://blog.autolab.cloud/claude-memory-chat-search-2026/" target="_blank" rel="noopener" class="share-btn share-linkedin" aria-label="分享到 LinkedIn">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <button class="share-btn share-copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='已複製!';setTimeout(()=>{this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;><path fill=&quot;currentColor&quot; d=&quot;M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z&quot;/></svg> 複製連結'},2000)})" aria-label="複製連結">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        複製連結
+      </button>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <div class="cta-box-inner">
+      <h3>想用 AI 解決真問題？</h3>
+      <p>加入阿峰老師的 AI 實戰社群，一起從觀念到落地。</p>
+      <div class="cta-buttons">
+        <a href="https://reurl.cc/GGlLNx" class="cta-btn">加入 LINE 社群</a>
+        <a href="https://www.autolab.cloud" class="cta-btn outline">企業培訓諮詢</a>
+      </div>
+      <div class="cta-links">
+        <a href="https://www.autolab.cloud">官網</a>
+        <a href="mailto:ai@autolab.cloud">聯繫合作</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Articles -->
+  <section class="related-section">
+  <h2>你可能也想看</h2>
+  <div class="related-grid">
+    <a href="https://blog.autolab.cloud/claude-cowork-five-layer-architecture-guide/" class="related-card">
+  <img class="related-card-thumb" src="../claude-cowork-five-layer-architecture-guide/banner.png" alt="Claude Cowork 五層架構：從工具變成環境的完整指南（2026 最新）" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-18</div>
+    <div class="related-card-title">Claude Cowork 五層架構：從工具變成環境的完整指南（2026 最新）</div>
+  </div>
+</a><a href="https://blog.autolab.cloud/ai-block-claude/" class="related-card">
+  <img class="related-card-thumb" src="../ai-block-claude/thumbnail.png" alt="Claude 被封殺、Block 裁員一半：AI 時代職場生存指南（2026）" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-02</div>
+    <div class="related-card-title">Claude 被封殺、Block 裁員一半：AI 時代職場生存指南（2026）</div>
+  </div>
+</a><a href="https://blog.autolab.cloud/enterprise-ai-selection-framework-2026/" class="related-card">
+  <img class="related-card-thumb" src="../enterprise-ai-selection-framework-2026/banner.png" alt="企業選 AI 工具的四個判斷軸：從日本最大 AI 社群的觀察到台灣培訓現場的實戰經驗" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-21</div>
+    <div class="related-card-title">企業選 AI 工具的四個判斷軸：從日本最大 AI 社群的觀察到台灣培訓現場的實戰經驗</div>
+  </div>
+</a>
+  </div>
+</section>
+
+  <!-- Article Navigation -->
+  <nav class="article-nav">
+  <a href="https://blog.autolab.cloud/claude-code-btw-feature/" class="prev">
+  <div class="nav-label">← 上一篇</div>
+  <div class="nav-title">Claude Code /btw 指令完整解析：問一下就好，不消耗 context window</div>
+</a><a href="https://blog.autolab.cloud/singapore-budget-2026-ai-national-strategy/" class="next">
+  <div class="nav-label">下一篇 →</div>
+  <div class="nav-title">台灣企業 AI 導入太慢？從新加坡 2026 預算案看你該立刻行動的理由</div>
+</a>
+</nav>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2026 Autolab — 黃敬峰（AI峰哥）. All rights reserved.</p>
+    <p style="margin-top:8px">
+      <a href="https://blog.autolab.cloud/">Blog</a> ·
+      <a href="https://www.autolab.cloud">官網</a> ·
+      <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+    </p>
+  </footer>
+</body>
+</html>

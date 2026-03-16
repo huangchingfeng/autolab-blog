@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 吸血鬼：效率越高，人越累？矽谷工程師的警告與解法 — 阿峰老師</title>
+  <meta name="description" content="用 AI 工作效率提升 10 倍，但為什麼反而更累了？矽谷 40 年工程師 Steve Yegge 把這個現象叫做 AI 吸血鬼。哈佛商業評論追蹤 200 人也確認了惡性循環。本文帶你看清楚問題在哪，以及怎麼應對。">
+  <meta name="keywords" content="AI, 生產力, 職場, AI倦怠, 工作效率">
+  <meta name="author" content="黃敬峰（AI峰哥）">
+  <link rel="canonical" href="https://blog.autolab.cloud/ai-vampire-burnout/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AI 吸血鬼：效率越高，人越累？矽谷工程師的警告與解法">
+  <meta property="og:description" content="用 AI 工作效率提升 10 倍，但為什麼反而更累了？矽谷 40 年工程師 Steve Yegge 把這個現象叫做 AI 吸血鬼。哈佛商業評論追蹤 200 人也確認了惡性循環。本文帶你看清楚問題在哪，以及怎麼應對。">
+  <meta property="og:image" content="https://blog.autolab.cloud/ai-vampire-burnout/banner.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://blog.autolab.cloud/ai-vampire-burnout/">
+  <meta property="og:site_name" content="阿峰老師 Autolab">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="article:author" content="黃敬峰（AI峰哥）">
+  <meta property="article:published_time" content="2026-03-16T00:00:00+08:00">
+  <meta property="article:modified_time" content="2026-03-16T00:00:00+08:00">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI 吸血鬼：效率越高，人越累？矽谷工程師的警告與解法">
+  <meta name="twitter:description" content="用 AI 工作效率提升 10 倍，但為什麼反而更累了？矽谷 40 年工程師 Steve Yegge 把這個現象叫做 AI 吸血鬼。哈佛商業評論追蹤 200 人也確認了惡性循環。本文帶你看清楚問題在哪，以及怎麼應對。">
+  <meta name="twitter:image" content="https://blog.autolab.cloud/ai-vampire-burnout/banner.png">
+
+  <!-- Article Tags -->
+  <meta property="article:tag" content="AI">
+  <meta property="article:tag" content="生產力">
+  <meta property="article:tag" content="職場">
+  <meta property="article:tag" content="AI倦怠">
+  <meta property="article:tag" content="工作效率">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AI 吸血鬼：效率越高，人越累？矽谷工程師的警告與解法", "description": "用 AI 工作效率提升 10 倍，但為什麼反而更累了？矽谷 40 年工程師 Steve Yegge 把這個現象叫做 AI 吸血鬼。哈佛商業評論追蹤 200 人也確認了惡性循環。本文帶你看清楚問題在哪，以及怎麼應對。", "author": {"@type": "Person", "name": "黃敬峰（AI峰哥）", "url": "https://www.autolab.cloud"}, "publisher": {"@type": "Organization", "name": "Autolab", "url": "https://www.autolab.cloud", "logo": {"@type": "ImageObject", "url": "https://blog.autolab.cloud/static/og-default.png"}}, "datePublished": "2026-03-16T00:00:00+08:00", "dateModified": "2026-03-16T00:00:00+08:00", "image": "https://blog.autolab.cloud/ai-vampire-burnout/banner.png", "mainEntityOfPage": "https://blog.autolab.cloud/ai-vampire-burnout/", "keywords": "AI, 生產力, 職場, AI倦怠, 工作效率", "inLanguage": "zh-Hant-TW"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://blog.autolab.cloud/"}, {"@type": "ListItem", "position": 2, "name": "AI 吸血鬼：效率越高，人越累？矽谷工程師的警告與解法", "item": "https://blog.autolab.cloud/ai-vampire-burnout/"}]}</script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://blog.autolab.cloud/static/favicon.png">
+  <link rel="icon" type="image/x-icon" href="https://blog.autolab.cloud/static/favicon.ico">
+  <link rel="apple-touch-icon" href="https://blog.autolab.cloud/static/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="阿峰老師 Blog RSS" href="https://blog.autolab.cloud/feed.xml">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://blog.autolab.cloud/static/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至主要內容</a>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="https://blog.autolab.cloud/" class="nav-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 412 160" width="32" height="13" aria-hidden="true">
+          <defs><g id="wing"><polygon points="188,26 0,0 16,22 168,90"/><polygon points="166,100 34,60 42,72 170,114"/><polygon points="174,122 68,88 76,100 182,140"/></g></defs>
+          <use href="#wing" fill="#00D4FF"/><use href="#wing" fill="#00D4FF" transform="translate(392,0) scale(-1,1)"/>
+        </svg>
+        <span>Autolab</span> 阿峰老師
+      </a>
+      <div class="nav-links">
+        <a href="https://blog.autolab.cloud/">Blog</a>
+        <a href="https://www.autolab.cloud">官網</a>
+        <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs" aria-label="麵包屑導航">
+    <a href="https://blog.autolab.cloud/">Blog</a><span class="sep">›</span><span class="current">AI 吸血鬼：效率越高，人越累？矽谷工程師的警告與解法</span>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="article-header">
+    <div class="article-meta">
+      <span>2026-03-16</span>
+      <span>黃敬峰（AI峰哥）</span>
+    </div>
+    <h1>AI 吸血鬼：效率越高，人越累？矽谷工程師的警告與解法</h1>
+    <div class="card-tags"><span class="tag" data-color="yellow">AI</span><span class="tag" data-color="cyan">生產力</span><span class="tag" data-color="green">職場</span><span class="tag" data-color="orange">AI倦怠</span><span class="tag" data-color="green">工作效率</span></div>
+  </header>
+
+  <!-- Featured Image -->
+  <div class="featured-image-wrapper"><img src="banner.png" alt="AI 吸血鬼：效率越高，人越累？矽谷工程師的警告與解法" class="featured-image" loading="lazy" width="780" height="438"></div>
+
+  <!-- YouTube -->
+  
+
+  <!-- CONTENT -->
+  <main id="main-content">
+  <article class="article-content">
+    <p>上個月我去一家科技公司做 AI 導入輔導，課後一個工程師悄悄把我攔住。</p>
+<p>「老師，我最近下午兩三點就腦袋轉不動。去看醫生，醫生說沒問題。我以為是睡眠問題，結果也不是。你覺得是怎麼了？」</p>
+<p>我問他：「你現在用 AI 工具，一天大概在處理幾個任務？」</p>
+<p>他想了一下：「大概五六個？以前一天只做一個核心功能。」</p>
+<p>找到了。</p>
+<p>這不是睡眠問題，不是生活壓力問題，是使用 AI 之後認知負荷模式完全改變帶來的新型疲勞。</p>
+<p>矽谷有個人比我更早注意到這件事，而且他把它說得比我清楚得多。</p>
+<h2 id="_1">重點回顧</h2>
+<p>本文核心觀點：</p>
+<ul>
+<li><strong>AI 加速了執行，但沒有減少認知切換的頻率</strong>——頻繁切換任務讓大腦持續付出「切換代價」</li>
+<li><strong>AI 生產，你審查</strong>——產出速度 10 倍，但審查責任是 1:1 的</li>
+<li><strong>效率提升啟動惡性循環</strong>——哈佛商業評論追蹤 200 人確認這不是個人問題</li>
+<li><strong>解法是主動縮短工時</strong>，而不是繼續填滿時間</li>
+</ul>
+
+<hr />
+<h2 id="ai-40">【獨家】AI 吸血鬼——矽谷 40 年老兵的警告</h2>
+<p>Steve Yegge 這個人你可能沒聽過，但他在矽谷的圈子裡有一定的份量。</p>
+<p>他在 Google 和 Amazon 加起來待了超過 40 年，不是那種看過一兩個產品就寫心得的人——他是真的在第一線做工程師和技術主管做了幾十年的人。</p>
+<p>他最近在部落格寫了一篇文章，把一個現象叫做「AI 吸血鬼」（The AI Vampire）。</p>
+<p>內容大意是這樣：他和身邊的工程師，自從開始密集使用 AI 輔助寫程式之後，會在白天突然睡著。不是因為熬夜，是精力被吸乾了。</p>
+<p>他用美劇裡的能量吸血鬼做類比——那種不吸你的血、只吸你的生命力、悄悄讓你枯萎的那種。</p>
+<p>這個比喻讓我印象很深。</p>
+<p>因為 AI 帶來的疲勞跟傳統的過勞不一樣。傳統的過勞是因為工作時間太長，你知道自己在加班，身體和心理都有明確的訊號。</p>
+<p>AI 帶來的疲勞是悄悄的。你下班時間沒變，工作量看起來也沒變，但就是覺得累——說不清楚哪裡出了問題。</p>
+<h2 id="_2">【獨家】切換代價：一個被低估的精力殺手</h2>
+<p><img alt="A woman reviews receipts and calculates expenses at a desk with a pink calculator." src="images/task-switching-cost.jpg" />
+<em>Photo by <a href="https://www.pexels.com/@karola-g">www.kaboompics.com</a> on <a href="https://www.pexels.com/photo/person-holding-receipts-and-using-a-calculator-7680736/">Pexels</a></em></p>
+<p>認知科學裡有個概念叫「任務切換代價」（Task Switching Cost）。</p>
+<p>每次你的大腦從一個問題域切換到另一個問題域，都需要做三件事：</p>
+<ol>
+<li><strong>清除舊的工作記憶</strong>——把前一個問題的上下文從暫存空間移走</li>
+<li><strong>載入新的工作記憶</strong>——把新問題的背景、規則、目標重新建立</li>
+<li><strong>重新進入狀態</strong>——達到足夠的專注深度才能開始有效工作</li>
+</ol>
+
+<p>研究顯示，完成一次深度任務切換，平均需要 20 到 25 分鐘才能重新達到進入「心流」（Flow）的狀態。</p>
+<p>在 AI 出現之前，工程師的工作節奏是有自然間隔的：下任務需要時間，環境設定需要時間，測試需要時間。這些「等待」其實是讓大腦切換狀態的機會。</p>
+<p>Claude Code 出現之後，這些等待幾乎消失了。一個功能幾分鐘就跑完，接著馬上可以開下一個。</p>
+<p>執行速度加快了，但切換本身的精力代價沒有改變。</p>
+<p>更糟的是，當任務完成得快，人們（和組織）會自然而然地填入更多任務。以前一天處理一個功能模組，現在一天要切換五六個，每次都要付「入場費」，每次都要重新進入狀態。</p>
+<p>一整天下來，你付出的切換代價遠超過以前，但你可能根本沒意識到。</p>
+<h2 id="ai">【獨家】AI 是生產線，你是最後的品管員</h2>
+<p><img alt="A robotic arm plays chess against a human, symbolizing AI innovation and strategy." src="images/ai.jpg" />
+<em>Photo by <a href="https://www.pexels.com/@pavel-danilyuk">Pavel Danilyuk</a> on <a href="https://www.pexels.com/photo/a-person-playing-chess-8438944/">Pexels</a></em></p>
+<p>這是我在輔導企業時觀察到的另一個重要現象。</p>
+<p>很多人以為用了 AI 就是讓 AI 幫你做事，你只需要給指令就好。</p>
+<p>但在實際的工作流程裡，情況是這樣的：</p>
+<ul>
+<li>AI 產出一份程式碼，你要審查邏輯、安全性、邊界條件</li>
+<li>AI 產出一份報告，你要驗證數據、確認敘述沒有錯誤、判斷格式是否符合需求</li>
+<li>AI 提出一個方案，你要評估可行性、風險、與現有系統的相容性</li>
+</ul>
+
+<p>AI 的產出速度是人類的十倍，但每份產出都需要人類的判斷和審查。</p>
+<p>更重要的是，AI 不能幫你承擔責任。最後如果出了問題，是你的問題，不是 AI 的問題。</p>
+<p>所以你實際上在做的事情，不是「讓 AI 幫你工作」，而是「讓 AI 大量生產，然後你做大量品管」。</p>
+<p>生產速度加快了，品管工作量也跟著加快了，而品管本身是高認知負荷的工作，不是點頭確認就好。</p>
+<!-- wp:html -->
+<table style="width:100%;border-collapse:collapse;margin:1.5em 0;">
+  <thead>
+    <tr style="background:#0A1628;color:#00D4FF;">
+      <th style="padding:10px 16px;text-align:left;border:1px solid #e0e0e0;">面向</th>
+      <th style="padding:10px 16px;text-align:left;border:1px solid #e0e0e0;">沒有 AI 的時代</th>
+      <th style="padding:10px 16px;text-align:left;border:1px solid #e0e0e0;">AI 輔助工作時代</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background:#ffffff;">
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;font-weight:bold;">每日任務數</td>
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;">1-2 個深度任務</td>
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;">5-6 個切換任務</td>
+    </tr>
+    <tr style="background:#f8f9fa;">
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;font-weight:bold;">切換頻率</td>
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;">低，自然節奏</td>
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;">高，持續切換</td>
+    </tr>
+    <tr style="background:#ffffff;">
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;font-weight:bold;">審查負擔</td>
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;">低（自己產出自己審）</td>
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;">高（AI 快速產出，你慢慢審）</td>
+    </tr>
+    <tr style="background:#f8f9fa;">
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;font-weight:bold;">下班時感受</td>
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;">累但有成就感</td>
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;">更累，說不清楚為什麼</td>
+    </tr>
+  </tbody>
+</table>
+<!-- /wp:html -->
+
+<h2 id="_3">【獨家】哈佛商業評論的惡性循環</h2>
+<p><img alt="Abstract blurred motion of people walking indoors, depicting urban life and busy routines." src="images/business.jpg" />
+<em>Photo by <a href="https://www.pexels.com/@octocat">RPA studio</a> on <a href="https://www.pexels.com/photo/blurred-silhouettes-of-commuters-indoors-33289065/">Pexels</a></em></p>
+<p>哈佛商業評論（HBR）在 2026 年 2 月發表了一份追蹤研究，對象是 200 名科技公司員工，記錄了一個讓人心涼但非常真實的循環：</p>
+<p><strong>AI 讓你更高效 → 組織看到了，期待你做更多 → 你更依賴 AI 完成更多 → 任務範圍繼續擴大 → 認知負荷進一步加劇 → 反而比以前更累。</strong></p>
+<p>這個循環有幾個讓人很無力的特點：</p>
+<p>第一，沒有人明著叫你這樣做。沒有主管說「你現在一天要做六個任務」。是組織的整體期待和你自身的進取心驅動你自動進入這個循環。</p>
+<p>第二，每一步看起來都是好事。效率提升是好事，接受更多挑戰是好事，更依賴工具是好事。但好事的連鎖反應，可能會導致糟糕的結果。</p>
+<p>第三，個人很難從系統內部看清楚。你只知道自己越來越累，但不知道是什麼機制在驅動。</p>
+<h2 id="ai_1">阿峰觀點：能量上限，才是 AI 時代最重要的自我管理</h2>
+<p>我輔導超過 400 家企業做 AI 導入，最常看到兩種對待 AI 效益的方式：</p>
+<p><strong>第一種</strong>：「AI 幫我省了兩小時，那我就多做兩小時的事。」</p>
+<p><strong>第二種</strong>：「AI 幫我省了兩小時，那我就少工作兩小時。」</p>
+<p>你可能覺得第一種才是進取的、負責任的，但 Steve Yegge 的研究告訴你的是：長期執行第一種策略，你的認知能量會被慢慢耗盡，最終的生產效率反而會下降。</p>
+<p>頂尖創意工作者的研究告訴我們，每天真正高品質的深度工作時間，生理上的上限大概是四個小時。超過這個時間，工作品質會顯著下滑，只是你自己未必察覺。</p>
+<p>Yegge 的做法很直接：把每天的有效工作日縮短到三四個小時，下午就關電腦，去散步、陪家人。</p>
+<p>這不是偷懶的藉口，是他在把 AI 效益真正落到自己身上，而不是讓組織用更多任務把效益吃掉。</p>
+<p>我建議三個具體做法：</p>
+<ol>
+<li><strong>設定每天的「AI 切換上限」</strong>——決定一天最多切換幾個不同的任務域，超過就拒絕或延到隔天</li>
+<li><strong>保留「高認知任務」的時間和精力</strong>——判斷、決策、架構設計這些只有你能做的事，不要用疲憊的大腦去做</li>
+<li><strong>用 AI 贏回時間，不是贏回更多任務</strong>——把節省下來的時間至少有一半用來真正休息</li>
+</ol>
+
+<p>「AI 是效率倍增器，不是能量製造機。」</p>
+<p>當工具不斷告訴你還可以更快的時候，也許更值得問自己的問題是：我可以更慢嗎？</p>
+<hr />
+<h2 id="_4">本文提到的資源</h2>
+<!-- wp:html -->
+<table style="width:100%;border-collapse:collapse;margin:1.5em 0;">
+  <thead>
+    <tr style="background:#0A1628;color:#00D4FF;">
+      <th style="padding:10px 16px;text-align:left;border:1px solid #e0e0e0;">資源</th>
+      <th style="padding:10px 16px;text-align:left;border:1px solid #e0e0e0;">說明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background:#ffffff;">
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;font-weight:bold;">Steve Yegge《The AI Vampire》</td>
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;">矽谷工程師對 AI 帶來的新型疲勞的第一手觀察</td>
+    </tr>
+    <tr style="background:#f8f9fa;">
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;font-weight:bold;">哈佛商業評論 2026/02 研究</td>
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;">追蹤 200 名員工的 AI 效率惡性循環報告</td>
+    </tr>
+    <tr style="background:#ffffff;">
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;font-weight:bold;">阿峰老師 AI 培訓</td>
+      <td style="padding:10px 16px;border:1px solid #e0e0e0;"><a href="https://www.autolab.cloud" style="color:#00D4FF;">www.autolab.cloud</a> — 企業 AI 導入輔導</td>
+    </tr>
+  </tbody>
+</table>
+<!-- /wp:html -->
+
+<hr />
+<p>企業想帶團隊導入 AI，歡迎到官網聯繫阿峰老師：<a href="https://www.autolab.cloud" style="color:#00D4FF;">autolab.cloud</a></p>
+<hr />
+<h3 id="_5">關於作者</h3>
+<p>黃敬峰（AI峰哥），企業 AI 實戰培訓專家，400+ 企業合作、10,000+ 學員。
+核心心法：「會用、懂用、好用、每天用」
+官網：<a href="https://www.autolab.cloud">https://www.autolab.cloud</a></p>
+<div style="background:#f8f9fa;padding:20px;border-radius:8px;margin:2em 0;">
+<p style="font-weight:700;font-size:1.1em;margin:0 0 12px 0;color:#0A1628;">🔗 追蹤阿峰老師</p>
+<ul style="margin:0;padding-left:20px;list-style:none;">
+<li>📝 部落格：<a href="https://blog.autolab.cloud" style="color:#00D4FF;">blog.autolab.cloud</a></li>
+<li>🎬 YouTube：<a href="https://www.youtube.com/channel/UCVVZz6m4T4k6-PZxFSlCkRQ" style="color:#00D4FF;">黃敬峰</a></li>
+<li>📘 Facebook：<a href="https://www.facebook.com/nikeshoxmiles" style="color:#00D4FF;">黃敬峰</a></li>
+<li>📸 Instagram：<a href="https://www.instagram.com/nikeshoxmiles/" style="color:#00D4FF;">@nikeshoxmiles</a></li>
+<li>🧵 Threads：<a href="https://www.threads.net/@nikeshoxmiles" style="color:#00D4FF;">@nikeshoxmiles</a></li>
+<li>💬 LINE 官方：<a href="https://lin.ee/mUvPZwJC" style="color:#00D4FF;">加入好友</a></li>
+</ul>
+</div>
+  </article>
+  </main>
+
+  <!-- Share -->
+  <div class="share-section">
+    <h3>分享這篇文章</h3>
+    <div class="share-buttons">
+      <a href="https://social-plugins.line.me/lineit/share?url=https://blog.autolab.cloud/ai-vampire-burnout/" target="_blank" rel="noopener" class="share-btn share-line" aria-label="分享到 LINE">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        LINE
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.autolab.cloud/ai-vampire-burnout/" target="_blank" rel="noopener" class="share-btn share-fb" aria-label="分享到 Facebook">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook
+      </a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://blog.autolab.cloud/ai-vampire-burnout/" target="_blank" rel="noopener" class="share-btn share-linkedin" aria-label="分享到 LinkedIn">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <button class="share-btn share-copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='已複製!';setTimeout(()=>{this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;><path fill=&quot;currentColor&quot; d=&quot;M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z&quot;/></svg> 複製連結'},2000)})" aria-label="複製連結">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        複製連結
+      </button>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <div class="cta-box-inner">
+      <h3>想用 AI 解決真問題？</h3>
+      <p>加入阿峰老師的 AI 實戰社群，一起從觀念到落地。</p>
+      <div class="cta-buttons">
+        <a href="https://reurl.cc/GGlLNx" class="cta-btn">加入 LINE 社群</a>
+        <a href="https://www.autolab.cloud" class="cta-btn outline">企業培訓諮詢</a>
+      </div>
+      <div class="cta-links">
+        <a href="https://www.autolab.cloud">官網</a>
+        <a href="mailto:ai@autolab.cloud">聯繫合作</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Articles -->
+  <section class="related-section">
+  <h2>你可能也想看</h2>
+  <div class="related-grid">
+    <a href="https://blog.autolab.cloud/ai-keyboard-work-one-person-company/" class="related-card">
+  <img class="related-card-thumb" src="../ai-keyboard-work-one-person-company/banner.png" alt="鍵盤敲越多越危險？AI 時代的個人生存法則｜簡立峰博士觀點" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-07</div>
+    <div class="related-card-title">鍵盤敲越多越危險？AI 時代的個人生存法則｜簡立峰博士觀點</div>
+  </div>
+</a><a href="https://blog.autolab.cloud/enterprise-ai-selection-framework-2026/" class="related-card">
+  <img class="related-card-thumb" src="../enterprise-ai-selection-framework-2026/banner.png" alt="企業選 AI 工具的四個判斷軸：從日本最大 AI 社群的觀察到台灣培訓現場的實戰經驗" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-21</div>
+    <div class="related-card-title">企業選 AI 工具的四個判斷軸：從日本最大 AI 社群的觀察到台灣培訓現場的實戰經驗</div>
+  </div>
+</a><a href="https://blog.autolab.cloud/ai-work-environment-three-steps/" class="related-card">
+  <img class="related-card-thumb" src="../ai-work-environment-three-steps/banner.png" alt="AI 用不穩？問題不在工具，在你的工作環境" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-20</div>
+    <div class="related-card-title">AI 用不穩？問題不在工具，在你的工作環境</div>
+  </div>
+</a>
+  </div>
+</section>
+
+  <!-- Article Navigation -->
+  <nav class="article-nav">
+  <a href="https://blog.autolab.cloud/claude-code-architecture-context-engineering/" class="prev">
+  <div class="nav-label">← 上一篇</div>
+  <div class="nav-title">Claude Code 進階：你可能不知道的六層架構與上下文管理術</div>
+</a><a href="https://blog.autolab.cloud/singapore-vs-taiwan-ai-gap-2026/" class="next">
+  <div class="nav-label">下一篇 →</div>
+  <div class="nav-title">新加坡總理親自管 AI，台灣企業的行動差距有多大？</div>
+</a>
+</nav>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2026 Autolab — 黃敬峰（AI峰哥）. All rights reserved.</p>
+    <p style="margin-top:8px">
+      <a href="https://blog.autolab.cloud/">Blog</a> ·
+      <a href="https://www.autolab.cloud">官網</a> ·
+      <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+    </p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Code /btw 指令完整解析：問一下就好，不消耗 context window — 阿峰老師</title>
+  <meta name="description" content="Claude Code 2.1.72 新推出 /btw 旁問功能，讓你在工作流中插問一個問題，不進入對話歷史、不消耗 context window，可減少約 50% token 消耗。本文完整說明使用方式、限制與場景。">
+  <meta name="keywords" content="Claude Code, AI工具, 開發工具, token優化">
+  <meta name="author" content="黃敬峰（AI峰哥）">
+  <link rel="canonical" href="https://blog.autolab.cloud/claude-code-btw-feature/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Claude Code /btw 指令完整解析：問一下就好，不消耗 context window">
+  <meta property="og:description" content="Claude Code 2.1.72 新推出 /btw 旁問功能，讓你在工作流中插問一個問題，不進入對話歷史、不消耗 context window，可減少約 50% token 消耗。本文完整說明使用方式、限制與場景。">
+  <meta property="og:image" content="https://blog.autolab.cloud/claude-code-btw-feature/banner.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://blog.autolab.cloud/claude-code-btw-feature/">
+  <meta property="og:site_name" content="阿峰老師 Autolab">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="article:author" content="黃敬峰（AI峰哥）">
+  <meta property="article:published_time" content="2026-03-16T00:00:00+08:00">
+  <meta property="article:modified_time" content="2026-03-16T00:00:00+08:00">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Claude Code /btw 指令完整解析：問一下就好，不消耗 context window">
+  <meta name="twitter:description" content="Claude Code 2.1.72 新推出 /btw 旁問功能，讓你在工作流中插問一個問題，不進入對話歷史、不消耗 context window，可減少約 50% token 消耗。本文完整說明使用方式、限制與場景。">
+  <meta name="twitter:image" content="https://blog.autolab.cloud/claude-code-btw-feature/banner.png">
+
+  <!-- Article Tags -->
+  <meta property="article:tag" content="Claude Code">
+  <meta property="article:tag" content="AI工具">
+  <meta property="article:tag" content="開發工具">
+  <meta property="article:tag" content="token優化">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Claude Code /btw 指令完整解析：問一下就好，不消耗 context window", "description": "Claude Code 2.1.72 新推出 /btw 旁問功能，讓你在工作流中插問一個問題，不進入對話歷史、不消耗 context window，可減少約 50% token 消耗。本文完整說明使用方式、限制與場景。", "author": {"@type": "Person", "name": "黃敬峰（AI峰哥）", "url": "https://www.autolab.cloud"}, "publisher": {"@type": "Organization", "name": "Autolab", "url": "https://www.autolab.cloud", "logo": {"@type": "ImageObject", "url": "https://blog.autolab.cloud/static/og-default.png"}}, "datePublished": "2026-03-16T00:00:00+08:00", "dateModified": "2026-03-16T00:00:00+08:00", "image": "https://blog.autolab.cloud/claude-code-btw-feature/banner.png", "mainEntityOfPage": "https://blog.autolab.cloud/claude-code-btw-feature/", "keywords": "Claude Code, AI工具, 開發工具, token優化", "inLanguage": "zh-Hant-TW"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://blog.autolab.cloud/"}, {"@type": "ListItem", "position": 2, "name": "Claude Code /btw 指令完整解析：問一下就好，不消耗 context window", "item": "https://blog.autolab.cloud/claude-code-btw-feature/"}]}</script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://blog.autolab.cloud/static/favicon.png">
+  <link rel="icon" type="image/x-icon" href="https://blog.autolab.cloud/static/favicon.ico">
+  <link rel="apple-touch-icon" href="https://blog.autolab.cloud/static/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="阿峰老師 Blog RSS" href="https://blog.autolab.cloud/feed.xml">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://blog.autolab.cloud/static/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至主要內容</a>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="https://blog.autolab.cloud/" class="nav-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 412 160" width="32" height="13" aria-hidden="true">
+          <defs><g id="wing"><polygon points="188,26 0,0 16,22 168,90"/><polygon points="166,100 34,60 42,72 170,114"/><polygon points="174,122 68,88 76,100 182,140"/></g></defs>
+          <use href="#wing" fill="#00D4FF"/><use href="#wing" fill="#00D4FF" transform="translate(392,0) scale(-1,1)"/>
+        </svg>
+        <span>Autolab</span> 阿峰老師
+      </a>
+      <div class="nav-links">
+        <a href="https://blog.autolab.cloud/">Blog</a>
+        <a href="https://www.autolab.cloud">官網</a>
+        <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs" aria-label="麵包屑導航">
+    <a href="https://blog.autolab.cloud/">Blog</a><span class="sep">›</span><span class="current">Claude Code /btw 指令完整解析：問一下就好，不消耗 context window</span>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="article-header">
+    <div class="article-meta">
+      <span>2026-03-16</span>
+      <span>黃敬峰（AI峰哥）</span>
+    </div>
+    <h1>Claude Code /btw 指令完整解析：問一下就好，不消耗 context window</h1>
+    <div class="card-tags"><span class="tag" data-color="yellow">Claude Code</span><span class="tag" data-color="yellow">AI工具</span><span class="tag" data-color="yellow">開發工具</span><span class="tag" data-color="pink">token優化</span></div>
+  </header>
+
+  <!-- Featured Image -->
+  <div class="featured-image-wrapper"><img src="banner.png" alt="Claude Code /btw 指令完整解析：問一下就好，不消耗 context window" class="featured-image" loading="lazy" width="780" height="438"></div>
+
+  <!-- YouTube -->
+  
+
+  <!-- CONTENT -->
+  <main id="main-content">
+  <article class="article-content">
+    <blockquote>
+<p>本文是社群貼文的完整延伸版。
+社群版講了核心概念，這裡加上完整使用指南、場景分析與阿峰老師的實戰觀點。</p>
+</blockquote>
+<hr />
+<h2 id="_1">重點回顧</h2>
+<p>Claude Code 2.1.72 在 2026 年 3 月 10 日推出 <code>/btw</code> 指令（By The Way）。這個指令讓你在進行中的工作任務旁邊「順便問一個問題」——答案顯示在浮層視窗，不進入對話歷史，不消耗 context window，關掉就消失。</p>
+<p>持續使用 <code>/btw</code> 可以減少約 50% 的 token 消耗，是目前 Claude Code 裡最直接的省錢手段之一。</p>
+<hr />
+<h2 id="btw-context">【獨家】/btw 的技術設計：為什麼能做到不消耗 context？</h2>
+<p><img alt="Abstract digital art featuring futuristic geometric patterns with vibrant neon lighting." src="images/btw-technology-design-context.jpg" />
+<em>Photo by <a href="https://www.pexels.com/@pachon-in-motion-426015731">Pachon in Motion</a> on <a href="https://www.pexels.com/photo/a-computer-generated-image-of-a-futuristic-room-18419508/">Pexels</a></em></p>
+<h3 id="_2">一般問問題會發生什麼？</h3>
+<p>當你在 Claude Code 的對話框裡直接輸入一個問題，這條訊息會被加進「對話歷史」（conversation history），Claude 在處理每一個後續請求時，都需要把整段歷史記憶載入進來。</p>
+<p>這代表什麼？</p>
+<p><strong>你問的問題愈多，context 愈長，每次請求的 token 就愈多，費用就愈高。</strong> 就算是一個「那個函式叫什麼名字」這種五秒鐘能解決的問題，問完之後它就永遠留在你的 context 裡了。</p>
+<h3 id="btw">/btw 的設計邏輯</h3>
+<p><code>/btw</code> 採用「側鏈」（side-chain context）設計。</p>
+<p>它創建一個完全獨立的臨時 context，跟主要工作任務的對話歷史完全隔離。Claude 看得到你的主任務 context（所以它能回答跟目前工作相關的問題），但它的回答不會回寫進主任務的歷史記錄。</p>
+<p>你關掉浮層視窗，這個側鏈就消失了。什麼都沒留下。</p>
+<h3 id="_3">另一個關鍵限制：沒有工具呼叫權限</h3>
+<p><code>/btw</code> 的請求沒有工具呼叫（tool call）權限。這是故意的設計，也是它能做到低 token 消耗的另一個原因。</p>
+<p>沒有工具呼叫權限意味著：
+- 不能執行程式碼
+- 不能讀取或編輯檔案
+- 不能呼叫外部 API
+- 只能回答基於現有知識和 context 的問題</p>
+<p>這個限制讓 <code>/btw</code> 的每次請求都是輕量的——沒有工具呼叫的 overhead，純粹是知識查詢。</p>
+<hr />
+<h2 id="btw_1">【獨家】什麼時候該用 /btw，什麼時候不該用？</h2>
+<p><img alt="A soothing abstract blurred gradient background with warm tones." src="images/btw.jpg" />
+<em>Photo by <a href="https://www.pexels.com/@juanpphotoandvideo">Juan Pablo Serrano</a> on <a href="https://www.pexels.com/photo/blurry-image-of-a-brownish-background-1242348/">Pexels</a></em></p>
+<p>這是實際使用時最需要判斷的地方。</p>
+<h3 id="btw_2">適合用 /btw 的場景</h3>
+<p><strong>查詢型問題（最適合）</strong></p>
+<p>這是 <code>/btw</code> 的甜蜜點。你正在做一件事，需要查一個資訊，查完繼續做：</p>
+<ul>
+<li><code>/btw</code> Python 的 <code>datetime.strptime</code> 格式字串怎麼寫？</li>
+<li><code>/btw</code> 我們剛才討論的那個 API endpoint 路徑是什麼？</li>
+<li><code>/btw</code> ES2022 有沒有 <code>at()</code> 方法？</li>
+<li><code>/btw</code> PostgreSQL 的 <code>JSONB</code> 跟 <code>JSON</code> 差在哪？</li>
+</ul>
+<p>這類問題有幾個共同特點：一句話能說清楚、答案是固定知識或 context 裡已有的資訊、問完不需要 Claude 採取任何行動。</p>
+<p><strong>確認型問題</strong></p>
+<p>你在實作某個功能，想再確認一下某個細節：</p>
+<ul>
+<li><code>/btw</code> 這個函式我之前是不是說過要用 async？</li>
+<li><code>/btw</code> 我們的 API key 是放在 <code>.env</code> 還是 <code>config.json</code>？</li>
+</ul>
+<h3 id="btw_3">不適合用 /btw 的場景</h3>
+<p><strong>影響任務方向的決策型問題</strong></p>
+<p>如果你的問題的答案會改變接下來的工作方向，就不適合用 <code>/btw</code>：</p>
+<ul>
+<li>❌ <code>/btw</code> 你覺得這個架構設計有沒有問題？</li>
+</ul>
+<p>這種問題你需要 Claude 的答案留在 context 裡，讓它影響後續的實作決策。</p>
+<p><strong>複雜的多輪除錯</strong></p>
+<ul>
+<li>❌ <code>/btw</code> 這個 bug 怎麼追？</li>
+</ul>
+<p>這種問題需要 Claude 看完錯誤訊息、提問、看你的回覆、再提問，整個過程都需要保存在對話歷史。</p>
+<p><strong>你希望 Claude 日後還能引用的重要資訊</strong></p>
+<ul>
+<li>❌ <code>/btw</code> 我們的目標用戶是誰？</li>
+</ul>
+<p>如果你希望 Claude 在接下來的工作中都記得這個資訊，就把它說進主要對話裡，不要用 <code>/btw</code>。</p>
+<hr />
+<h2 id="token-50">【獨家】Token 省了 50%——實際意味著什麼？</h2>
+<p><img alt="Image of Bitcoin tokens on a Weekly LocalBitcoins volume report paper." src="images/token-50.jpg" />
+<em>Photo by <a href="https://www.pexels.com/@rdne">RDNE Stock project</a> on <a href="https://www.pexels.com/photo/silver-and-golden-bitcoin-tokens-scattered-over-a-finance-report-8370771/">Pexels</a></em></p>
+<p>「省 50% token 消耗」聽起來是個行銷說詞，但背後有實際的使用邏輯。</p>
+<p>這個數字的前提是：<strong>在需要頻繁問小問題的工作任務中</strong>。</p>
+<p>如果你今天在用 Claude Code 做一個複雜的 refactor，過程中可能問了 20 個問題。如果其中 10 個是「查一個語法」「確認一個函式名」這類純查詢問題，以前你會把這 10 個問題全問進主對話，造成 context 快速膨脹。</p>
+<p>現在這 10 個問題全用 <code>/btw</code>，主對話 context 只剩 10 個真正影響任務的訊息。context 短了一半，每次請求的 token 自然省了大約一半。</p>
+<p>對於重度使用 Claude Code 的開發者來說，這不只是費用問題，還有一個更重要的影響：<strong>context 太長時，Claude 的回應品質會下降</strong>。較短的 context 讓 Claude 更能專注在當前任務的關鍵資訊，而不是在一大堆舊訊息裡撈重點。</p>
+<hr />
+<h2 id="_4">阿峰觀點</h2>
+<p>帶過超過 400 家企業做 AI 培訓，我發現一個很普遍的行為模式，在工程師族群裡特別明顯：</p>
+<p>他們不敢問「小問題」。</p>
+<p>不是不需要知道，而是覺得「這種事應該自己查，不值得問 AI」「每問一次又多一點 context，有點浪費」。</p>
+<p>結果就是，他們花了更多時間自己查，反而比直接問 AI 慢。而且查到了，還得把答案套回工作情境——這個整合步驟本來可以讓 Claude 幫你做。</p>
+<p>這不是他們的問題，這是工具的設計帶給他們的心理負擔。</p>
+<p><code>/btw</code> 的意義不只是省錢，而是讓工程師有心理安全感去問那些「以前覺得不值得問」的問題。</p>
+<p>問題不在你，問題在工具。</p>
+<p>工具現在修好了，你就該放手問。</p>
+<hr />
+<h2 id="_5">如何開始使用</h2>
+<p>升級到 Claude Code 2.1.72 或以上版本，直接使用：</p>
+<div class="highlight"><pre><span></span><code>/btw [你的問題]
+</code></pre></div>
+
+<p>不需要任何設定，升級即用。</p>
+<hr />
+<h2 id="_6">本文提到的資源</h2>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude Code</td>
+<td>Anthropic 的 AI 程式碼開發工具</td>
+</tr>
+<tr>
+<td>/btw 指令</td>
+<td>Claude Code 2.1.72 新功能，旁問不消耗 context</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>如果你的公司也想讓工程師團隊更有效率地使用 AI 工具，歡迎到官網聯繫我。
+阿峰老師 → <a href="https://www.autolab.cloud">https://www.autolab.cloud</a></p>
+<hr />
+<div style="background:#f8f9fa;padding:20px;border-radius:8px;margin:2em 0;">
+<p style="font-weight:700;font-size:1.1em;margin:0 0 12px 0;color:#0A1628;">🔗 追蹤阿峰老師</p>
+<ul style="margin:0;padding-left:20px;list-style:none;">
+<li>📝 部落格：<a href="https://blog.autolab.cloud" style="color:#00D4FF;">blog.autolab.cloud</a></li>
+<li>🎬 YouTube：<a href="https://www.youtube.com/channel/UCVVZz6m4T4k6-PZxFSlCkRQ" style="color:#00D4FF;">黃敬峰</a></li>
+<li>📘 Facebook：<a href="https://www.facebook.com/nikeshoxmiles" style="color:#00D4FF;">黃敬峰</a></li>
+<li>📸 Instagram：<a href="https://www.instagram.com/nikeshoxmiles/" style="color:#00D4FF;">@nikeshoxmiles</a></li>
+<li>🧵 Threads：<a href="https://www.threads.net/@nikeshoxmiles" style="color:#00D4FF;">@nikeshoxmiles</a></li>
+<li>💬 LINE 官方：<a href="https://lin.ee/mUvPZwJC" style="color:#00D4FF;">加入好友</a></li>
+</ul>
+</div>
+
+<h3 id="_7">關於作者</h3>
+<p>黃敬峰（AI峰哥），企業 AI 實戰培訓專家，400+ 企業合作、10,000+ 學員。
+核心心法：「會用、懂用、好用、每天用」
+官網：<a href="https://www.autolab.cloud">https://www.autolab.cloud</a></p>
+  </article>
+  </main>
+
+  <!-- Share -->
+  <div class="share-section">
+    <h3>分享這篇文章</h3>
+    <div class="share-buttons">
+      <a href="https://social-plugins.line.me/lineit/share?url=https://blog.autolab.cloud/claude-code-btw-feature/" target="_blank" rel="noopener" class="share-btn share-line" aria-label="分享到 LINE">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        LINE
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.autolab.cloud/claude-code-btw-feature/" target="_blank" rel="noopener" class="share-btn share-fb" aria-label="分享到 Facebook">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook
+      </a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://blog.autolab.cloud/claude-code-btw-feature/" target="_blank" rel="noopener" class="share-btn share-linkedin" aria-label="分享到 LinkedIn">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <button class="share-btn share-copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='已複製!';setTimeout(()=>{this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;><path fill=&quot;currentColor&quot; d=&quot;M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z&quot;/></svg> 複製連結'},2000)})" aria-label="複製連結">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        複製連結
+      </button>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <div class="cta-box-inner">
+      <h3>想用 AI 解決真問題？</h3>
+      <p>加入阿峰老師的 AI 實戰社群，一起從觀念到落地。</p>
+      <div class="cta-buttons">
+        <a href="https://reurl.cc/GGlLNx" class="cta-btn">加入 LINE 社群</a>
+        <a href="https://www.autolab.cloud" class="cta-btn outline">企業培訓諮詢</a>
+      </div>
+      <div class="cta-links">
+        <a href="https://www.autolab.cloud">官網</a>
+        <a href="mailto:ai@autolab.cloud">聯繫合作</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Articles -->
+  <section class="related-section">
+  <h2>你可能也想看</h2>
+  <div class="related-grid">
+    <a href="https://blog.autolab.cloud/claude-code-architecture-context-engineering/" class="related-card">
+  <img class="related-card-thumb" src="../claude-code-architecture-context-engineering/banner.png" alt="Claude Code 進階：你可能不知道的六層架構與上下文管理術" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-17</div>
+    <div class="related-card-title">Claude Code 進階：你可能不知道的六層架構與上下文管理術</div>
+  </div>
+</a><a href="https://blog.autolab.cloud/obsidian-claude-code-second-brain/" class="related-card">
+  <img class="related-card-thumb" src="../obsidian-claude-code-second-brain/banner.png" alt="Obsidian + Claude Code：矽谷 AI 圈都在用的第二大腦組合，為什麼比 Notion 更適合 AI 時代？" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-20</div>
+    <div class="related-card-title">Obsidian + Claude Code：矽谷 AI 圈都在用的第二大腦組合，為什麼比 Notion 更適合 AI 時代？</div>
+  </div>
+</a><a href="https://blog.autolab.cloud/openclaw-ai-agent-guide-taiwan-enterprise/" class="related-card">
+  <img class="related-card-thumb" src="../openclaw-ai-agent-guide-taiwan-enterprise/banner.png" alt="OpenClaw 全解析：當 AI 從顧問變成員工，台灣企業需要知道什麼" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-11</div>
+    <div class="related-card-title">OpenClaw 全解析：當 AI 從顧問變成員工，台灣企業需要知道什麼</div>
+  </div>
+</a>
+  </div>
+</section>
+
+  <!-- Article Navigation -->
+  <nav class="article-nav">
+  <a href="https://blog.autolab.cloud/aditya-restlessness-ai-era/" class="prev">
+  <div class="nav-label">← 上一篇</div>
+  <div class="nav-title">你的 20 年功力，AI 一週就學會了——前 Dropbox CTO 告訴你，躁動感才是 AI 時代的新履歷</div>
+</a><a href="https://blog.autolab.cloud/claude-memory-chat-search-2026/" class="next">
+  <div class="nav-label">下一篇 →</div>
+  <div class="nav-title">Claude 終於有記憶了！記憶功能 + 聊天搜尋完整教學，讓 AI 越用越懂你</div>
+</a>
+</nav>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2026 Autolab — 黃敬峰（AI峰哥）. All rights reserved.</p>
+    <p style="margin-top:8px">
+      <a href="https://blog.autolab.cloud/">Blog</a> ·
+      <a href="https://www.autolab.cloud">官網</a> ·
+      <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+    </p>
+  </footer>
+</body>
+</html>
