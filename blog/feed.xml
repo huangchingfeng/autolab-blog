@@ -5,7 +5,7 @@
     <link>https://blog.autolab.cloud/</link>
     <description>企業 AI 培訓、Vibe Coding、AI 工具教學，從觀念到落地。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2026 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://blog.autolab.cloud/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://blog.autolab.cloud/static/og-default.png</url>
@@ -117,6 +117,19 @@
       <category>台灣AI差距</category>
       <category>AI甘榜</category>
       <category>企業AI導入</category>
+    </item>
+    <item>
+      <title>Elon Musk 的 Builder 哲學：AI 時代，動手做的人才有未來</title>
+      <link>https://blog.autolab.cloud/elon-musk-builder-philosophy/</link>
+      <guid>https://blog.autolab.cloud/elon-musk-builder-philosophy/</guid>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>Musk 在 Giga Berlin 訪談說他最敬佩 Builder。AI 時代，真正稀缺的不是會用 AI 的人，是願意動手做出東西的人。阿峰老師拆解 Builder 哲學的 5 個 AI 時代啟示。</description>
+      <category>AI</category>
+      <category>Elon Musk</category>
+      <category>Builder</category>
+      <category>企業培訓</category>
+      <category>數位轉型</category>
     </item>
     <item>
       <title>台灣企業 AI 導入太慢？從新加坡 2026 預算案看你該立刻行動的理由</title>
@@ -254,18 +267,6 @@
       <category>ChatGPT</category>
       <category>精準提問</category>
       <category>Perplexity</category>
-    </item>
-    <item>
-      <title>2026 普通人必備的 6 個 AI 技能：一人公司的基礎建設</title>
-      <link>https://blog.autolab.cloud/six-ai-skills-for-beginners/</link>
-      <guid>https://blog.autolab.cloud/six-ai-skills-for-beginners/</guid>
-      <pubDate>Mon, 09 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>不用寫程式，這 6 個 AI 技能讓一個普通人扛起整間公司。結構化提示詞、AI 智能體、數字大腦、工作流自動化、零代碼開發、批量內容生成完整教學。</description>
-      <category>AI技能</category>
-      <category>AI工具教學</category>
-      <category>一人公司</category>
-      <category>NotebookLM</category>
     </item>
   </channel>
 </rss>
