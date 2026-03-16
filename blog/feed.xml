@@ -107,6 +107,19 @@
       <category>開發工具</category>
     </item>
     <item>
+      <title>OpenClaw 544 個使用案例：複製貼上就能設定，龍蝦從此飛起來</title>
+      <link>https://blog.autolab.cloud/openclaw-544-use-cases-copy-paste-setup/</link>
+      <guid>https://blog.autolab.cloud/openclaw-544-use-cases-copy-paste-setup/</guid>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>有人把 YouTube 上所有 OpenClaw 教學整理成 544 個使用案例，11 個主題分類，一鍵 Copy Prompt 就能讓龍蝦自動幫你設定好。不需要自己看影片、寫提示詞、搞環境設定。</description>
+      <category>OpenClaw</category>
+      <category>AI助理</category>
+      <category>龍蝦</category>
+      <category>ClawHub</category>
+      <category>AI工具</category>
+    </item>
+    <item>
       <title>AI龍蝦暴紅真相：OpenClaw千人排隊裝AI，背後12%惡意技能你知道嗎？</title>
       <link>https://blog.autolab.cloud/openclaw-ai-agent-viral-china-security-risks/</link>
       <guid>https://blog.autolab.cloud/openclaw-ai-agent-viral-china-security-risks/</guid>
@@ -256,18 +269,6 @@
       <category>自托管</category>
       <category>數位轉型</category>
       <category>AI工具</category>
-    </item>
-    <item>
-      <title>讓 AI 記住你的工作方式：Claude Skill 實戰指南</title>
-      <link>https://blog.autolab.cloud/claude-skill-guide/</link>
-      <guid>https://blog.autolab.cloud/claude-skill-guide/</guid>
-      <pubDate>Tue, 10 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>你花在教 AI 怎麼配合你的時間，可能比 AI 幫你省的時間還多。Anthropic 官方 33 頁 Skills 指南的中文深度解讀，加上阿峰老師的企業導入建議。</description>
-      <category>Claude</category>
-      <category>AI工具</category>
-      <category>Skill</category>
-      <category>自動化</category>
     </item>
   </channel>
 </rss>
