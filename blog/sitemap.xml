@@ -49,12 +49,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blog.autolab.cloud/openclaw-544-use-cases-copy-paste-setup/</loc>
-    <lastmod>2026-03-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://blog.autolab.cloud/openclaw-ai-agent-viral-china-security-risks/</loc>
     <lastmod>2026-03-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -98,6 +92,12 @@
   </url>
   <url>
     <loc>https://blog.autolab.cloud/claude-memory-chat-search-2026/</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blog.autolab.cloud/openclaw-544-examples-copy-paste/</loc>
     <lastmod>2026-03-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

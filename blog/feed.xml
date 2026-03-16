@@ -107,19 +107,6 @@
       <category>開發工具</category>
     </item>
     <item>
-      <title>OpenClaw 544 個使用案例：複製貼上就能設定，龍蝦從此飛起來</title>
-      <link>https://blog.autolab.cloud/openclaw-544-use-cases-copy-paste-setup/</link>
-      <guid>https://blog.autolab.cloud/openclaw-544-use-cases-copy-paste-setup/</guid>
-      <pubDate>Mon, 16 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>有人把 YouTube 上所有 OpenClaw 教學整理成 544 個使用案例，11 個主題分類，一鍵 Copy Prompt 就能讓龍蝦自動幫你設定好。不需要自己看影片、寫提示詞、搞環境設定。</description>
-      <category>OpenClaw</category>
-      <category>AI助理</category>
-      <category>龍蝦</category>
-      <category>ClawHub</category>
-      <category>AI工具</category>
-    </item>
-    <item>
       <title>AI龍蝦暴紅真相：OpenClaw千人排隊裝AI，背後12%惡意技能你知道嗎？</title>
       <link>https://blog.autolab.cloud/openclaw-ai-agent-viral-china-security-risks/</link>
       <guid>https://blog.autolab.cloud/openclaw-ai-agent-viral-china-security-risks/</guid>
@@ -221,6 +208,20 @@
       <category>AI個人化</category>
       <category>Anthropic</category>
       <category>企業AI</category>
+    </item>
+    <item>
+      <title>OpenClaw 用不起來？544 個使用案例幫你找到入門起點</title>
+      <link>https://blog.autolab.cloud/openclaw-544-examples-copy-paste/</link>
+      <guid>https://blog.autolab.cloud/openclaw-544-examples-copy-paste/</guid>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>噪噪溫斯頓整理了 544 個 OpenClaw 使用案例，涵蓋 11 個工作主題。不用看完整影片，Copy Prompt 貼給龍蝦，馬上開始設定。本文教你怎麼用，還有最被忽略的進階玩法。</description>
+      <category>OpenClaw</category>
+      <category>AI Agent</category>
+      <category>龍蝦</category>
+      <category>使用教學</category>
+      <category>AI工具</category>
+      <category>AI實戰</category>
     </item>
     <item>
       <title>台灣企業 AI 導入太慢？從新加坡 2026 預算案看你該立刻行動的理由</title>
