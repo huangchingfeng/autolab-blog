@@ -132,6 +132,19 @@
       <category>數位轉型</category>
     </item>
     <item>
+      <title>你的 20 年功力，AI 一週就學會了——前 Dropbox CTO 告訴你，躁動感才是 AI 時代的新履歷</title>
+      <link>https://blog.autolab.cloud/aditya-restlessness-ai-era/</link>
+      <guid>https://blog.autolab.cloud/aditya-restlessness-ai-era/</guid>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>前 Dropbox CTO Aditya Agarwal 花 5 天寫出 5 年份程式碼後的反思：工作年資跟 AI 適應力幾乎零相關，真正的指標是「做過東西的痕跡」和停不下來的躁動感。</description>
+      <category>AI時代</category>
+      <category>職場趨勢</category>
+      <category>人才觀</category>
+      <category>AdityaAgarwal</category>
+      <category>AI適應力</category>
+    </item>
+    <item>
       <title>台灣企業 AI 導入太慢？從新加坡 2026 預算案看你該立刻行動的理由</title>
       <link>https://blog.autolab.cloud/singapore-budget-2026-ai-national-strategy/</link>
       <guid>https://blog.autolab.cloud/singapore-budget-2026-ai-national-strategy/</guid>
@@ -254,19 +267,6 @@
       <category>駕馭工程</category>
       <category>AIAgent</category>
       <category>軟體開發</category>
-    </item>
-    <item>
-      <title>2026 年普通人必備 6 個 AI 技能：精準提問、AI 搜尋、寫作、圖片、影片、自動化完整教學</title>
-      <link>https://blog.autolab.cloud/ai-2026-ai/</link>
-      <guid>https://blog.autolab.cloud/ai-2026-ai/</guid>
-      <pubDate>Mon, 09 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>不用寫程式也能用 AI 改變工作方式！精準提問四要素、Perplexity AI 搜尋、AI 寫作三段位、圖片影片生成、自動化工作流，六個實戰技能完整教學。</description>
-      <category>AI技能</category>
-      <category>AI教學</category>
-      <category>ChatGPT</category>
-      <category>精準提問</category>
-      <category>Perplexity</category>
     </item>
   </channel>
 </rss>
