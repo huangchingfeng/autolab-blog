@@ -419,7 +419,7 @@
         <span class="hero-stat-label">學員</span>
       </div>
       <div class="hero-stat">
-        <span class="hero-stat-number">41</span>
+        <span class="hero-stat-number">42</span>
         <span class="hero-stat-label">篇文章</span>
       </div>
     </div>
@@ -527,6 +527,15 @@
     <div class="card-title">GPT-5.4 極限推理 + 百萬 Token 發布，但你真正該做的事不是升級</div>
     <div class="card-desc">GPT-5.4 帶來 Extreme Reasoning 和百萬 Token 上下文，但 GPT-5.1 才上市六個月就退役了。這告訴企業一件事：停止追模型，開始建立你的 AI 工作流。</div>
     <div class="card-tags"><span class="tag" data-color="green">AI工具教學</span><span class="tag" data-color="pink">AI觀點</span><span class="tag" data-color="pink">企業AI</span></div>
+  </div>
+</a>
+<a href="claude-code-agent-teams-guide/" class="card">
+  <img class="card-thumb" src="claude-code-agent-teams-guide/thumbnail.png" alt="Claude Code Agent Teams 完全指南：從 Sub-agent 到多 AI 協作的架構升級" loading="lazy">
+  <div class="card-body">
+    <div class="card-date">2026-03-17</div>
+    <div class="card-title">Claude Code Agent Teams 完全指南：從 Sub-agent 到多 AI 協作的架構升級</div>
+    <div class="card-desc"></div>
+    <div class="card-tags"></div>
   </div>
 </a>
 <a href="openclaw-ai-agent-viral-china-security-risks/" class="card">
@@ -835,6 +844,62 @@
       </div>
     </div>
   </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter-section">
+    <div class="newsletter-box">
+      <div class="newsletter-box-inner">
+        <div class="newsletter-icon">&#9993;</div>
+        <h3>每週 AI 實戰精華，直送信箱</h3>
+        <p>加入 1,200+ 位 AI 實踐者，每週收到最新 AI 落地案例與工具推薦。</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" name="email" id="newsletter-email" placeholder="輸入你的 Email" required autocomplete="email">
+          <button type="submit" id="newsletter-btn">免費訂閱</button>
+        </form>
+        <p class="newsletter-note" id="newsletter-msg">我們尊重你的隱私，隨時可取消訂閱。</p>
+      </div>
+    </div>
+  </section>
+  <script>
+  (function(){
+    var form = document.getElementById('newsletter-form');
+    var btn = document.getElementById('newsletter-btn');
+    var msg = document.getElementById('newsletter-msg');
+    var emailInput = document.getElementById('newsletter-email');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var email = emailInput.value.trim();
+      if(!email) return;
+      btn.disabled = true;
+      btn.textContent = '訂閱中...';
+      fetch('https://www.autolab.cloud/api/newsletter/subscribe', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({email: email})
+      })
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        if(data.success){
+          msg.textContent = '訂閱成功！請查收歡迎信。';
+          msg.style.color = '#00D4FF';
+          emailInput.value = '';
+          form.style.display = 'none';
+        } else {
+          msg.textContent = data.message || '訂閱失敗，請稍後再試。';
+          msg.style.color = '#FF6B35';
+        }
+      })
+      .catch(function(){
+        msg.textContent = '網路錯誤，請稍後再試。';
+        msg.style.color = '#FF6B35';
+      })
+      .finally(function(){
+        btn.disabled = false;
+        btn.textContent = '免費訂閱';
+      });
+    });
+  })();
+  </script>
 
   <!-- FOOTER -->
   <footer class="footer">

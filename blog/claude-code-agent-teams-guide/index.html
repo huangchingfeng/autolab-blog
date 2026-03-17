@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Code Agent Teams 完全指南：從 Sub-agent 到多 AI 協作的架構升級 — 阿峰老師</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="黃敬峰（AI峰哥）">
+  <link rel="canonical" href="https://blog.autolab.cloud/claude-code-agent-teams-guide/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Claude Code Agent Teams 完全指南：從 Sub-agent 到多 AI 協作的架構升級">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="https://blog.autolab.cloud/claude-code-agent-teams-guide/thumbnail.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://blog.autolab.cloud/claude-code-agent-teams-guide/">
+  <meta property="og:site_name" content="阿峰老師 Autolab">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="article:author" content="黃敬峰（AI峰哥）">
+  <meta property="article:published_time" content="2026-03-17T00:00:00+08:00">
+  <meta property="article:modified_time" content="2026-03-17T00:00:00+08:00">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Claude Code Agent Teams 完全指南：從 Sub-agent 到多 AI 協作的架構升級">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="https://blog.autolab.cloud/claude-code-agent-teams-guide/thumbnail.png">
+
+  <!-- Article Tags -->
+  
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Claude Code Agent Teams 完全指南：從 Sub-agent 到多 AI 協作的架構升級", "description": "", "author": {"@type": "Person", "name": "黃敬峰（AI峰哥）", "url": "https://www.autolab.cloud"}, "publisher": {"@type": "Organization", "name": "Autolab", "url": "https://www.autolab.cloud", "logo": {"@type": "ImageObject", "url": "https://blog.autolab.cloud/static/og-default.png"}}, "datePublished": "2026-03-17T00:00:00+08:00", "dateModified": "2026-03-17T00:00:00+08:00", "image": "https://blog.autolab.cloud/claude-code-agent-teams-guide/thumbnail.png", "mainEntityOfPage": "https://blog.autolab.cloud/claude-code-agent-teams-guide/", "keywords": "", "inLanguage": "zh-Hant-TW"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://blog.autolab.cloud/"}, {"@type": "ListItem", "position": 2, "name": "Claude Code Agent Teams 完全指南：從 Sub-agent 到多 AI 協作的架構升級", "item": "https://blog.autolab.cloud/claude-code-agent-teams-guide/"}]}</script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://blog.autolab.cloud/static/favicon.png">
+  <link rel="icon" type="image/x-icon" href="https://blog.autolab.cloud/static/favicon.ico">
+  <link rel="apple-touch-icon" href="https://blog.autolab.cloud/static/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="阿峰老師 Blog RSS" href="https://blog.autolab.cloud/feed.xml">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://blog.autolab.cloud/static/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至主要內容</a>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="https://blog.autolab.cloud/" class="nav-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 412 160" width="32" height="13" aria-hidden="true">
+          <defs><g id="wing"><polygon points="188,26 0,0 16,22 168,90"/><polygon points="166,100 34,60 42,72 170,114"/><polygon points="174,122 68,88 76,100 182,140"/></g></defs>
+          <use href="#wing" fill="#00D4FF"/><use href="#wing" fill="#00D4FF" transform="translate(392,0) scale(-1,1)"/>
+        </svg>
+        <span>Autolab</span> 阿峰老師
+      </a>
+      <div class="nav-links">
+        <a href="https://blog.autolab.cloud/">Blog</a>
+        <a href="https://www.autolab.cloud">官網</a>
+        <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs" aria-label="麵包屑導航">
+    <a href="https://blog.autolab.cloud/">Blog</a><span class="sep">›</span><span class="current">Claude Code Agent Teams 完全指南：從 Sub-agent 到多 AI 協作的架構升級</span>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="article-header">
+    <div class="article-meta">
+      <span>2026-03-17</span>
+      <span>黃敬峰（AI峰哥）</span>
+    </div>
+    <h1>Claude Code Agent Teams 完全指南：從 Sub-agent 到多 AI 協作的架構升級</h1>
+    <div class="card-tags"></div>
+  </header>
+
+  <!-- Featured Image -->
+  <div class="featured-image-wrapper"><img src="thumbnail.png" alt="Claude Code Agent Teams 完全指南：從 Sub-agent 到多 AI 協作的架構升級" class="featured-image" loading="lazy" width="780" height="438"></div>
+
+  <!-- YouTube -->
+  
+
+  <!-- CONTENT -->
+  <main id="main-content">
+  <article class="article-content">
+    <h1 id="claude-code-agent-teams-sub-agent-ai">Claude Code Agent Teams 完全指南：從 Sub-agent 到多 AI 協作的架構升級</h1>
+<blockquote>
+<p>本文是 YouTube 影片「Claude Code Agent Teams 實戰！一個人管多個 AI Agent 的終極教學」的延伸閱讀版。
+影片講了核心觀念和故事背景，本文加上完整的部署步驟和深度架構分析。
+影片版本：<a href="https://www.youtube.com/watch?v=kfefDSYE0Rg">https://www.youtube.com/watch?v=kfefDSYE0Rg</a></p>
+</blockquote>
+<hr />
+<h2 id="_1">影片重點回顧</h2>
+<p>Claude Code 的 Agent Teams 功能在 2026 年 2 月 5 日正式上線，但其實 <a href="https://www.anthropic.com">Anthropic</a> 早在幾個月前就把它寫進了 Claude Code 的 binary 裡，只是用 guard function 鎖住，對外不開放。</p>
+<p>2026 年 1 月 24 日，開發者 Mike Kelly 用 <code>strings</code> 指令把 binary 拆開，發現了內部代號「Swarms」的 TeammateTool，有 13 個完整操作，全寫好了。消息傳出，社群沸騰，兩週後 Anthropic 正式發布。</p>
+<p>核心概念：一個 session 當 Team Lead，指揮多個 Teammate，每個 Teammate 有獨立 context window，<strong>而且 Teammate 之間可以直接溝通</strong>——這是跟 sub-agent 最大的差別。</p>
+<p>啟用方式：Claude Code v2.1.32+，設定環境變數 <code>CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1</code>。</p>
+<hr />
+<h2 id="agent-teams-vs-sub-agent">【獨家】Agent Teams vs Sub-agent：架構層面的本質差異</h2>
+<p>很多人以為 Agent Teams 只是「更多 sub-agent」，其實不對。</p>
+<!-- wp:html -->
+<table style="width:100%;border-collapse:collapse;margin:1.5em 0;font-size:0.95em;">
+<thead><tr style="background:#00D4FF;color:#0A1628;">
+  <th style="padding:12px 16px;text-align:left;font-weight:700;">比較維度</th>
+  <th style="padding:12px 16px;text-align:left;font-weight:700;">Sub-agent 模式</th>
+  <th style="padding:12px 16px;text-align:left;font-weight:700;">Agent Teams</th>
+</tr></thead>
+<tbody>
+<tr style="background:#f8f9fa;border-bottom:1px solid #e9ecef;">
+  <td style="padding:10px 16px;font-weight:600;">溝通路徑</td>
+  <td style="padding:10px 16px;">所有訊息必須經過主 Agent</td>
+  <td style="padding:10px 16px;">Teammate 之間可直接溝通</td>
+</tr>
+<tr style="background:#ffffff;border-bottom:1px solid #e9ecef;">
+  <td style="padding:10px 16px;font-weight:600;">Context Window</td>
+  <td style="padding:10px 16px;">共用主 Agent 的 context</td>
+  <td style="padding:10px 16px;">每個 Teammate 獨立 context</td>
+</tr>
+<tr style="background:#f8f9fa;border-bottom:1px solid #e9ecef;">
+  <td style="padding:10px 16px;font-weight:600;">並行能力</td>
+  <td style="padding:10px 16px;">偽並行（主 Agent 排程）</td>
+  <td style="padding:10px 16px;">真並行（各自同時執行）</td>
+</tr>
+<tr style="background:#ffffff;border-bottom:1px solid #e9ecef;">
+  <td style="padding:10px 16px;font-weight:600;">瓶頸所在</td>
+  <td style="padding:10px 16px;">主 Agent 是流量瓶頸</td>
+  <td style="padding:10px 16px;">Team Lead 只做策略決策</td>
+</tr>
+<tr style="background:#f8f9fa;border-bottom:1px solid #e9ecef;">
+  <td style="padding:10px 16px;font-weight:600;">適合任務規模</td>
+  <td style="padding:10px 16px;">中小型（單一線性流程）</td>
+  <td style="padding:10px 16px;">大型（多任務並行，相互依賴）</td>
+</tr>
+<tr style="background:#ffffff;">
+  <td style="padding:10px 16px;font-weight:600;">除錯難度</td>
+  <td style="padding:10px 16px;">集中在主 Agent，容易追蹤</td>
+  <td style="padding:10px 16px;">分散但透明（inbox 可直接查看）</td>
+</tr>
+</tbody></table>
+<!-- /wp:html -->
+
+<p><strong>簡單說</strong>：sub-agent 是「老闆一個人管所有業務」；Agent Teams 是「老闆只做策略，各部門主管直接協調」。</p>
+<p>後者在任務規模擴大後效率差距是指數級的。</p>
+<hr />
+<h2 id="agent-teams">【獨家】Agent Teams 完整部署步驟</h2>
+<p>這是我查過官方文件後整理的實際操作步驟，比官方文件更有條理。</p>
+<h3 id="_2">第一步：確認環境</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 確認 Claude Code 版本</span>
+claude<span class="w"> </span>--version
+<span class="c1"># 需要 v2.1.32 或更新</span>
+
+<span class="c1"># 如果版本不夠，更新</span>
+npm<span class="w"> </span>update<span class="w"> </span>-g<span class="w"> </span>@anthropic-ai/claude-code
+</code></pre></div>
+
+<h3 id="agent-teams_1">第二步：啟用 Agent Teams</h3>
+<p>在你的 <code>~/.claude/settings.json</code> 加上：</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>或者每次執行前設定環境變數：</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS</span><span class="o">=</span><span class="m">1</span>
+claude
+</code></pre></div>
+
+<h3 id="_3">第三步：設定顯示模式</h3>
+<p>Agent Teams 支援三種顯示模式：</p>
+<ul>
+<li><strong><code>auto</code>（預設）</strong>：在 tmux session 裡自動開分割畫面，否則用 in-process 模式</li>
+<li><strong><code>in-process</code></strong>：所有 Teammate 在同一個 terminal，用 Shift+Down 切換</li>
+<li><strong><code>split</code></strong>：強制分割畫面（需要 tmux 或 iTerm2）</li>
+</ul>
+<p>如果你用 tmux，直接進 tmux 再開 claude 就好。如果用 iTerm2，需要先啟用 Python API：</p>
+<div class="highlight"><pre><span></span><code>iTerm2 → Preferences → General → Magic → Enable Python API
+</code></pre></div>
+
+<h3 id="team-lead">第四步：啟動 Team Lead</h3>
+<p>直接開啟 claude，然後用以下方式說明你的任務：</p>
+<div class="highlight"><pre><span></span><code>我需要你組建一個 Agent Teams 來重構這個代碼庫：
+- Frontend Teammate：負責 React 組件（src/components/）
+- Backend Teammate：負責 API 路由（src/api/）
+- Test Teammate：負責測試（src/__tests__/）
+
+請分派任務後開始執行。
+</code></pre></div>
+
+<p>Claude Code 會自動：
+1. 啟動對應數量的 Teammate session
+2. 建立 <code>~/.claude/teams/[team-name]/</code> 目錄
+3. 為每個 Teammate 建立 inbox 檔案
+4. 分派任務並開始執行</p>
+<h3 id="_4">第五步：監控執行狀態</h3>
+<p>在 tmux 分割畫面下，你能同時看到：
+- Team Lead 的總體進度
+- 各個 Teammate 的執行狀態
+- Teammate 之間的 inbox 訊息</p>
+<p>如果某個 Teammate 卡住了，直接在它的視窗下指令。如果想查看所有 Agent 在溝通什麼：</p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>~/.claude/teams/<span class="o">[</span>team-name<span class="o">]</span>/inbox/teammate-1.json
+</code></pre></div>
+
+<hr />
+<h2 id="agent-teams_2">【獨家】什麼任務最適合用 Agent Teams？</h2>
+<p>不是所有任務都值得開 Agent Teams。根據官方文件和我的觀察，以下場景效益最明顯：</p>
+<p><strong>✅ 高度適合：</strong>
+- <strong>大型代碼庫重構</strong>：前端 + 後端 + 測試可以完全並行
+- <strong>多服務同時開發</strong>：微服務架構下各服務獨立開發
+- <strong>文件生成 + 審查</strong>：一個 Agent 寫，另一個同步審查和改進
+- <strong>多語言翻譯</strong>：同時處理多個語言版本</p>
+<p><strong>⚠️ 注意事項：</strong>
+- <strong>Token 成本是線性倍數</strong>：3 個 Teammate = 至少 3 倍 token 消耗
+- <strong>目前不支援 session 恢復</strong>：中斷後 in-process 模式的 Teammate 無法繼續
+- <strong>VS Code terminal 不支援分割畫面</strong>：建議用外部 terminal</p>
+<p><strong>❌ 不適合：</strong>
+- 簡單的單一任務（成本不划算）
+- 嚴格線性依賴的工作流（A 必須等 B 完成才能開始）</p>
+<hr />
+<h2 id="_5">阿峰觀點</h2>
+<p>我帶過超過 400 家企業做 AI 培訓，最近最常聽到工程師說：「我用 Claude 做小任務很快，但遇到大型專案還是很頭大。」</p>
+<p>Agent Teams 加上 Claude Opus 4.6 的 <a href="https://docs.anthropic.com/en/docs/claude-code/memory">context compaction</a>（自動壓縮舊對話，讓長時間 session 不斷線），這個組合直接解決了那個「大型專案很頭大」的問題。</p>
+<p>但我想說一個更根本的東西：<strong>這不只是工具的升級，是角色的升級。</strong></p>
+<p>以前工程師的工作主要是「執行」——寫程式、改 bug、跑測試。現在開始出現一種新能力：<strong>指揮 AI 團隊</strong>——決定架構方向、分派任務、監控結果、做最後判斷。</p>
+<p>會寫程式的工程師越來越多（AI 也會），但會指揮 AI 團隊的工程師還很少。</p>
+<p>那個問我「一個人管五個 AI agent，是我在工作還是他們在工作」的工程師，我後來跟他說：你的工作性質已經在改變了，而且是往更有價值的方向改變。</p>
+<p>問題不在你能不能寫程式。問題在你能不能做指揮官。</p>
+<hr />
+<h2 id="_6">本文提到的資源</h2>
+<!-- wp:html -->
+<table style="width:100%;border-collapse:collapse;margin:1.5em 0;font-size:0.95em;">
+<thead><tr style="background:#00D4FF;color:#0A1628;">
+  <th style="padding:12px 16px;text-align:left;font-weight:700;">資源</th>
+  <th style="padding:12px 16px;text-align:left;font-weight:700;">連結</th>
+  <th style="padding:12px 16px;text-align:left;font-weight:700;">說明</th>
+</tr></thead>
+<tbody>
+<tr style="background:#f8f9fa;border-bottom:1px solid #e9ecef;">
+  <td style="padding:10px 16px;">Anthropic 官方文件</td>
+  <td style="padding:10px 16px;"><a href="https://code.claude.com/docs/en/agent-teams" style="color:#00D4FF;">code.claude.com</a></td>
+  <td style="padding:10px 16px;">Agent Teams 官方指南</td>
+</tr>
+<tr style="background:#ffffff;border-bottom:1px solid #e9ecef;">
+  <td style="padding:10px 16px;">社群發現文章</td>
+  <td style="padding:10px 16px;"><a href="https://paddo.dev/blog/claude-code-hidden-swarm/" style="color:#00D4FF;">paddo.dev</a></td>
+  <td style="padding:10px 16px;">Mike Kelly 如何在 binary 裡挖出 Swarms</td>
+</tr>
+<tr style="background:#f8f9fa;">
+  <td style="padding:10px 16px;">Claude Code 下載</td>
+  <td style="padding:10px 16px;"><a href="https://code.claude.com" style="color:#00D4FF;">code.claude.com</a></td>
+  <td style="padding:10px 16px;">官方 CLI，需要 API Key</td>
+</tr>
+</tbody></table>
+<!-- /wp:html -->
+
+<hr />
+<!-- wp:html -->
+<div style="background:linear-gradient(135deg, #0A1628 0%, #1a2a4a 100%);padding:28px;border-radius:12px;margin:2em 0;border-left:4px solid #00D4FF;">
+  <p style="font-weight:700;font-size:1.2em;margin:0 0 8px 0;color:#fff;">📬 訂閱阿峰老師的 AI 實戰電子報</p>
+  <p style="color:#ccc;margin:0 0 16px 0;font-size:0.95em;">每週精選 AI 工具技巧、產業趨勢、實戰案例，直送你的信箱。</p>
+  <form action="https://formsubmit.co/ai@autolab.cloud" method="POST" style="display:flex;gap:8px;flex-wrap:wrap;">
+    <input type="hidden" name="_subject" value="新訂閱：AI 實戰電子報">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://blog.autolab.cloud/?subscribed=1">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="email" name="email" placeholder="輸入你的 Email" required style="flex:1;min-width:200px;padding:12px 16px;border:2px solid #00D4FF;border-radius:6px;background:#fff;font-size:1em;outline:none;">
+    <button type="submit" style="background:#00D4FF;color:#0A1628;padding:12px 24px;border:none;border-radius:6px;font-weight:700;font-size:1em;cursor:pointer;white-space:nowrap;">免費訂閱 →</button>
+  </form>
+</div>
+<!-- /wp:html -->
+
+<p>如果你的公司想導入 AI，讓團隊真正用起來，歡迎到 <strong><a href="https://www.autolab.cloud">autolab.cloud</a></strong> 聯繫阿峰老師。</p>
+<hr />
+<!-- wp:html -->
+<div style="background:#f8f9fa;padding:20px;border-radius:8px;margin:2em 0;">
+<p style="font-weight:700;font-size:1.1em;margin:0 0 12px 0;color:#0A1628;">🔗 追蹤阿峰老師</p>
+<ul style="margin:0;padding-left:20px;list-style:none;">
+<li>📝 部落格：<a href="https://blog.autolab.cloud" style="color:#00D4FF;">blog.autolab.cloud</a></li>
+<li>🎬 YouTube：<a href="https://www.youtube.com/channel/UCVVZz6m4T4k6-PZxFSlCkRQ" style="color:#00D4FF;">黃敬峰</a></li>
+<li>📘 Facebook：<a href="https://www.facebook.com/nikeshoxmiles" style="color:#00D4FF;">黃敬峰</a></li>
+<li>📸 Instagram：<a href="https://www.instagram.com/nikeshoxmiles/" style="color:#00D4FF;">@nikeshoxmiles</a></li>
+<li>🧵 Threads：<a href="https://www.threads.net/@nikeshoxmiles" style="color:#00D4FF;">@nikeshoxmiles</a></li>
+<li>💬 LINE 官方：<a href="https://lin.ee/mUvPZwJC" style="color:#00D4FF;">加入好友</a></li>
+</ul>
+</div>
+<!-- /wp:html -->
+
+<hr />
+<h3 id="_7">關於作者</h3>
+<p>黃敬峰（AI峰哥），企業 AI 實戰培訓專家，400+ 企業合作、10,000+ 學員。
+核心心法：「會用、懂用、好用、每天用」
+官網：<a href="https://www.autolab.cloud">https://www.autolab.cloud</a></p>
+<p>SEO:
+- Meta Title：Claude Code Agent Teams 完全指南：多 AI 協作架構升級
+- Meta Description：Claude Code Agent Teams 讓一個 Team Lead 指揮多個 Teammate 並行執行，Teammate 之間可直接溝通。本文包含完整部署步驟、架構比較表、最適合場景分析。
+- Tags：#ClaudeCode #AgentTeams #AI #工程師 #多代理
+- Target Keywords：Claude Code Agent Teams, Claude Code 多 Agent, AI Agent 協作, Team Lead Teammate, Claude Code 教學</p>
+  </article>
+  </main>
+
+  <!-- Share -->
+  <div class="share-section">
+    <h3>分享這篇文章</h3>
+    <div class="share-buttons">
+      <a href="https://social-plugins.line.me/lineit/share?url=https://blog.autolab.cloud/claude-code-agent-teams-guide/" target="_blank" rel="noopener" class="share-btn share-line" aria-label="分享到 LINE">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        LINE
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.autolab.cloud/claude-code-agent-teams-guide/" target="_blank" rel="noopener" class="share-btn share-fb" aria-label="分享到 Facebook">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook
+      </a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://blog.autolab.cloud/claude-code-agent-teams-guide/" target="_blank" rel="noopener" class="share-btn share-linkedin" aria-label="分享到 LinkedIn">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <button class="share-btn share-copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='已複製!';setTimeout(()=>{this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;><path fill=&quot;currentColor&quot; d=&quot;M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z&quot;/></svg> 複製連結'},2000)})" aria-label="複製連結">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        複製連結
+      </button>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <div class="cta-box-inner">
+      <h3>想用 AI 解決真問題？</h3>
+      <p>加入阿峰老師的 AI 實戰社群，一起從觀念到落地。</p>
+      <div class="cta-buttons">
+        <a href="https://reurl.cc/GGlLNx" class="cta-btn">加入 LINE 社群</a>
+        <a href="https://www.autolab.cloud" class="cta-btn outline">企業培訓諮詢</a>
+      </div>
+      <div class="cta-links">
+        <a href="https://www.autolab.cloud">官網</a>
+        <a href="mailto:ai@autolab.cloud">聯繫合作</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Newsletter -->
+  <div class="newsletter-box">
+    <div class="newsletter-box-inner">
+      <div class="newsletter-icon">&#9993;</div>
+      <h3>每週 AI 實戰精華，直送信箱</h3>
+      <p>加入 1,200+ 位 AI 實踐者，每週收到最新 AI 落地案例與工具推薦。</p>
+      <form class="newsletter-form" id="newsletter-form">
+        <input type="email" name="email" id="newsletter-email" placeholder="輸入你的 Email" required autocomplete="email">
+        <button type="submit" id="newsletter-btn">免費訂閱</button>
+      </form>
+      <p class="newsletter-note" id="newsletter-msg">我們尊重你的隱私，隨時可取消訂閱。</p>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var form = document.getElementById('newsletter-form');
+    var btn = document.getElementById('newsletter-btn');
+    var msg = document.getElementById('newsletter-msg');
+    var emailInput = document.getElementById('newsletter-email');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var email = emailInput.value.trim();
+      if(!email) return;
+      btn.disabled = true;
+      btn.textContent = '訂閱中...';
+      fetch('https://www.autolab.cloud/api/newsletter/subscribe', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({email: email})
+      })
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        if(data.success){
+          msg.textContent = '訂閱成功！請查收歡迎信。';
+          msg.style.color = '#00D4FF';
+          emailInput.value = '';
+          form.style.display = 'none';
+        } else {
+          msg.textContent = data.message || '訂閱失敗，請稍後再試。';
+          msg.style.color = '#FF6B35';
+        }
+      })
+      .catch(function(){
+        msg.textContent = '網路錯誤，請稍後再試。';
+        msg.style.color = '#FF6B35';
+      })
+      .finally(function(){
+        btn.disabled = false;
+        btn.textContent = '免費訂閱';
+      });
+    });
+  })();
+  </script>
+
+  <!-- Related Articles -->
+  <section class="related-section">
+  <h2>你可能也想看</h2>
+  <div class="related-grid">
+    <a href="https://blog.autolab.cloud/enterprise-ai-selection-framework-2026/" class="related-card">
+  <img class="related-card-thumb" src="../enterprise-ai-selection-framework-2026/banner.png" alt="企業選 AI 工具的四個判斷軸：從日本最大 AI 社群的觀察到台灣培訓現場的實戰經驗" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-21</div>
+    <div class="related-card-title">企業選 AI 工具的四個判斷軸：從日本最大 AI 社群的觀察到台灣培訓現場的實戰經驗</div>
+  </div>
+</a><a href="https://blog.autolab.cloud/ai-work-environment-three-steps/" class="related-card">
+  <img class="related-card-thumb" src="../ai-work-environment-three-steps/banner.png" alt="AI 用不穩？問題不在工具，在你的工作環境" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-20</div>
+    <div class="related-card-title">AI 用不穩？問題不在工具，在你的工作環境</div>
+  </div>
+</a><a href="https://blog.autolab.cloud/obsidian-claude-code-second-brain/" class="related-card">
+  <img class="related-card-thumb" src="../obsidian-claude-code-second-brain/banner.png" alt="Obsidian + Claude Code：矽谷 AI 圈都在用的第二大腦組合，為什麼比 Notion 更適合 AI 時代？" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-20</div>
+    <div class="related-card-title">Obsidian + Claude Code：矽谷 AI 圈都在用的第二大腦組合，為什麼比 Notion 更適合 AI 時代？</div>
+  </div>
+</a>
+  </div>
+</section>
+
+  <!-- Article Navigation -->
+  <nav class="article-nav">
+  <a href="https://blog.autolab.cloud/gpt54-extreme-reasoning-workflow-strategy/" class="prev">
+  <div class="nav-label">← 上一篇</div>
+  <div class="nav-title">GPT-5.4 極限推理 + 百萬 Token 發布，但你真正該做的事不是升級</div>
+</a><a href="https://blog.autolab.cloud/openclaw-ai-agent-viral-china-security-risks/" class="next">
+  <div class="nav-label">下一篇 →</div>
+  <div class="nav-title">AI龍蝦暴紅真相：OpenClaw千人排隊裝AI，背後12%惡意技能你知道嗎？</div>
+</a>
+</nav>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2026 Autolab — 黃敬峰（AI峰哥）. All rights reserved.</p>
+    <p style="margin-top:8px">
+      <a href="https://blog.autolab.cloud/">Blog</a> ·
+      <a href="https://www.autolab.cloud">官網</a> ·
+      <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+    </p>
+  </footer>
+</body>
+</html>

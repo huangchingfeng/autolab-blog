@@ -132,6 +132,14 @@
       <category>工作術</category>
     </item>
     <item>
+      <title>Claude Code Agent Teams 完全指南：從 Sub-agent 到多 AI 協作的架構升級</title>
+      <link>https://blog.autolab.cloud/claude-code-agent-teams-guide/</link>
+      <guid>https://blog.autolab.cloud/claude-code-agent-teams-guide/</guid>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description></description>
+    </item>
+    <item>
       <title>AI龍蝦暴紅真相：OpenClaw千人排隊裝AI，背後12%惡意技能你知道嗎？</title>
       <link>https://blog.autolab.cloud/openclaw-ai-agent-viral-china-security-risks/</link>
       <guid>https://blog.autolab.cloud/openclaw-ai-agent-viral-china-security-risks/</guid>
@@ -260,19 +268,6 @@
       <category>企業AI導入</category>
       <category>AI甘榜</category>
       <category>國家AI政策</category>
-    </item>
-    <item>
-      <title>2026 AI 代勞元年：iKala 程世嘉的三個判斷，和你現在就該做的事</title>
-      <link>https://blog.autolab.cloud/ikala-sega-ai-agent-era-2026/</link>
-      <guid>https://blog.autolab.cloud/ikala-sega-ai-agent-era-2026/</guid>
-      <pubDate>Sat, 14 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>iKala 董事長程世嘉判斷 2026 年是 AI 代勞元年。全球 57% 企業已正式導入 AI Agent，台灣企業該怎麼跟上？阿峰老師從 400+ 企業培訓經驗分析三道隱形門檻和解法。</description>
-      <category>AI代勞元年</category>
-      <category>AIAgent</category>
-      <category>程世嘉</category>
-      <category>iKala</category>
-      <category>企業AI導入</category>
     </item>
   </channel>
 </rss>

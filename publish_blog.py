@@ -393,7 +393,7 @@ def render_index(all_articles):
     """產生首頁 HTML"""
     tpl = (TEMPLATES_DIR / "index.html").read_text()
     # 按日期倒序
-    sorted_articles = sorted(all_articles, key=lambda a: a.get("date", ""), reverse=True)
+    sorted_articles = sorted(all_articles, key=lambda a: str(a.get("date", "")), reverse=True)
 
     cards = []
     for a in sorted_articles:

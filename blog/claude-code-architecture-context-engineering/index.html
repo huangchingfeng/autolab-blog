@@ -332,6 +332,60 @@
     </div>
   </div>
 
+  <!-- Newsletter -->
+  <div class="newsletter-box">
+    <div class="newsletter-box-inner">
+      <div class="newsletter-icon">&#9993;</div>
+      <h3>每週 AI 實戰精華，直送信箱</h3>
+      <p>加入 1,200+ 位 AI 實踐者，每週收到最新 AI 落地案例與工具推薦。</p>
+      <form class="newsletter-form" id="newsletter-form">
+        <input type="email" name="email" id="newsletter-email" placeholder="輸入你的 Email" required autocomplete="email">
+        <button type="submit" id="newsletter-btn">免費訂閱</button>
+      </form>
+      <p class="newsletter-note" id="newsletter-msg">我們尊重你的隱私，隨時可取消訂閱。</p>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var form = document.getElementById('newsletter-form');
+    var btn = document.getElementById('newsletter-btn');
+    var msg = document.getElementById('newsletter-msg');
+    var emailInput = document.getElementById('newsletter-email');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var email = emailInput.value.trim();
+      if(!email) return;
+      btn.disabled = true;
+      btn.textContent = '訂閱中...';
+      fetch('https://www.autolab.cloud/api/newsletter/subscribe', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({email: email})
+      })
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        if(data.success){
+          msg.textContent = '訂閱成功！請查收歡迎信。';
+          msg.style.color = '#00D4FF';
+          emailInput.value = '';
+          form.style.display = 'none';
+        } else {
+          msg.textContent = data.message || '訂閱失敗，請稍後再試。';
+          msg.style.color = '#FF6B35';
+        }
+      })
+      .catch(function(){
+        msg.textContent = '網路錯誤，請稍後再試。';
+        msg.style.color = '#FF6B35';
+      })
+      .finally(function(){
+        btn.disabled = false;
+        btn.textContent = '免費訂閱';
+      });
+    });
+  })();
+  </script>
+
   <!-- Related Articles -->
   <section class="related-section">
   <h2>你可能也想看</h2>
