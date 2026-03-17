@@ -120,6 +120,18 @@
       <category>開發工具</category>
     </item>
     <item>
+      <title>GPT-5.4 極限推理 + 百萬 Token 發布，但你真正該做的事不是升級</title>
+      <link>https://blog.autolab.cloud/gpt54-extreme-reasoning-workflow-strategy/</link>
+      <guid>https://blog.autolab.cloud/gpt54-extreme-reasoning-workflow-strategy/</guid>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>GPT-5.4 帶來 Extreme Reasoning 和百萬 Token 上下文，但 GPT-5.1 才上市六個月就退役了。這告訴企業一件事：停止追模型，開始建立你的 AI 工作流。</description>
+      <category>AI工具教學</category>
+      <category>AI觀點</category>
+      <category>企業AI</category>
+      <category>工作術</category>
+    </item>
+    <item>
       <title>AI龍蝦暴紅真相：OpenClaw千人排隊裝AI，背後12%惡意技能你知道嗎？</title>
       <link>https://blog.autolab.cloud/openclaw-ai-agent-viral-china-security-risks/</link>
       <guid>https://blog.autolab.cloud/openclaw-ai-agent-viral-china-security-risks/</guid>
@@ -261,14 +273,6 @@
       <category>程世嘉</category>
       <category>iKala</category>
       <category>企業AI導入</category>
-    </item>
-    <item>
-      <title>Untitled</title>
-      <link>https://blog.autolab.cloud/untitled/</link>
-      <guid>https://blog.autolab.cloud/untitled/</guid>
-      <pubDate>Sat, 14 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description></description>
     </item>
   </channel>
 </rss>
