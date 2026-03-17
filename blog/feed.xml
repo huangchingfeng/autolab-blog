@@ -5,7 +5,7 @@
     <link>https://blog.autolab.cloud/</link>
     <description>企業 AI 培訓、Vibe Coding、AI 工具教學，從觀念到落地。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Mon, 16 Mar 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 17 Mar 2026 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://blog.autolab.cloud/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://blog.autolab.cloud/static/og-default.png</url>
@@ -91,6 +91,19 @@
       <category>MCP</category>
       <category>AI工作環境</category>
       <category>企業AI</category>
+    </item>
+    <item>
+      <title>零員工、年商1200萬台幣：日本AI一人社長的「仕組み」秘密</title>
+      <link>https://blog.autolab.cloud/japan-ai-solopreneur-6000man/</link>
+      <guid>https://blog.autolab.cloud/japan-ai-solopreneur-6000man/</guid>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>日本出現年商6000萬日圓的電商一人社長，靠的不是加班，而是把AI從工具升級成機制。本文拆解仕組み思維、75%工時削減案例，以及你現在就能用的流程設計框架。</description>
+      <category>AI</category>
+      <category>一人公司</category>
+      <category>工作效率</category>
+      <category>企業AI</category>
+      <category>流程自動化</category>
     </item>
     <item>
       <title>Claude Code 進階：你可能不知道的六層架構與上下文管理術</title>
@@ -256,20 +269,6 @@
       <pubDate>Sat, 14 Mar 2026 00:00:00 +0800</pubDate>
       <author>ai@autolab.cloud (黃敬峰)</author>
       <description></description>
-    </item>
-    <item>
-      <title>OpenClaw 全解析：當 AI 從顧問變成員工，台灣企業需要知道什麼</title>
-      <link>https://blog.autolab.cloud/openclaw-ai-agent-guide-taiwan-enterprise/</link>
-      <guid>https://blog.autolab.cloud/openclaw-ai-agent-guide-taiwan-enterprise/</guid>
-      <pubDate>Wed, 11 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>GitHub 全球第一的 AI Agent 系統 OpenClaw，5 個月超越 React。本文深入解析技術架構、安全風險、部署方式，以及台灣企業真正需要評估的三個面向。</description>
-      <category>OpenClaw</category>
-      <category>AI Agent</category>
-      <category>企業AI</category>
-      <category>自托管</category>
-      <category>數位轉型</category>
-      <category>AI工具</category>
     </item>
   </channel>
 </rss>
