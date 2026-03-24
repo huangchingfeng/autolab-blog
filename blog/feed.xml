@@ -26,6 +26,20 @@
       <category>開源</category>
     </item>
     <item>
+      <title>你的工程師用 AI 寫的 code，45% 可能有漏洞——OpenAI Codex Security 如何改變資安遊戲規則</title>
+      <link>https://blog.autolab.cloud/openai-codex-security-ai-vulnerability-scanner/</link>
+      <guid>https://blog.autolab.cloud/openai-codex-security-ai-vulnerability-scanner/</guid>
+      <pubDate>Tue, 24 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>OpenAI 推出 Codex Security，一隻 AI 資安 agent 在 30 天內掃描 120 萬筆 commit、揪出 14 個全球級 CVE 漏洞。阿峰老師深度解析這對台灣企業資安治理的意義。</description>
+      <category>AI</category>
+      <category>資安</category>
+      <category>OpenAI</category>
+      <category>Codex Security</category>
+      <category>程式開發</category>
+      <category>企業培訓</category>
+    </item>
+    <item>
       <title>企業選 AI 工具的四個判斷軸：從日本最大 AI 社群的觀察到台灣培訓現場的實戰經驗</title>
       <link>https://blog.autolab.cloud/enterprise-ai-selection-framework-2026/</link>
       <guid>https://blog.autolab.cloud/enterprise-ai-selection-framework-2026/</guid>
@@ -254,20 +268,6 @@
       <category>AI個人化</category>
       <category>Anthropic</category>
       <category>企業AI</category>
-    </item>
-    <item>
-      <title>OpenClaw 用不起來？544 個使用案例幫你找到入門起點</title>
-      <link>https://blog.autolab.cloud/openclaw-544-examples-copy-paste/</link>
-      <guid>https://blog.autolab.cloud/openclaw-544-examples-copy-paste/</guid>
-      <pubDate>Mon, 16 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>噪噪溫斯頓整理了 544 個 OpenClaw 使用案例，涵蓋 11 個工作主題。不用看完整影片，Copy Prompt 貼給龍蝦，馬上開始設定。本文教你怎麼用，還有最被忽略的進階玩法。</description>
-      <category>OpenClaw</category>
-      <category>AI Agent</category>
-      <category>龍蝦</category>
-      <category>使用教學</category>
-      <category>AI工具</category>
-      <category>AI實戰</category>
     </item>
   </channel>
 </rss>
