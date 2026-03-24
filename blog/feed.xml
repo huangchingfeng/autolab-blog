@@ -5,13 +5,26 @@
     <link>https://blog.autolab.cloud/</link>
     <description>企業 AI 培訓、Vibe Coding、AI 工具教學，從觀念到落地。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 17 Mar 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 24 Mar 2026 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://blog.autolab.cloud/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://blog.autolab.cloud/static/og-default.png</url>
       <title>阿峰老師 AI 實戰部落格</title>
       <link>https://blog.autolab.cloud/</link>
     </image>
+    <item>
+      <title>NVIDIA 用開源搶佔 AI Agent 生態——GTC 2026 Agent Toolkit 完整解析</title>
+      <link>https://blog.autolab.cloud/nvidia-agent-toolkit-gtc-2026/</link>
+      <guid>https://blog.autolab.cloud/nvidia-agent-toolkit-gtc-2026/</guid>
+      <pubDate>Tue, 24 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>黃仁勳在 GTC 2026 發布 Agent Toolkit 開源軟體堆疊，包含 NemoClaw、OpenShell 安全沙箱、Nemotron 開源模型和 AI-Q 企業藍圖。這是 NVIDIA 從硬體公司轉型為 AI 生態平台的關鍵一步。</description>
+      <category>AI</category>
+      <category>NVIDIA</category>
+      <category>AI Agent</category>
+      <category>GTC 2026</category>
+      <category>開源</category>
+    </item>
     <item>
       <title>企業選 AI 工具的四個判斷軸：從日本最大 AI 社群的觀察到台灣培訓現場的實戰經驗</title>
       <link>https://blog.autolab.cloud/enterprise-ai-selection-framework-2026/</link>
@@ -255,19 +268,6 @@
       <category>使用教學</category>
       <category>AI工具</category>
       <category>AI實戰</category>
-    </item>
-    <item>
-      <title>台灣企業 AI 導入太慢？從新加坡 2026 預算案看你該立刻行動的理由</title>
-      <link>https://blog.autolab.cloud/singapore-budget-2026-ai-national-strategy/</link>
-      <guid>https://blog.autolab.cloud/singapore-budget-2026-ai-national-strategy/</guid>
-      <pubDate>Sun, 15 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>新加坡總理親自掛帥推動 AI 國家戰略，三年要讓一萬家企業導入 AI。台灣企業該怎麼跟上？阿峰老師從 400 家企業培訓經驗，拆解台灣中小企業 AI 導入的實操步驟。</description>
-      <category>新加坡AI戰略</category>
-      <category>2026預算案</category>
-      <category>企業AI導入</category>
-      <category>AI甘榜</category>
-      <category>國家AI政策</category>
     </item>
   </channel>
 </rss>
