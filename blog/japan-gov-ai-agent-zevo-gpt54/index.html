@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日本公務員已經在用 AI Agent 上班了，台灣呢？ — 阿峰老師</title>
+  <meta name="description" content="日本政府專用 AI 平台 zevo 導入 GPT-5.4 mini/nano，讓地方公務員用 AI Agent 處理日常業務。小模型不是閹割版，是 subagent 架構的專業執行者。台灣公部門可以從中學到什麼？">
+  <meta name="keywords" content="AI, AI Agent, 公部門AI, 日本, GPT-5.4">
+  <meta name="author" content="黃敬峰（AI峰哥）">
+  <link rel="canonical" href="https://blog.autolab.cloud/japan-gov-ai-agent-zevo-gpt54/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="日本公務員已經在用 AI Agent 上班了，台灣呢？">
+  <meta property="og:description" content="日本政府專用 AI 平台 zevo 導入 GPT-5.4 mini/nano，讓地方公務員用 AI Agent 處理日常業務。小模型不是閹割版，是 subagent 架構的專業執行者。台灣公部門可以從中學到什麼？">
+  <meta property="og:image" content="https://blog.autolab.cloud/japan-gov-ai-agent-zevo-gpt54/thumbnail.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://blog.autolab.cloud/japan-gov-ai-agent-zevo-gpt54/">
+  <meta property="og:site_name" content="阿峰老師 Autolab">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="article:author" content="黃敬峰（AI峰哥）">
+  <meta property="article:published_time" content="2026-03-28T00:00:00+08:00">
+  <meta property="article:modified_time" content="2026-03-28T00:00:00+08:00">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="日本公務員已經在用 AI Agent 上班了，台灣呢？">
+  <meta name="twitter:description" content="日本政府專用 AI 平台 zevo 導入 GPT-5.4 mini/nano，讓地方公務員用 AI Agent 處理日常業務。小模型不是閹割版，是 subagent 架構的專業執行者。台灣公部門可以從中學到什麼？">
+  <meta name="twitter:image" content="https://blog.autolab.cloud/japan-gov-ai-agent-zevo-gpt54/thumbnail.png">
+
+  <!-- Article Tags -->
+  <meta property="article:tag" content="AI">
+  <meta property="article:tag" content="AI Agent">
+  <meta property="article:tag" content="公部門AI">
+  <meta property="article:tag" content="日本">
+  <meta property="article:tag" content="GPT-5.4">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "日本公務員已經在用 AI Agent 上班了，台灣呢？", "description": "日本政府專用 AI 平台 zevo 導入 GPT-5.4 mini/nano，讓地方公務員用 AI Agent 處理日常業務。小模型不是閹割版，是 subagent 架構的專業執行者。台灣公部門可以從中學到什麼？", "author": {"@type": "Person", "name": "黃敬峰（AI峰哥）", "url": "https://www.autolab.cloud"}, "publisher": {"@type": "Organization", "name": "Autolab", "url": "https://www.autolab.cloud", "logo": {"@type": "ImageObject", "url": "https://blog.autolab.cloud/static/og-default.png"}}, "datePublished": "2026-03-28T00:00:00+08:00", "dateModified": "2026-03-28T00:00:00+08:00", "image": "https://blog.autolab.cloud/japan-gov-ai-agent-zevo-gpt54/thumbnail.png", "mainEntityOfPage": "https://blog.autolab.cloud/japan-gov-ai-agent-zevo-gpt54/", "keywords": "AI, AI Agent, 公部門AI, 日本, GPT-5.4", "inLanguage": "zh-Hant-TW"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://blog.autolab.cloud/"}, {"@type": "ListItem", "position": 2, "name": "日本公務員已經在用 AI Agent 上班了，台灣呢？", "item": "https://blog.autolab.cloud/japan-gov-ai-agent-zevo-gpt54/"}]}</script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://blog.autolab.cloud/static/favicon.png">
+  <link rel="icon" type="image/x-icon" href="https://blog.autolab.cloud/static/favicon.ico">
+  <link rel="apple-touch-icon" href="https://blog.autolab.cloud/static/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="阿峰老師 Blog RSS" href="https://blog.autolab.cloud/feed.xml">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://blog.autolab.cloud/static/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至主要內容</a>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="https://blog.autolab.cloud/" class="nav-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 412 160" width="32" height="13" aria-hidden="true">
+          <defs><g id="wing"><polygon points="188,26 0,0 16,22 168,90"/><polygon points="166,100 34,60 42,72 170,114"/><polygon points="174,122 68,88 76,100 182,140"/></g></defs>
+          <use href="#wing" fill="#00D4FF"/><use href="#wing" fill="#00D4FF" transform="translate(392,0) scale(-1,1)"/>
+        </svg>
+        <span>Autolab</span> 阿峰老師
+      </a>
+      <div class="nav-links">
+        <a href="https://blog.autolab.cloud/">Blog</a>
+        <a href="https://www.autolab.cloud">官網</a>
+        <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs" aria-label="麵包屑導航">
+    <a href="https://blog.autolab.cloud/">Blog</a><span class="sep">›</span><span class="current">日本公務員已經在用 AI Agent 上班了，台灣呢？</span>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="article-header">
+    <div class="article-meta">
+      <span>2026-03-28</span>
+      <span>黃敬峰（AI峰哥）</span>
+    </div>
+    <h1>日本公務員已經在用 AI Agent 上班了，台灣呢？</h1>
+    <div class="card-tags"><span class="tag" data-color="yellow">AI</span><span class="tag" data-color="cyan">AI Agent</span><span class="tag" data-color="orange">公部門AI</span><span class="tag" data-color="orange">日本</span><span class="tag" data-color="cyan">GPT-5.4</span></div>
+  </header>
+
+  <!-- Featured Image -->
+  <div class="featured-image-wrapper"><img src="thumbnail.png" alt="日本公務員已經在用 AI Agent 上班了，台灣呢？" class="featured-image" loading="lazy" width="780" height="438"></div>
+
+  <!-- YouTube -->
+  
+
+  <!-- CONTENT -->
+  <main id="main-content">
+  <article class="article-content">
+    <h1 id="ai-agent">日本公務員已經在用 AI Agent 上班了，台灣呢？</h1>
+<blockquote>
+<p>本文是社群貼文的完整延伸版。
+社群版講了核心觀念，本文加上獨家深度分析和操作指南。</p>
+</blockquote>
+<hr />
+<h2 id="_1">重點回顧</h2>
+<p>2026 年 3 月 27 日，日本地方政府專用的 AI 平台 zevo 正式導入 OpenAI 最新的 GPT-5.4 mini 和 nano 模型。這代表日本的區公所、市役所這些以謹慎著稱的公務機關，已經在用 AI Agent 處理日常業務——文件摘要、資料分類、多語言翻譯、表單核對，全部自動化。</p>
+<p>更值得注意的是：這不是什麼昂貴的科技升級。現有 zevo 用戶不用額外付費，管理員開個權限隔天就能上線。</p>
+<hr />
+<h2 id="subagent-ai">【獨家】Subagent 架構解析：為什麼小模型才是 AI 落地的關鍵</h2>
+<p>很多人對 AI 的認知還停在「一個很聰明的聊天機器人」。但 2026 年 AI 產業最重要的轉變，是從「單一模型對話」走向「多模型協作」——也就是所謂的 Agent 架構。</p>
+<h3 id="subagent">什麼是 Subagent 架構？</h3>
+<p>想像一間公司的運作方式：</p>
+<p>CEO 負責戰略決策，但 CEO 不會自己去影印文件、整理報表、回覆例行信件。這些工作由專業的助理和執行人員處理，效率更高、成本更低。</p>
+<p>OpenAI 現在明確推薦的做法也是這樣：</p>
+<ul>
+<li><strong>GPT-5.4���大模型）</strong>：負責規劃、判斷、複雜推理</li>
+<li><strong>GPT-5.4 mini（中型模型）</strong>：負責文件處理、程式碼、多步驟任務</li>
+<li><strong>GPT-5.4 nano（小型模型）</strong>：負責分類、萃取、排序、重複性檢查</li>
+</ul>
+<p>這三層就像一支數位團隊，大模型當專案經理，mini 和 nano 當專業執行者，平行運作、各司其職。</p>
+<h3 id="_2">為什麼這對企業很重要？</h3>
+<p>因為成本。</p>
+<p>GPT-5.4 nano 處理一百萬個 token 的輸入只要 0.2 美元（約台幣 6 塊），輸出也只要 1.25 美元。這比 Google 的 Gemini 3.1 Flash-Lite 還便宜。</p>
+<p>換算成實際場景：用 nano 幫你把十萬筆客戶資料自動分類、貼標籤，成本可能不到台幣一百塊。過去需要一整個團隊花一週做的事，現在一個下午就跑完了。</p>
+<p>而 GPT-5.4 mini 在程式碼能力上已經接近完整版 GPT-5.4，速度卻是上一代的 2 倍以上。OpenAI 自己公布的測試數據顯示，5.4 nano 在最高推理模式下，效能甚至超越了上一代的 GPT-5 mini。</p>
+<p>這不是「便宜版 AI」，是專門為大規模工作流程設計的引擎。</p>
+<h3 id="subagent_1">Subagent 架構的三個落地場景</h3>
+<p><strong>場景一：政府公文處理</strong>
+大模型判斷公文類型和優先級 → nano 自動萃取關鍵欄位 → mini 產生摘要和回覆草稿</p>
+<p><strong>場景二：企業客服系統</strong>
+大模型理解客戶問題的複雜意圖 → nano 從知識庫撈取相關資料 → mini 組合成完整回覆</p>
+<p><strong>場景三：財務報表審查</strong>
+大模型規劃審查策略 → nano 批量核對數字一致性 → mini 撰寫異常報告</p>
+<p>每一個場景都不需要員工「學會用 AI」。AI 已經被設計成系統的一部分，打開就能用。</p>
+<hr />
+<h2 id="zevo">【獨家】日本 zevo 平台深度解析：為什麼公部門能快速導入</h2>
+<h3 id="zevo_1">zevo 是什麼？</h3>
+<p>zevo 是日本 Shift Plus 公司開發的「自治體 AI」平台，專門為地方政府設計。他們的關聯平台 LedgHOME 截至 2025 年 8 月，已經服務超過 520 個日本地方政府，管理了全日本將近一半的故鄉納稅業務。</p>
+<p>這代表 Shift Plus 對日本公務體系的資安合規、使用習慣、行政流程都有極深的理解。zevo 不是一個通用 AI 工具，而是一個「為公務員量身打造」的系統。</p>
+<h3 id="gpt-54-mininano">導入 GPT-5.4 mini/nano 的具體方式</h3>
+<p>這次更新有幾個聰明的設計：</p>
+<ol>
+<li><strong>免費升級</strong>：現有 zevo 訂閱用戶不需額外付費就能使用新模型</li>
+<li><strong>預設禁用</strong>：新模型預設為「禁止」狀態，需要組織管理員核准才能啟用</li>
+<li><strong>模型選擇權</strong>：公務員可以根據任務需求選擇不同模型</li>
+</ol>
+<p>「預設禁用 + 管理員核准」這個設計特別值得學習。它既不會因為「安全顧慮」完全封殺 AI，也不會讓 AI 不受控地在機關內擴散。管理員可以先小範圍試用，確認沒問題再逐步開放。</p>
+<h3 id="zevo_2">zevo 的具體功能</h3>
+<ul>
+<li><strong>GPT-5.4 mini 負責</strong>：文件摘要、多語言翻譯（英中韓）、問答支援、文件撰寫</li>
+<li><strong>GPT-5.4 nano 負責</strong>：資料分類、欄位萃取、表單核對、排序整理</li>
+<li><strong>整合 LGTalk</strong>：政府專用安全通訊工具，直接整合 AI 功能</li>
+<li><strong>eRex</strong>：符合 LGWAN 資安規範的語音轉文字 AI 工具</li>
+</ul>
+<p>每一個功能都是公務員日常會用到的，不是什麼炫技的 demo。</p>
+<hr />
+<h2 id="_3">阿峰觀點</h2>
+<h3 id="_4">台灣公部門的現況與差距</h3>
+<p>台灣其實不是沒有在做。行政院 2023 年就發布了《使用生成式 AI 參考指引》，國科會推動 TAIDE 對話引擎計畫，司法院也試辦了 AI 協助撰寫判決草稿。</p>
+<p>但跟日本比，我們少了一塊關鍵拼圖：<strong>平台化</strong>。</p>
+<p>日本的 zevo 做到了三件事：
+1. 資安合規內建在平台裡，公務員不用擔心
+2. 模型選擇和權限控管都設計好了，管理員一鍵開關
+3. 使用介面就是公務員熟悉的操作流程，不用重新學</p>
+<p>台灣目前多數機關還停在「買帳號讓大家自己試」的階段。沒有統一平台、沒有標準化的工作流程、沒有 subagent 架構的概念。</p>
+<h3 id="400">我帶過 400+ 企業的觀察</h3>
+<p>這個問題不只是公部門的問題，企業也一樣。</p>
+<p>我帶過超過 400 家企業做 AI 培訓，最常聽到的困惑是：「老師，我們知道 AI 很強，但不知道怎麼真的用在工作裡。」</p>
+<p>答案從來不是「讓每個員工學會跟 ChatGPT 聊天」。答案是：<strong>把 AI 設計成工作流程的一部分</strong>。</p>
+<p>就像 zevo 做的一樣——公務員不需要理解什麼是 GPT-5.4 mini 或 nano，他們只需要打開系統、選擇功能、得到結果。AI 像水電一樣，打開就能用。</p>
+<h3 id="hr">給企業主和 HR 的建議</h3>
+<p>如果你正在考慮讓團隊導入 AI，這件事給你的啟示是：</p>
+<ol>
+<li><strong>不要從「買工具」開始</strong>，要從「梳理工作流程」開始</li>
+<li><strong>找出那些重複、標準化、但不得不做的任務</strong>——這就是 AI Agent 的甜蜜點</li>
+<li><strong>先小範圍試點</strong>，確認有效再逐步擴大（學 zevo 的「預設禁用 + 管理員核准」模式）</li>
+<li><strong>選對模型</strong>：不是所有任務都需要最貴最強的 AI，很多日常工作用 nano 等級就綽綽有餘</li>
+</ol>
+<p>「會用、懂用、好用、每天用」——這不只是我對個人的建議，也是對所有想導入 AI 的組織說的話。</p>
+<hr />
+<h2 id="_5">本文提到的資源</h2>
+<table>
+<thead>
+<tr>
+<th>工具/平台</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>zevo（自治体 AI）</td>
+<td>日本地方政府專用 AI 平台，由 Shift Plus 開發</td>
+</tr>
+<tr>
+<td>GPT-5.4 mini</td>
+<td>OpenAI 中型模型，2x 速度，適合文件處理和程式碼</td>
+</tr>
+<tr>
+<td>GPT-5.4 nano</td>
+<td>OpenAI 最小模型，$$0.2/百萬 token，適合分類和萃取</td>
+</tr>
+<tr>
+<td>LedgHOME</td>
+<td>Shift Plus 故鄉納稅管理平台，服務 520+ 地方政府</td>
+</tr>
+<tr>
+<td>TAIDE</td>
+<td>台灣國科會推動的繁體中文 AI 對話引擎</td>
+</tr>
+</tbody>
+</table>
+<p><strong>資料來源</strong>：
+- PR Times：シフトプラス「自治体AI zevo」GPT-5.4-mini/nano 提供開始（2026/03/27）
+- OpenAI：Introducing GPT-5.4 mini and nano（2026/03/17）</p>
+<hr />
+<p>🏢 想帶團隊導入 AI？阿峰老師服務過超過 400 家企業，從流程診斷到實戰培訓一條龍。
+→ <a href="https://www.autolab.cloud">https://www.autolab.cloud</a></p>
+<hr />
+<h3 id="_6">關於作者</h3>
+<p>黃敬峰（AI峰哥），企業 AI 實戰培訓專家，400+ 企業合作、10,000+ 學員。
+核心心法：「會用、懂用、好用、每天用」
+官網：<a href="https://www.autolab.cloud">https://www.autolab.cloud</a></p>
+  </article>
+  </main>
+
+  <!-- Share -->
+  <div class="share-section">
+    <h3>分享這篇文章</h3>
+    <div class="share-buttons">
+      <a href="https://social-plugins.line.me/lineit/share?url=https://blog.autolab.cloud/japan-gov-ai-agent-zevo-gpt54/" target="_blank" rel="noopener" class="share-btn share-line" aria-label="分享到 LINE">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        LINE
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.autolab.cloud/japan-gov-ai-agent-zevo-gpt54/" target="_blank" rel="noopener" class="share-btn share-fb" aria-label="分享到 Facebook">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook
+      </a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://blog.autolab.cloud/japan-gov-ai-agent-zevo-gpt54/" target="_blank" rel="noopener" class="share-btn share-linkedin" aria-label="分享到 LinkedIn">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <button class="share-btn share-copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='已複製!';setTimeout(()=>{this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;><path fill=&quot;currentColor&quot; d=&quot;M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z&quot;/></svg> 複製連結'},2000)})" aria-label="複製連結">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        複製連結
+      </button>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <div class="cta-box-inner">
+      <h3>想用 AI 解決真問題？</h3>
+      <p>加入阿峰老師的 AI 實戰社群，一起從觀念到落地。</p>
+      <div class="cta-buttons">
+        <a href="https://reurl.cc/GGlLNx" class="cta-btn">加入 LINE 社群</a>
+        <a href="https://www.autolab.cloud" class="cta-btn outline">企業培訓諮詢</a>
+      </div>
+      <div class="cta-links">
+        <a href="https://www.autolab.cloud">官網</a>
+        <a href="mailto:ai@autolab.cloud">聯繫合作</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Newsletter -->
+  <div class="newsletter-box">
+    <div class="newsletter-box-inner">
+      <div class="newsletter-icon">&#9993;</div>
+      <h3>每週 AI 實戰精華，直送信箱</h3>
+      <p>加入 1,200+ 位 AI 實踐者，每週收到最新 AI 落地案例與工具推薦。</p>
+      <form class="newsletter-form" id="newsletter-form">
+        <input type="email" name="email" id="newsletter-email" placeholder="輸入你的 Email" required autocomplete="email">
+        <button type="submit" id="newsletter-btn">免費訂閱</button>
+      </form>
+      <p class="newsletter-note" id="newsletter-msg">我們尊重你的隱私，隨時可取消訂閱。</p>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var form = document.getElementById('newsletter-form');
+    var btn = document.getElementById('newsletter-btn');
+    var msg = document.getElementById('newsletter-msg');
+    var emailInput = document.getElementById('newsletter-email');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var email = emailInput.value.trim();
+      if(!email) return;
+      btn.disabled = true;
+      btn.textContent = '訂閱中...';
+      fetch('https://www.autolab.cloud/api/newsletter/subscribe', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({email: email})
+      })
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        if(data.success){
+          msg.textContent = '訂閱成功！請查收歡迎信。';
+          msg.style.color = '#00D4FF';
+          emailInput.value = '';
+          form.style.display = 'none';
+        } else {
+          msg.textContent = data.message || '訂閱失敗，請稍後再試。';
+          msg.style.color = '#FF6B35';
+        }
+      })
+      .catch(function(){
+        msg.textContent = '網路錯誤，請稍後再試。';
+        msg.style.color = '#FF6B35';
+      })
+      .finally(function(){
+        btn.disabled = false;
+        btn.textContent = '免費訂閱';
+      });
+    });
+  })();
+  </script>
+
+  <!-- Related Articles -->
+  <section class="related-section">
+  <h2>你可能也想看</h2>
+  <div class="related-grid">
+    <a href="https://blog.autolab.cloud/harness-engineering-ai-agent-2026/" class="related-card">
+  <img class="related-card-thumb" src="../harness-engineering-ai-agent-2026/banner.png" alt="Harness Engineering：為什麼你的 AI Agent Demo 很強、上線就爛？2026 年 AI 工程最重要的觀念轉變" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-28</div>
+    <div class="related-card-title">Harness Engineering：為什麼你的 AI Agent Demo 很強、上線就爛？2026 年 AI 工程最重要的觀念轉變</div>
+  </div>
+</a><a href="https://blog.autolab.cloud/nvidia-agent-toolkit-gtc-2026/" class="related-card">
+  <img class="related-card-thumb" src="../nvidia-agent-toolkit-gtc-2026/banner.png" alt="NVIDIA 用開源搶佔 AI Agent 生態——GTC 2026 Agent Toolkit 完整解析" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-24</div>
+    <div class="related-card-title">NVIDIA 用開源搶佔 AI Agent 生態——GTC 2026 Agent Toolkit 完整解析</div>
+  </div>
+</a><a href="https://blog.autolab.cloud/google-turboquant-kv-cache-compression/" class="related-card">
+  <img class="related-card-thumb" src="../google-turboquant-kv-cache-compression/banner.png" alt="Google TurboQuant：3-bit 壓縮讓 AI 記憶體砍 6 倍、速度快 8 倍，零精度損失" loading="lazy">
+  <div class="related-card-body">
+    <div class="related-card-date">2026-03-28</div>
+    <div class="related-card-title">Google TurboQuant：3-bit 壓縮讓 AI 記憶體砍 6 倍、速度快 8 倍，零精度損失</div>
+  </div>
+</a>
+  </div>
+</section>
+
+  <!-- Article Navigation -->
+  <nav class="article-nav">
+  <a href="https://blog.autolab.cloud/google-turboquant-kv-cache-compression/" class="prev">
+  <div class="nav-label">← 上一篇</div>
+  <div class="nav-title">Google TurboQuant：3-bit 壓縮讓 AI 記憶體砍 6 倍、速度快 8 倍，零精度損失</div>
+</a><a href="https://blog.autolab.cloud/claude-85-use-cases-guide/" class="next">
+  <div class="nav-label">下一篇 →</div>
+  <div class="nav-title">Claude 怎麼用？Anthropic 官方 85 個使用情境完整解析，六成不用寫程式</div>
+</a>
+</nav>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2026 Autolab — 黃敬峰（AI峰哥）. All rights reserved.</p>
+    <p style="margin-top:8px">
+      <a href="https://blog.autolab.cloud/">Blog</a> ·
+      <a href="https://www.autolab.cloud">官網</a> ·
+      <a href="https://reurl.cc/GGlLNx">LINE 社群</a>
+    </p>
+  </footer>
+</body>
+</html>

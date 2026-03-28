@@ -7,19 +7,37 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://blog.autolab.cloud/harness-engineering-ai-agent-2026/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blog.autolab.cloud/google-turboquant-kv-cache-compression/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blog.autolab.cloud/japan-gov-ai-agent-zevo-gpt54/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://blog.autolab.cloud/claude-85-use-cases-guide/</loc>
     <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blog.autolab.cloud/nvidia-agent-toolkit-gtc-2026/</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://blog.autolab.cloud/openai-codex-security-ai-vulnerability-scanner/</loc>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blog.autolab.cloud/openai-codex-security-ai-vulnerability-scanner/</loc>
+    <loc>https://blog.autolab.cloud/nvidia-agent-toolkit-gtc-2026/</loc>
     <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
