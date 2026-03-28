@@ -65,6 +65,21 @@
       <category>GPT-5.4</category>
     </item>
     <item>
+      <title>韓國企業已經讓每個員工設計自己的 AI Agent，你的公司還在「試試看」？</title>
+      <link>https://blog.autolab.cloud/korea-enterprise-ai-agent-revolution-2026/</link>
+      <guid>https://blog.autolab.cloud/korea-enterprise-ai-agent-revolution-2026/</guid>
+      <pubDate>Sat, 28 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>微軟 AI Tour 首爾揭露韓國企業 AI 落地新模式：KT 讓員工自己設計 AI Agent、現代百貨 HEYDI 用量 9 倍成長、M365 E7 把 Agent 變標配。AI 落地的關鍵不在技術，在組織。</description>
+      <category>AI Agent</category>
+      <category>企業AI</category>
+      <category>韓國</category>
+      <category>Microsoft</category>
+      <category>KT</category>
+      <category>現代百貨</category>
+      <category>組織變革</category>
+    </item>
+    <item>
       <title>Claude 怎麼用？Anthropic 官方 85 個使用情境完整解析，六成不用寫程式</title>
       <link>https://blog.autolab.cloud/claude-85-use-cases-guide/</link>
       <guid>https://blog.autolab.cloud/claude-85-use-cases-guide/</guid>
@@ -255,19 +270,6 @@
       <category>一人公司</category>
       <category>稅務</category>
       <category>非工程師</category>
-    </item>
-    <item>
-      <title>AI 吸血鬼：效率越高，人越累？矽谷工程師的警告與解法</title>
-      <link>https://blog.autolab.cloud/ai-vampire-burnout/</link>
-      <guid>https://blog.autolab.cloud/ai-vampire-burnout/</guid>
-      <pubDate>Mon, 16 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>用 AI 工作效率提升 10 倍，但為什麼反而更累了？矽谷 40 年工程師 Steve Yegge 把這個現象叫做 AI 吸血鬼。哈佛商業評論追蹤 200 人也確認了惡性循環。本文帶你看清楚問題在哪，以及怎麼應對。</description>
-      <category>AI</category>
-      <category>生產力</category>
-      <category>職場</category>
-      <category>AI倦怠</category>
-      <category>工作效率</category>
     </item>
   </channel>
 </rss>
