@@ -5,13 +5,26 @@
     <link>https://blog.autolab.cloud/</link>
     <description>企業 AI 培訓、Vibe Coding、AI 工具教學，從觀念到落地。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 24 Mar 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 28 Mar 2026 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://blog.autolab.cloud/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://blog.autolab.cloud/static/og-default.png</url>
       <title>阿峰老師 AI 實戰部落格</title>
       <link>https://blog.autolab.cloud/</link>
     </image>
+    <item>
+      <title>Claude 怎麼用？Anthropic 官方 85 個使用情境完整解析，六成不用寫程式</title>
+      <link>https://blog.autolab.cloud/claude-85-use-cases-guide/</link>
+      <guid>https://blog.autolab.cloud/claude-85-use-cases-guide/</guid>
+      <pubDate>Sat, 28 Mar 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>Anthropic 官方整理 85 個 Claude 真實使用情境，橫跨 12 大職場類別。本文深度解析五大新功能、模型選擇策略，以及企業導入 AI 的務實建議。</description>
+      <category>AI</category>
+      <category>Claude</category>
+      <category>Anthropic</category>
+      <category>AI工具</category>
+      <category>企業培訓</category>
+    </item>
     <item>
       <title>NVIDIA 用開源搶佔 AI Agent 生態——GTC 2026 Agent Toolkit 完整解析</title>
       <link>https://blog.autolab.cloud/nvidia-agent-toolkit-gtc-2026/</link>
@@ -254,20 +267,6 @@
       <category>AI工具</category>
       <category>開發工具</category>
       <category>token優化</category>
-    </item>
-    <item>
-      <title>Claude 終於有記憶了！記憶功能 + 聊天搜尋完整教學，讓 AI 越用越懂你</title>
-      <link>https://blog.autolab.cloud/claude-memory-chat-search-2026/</link>
-      <guid>https://blog.autolab.cloud/claude-memory-chat-search-2026/</guid>
-      <pubDate>Mon, 16 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>Anthropic 2026 年 3 月重大更新：記憶功能全員免費開放，聊天搜尋讓歷史對話變知識庫，跨 AI 工具記憶搬家。本文完整教你怎麼設定、怎麼用、企業版有哪些控制機制。</description>
-      <category>Claude</category>
-      <category>記憶功能</category>
-      <category>ChatSearch</category>
-      <category>AI個人化</category>
-      <category>Anthropic</category>
-      <category>企業AI</category>
     </item>
   </channel>
 </rss>
