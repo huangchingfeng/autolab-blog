@@ -5,13 +5,26 @@
     <link>https://blog.autolab.cloud/</link>
     <description>企業 AI 培訓、Vibe Coding、AI 工具教學，從觀念到落地。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Mon, 30 Mar 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 04 Apr 2026 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://blog.autolab.cloud/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://blog.autolab.cloud/static/og-default.png</url>
       <title>阿峰老師 AI 實戰部落格</title>
       <link>https://blog.autolab.cloud/</link>
     </image>
+    <item>
+      <title>Slack 變身 AI 代理調度中心：30 項更新背後你不能錯過的戰略訊號</title>
+      <link>https://blog.autolab.cloud/slack-ai-agent-orchestration-2026/</link>
+      <guid>https://blog.autolab.cloud/slack-ai-agent-orchestration-2026/</guid>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description></description>
+      <category>AI代理</category>
+      <category>Slack</category>
+      <category>企業AI</category>
+      <category>MCP</category>
+      <category>工作流程</category>
+    </item>
     <item>
       <title>Claude Code 怎麼用？一個指令搞定從寫文章到全平台發文的完整攻略</title>
       <link>https://blog.autolab.cloud/claude-code-post-factory-guide-2026/</link>
@@ -257,19 +270,6 @@
       <pubDate>Tue, 17 Mar 2026 00:00:00 +0800</pubDate>
       <author>ai@autolab.cloud (黃敬峰)</author>
       <description></description>
-    </item>
-    <item>
-      <title>AI龍蝦暴紅真相：OpenClaw千人排隊裝AI，背後12%惡意技能你知道嗎？</title>
-      <link>https://blog.autolab.cloud/openclaw-ai-agent-viral-china-security-risks/</link>
-      <guid>https://blog.autolab.cloud/openclaw-ai-agent-viral-china-security-risks/</guid>
-      <pubDate>Mon, 16 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>中國深圳騰訊總部外千人排隊安裝OpenClaw AI Agent，「養龍蝦」現象席捲中國職場。但技能市集ClawHub有335個惡意包、CVSS 8.8高危漏洞，台灣企業該如何看待這波AI Agent浪潮？</description>
-      <category>AI Agent</category>
-      <category>OpenClaw</category>
-      <category>資安</category>
-      <category>企業AI</category>
-      <category>AI趨勢</category>
     </item>
   </channel>
 </rss>
