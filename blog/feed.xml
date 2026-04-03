@@ -13,6 +13,19 @@
       <link>https://blog.autolab.cloud/</link>
     </image>
     <item>
+      <title>AI 寫程式省下的時間，被這個費用默默吃掉了</title>
+      <link>https://blog.autolab.cloud/ai-coding-tools-real-cost-2026/</link>
+      <guid>https://blog.autolab.cloud/ai-coding-tools-real-cost-2026/</guid>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description></description>
+      <category>AI 工具</category>
+      <category>企業 AI</category>
+      <category>軟體開發</category>
+      <category>Claude Code</category>
+      <category>Cursor AI</category>
+    </item>
+    <item>
       <title>Slack 變身 AI 代理調度中心：30 項更新背後你不能錯過的戰略訊號</title>
       <link>https://blog.autolab.cloud/slack-ai-agent-orchestration-2026/</link>
       <guid>https://blog.autolab.cloud/slack-ai-agent-orchestration-2026/</guid>
@@ -262,14 +275,6 @@
       <category>AI觀點</category>
       <category>企業AI</category>
       <category>工作術</category>
-    </item>
-    <item>
-      <title>Claude Code Agent Teams 完全指南：從 Sub-agent 到多 AI 協作的架構升級</title>
-      <link>https://blog.autolab.cloud/claude-code-agent-teams-guide/</link>
-      <guid>https://blog.autolab.cloud/claude-code-agent-teams-guide/</guid>
-      <pubDate>Tue, 17 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description></description>
     </item>
   </channel>
 </rss>
