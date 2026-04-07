@@ -5,13 +5,27 @@
     <link>https://blog.autolab.cloud/</link>
     <description>企業 AI 培訓、Vibe Coding、AI 工具教學，從觀念到落地。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Sat, 04 Apr 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 08 Apr 2026 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://blog.autolab.cloud/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://blog.autolab.cloud/static/og-default.png</url>
       <title>阿峰老師 AI 實戰部落格</title>
       <link>https://blog.autolab.cloud/</link>
     </image>
+    <item>
+      <title>35 個更新你不需要全學，但這 3 個你非知道不可｜Claude Q1 2026 完整指南</title>
+      <link>https://blog.autolab.cloud/claude-q1-2026-updates-guide/</link>
+      <guid>https://blog.autolab.cloud/claude-q1-2026-updates-guide/</guid>
+      <pubDate>Wed, 08 Apr 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>Anthropic Q1 2026 推出了 35 個 Claude 更新，本文幫你找出最值得台灣企業導入的核心功能：Claude Cowork、1M Token Context、Claude Code 新指令，附完整使用建議。</description>
+      <category>Claude</category>
+      <category>AI工具</category>
+      <category>Anthropic</category>
+      <category>Claude Code</category>
+      <category>Claude Cowork</category>
+      <category>企業AI</category>
+    </item>
     <item>
       <title>AI 寫程式省下的時間，被這個費用默默吃掉了</title>
       <link>https://blog.autolab.cloud/ai-coding-tools-real-cost-2026/</link>
@@ -263,18 +277,6 @@
       <category>MCP</category>
       <category>CLAUDE.md</category>
       <category>開發工具</category>
-    </item>
-    <item>
-      <title>GPT-5.4 極限推理 + 百萬 Token 發布，但你真正該做的事不是升級</title>
-      <link>https://blog.autolab.cloud/gpt54-extreme-reasoning-workflow-strategy/</link>
-      <guid>https://blog.autolab.cloud/gpt54-extreme-reasoning-workflow-strategy/</guid>
-      <pubDate>Tue, 17 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>GPT-5.4 帶來 Extreme Reasoning 和百萬 Token 上下文，但 GPT-5.1 才上市六個月就退役了。這告訴企業一件事：停止追模型，開始建立你的 AI 工作流。</description>
-      <category>AI工具教學</category>
-      <category>AI觀點</category>
-      <category>企業AI</category>
-      <category>工作術</category>
     </item>
   </channel>
 </rss>
