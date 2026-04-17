@@ -5,13 +5,26 @@
     <link>https://blog.autolab.cloud/</link>
     <description>企業 AI 培訓、Vibe Coding、AI 工具教學，從觀念到落地。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Wed, 08 Apr 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 17 Apr 2026 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://blog.autolab.cloud/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://blog.autolab.cloud/static/og-default.png</url>
       <title>阿峰老師 AI 實戰部落格</title>
       <link>https://blog.autolab.cloud/</link>
     </image>
+    <item>
+      <title>Claude Opus 4.7 + 1M Context 實戰｜阿峰老師的 Session 管理升級指南</title>
+      <link>https://blog.autolab.cloud/claude-opus-4-7-session-management/</link>
+      <guid>https://blog.autolab.cloud/claude-opus-4-7-session-management/</guid>
+      <pubDate>Fri, 17 Apr 2026 00:00:00 +0800</pubDate>
+      <author>ai@autolab.cloud (黃敬峰)</author>
+      <description>Anthropic 發布 Opus 4.7 + Claude Code 工程師親口教 1M Context Session 管理。每天用 Claude Code 跑企業培訓的阿峰老師，整理升級後立刻要做的 5 件事——含 100+ Skills 用戶的實戰經驗。</description>
+      <category>Claude Opus 4.7</category>
+      <category>Claude Code</category>
+      <category>Session管理</category>
+      <category>AI工具</category>
+      <category>阿峰老師</category>
+    </item>
     <item>
       <title>35 個更新你不需要全學，但這 3 個你非知道不可｜Claude Q1 2026 完整指南</title>
       <link>https://blog.autolab.cloud/claude-q1-2026-updates-guide/</link>
@@ -263,20 +276,6 @@
       <category>工作效率</category>
       <category>企業AI</category>
       <category>流程自動化</category>
-    </item>
-    <item>
-      <title>Claude Code 進階：你可能不知道的六層架構與上下文管理術</title>
-      <link>https://blog.autolab.cloud/claude-code-architecture-context-engineering/</link>
-      <guid>https://blog.autolab.cloud/claude-code-architecture-context-engineering/</guid>
-      <pubDate>Tue, 17 Mar 2026 00:00:00 +0800</pubDate>
-      <author>ai@autolab.cloud (黃敬峰)</author>
-      <description>Claude Code 不是聊天機器人，是六層代理系統。從上下文分層、MCP 管理到 Prompt Caching，完整解析讓你從「會用」升級到「用得好」的關鍵實踐。</description>
-      <category>AI</category>
-      <category>Claude Code</category>
-      <category>上下文工程</category>
-      <category>MCP</category>
-      <category>CLAUDE.md</category>
-      <category>開發工具</category>
     </item>
   </channel>
 </rss>

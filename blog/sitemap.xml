@@ -2,9 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://blog.autolab.cloud/</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://blog.autolab.cloud/claude-opus-4-7-session-management/</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blog.autolab.cloud/claude-q1-2026-updates-guide/</loc>
@@ -332,7 +338,7 @@
   </url>
   <url>
     <loc>https://blog.autolab.cloud/buffett-ai-investment-strategy-2026/</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
